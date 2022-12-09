@@ -1,16 +1,21 @@
 <template>
   <div class="v-app-nav">
-    <router-link :to="{name:'calculator'}" class="app-button" >calculateur icon</router-link>
-    <router-link :to="{name:'contract'}"   class="app-button" >contrat icon</router-link>
+    <router-link :to="{name:'calculator'}" class="app-button" ><icon-calculator></icon-calculator></router-link>
+    <router-link :to="{name:'contract'}"   class="app-button" ><icon-contract></icon-contract></router-link>
   </div>
 </template>
 
 <script lang="ts">
 import {defineComponent} from 'vue';
+import IconCalculator from "./IconCalculator.vue";
+import IconContract from "./IconContract.vue";
+import IconIsValidate from "./IconIsValidate.vue";
+import IconPen from "./IconPen.vue";
+import IconDelet from "./IconDelete.vue";
 
 export default defineComponent({
   name: 'AppNav',
-  components: {},
+  components: {IconDelet, IconPen, IconIsValidate, IconContract, IconCalculator},
 });
 </script>
 
@@ -21,8 +26,6 @@ export default defineComponent({
   justify-content: center;
 
   > * {
-    width: 8rem;
-    height: 8rem;
     margin-left: 1rem;
     margin-right: 1rem;
   }

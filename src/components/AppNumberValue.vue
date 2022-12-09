@@ -2,7 +2,9 @@
   <div class="v-app-number-value">
     <div
         class="v-app-number-value__icon"
-    ></div>
+    >
+      <icon-pen></icon-pen>
+    </div>
     <div
         v-if="isCHFValue"
         class="v-app-number-value__device"
@@ -20,10 +22,11 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue';
+import IconPen from "./IconPen.vue";
 
 export default defineComponent({
   name: 'AppNumberValue',
-  components: {},
+  components: {IconPen},
 
   props: {
     isCHFValue: {
@@ -42,10 +45,6 @@ export default defineComponent({
 }
 
 .v-app-number-value__icon {
-  box-sizing: border-box;
-  border: solid 2px;
-  width:  2rem;
-  height: 2rem;
 }
 
 .v-app-number-value__value {
