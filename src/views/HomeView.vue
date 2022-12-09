@@ -1,9 +1,22 @@
-<script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+<template>
+  <div class="v-home-view">
+    <app-nav></app-nav>
+  </div>
+</template>
+
+<script lang="ts">
+import {defineComponent} from 'vue';
+import AppNav from "../components/AppNav.vue";
+
+export default defineComponent({
+  name: 'HomeView',
+  components: {AppNav},
+
+});
 </script>
 
-<template>
-  <main>
-    <TheWelcome />
-  </main>
-</template>
+<style lang="scss" scoped>
+.v-home-view {
+
+}
+</style>

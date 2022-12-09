@@ -7,9 +7,6 @@
   ],
   "compilerOptions": {
     "baseUrl": "./vue-project",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
   },
 
   "references": [
