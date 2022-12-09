@@ -13,8 +13,12 @@ export class NumberCalculatorSection extends CalculatorSection{
 
     #value: number = 0
 
-    constructor() {
-        super();
+    constructor(public index: number,
+                public title?: string,
+                public info?: string,
+                public required = false,
+                ) {
+        super(index, title, info, required);
     }
 
      public addSubSection(subsection: NumberCalculatorSubsection) {
