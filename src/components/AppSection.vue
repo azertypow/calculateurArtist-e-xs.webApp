@@ -1,5 +1,6 @@
 <template>
   <div class="v-app-section">
+    <div class="v-app-section__required-info">Facultatif</div>
     <div
         class="app-g"
     >
@@ -10,13 +11,16 @@
       </div>
 
       <div
-          class="app-g__coll-4-12"
+          class="app-g__coll-8-12"
       >
         <div>{{title}}</div>
       </div>
-
+    </div>
+    <div
+        class="app-g"
+    >
       <div
-          class="app-g__coll-6-12"
+          class="app-g__coll-12-12"
       >
         <slot></slot>
       </div>
@@ -44,11 +48,30 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .v-app-section {
   box-sizing: border-box;
   border-top: solid 1px var(--app-color-border);
   padding: 3rem 1rem;
+  position: relative;
+
+  > .app-g + .app-g {
+    margin-top: 2rem;
+  }
+
+  .app-g__coll-12-12 {
+    > .app-g + .app-g {
+      margin-top: 4rem;
+    }
+  }
+}
+
+.v-app-section__required-info {
+  font-size:    var(--app-font-size);
+  line-height:  1rem;
+  position: absolute;
+  top: 1rem;
+  right: 0;
 }
 
 .v-app-section__index {

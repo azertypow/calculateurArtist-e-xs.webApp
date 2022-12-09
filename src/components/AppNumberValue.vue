@@ -1,13 +1,12 @@
 <template>
   <div class="v-app-number-value">
     <div
+        class="v-app-number-value__icon"
+    ></div>
+    <div
         v-if="isCHFValue"
         class="v-app-number-value__device"
     >CHF</div>
-    <div
-        class="v-app-number-value__icon"
-    ></div>
-
     <input
         class="v-app-number-value__value"
         type="number"
@@ -43,7 +42,8 @@ export default defineComponent({
 }
 
 .v-app-number-value__icon {
-  background: black;
+  box-sizing: border-box;
+  border: solid 2px;
   width:  2rem;
   height: 2rem;
 }

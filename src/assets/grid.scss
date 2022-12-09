@@ -14,3 +14,13 @@
 .app-g__coll-10-12 {width: calc(100% / 12 * 10); display: block; box-sizing: border-box;}
 .app-g__coll-11-12 {width: calc(100% / 12 * 11); display: block; box-sizing: border-box;}
 .app-g__coll-12-12 {width: calc(100% / 12 * 12); display: block; box-sizing: border-box;}
+
+.app-remove-child-margin {
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}

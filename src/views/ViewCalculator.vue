@@ -8,12 +8,52 @@
         title="Taille de la structure"
     >
       <div
-          class="v-view-calculator__section"
+          class="app-g"
       >
-        <app-checkbox textValue="Petite"  description="< 50 000 CHF /année"></app-checkbox>
-        <app-checkbox textValue="Moyenne" description="50K–250K CHF /année"></app-checkbox>
-        <app-checkbox textValue="Grande"  description="250K–500K CHF /année"></app-checkbox>
-        <app-checkbox textValue="Très"    description="> 500K CHF /année"></app-checkbox>
+        <div
+            class="app-g__coll-6-12"
+        ></div>
+        <div
+            class="app-g__coll-6-12"
+        >
+          <app-checkbox textValue="Petite"  description="< 50 000 CHF /année"></app-checkbox>
+        </div>
+      </div>
+      <div
+          class="app-g"
+      >
+        <div
+            class="app-g__coll-6-12"
+        ></div>
+        <div
+            class="app-g__coll-6-12"
+        >
+          <app-checkbox textValue="Moyenne" description="50K–250K CHF /année"></app-checkbox>
+        </div>
+      </div>
+      <div
+          class="app-g"
+      >
+        <div
+            class="app-g__coll-6-12"
+        ></div>
+        <div
+            class="app-g__coll-6-12"
+        >
+          <app-checkbox textValue="Grande"  description="250K–500K CHF /année"></app-checkbox>
+        </div>
+      </div>
+      <div
+          class="app-g"
+      >
+        <div
+            class="app-g__coll-6-12"
+        ></div>
+        <div
+            class="app-g__coll-6-12"
+        >
+          <app-checkbox textValue="Très"    description="> 500K CHF /année"></app-checkbox>
+        </div>
       </div>
     </app-section>
 
@@ -22,11 +62,28 @@
         title="Type d’exposition"
     >
       <div
-          class="v-view-calculator__section"
+          class="app-g"
       >
-        <app-checkbox @toggle="checkBoxToggle" textValue="Solo"        ></app-checkbox>
-        <app-checkbox @toggle="checkBoxToggle" textValue="2 à 6 pers." ></app-checkbox>
-        <app-checkbox @toggle="checkBoxToggle" textValue="7 et plus"   ></app-checkbox>
+        <div class="app-g__coll-6-12"></div>
+        <div class="app-g__coll-6-12">
+          <app-checkbox @toggle="checkBoxToggle" textValue="Solo"        ></app-checkbox>
+        </div>
+      </div>
+      <div
+          class="app-g"
+      >
+        <div class="app-g__coll-6-12"></div>
+        <div class="app-g__coll-6-12">
+          <app-checkbox @toggle="checkBoxToggle" textValue="2 à 6 pers." ></app-checkbox>
+        </div>
+      </div>
+      <div
+          class="app-g"
+      >
+        <div class="app-g__coll-6-12"></div>
+        <div class="app-g__coll-6-12">
+          <app-checkbox @toggle="checkBoxToggle" textValue="7 et plus"   ></app-checkbox>
+        </div>
       </div>
     </app-section>
 
@@ -35,13 +92,28 @@
         title="Honoraires de participation et/ou de conception"
     >
       <div
-          class="v-view-calculator__section"
+          class="app-g"
       >
-        <app-checkbox textValue="Emploi d’une ou plusieurs œuvres existantes"
-                      info="Si la pièce a été produite AVANT la proposition de participation à l’exposition et qu’il n’y a pas de modifications à effectuer sur la pièce pour la présenter, cocher cette case."
-        ></app-checkbox>
-        <app-checkbox textValue="Emploi d’une ou plusieurs œuvres existantes" ></app-checkbox>
-        <app-checkbox textValue="Emploi d’une ou plusieurs œuvres existantes"   ></app-checkbox>
+        <div class="app-g__coll-6-12" ></div>
+        <div class="app-g__coll-6-12" >
+          <app-checkbox textValue="Emploi d’une ou plusieurs œuvres existantes" info="Si la pièce a été produite AVANT la proposition de participation à l’exposition et qu’il n’y a pas de modifications à effectuer sur la pièce pour la présenter, cocher cette case."></app-checkbox>
+        </div>
+      </div>
+      <div
+          class="app-g"
+      >
+        <div class="app-g__coll-6-12" ></div>
+        <div class="app-g__coll-6-12" >
+          <app-checkbox textValue="Emploi d’une ou plusieurs œuvres existantes" ></app-checkbox>
+        </div>
+      </div>
+      <div
+          class="app-g"
+      >
+        <div class="app-g__coll-6-12" ></div>
+        <div class="app-g__coll-6-12" >
+          <app-checkbox textValue="Emploi d’une ou plusieurs œuvres existantes"   ></app-checkbox>
+        </div>
       </div>
     </app-section>
 
@@ -50,11 +122,10 @@
         title="Durée de l’exposition (en mois)"
     >
       <div
-          class="v-view-calculator__section"
+          class="app-g"
       >
-        <div
-            class="v-view-calculator__section__line"
-        >
+        <div class="app-g__coll-6-12" ></div>
+        <div class="app-g__coll-6-12" >
           <app-number-value :is-c-h-f-value="false" ></app-number-value>
         </div>
       </div>
@@ -65,13 +136,44 @@
         title="Honoraires de réalisation (si réalisé par l’artiste)"
     >
       <div
-          class="v-view-calculator__section"
+          class="app-g"
       >
-        <app-checkbox textValue="Emploi d’une ou plusieurs œuvres existantes"
-                      info="Si la pièce a été produite AVANT la proposition de participation à l’exposition et qu’il n’y a pas de modifications à effectuer sur la pièce pour la présenter, cocher cette case."
-        ></app-checkbox>
-        <app-checkbox textValue="Emploi d’une ou plusieurs œuvres existantes" ></app-checkbox>
-        <app-checkbox textValue="Emploi d’une ou plusieurs œuvres existantes"   ></app-checkbox>
+        <div
+            class="app-g__coll-2-12"
+        >
+          <div
+              class="v-view-calculator__circle-state-container"
+          >
+            <div class="app-circle app-circle--is-active" ></div>
+          </div>
+        </div>
+        <div class="app-g__coll-4-12 app-remove-child-margin" >
+          <p>Coût horaire</p>
+          <p>↳ nombre d’heures</p>
+        </div>
+        <div class="app-g__coll-6-12" >
+          <app-number-value :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value :is-c-h-f-value="false" ></app-number-value>
+        </div>
+      </div>
+      <div
+          class="app-g"
+      >
+        <div
+            class="app-g__coll-2-12"
+        >
+          <div
+              class="v-view-calculator__circle-state-container"
+          >
+            <div class="app-circle app-circle--is-active" ></div>
+          </div>
+        </div>
+        <div class="app-g__coll-4-12 app-remove-child-margin" >
+          <p>Forfait de réalisation</p>
+        </div>
+        <div class="app-g__coll-6-12" >
+          <app-number-value :is-c-h-f-value="false" ></app-number-value>
+        </div>
       </div>
     </app-section>
 
@@ -80,44 +182,164 @@
         title="Per Diem"
     >
       <div
-          class="v-view-calculator__section"
+          class="app-g"
       >
-        <app-checkbox textValue="Emploi d’une ou plusieurs œuvres existantes"
-                      info="Si la pièce a été produite AVANT la proposition de participation à l’exposition et qu’il n’y a pas de modifications à effectuer sur la pièce pour la présenter, cocher cette case."
-        ></app-checkbox>
-        <app-checkbox textValue="Emploi d’une ou plusieurs œuvres existantes" ></app-checkbox>
-        <app-checkbox textValue="Emploi d’une ou plusieurs œuvres existantes"   ></app-checkbox>
+        <div
+            class="app-g__coll-2-12"
+        >
+          <div
+              class="v-view-calculator__circle-state-container"
+          >
+            <div class="app-circle" ></div>
+          </div>
+        </div>
+        <div class="app-g__coll-4-12 app-remove-child-margin" >
+          <p>Per Diem</p>
+        </div>
+        <div class="app-g__coll-6-12" >
+          <app-number-value :is-c-h-f-value="true" ></app-number-value>
+        </div>
+      </div>
+
+      <div
+          class="app-g"
+      >
+        <div
+            class="app-g__coll-2-12"
+        >
+          <div
+              class="v-view-calculator__circle-state-container"
+          >
+            <div class="app-circle" ></div>
+          </div>
+        </div>
+        <div class="app-g__coll-4-12 app-remove-child-margin" >
+          <p>Nombre d'heures</p>
+        </div>
+        <div class="app-g__coll-6-12" >
+          <app-number-value :is-c-h-f-value="false" ></app-number-value>
+        </div>
       </div>
     </app-section>
 
     <app-section
         :index="7"
-        title="Per Diem"
+        title="Honoraires de montage et transport"
     >
       <div
-          class="v-view-calculator__section"
+          class="app-g"
       >
-        <app-checkbox textValue="Emploi d’une ou plusieurs œuvres existantes"
-                      info="Si la pièce a été produite AVANT la proposition de participation à l’exposition et qu’il n’y a pas de modifications à effectuer sur la pièce pour la présenter, cocher cette case."
-        ></app-checkbox>
-        <app-checkbox textValue="Emploi d’une ou plusieurs œuvres existantes" ></app-checkbox>
-        <app-checkbox textValue="Emploi d’une ou plusieurs œuvres existantes"   ></app-checkbox>
+        <div
+            class="app-g__coll-2-12"
+        >
+          <div
+              class="v-view-calculator__circle-state-container"
+          >
+            <div class="app-circle" ></div>
+          </div>
+        </div>
+        <div class="app-g__coll-4-12 app-remove-child-margin" >
+          <p>Honoraires de montage et transport</p>
+        </div>
+        <div class="app-g__coll-6-12" >
+          <app-number-value :is-c-h-f-value="false" ></app-number-value>
+        </div>
       </div>
+
+      <div
+          class="app-g"
+      >
+        <div
+            class="app-g__coll-2-12"
+        >
+          <div
+              class="v-view-calculator__circle-state-container"
+          >
+            <div class="app-circle" ></div>
+          </div>
+        </div>
+        <div class="app-g__coll-4-12 app-remove-child-margin" >
+          <p>↳ nombre d’heures</p>
+        </div>
+        <div class="app-g__coll-6-12" >
+          <app-number-value :is-c-h-f-value="false" ></app-number-value>
+        </div>
+      </div>
+
     </app-section>
 
     <app-section
         :index="8"
         title="Forfait par performance"
     >
+
       <div
-          class="v-view-calculator__section"
+          class="app-g"
       >
-        <app-checkbox textValue="Emploi d’une ou plusieurs œuvres existantes"
-                      info="Si la pièce a été produite AVANT la proposition de participation à l’exposition et qu’il n’y a pas de modifications à effectuer sur la pièce pour la présenter, cocher cette case."
-        ></app-checkbox>
-        <app-checkbox textValue="Emploi d’une ou plusieurs œuvres existantes" ></app-checkbox>
-        <app-checkbox textValue="Emploi d’une ou plusieurs œuvres existantes"   ></app-checkbox>
+        <div
+            class="app-g__coll-2-12"
+        >
+          <div
+              class="v-view-calculator__circle-state-container"
+          >
+            <div class="app-circle" ></div>
+          </div>
+        </div>
+        <div class="app-g__coll-4-12 app-remove-child-margin" >
+          <p>Forfait par performance</p>
+          <p>↳ nombre d’occurences</p>
+        </div>
+        <div class="app-g__coll-6-12" >
+          <app-number-value :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value :is-c-h-f-value="false" ></app-number-value>
+        </div>
       </div>
+
+      <div
+          class="app-g"
+      >
+        <div
+            class="app-g__coll-2-12"
+        >
+          <div
+              class="v-view-calculator__circle-state-container"
+          >
+            <div class="app-circle" ></div>
+          </div>
+        </div>
+        <div class="app-g__coll-4-12 app-remove-child-margin" >
+          <p>Évènement avec préparation</p>
+          <p>↳ nombre d’occurences</p>
+        </div>
+        <div class="app-g__coll-6-12" >
+          <app-number-value :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value :is-c-h-f-value="false" ></app-number-value>
+        </div>
+      </div>
+
+
+      <div
+          class="app-g"
+      >
+        <div
+            class="app-g__coll-2-12"
+        >
+          <div
+              class="v-view-calculator__circle-state-container"
+          >
+            <div class="app-circle" ></div>
+          </div>
+        </div>
+        <div class="app-g__coll-4-12 app-remove-child-margin" >
+          <p>Évènement sans préparation</p>
+          <p>↳ nombre d’occurences</p>
+        </div>
+        <div class="app-g__coll-6-12" >
+          <app-number-value :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value :is-c-h-f-value="false" ></app-number-value>
+        </div>
+      </div>
+
     </app-section>
 
     <app-section
@@ -125,13 +347,10 @@
         title="Forfait texte / 1000 frappes"
     >
       <div
-          class="v-view-calculator__section"
+          class="app-g"
       >
-        <app-checkbox textValue="Emploi d’une ou plusieurs œuvres existantes"
-                      info="Si la pièce a été produite AVANT la proposition de participation à l’exposition et qu’il n’y a pas de modifications à effectuer sur la pièce pour la présenter, cocher cette case."
-        ></app-checkbox>
-        <app-checkbox textValue="Emploi d’une ou plusieurs œuvres existantes" ></app-checkbox>
-        <app-checkbox textValue="Emploi d’une ou plusieurs œuvres existantes"   ></app-checkbox>
+        <div class="app-g__coll-6-12" ></div>
+        <div class="app-g__coll-6-12" ></div>
       </div>
     </app-section>
   </div>
@@ -175,19 +394,8 @@ h2 {
   padding-top: 2rem;
 }
 
-.v-view-calculator__section {
+.v-view-calculator__circle-state-container {
   display: flex;
-  flex-direction: column;
+  justify-content: right;
 }
-
-.v-view-calculator__section__line {
-  display: flex;
-  flex-direction: row;
-}
-
-.v-view-calculator__section__line__coll {
-  display: block;
-  box-sizing: border-box;
-}
-
 </style>

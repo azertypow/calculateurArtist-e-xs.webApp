@@ -19,5 +19,12 @@ export default defineComponent({
   display: flex;
   align-items: center;
   justify-content: center;
+
+  > * {
+    width: 8rem;
+    height: 8rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 }
 </style>
