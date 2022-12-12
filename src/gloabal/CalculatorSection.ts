@@ -73,8 +73,8 @@ export class NumberCalculatorSubsection {
 
     public get status() {
         if(this.value === void(0)) return 'empty'
-        if (this.value) return 'in progress'
         if(this.validateValueCheck(this.value)) return 'validate'
+        if (this.value) return 'in progress'
         return 'error'
     }
 
