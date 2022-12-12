@@ -1,9 +1,40 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
+import {
+    NumberCalculatorSection,
+    NumberCalculatorSubsection,
+    OptionCalculatorSection
+} from "../gloabal/CalculatorSection";
 
 export const useGlobalStore = defineStore('globalStore', {
     state() {
         return {
+            calculatorSections: [
+
+                new NumberCalculatorSection(
+
+                    0,
+                    'Durée de l’exposition (en mois)',
+
+                ).addSubSection(
+                    new NumberCalculatorSubsection()
+                ),
+
+                new NumberCalculatorSection(
+
+                    0,
+                    'Honoraires de réalisation (si réalisé par l’artiste)',
+
+                ).addSubSection(
+                    new NumberCalculatorSubsection(
+                        'Coût horaire',
+                        50,
+                    ).setAMultiplier(
+                        '↳ nombre d’heures'
+                    )
+                ),
+
+            ] as {[key: number]: NumberCalculatorSection | OptionCalculatorSection},
             calculatorData: {
                 '1_taille_structure': {
                     title: 'Taille de la structure',
