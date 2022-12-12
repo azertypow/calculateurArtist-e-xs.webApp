@@ -31,17 +31,18 @@ export class NumberCalculatorSection extends CalculatorSection{
         super(index, title, info, required);
     }
 
-     public addSubSection(subsection: NumberCalculatorSubsection): this {
-         this.#subSections.push( subsection )
-         return this
-     }
+    public addSubSection(subsection: NumberCalculatorSubsection): this {
+        this.#subSections.push(subsection)
+        return this
+    }
+
     get subSections(): NumberCalculatorSubsection[] {
         return this.#subSections;
     }
 
-     get value(): number {
+    get value(): number {
         return this.#value
-     }
+    }
 }
 
 export class NumberCalculatorSubsection {
