@@ -19,9 +19,9 @@ export class OptionCalculatorSection extends CalculatorSection{
 }
 
 export class NumberCalculatorSection extends CalculatorSection{
-    #subSections: NumberCalculatorSubsection[] = []
+    private _subSections: NumberCalculatorSubsection[] = []
 
-    #value: number = 0
+    private _value: number = 0
 
     constructor(public index: number,
                 public title?: string,
@@ -32,25 +32,25 @@ export class NumberCalculatorSection extends CalculatorSection{
     }
 
     public addSubSection(subsection: NumberCalculatorSubsection): this {
-        this.#subSections.push(subsection)
+        this._subSections.push(subsection)
         return this
     }
 
     get subSections(): NumberCalculatorSubsection[] {
-        return this.#subSections;
+        return this._subSections;
     }
 
     get value(): number {
-        return this.#value
+        return this._value
     }
 }
 
 export class NumberCalculatorSubsection {
 
-    #multiplierValue?: number
-    #multiplierText = ''
+    private _multiplierValue?: number
+    private _multiplierText = ''
 
-    #result = 0
+    private _result = 0
 
     constructor(
         public text?: string,
@@ -66,8 +66,8 @@ export class NumberCalculatorSubsection {
     }
 
     public setAMultiplier(text = '', value?: number): this {
-        this.#multiplierValue = value
-        this.#multiplierText = text
+        this._multiplierValue = value
+        this._multiplierText = text
         return this
     }
 
@@ -79,6 +79,6 @@ export class NumberCalculatorSubsection {
     }
 
     public get result(): number {
-        return this.#multiplierValue ? this.#multiplierValue * this.#result : this.#result
+        return this._multiplierValue ? this._multiplierValue * this._result : this._result
     }
 }

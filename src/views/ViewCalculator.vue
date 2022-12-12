@@ -4,6 +4,21 @@
     <h2>RECOMMANDATIONS DE RÉMUNÉRATION POUR UNE EXPOSITION</h2>
 
     <app-section
+        v-for="section of sections"
+        :title="section.title"
+        :index="section.index"
+    >
+      <div
+          v-for="subsection of section.subSections"
+      >
+        {{subsection.text}}
+        {{subsection.value}}
+      </div>
+    </app-section>
+
+    <h1>new system class</h1>
+
+    <app-section
         :index="1"
         title="Taille de la structure"
     >
@@ -362,6 +377,8 @@ import AppNav from "../components/AppNav.vue";
 import AppCheckbox from "../components/AppCheckbox.vue";
 import AppSection from "../components/AppSection.vue";
 import AppNumberValue from "../components/AppNumberValue.vue";
+import {useGlobalStore} from "../stores/globalStore";
+import {NumberCalculatorSection, OptionCalculatorSection} from "../gloabal/CalculatorSection";
 
 export default defineComponent({
   name: 'ViewCalculator',
@@ -369,15 +386,22 @@ export default defineComponent({
 
   data() {
     return {
+      globalStore: useGlobalStore(),
       proto: true,
       checkeds: [],
+    }
+  },
+
+  computed: {
+    sections(): {[key: number]: NumberCalculatorSection | OptionCalculatorSection}  {
+      return this.globalStore.calculatorSections
     }
   },
 
   methods: {
     checkBoxToggle(value: {activated: boolean, textValue: string}) {
       console.log(value)
-    }
+    },
   },
 
 });
