@@ -1,5 +1,7 @@
 <template>
-  <div class="v-subsection-number">
+  <div
+      class="v-subsection-number app-subsection"
+  >
     <div
         v-if="numberSubsection.hasMultiplier"
         class="app-g"
@@ -24,7 +26,7 @@
       </div>
     </div>
 
-    <h6>result: {{numberSubsection.result}}</h6>
+    <h6 class="app-subsection__result" >result: {{numberSubsection.result}}</h6>
   </div>
 </template>
 

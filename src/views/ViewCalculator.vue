@@ -3,6 +3,8 @@
     <app-nav></app-nav>
     <h2>RECOMMANDATIONS DE RÉMUNÉRATION POUR UNE EXPOSITION</h2>
 
+<h1>new class system</h1>
+
     <app-section
         v-for="section of sections"
         :title="section.value.title"
@@ -21,7 +23,7 @@
       ></subsection-option>
     </app-section>
 
-    <h1>new system class</h1>
+<h1>old class system</h1>
 
     <app-section
         :index="1"

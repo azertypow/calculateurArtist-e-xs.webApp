@@ -11,7 +11,7 @@ export const useGlobalStore = defineStore('globalStore', {
     state() {
         return {
             calculatorSections: [
-
+                // ----------
                 new OptionCalculatorSection(
                     1,
                     'Taille de la structure',
@@ -22,28 +22,81 @@ export const useGlobalStore = defineStore('globalStore', {
                     new OptionCalculatorSubsection('Grand', '250K–500K CHF /année'),
                     new OptionCalculatorSubsection('Très grande', '> 500K CHF /année'),
                 ),
+                // ----------
 
 
+
+                // ----------
+                new OptionCalculatorSection(
+                    2,
+                    'Type d’exposition',
+                    true
+                ).addSubSection(
+                    new OptionCalculatorSubsection('Solo'),
+                    new OptionCalculatorSubsection('2 à 6 pers.'),
+                    new OptionCalculatorSubsection('7 et plus', ),
+                ),
+                // ----------
+
+
+                // ----------
+                new OptionCalculatorSection(
+                    3,
+                    'Emploi d’une ou plusieurs œuvres existantes',
+                    true
+                ).addSubSection(
+                    new OptionCalculatorSubsection('Emploi d’une ou plusieurs œuvres existantes'),
+                    new OptionCalculatorSubsection('Emploi d’une ou plusieurs œuvres existantes'),
+                    new OptionCalculatorSubsection('Emploi d’une ou plusieurs œuvres existantes'),
+                ),
+                // ----------
+
+
+
+                // ----------
                 new NumberCalculatorSection(
-                    1,
-                    'Durée de l’exposition (en mois)',
+                    4,
+                    "Durée de l'exposition (en mois)",
                 ).addSubSection(
                     new NumberCalculatorSubsection()
                 ),
+                // ----------
 
-
+                // ----------
                 new NumberCalculatorSection(
-                    2,
+                    5,
                     'Honoraires de réalisation (si réalisé par l’artiste)',
                 ).addSubSection(
                     new NumberCalculatorSubsection(
-                        'nombre d’heures',
+                        "nombre d'heures",
                         0,
                     ).setAMultiplier(
                         50,
                         'Coût horaire',
                     )
+                ).addSubSection(
+                    new NumberCalculatorSubsection(
+                        'Forfait de réalisation'
+                    )
                 ),
+                // ----------
+
+
+                // ----------
+                new NumberCalculatorSection(
+                    6,
+                    'Per Diem',
+                ).addSubSection(
+                    new NumberCalculatorSubsection(
+                        'Per Diem\n',
+                        0,
+                    )
+                ).addSubSection(
+                    new NumberCalculatorSubsection(
+                        "Nombre d'heures"
+                    )
+                ),
+                // ----------
 
             ] as OptionOrNumberCalculatorSection<OptionCalculatorSection | NumberCalculatorSection>[],
             calculatorData: {

@@ -102,3 +102,17 @@ button,
   opacity: 0;
   transform: translateY(-1rem);
 }
+
+.app-subsection {
+  position: relative;
+
+  .app-subsection__result {
+    font-size: var(--app-font-size);
+    line-height: 1rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    font-weight: 300;
+  }
+}

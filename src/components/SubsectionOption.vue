@@ -1,6 +1,6 @@
 <template>
   <div
-      class="v-subsection-option"
+      class="v-subsection-option app-subsection"
   >
     <div
         class="app-g"
@@ -17,6 +17,9 @@
         ></app-checkbox>
       </div>
     </div>
+
+  <h6 class="app-subsection__result" >option result</h6>
+
   </div>
 </template>
 
