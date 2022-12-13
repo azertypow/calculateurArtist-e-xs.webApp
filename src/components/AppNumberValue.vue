@@ -12,6 +12,7 @@
     <input
         class="v-app-number-value__value"
         type="number"
+        v-model="numberSubsection.value"
     >
     <div
         class="v-app-number-value__end"
@@ -22,13 +23,19 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue';
+import type {PropType} from 'vue';
 import IconPen from "./IconPen.vue";
+import type {NumberCalculatorSubsection} from "../gloabal/CalculatorSection";
 
 export default defineComponent({
   name: 'AppNumberValue',
   components: {IconPen},
 
   props: {
+    numberSubsection: {
+      required: true,
+      type: Object as PropType<NumberCalculatorSubsection>,
+    },
     isCHFValue: {
       required: false,
       default: false,
