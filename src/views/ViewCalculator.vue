@@ -5,15 +5,20 @@
 
     <app-section
         v-for="section of sections"
-        :title="section.title"
-        :index="section.index"
+        :title="section.value.title"
+        :index="section.value.index"
     >
-      <div
-          v-for="subsection of section.subSections"
+      <subsection-number
+          v-if="section.type === 'number'"
+          v-for="numberSubsection of section.value.subSections"
+          :numberSubsection="numberSubsection"
       >
-        {{subsection.text}}
-        {{subsection.value}}
-      </div>
+      </subsection-number>
+      <subsection-option
+          v-if="section.type === 'option'"
+          v-for="optionSubsection of section.value.subSections"
+          :optionSubsection="optionSubsection"
+      ></subsection-option>
     </app-section>
 
     <h1>new system class</h1>
@@ -141,7 +146,7 @@
       >
         <div class="app-g__coll-6-12" ></div>
         <div class="app-g__coll-6-12" >
-          <app-number-value :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value :numberSubsection="10" :is-c-h-f-value="false" ></app-number-value>
         </div>
       </div>
     </app-section>
@@ -167,8 +172,8 @@
           <p>↳ nombre d’heures</p>
         </div>
         <div class="app-g__coll-6-12" >
-          <app-number-value :is-c-h-f-value="false" ></app-number-value>
-          <app-number-value :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value :numberSubsection="10" :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value :numberSubsection="10" :is-c-h-f-value="false" ></app-number-value>
         </div>
       </div>
       <div
@@ -187,7 +192,7 @@
           <p>Forfait de réalisation</p>
         </div>
         <div class="app-g__coll-6-12" >
-          <app-number-value :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value :numberSubsection="10" :is-c-h-f-value="false" ></app-number-value>
         </div>
       </div>
     </app-section>
@@ -212,7 +217,7 @@
           <p>Per Diem</p>
         </div>
         <div class="app-g__coll-6-12" >
-          <app-number-value :is-c-h-f-value="true" ></app-number-value>
+          <app-number-value :numberSubsection="10" :is-c-h-f-value="true" ></app-number-value>
         </div>
       </div>
 
@@ -232,7 +237,7 @@
           <p>Nombre d'heures</p>
         </div>
         <div class="app-g__coll-6-12" >
-          <app-number-value :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value :numberSubsection="10" :is-c-h-f-value="false" ></app-number-value>
         </div>
       </div>
     </app-section>
@@ -257,7 +262,7 @@
           <p>Honoraires de montage et transport</p>
         </div>
         <div class="app-g__coll-6-12" >
-          <app-number-value :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value :numberSubsection="10" :is-c-h-f-value="false" ></app-number-value>
         </div>
       </div>
 
@@ -277,7 +282,7 @@
           <p>↳ nombre d’heures</p>
         </div>
         <div class="app-g__coll-6-12" >
-          <app-number-value :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value :numberSubsection="10" :is-c-h-f-value="false" ></app-number-value>
         </div>
       </div>
 
@@ -305,8 +310,8 @@
           <p>↳ nombre d’occurences</p>
         </div>
         <div class="app-g__coll-6-12" >
-          <app-number-value :is-c-h-f-value="false" ></app-number-value>
-          <app-number-value :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value :numberSubsection="10" :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value :numberSubsection="10" :is-c-h-f-value="false" ></app-number-value>
         </div>
       </div>
 
@@ -327,8 +332,8 @@
           <p>↳ nombre d’occurences</p>
         </div>
         <div class="app-g__coll-6-12" >
-          <app-number-value :is-c-h-f-value="false" ></app-number-value>
-          <app-number-value :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value :numberSubsection="10" :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value :numberSubsection="10" :is-c-h-f-value="false" ></app-number-value>
         </div>
       </div>
 
@@ -350,8 +355,8 @@
           <p>↳ nombre d’occurences</p>
         </div>
         <div class="app-g__coll-6-12" >
-          <app-number-value :is-c-h-f-value="false" ></app-number-value>
-          <app-number-value :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value :numberSubsection="10" :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value :numberSubsection="10" :is-c-h-f-value="false" ></app-number-value>
         </div>
       </div>
 
@@ -378,11 +383,16 @@ import AppCheckbox from "../components/AppCheckbox.vue";
 import AppSection from "../components/AppSection.vue";
 import AppNumberValue from "../components/AppNumberValue.vue";
 import {useGlobalStore} from "../stores/globalStore";
-import {NumberCalculatorSection, OptionCalculatorSection} from "../gloabal/CalculatorSection";
+import type {
+  NumberCalculatorSection,
+  OptionCalculatorSection
+} from "../gloabal/CalculatorSection";
+import SubsectionOption from "../components/SubsectionOption.vue";
+import SubsectionNumber from "../components/SubsectionNumber.vue";
 
 export default defineComponent({
   name: 'ViewCalculator',
-  components: {AppNumberValue, AppSection, AppCheckbox, AppNav},
+  components: {SubsectionNumber, SubsectionOption, AppNumberValue, AppSection, AppCheckbox, AppNav},
 
   data() {
     return {
@@ -393,8 +403,18 @@ export default defineComponent({
   },
 
   computed: {
-    sections(): {[key: number]: NumberCalculatorSection | OptionCalculatorSection}  {
-      return this.globalStore.calculatorSections
+    sections(): {[key: number]: {type: 'option', value: OptionCalculatorSection} | {type: 'number', value: NumberCalculatorSection}}  {
+      return this.globalStore.calculatorSections.map(subsection => {
+        if(subsection.type === 'number') return {
+          type: 'number',
+          value: subsection as NumberCalculatorSection,
+        }
+
+        return {
+          type: 'option',
+          value: subsection as OptionCalculatorSection,
+        }
+      })
     }
   },
 

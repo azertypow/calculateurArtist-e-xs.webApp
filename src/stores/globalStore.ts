@@ -1,9 +1,10 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
+import type {OptionOrNumberCalculatorSection} from '../gloabal/CalculatorSection'
 import {
     NumberCalculatorSection,
     NumberCalculatorSubsection,
-    OptionCalculatorSection
+    OptionCalculatorSection, OptionCalculatorSubsection
 } from "../gloabal/CalculatorSection";
 
 export const useGlobalStore = defineStore('globalStore', {
@@ -11,30 +12,40 @@ export const useGlobalStore = defineStore('globalStore', {
         return {
             calculatorSections: [
 
+                new OptionCalculatorSection(
+                    1,
+                    'Taille de la structure',
+                    true
+                ).addSubSection(
+                    new OptionCalculatorSubsection('Petit', '< 50 000 CHF /année'),
+                    new OptionCalculatorSubsection('Moyen', '50K–250K CHF /année'),
+                    new OptionCalculatorSubsection('Grand', '250K–500K CHF /année'),
+                    new OptionCalculatorSubsection('Très grande', '> 500K CHF /année'),
+                ),
+
+
                 new NumberCalculatorSection(
-
-                    0,
+                    1,
                     'Durée de l’exposition (en mois)',
-
                 ).addSubSection(
                     new NumberCalculatorSubsection()
                 ),
 
+
                 new NumberCalculatorSection(
-
-                    0,
+                    2,
                     'Honoraires de réalisation (si réalisé par l’artiste)',
-
                 ).addSubSection(
                     new NumberCalculatorSubsection(
-                        'Coût horaire',
-                        50,
+                        'nombre d’heures',
+                        0,
                     ).setAMultiplier(
-                        '↳ nombre d’heures'
+                        50,
+                        'Coût horaire',
                     )
                 ),
 
-            ] as {[key: number]: NumberCalculatorSection | OptionCalculatorSection},
+            ] as OptionOrNumberCalculatorSection<OptionCalculatorSection | NumberCalculatorSection>[],
             calculatorData: {
                 '1_taille_structure': {
                     title: 'Taille de la structure',
