@@ -17,10 +17,10 @@ export const useGlobalStore = defineStore('globalStore', {
                     'Taille de la structure',
                     true
                 ).addSubSection(
-                    new OptionCalculatorSubsection('Petit', '< 50 000 CHF /année'),
-                    new OptionCalculatorSubsection('Moyen', '50K–250K CHF /année'),
-                    new OptionCalculatorSubsection('Grand', '250K–500K CHF /année'),
-                    new OptionCalculatorSubsection('Très grande', '> 500K CHF /année'),
+                    new OptionCalculatorSubsection('01', 'Petit', '< 50 000 CHF /année'),
+                    new OptionCalculatorSubsection('02', 'Moyen', '50K–250K CHF /année'),
+                    new OptionCalculatorSubsection('03', 'Grand', '250K–500K CHF /année'),
+                    new OptionCalculatorSubsection('04', 'Très grande', '> 500K CHF /année'),
                 ),
                 // ----------
 
@@ -32,9 +32,9 @@ export const useGlobalStore = defineStore('globalStore', {
                     'Type d’exposition',
                     true
                 ).addSubSection(
-                    new OptionCalculatorSubsection('Solo'),
-                    new OptionCalculatorSubsection('2 à 6 pers.'),
-                    new OptionCalculatorSubsection('7 et plus', ),
+                    new OptionCalculatorSubsection('01', 'Solo'),
+                    new OptionCalculatorSubsection('02', '2 à 6 pers.'),
+                    new OptionCalculatorSubsection('03', '7 et plus', ),
                 ),
                 // ----------
 
@@ -45,9 +45,9 @@ export const useGlobalStore = defineStore('globalStore', {
                     'Emploi d’une ou plusieurs œuvres existantes',
                     true
                 ).addSubSection(
-                    new OptionCalculatorSubsection('Emploi d’une ou plusieurs œuvres existantes'),
-                    new OptionCalculatorSubsection('Emploi d’une ou plusieurs œuvres existantes'),
-                    new OptionCalculatorSubsection('Emploi d’une ou plusieurs œuvres existantes'),
+                    new OptionCalculatorSubsection('01', 'Emploi d’une ou plusieurs œuvres existantes'),
+                    new OptionCalculatorSubsection('02', 'Emploi d’une ou plusieurs œuvres existantes'),
+                    new OptionCalculatorSubsection('03', 'Emploi d’une ou plusieurs œuvres existantes'),
                 ),
                 // ----------
 

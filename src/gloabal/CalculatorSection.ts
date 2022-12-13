@@ -20,7 +20,7 @@ export class OptionCalculatorSection extends CalculatorSection {
 
     private _subSections: OptionCalculatorSubsection[] = []
 
-    private _value?: OptionCalculatorSubsection
+    value?: OptionCalculatorSubsection
 
     public type: CalculatorSectionType = 'option'
 
@@ -33,7 +33,7 @@ export class OptionCalculatorSection extends CalculatorSection {
     }
 
     public addSubSection(...subsectionsToAdd: OptionCalculatorSubsection[]): this {
-        subsectionsToAdd.forEach(subsection => this._subSections.push(subsection))
+        subsectionsToAdd.forEach(subsection => this._subSections.push(subsection.setParent(this)))
         return this
     }
 
@@ -80,6 +80,8 @@ export class NumberCalculatorSubsection {
         text: string
     }
 
+    protected parent?: NumberCalculatorSection
+
     constructor(
         public text?: string,
         public value = 0,
@@ -121,10 +123,27 @@ export class NumberCalculatorSubsection {
 
 export class OptionCalculatorSubsection {
 
+    private _parent?: OptionCalculatorSection
+
     constructor(
+        public uniqueID: string,
         public titre: string,
         public subtitle?: string
     ) {
+    }
+
+    setParent(parent: OptionCalculatorSection) {
+        this._parent = parent
+        return this
+    }
+
+    get parent(): OptionCalculatorSection | undefined {
+        return this._parent
+    }
+
+    get isActive(): boolean {
+        if(this._parent === undefined) return  false
+        return this._parent.value?.uniqueID === this.uniqueID
     }
 
 }

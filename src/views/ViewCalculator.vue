@@ -88,7 +88,7 @@
       >
         <div class="app-g__coll-6-12"></div>
         <div class="app-g__coll-6-12">
-          <app-checkbox @toggle="checkBoxToggle" textValue="Solo"        ></app-checkbox>
+          <app-checkbox textValue="Solo"        ></app-checkbox>
         </div>
       </div>
       <div
@@ -96,7 +96,7 @@
       >
         <div class="app-g__coll-6-12"></div>
         <div class="app-g__coll-6-12">
-          <app-checkbox @toggle="checkBoxToggle" textValue="2 à 6 pers." ></app-checkbox>
+          <app-checkbox textValue="2 à 6 pers." ></app-checkbox>
         </div>
       </div>
       <div
@@ -104,7 +104,7 @@
       >
         <div class="app-g__coll-6-12"></div>
         <div class="app-g__coll-6-12">
-          <app-checkbox @toggle="checkBoxToggle" textValue="7 et plus"   ></app-checkbox>
+          <app-checkbox textValue="7 et plus"   ></app-checkbox>
         </div>
       </div>
     </app-section>
@@ -418,12 +418,6 @@ export default defineComponent({
         }
       })
     }
-  },
-
-  methods: {
-    checkBoxToggle(value: {activated: boolean, textValue: string}) {
-      console.log(value)
-    },
   },
 
 });

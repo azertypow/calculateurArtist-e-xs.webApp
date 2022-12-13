@@ -5,12 +5,10 @@
     <label
         class="v-app-checkbox__label"
     >
-      <input
-          @input="checkboxClicked"
-          v-model="activated"
+      <span
           class="v-app-checkbox__input"
-          type="checkbox"
-      ><span class="v-app-checkbox__text"
+          :class="{'is-active': activated}"
+      ></span><span class="v-app-checkbox__text"
     >{{ textValue }}
       <template v-if="description">
         <br><span class="v-app-checkbox__description" >{{description}}</span>
@@ -41,11 +39,15 @@ export default defineComponent({
   data() {
     return {
       showInfo: false,
-      activated: false,
     }
   },
 
   props: {
+    activated: {
+      required: true,
+      type: Boolean,
+    },
+
     'textValue': {
       required: true,
       type: String,
@@ -58,12 +60,6 @@ export default defineComponent({
       required: false,
       type: String,
     },
-  },
-
-  methods: {
-    checkboxClicked() {
-      this.$emit('toggle', {activated: this.activated, textValue: this.textValue})
-    }
   },
 });
 </script>
@@ -91,7 +87,7 @@ export default defineComponent({
   margin-right: 1rem;
   box-shadow: inset 0 0 0 2px black;
 
-  &:checked {
+  &.is-active {
     box-shadow: inset 0 0 0 2px black, inset 0 0 0 5px var(--app-color-main);
     background-color: black;
   }

@@ -12,13 +12,15 @@
           class="app-g__coll-6-12"
       >
         <app-checkbox
+            @click="activeThisSubsection"
+            :activated="optionSubsection.isActive"
             :textValue="optionSubsection.titre"
             :description="optionSubsection.subtitle"
         ></app-checkbox>
       </div>
     </div>
 
-  <h6 class="app-subsection__result" >option result</h6>
+  <h6 class="app-subsection__result" >is active: {{optionSubsection.isActive}}</h6>
 
   </div>
 </template>
@@ -39,6 +41,13 @@ export default defineComponent({
       type: Object as PropType<OptionCalculatorSubsection>
     }
   },
+
+  methods: {
+    activeThisSubsection() {
+      if(this.optionSubsection.parent === undefined) return
+      this.optionSubsection.parent.value = this.optionSubsection
+    }
+  }
 
 });
 </script>
