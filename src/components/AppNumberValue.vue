@@ -12,7 +12,7 @@
     <input
         class="v-app-number-value__value"
         type="number"
-        v-model="numberSubsection.value"
+        v-model="numberSubsection?.value"
     >
     <div
         class="v-app-number-value__end"
@@ -33,7 +33,7 @@ export default defineComponent({
 
   props: {
     numberSubsection: {
-      required: true,
+      // required: true,
       type: Object as PropType<NumberCalculatorSubsection>,
     },
     isCHFValue: {

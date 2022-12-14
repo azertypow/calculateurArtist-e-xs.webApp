@@ -38,7 +38,7 @@
         <div
             class="app-g__coll-6-12"
         >
-          <app-checkbox textValue="Petite"  description="< 50 000 CHF /année"></app-checkbox>
+          <app-checkbox  textValue="Petite"  description="< 50 000 CHF /année" :activated="true"></app-checkbox>
         </div>
       </div>
       <div
@@ -50,7 +50,7 @@
         <div
             class="app-g__coll-6-12"
         >
-          <app-checkbox textValue="Moyenne" description="50K–250K CHF /année"></app-checkbox>
+          <app-checkbox textValue="Moyenne" description="50K–250K CHF /année" :activated="true"></app-checkbox>
         </div>
       </div>
       <div
@@ -62,7 +62,7 @@
         <div
             class="app-g__coll-6-12"
         >
-          <app-checkbox textValue="Grande"  description="250K–500K CHF /année"></app-checkbox>
+          <app-checkbox textValue="Grande"  description="250K–500K CHF /année" :activated="true"></app-checkbox>
         </div>
       </div>
       <div
@@ -74,7 +74,7 @@
         <div
             class="app-g__coll-6-12"
         >
-          <app-checkbox textValue="Très"    description="> 500K CHF /année"></app-checkbox>
+          <app-checkbox :activated="true" textValue="Très"    description="> 500K CHF /année"></app-checkbox>
         </div>
       </div>
     </app-section>
@@ -88,7 +88,7 @@
       >
         <div class="app-g__coll-6-12"></div>
         <div class="app-g__coll-6-12">
-          <app-checkbox textValue="Solo"        ></app-checkbox>
+          <app-checkbox :activated="true" textValue="Solo"        ></app-checkbox>
         </div>
       </div>
       <div
@@ -96,7 +96,7 @@
       >
         <div class="app-g__coll-6-12"></div>
         <div class="app-g__coll-6-12">
-          <app-checkbox textValue="2 à 6 pers." ></app-checkbox>
+          <app-checkbox :activated="true" textValue="2 à 6 pers." ></app-checkbox>
         </div>
       </div>
       <div
@@ -104,7 +104,7 @@
       >
         <div class="app-g__coll-6-12"></div>
         <div class="app-g__coll-6-12">
-          <app-checkbox textValue="7 et plus"   ></app-checkbox>
+          <app-checkbox :activated="true" textValue="7 et plus"   ></app-checkbox>
         </div>
       </div>
     </app-section>
@@ -118,7 +118,7 @@
       >
         <div class="app-g__coll-6-12" ></div>
         <div class="app-g__coll-6-12" >
-          <app-checkbox textValue="Emploi d’une ou plusieurs œuvres existantes" info="Si la pièce a été produite AVANT la proposition de participation à l’exposition et qu’il n’y a pas de modifications à effectuer sur la pièce pour la présenter, cocher cette case."></app-checkbox>
+          <app-checkbox :activated="true" textValue="Emploi d’une ou plusieurs œuvres existantes" info="Si la pièce a été produite AVANT la proposition de participation à l’exposition et qu’il n’y a pas de modifications à effectuer sur la pièce pour la présenter, cocher cette case."></app-checkbox>
         </div>
       </div>
       <div
@@ -126,7 +126,7 @@
       >
         <div class="app-g__coll-6-12" ></div>
         <div class="app-g__coll-6-12" >
-          <app-checkbox textValue="Emploi d’une ou plusieurs œuvres existantes" ></app-checkbox>
+          <app-checkbox :activated="true" textValue="Emploi d’une ou plusieurs œuvres existantes" ></app-checkbox>
         </div>
       </div>
       <div
@@ -134,7 +134,7 @@
       >
         <div class="app-g__coll-6-12" ></div>
         <div class="app-g__coll-6-12" >
-          <app-checkbox textValue="Emploi d’une ou plusieurs œuvres existantes"   ></app-checkbox>
+          <app-checkbox :activated="true" textValue="Emploi d’une ou plusieurs œuvres existantes"   ></app-checkbox>
         </div>
       </div>
     </app-section>
@@ -148,7 +148,7 @@
       >
         <div class="app-g__coll-6-12" ></div>
         <div class="app-g__coll-6-12" >
-          <app-number-value :numberSubsection="10" :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value :is-c-h-f-value="false" ></app-number-value>
         </div>
       </div>
     </app-section>
@@ -174,8 +174,8 @@
           <p>↳ nombre d’heures</p>
         </div>
         <div class="app-g__coll-6-12" >
-          <app-number-value :numberSubsection="10" :is-c-h-f-value="false" ></app-number-value>
-          <app-number-value :numberSubsection="10" :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value  :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value  :is-c-h-f-value="false" ></app-number-value>
         </div>
       </div>
       <div
@@ -194,7 +194,7 @@
           <p>Forfait de réalisation</p>
         </div>
         <div class="app-g__coll-6-12" >
-          <app-number-value :numberSubsection="10" :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value :is-c-h-f-value="false" ></app-number-value>
         </div>
       </div>
     </app-section>
@@ -219,7 +219,7 @@
           <p>Per Diem</p>
         </div>
         <div class="app-g__coll-6-12" >
-          <app-number-value :numberSubsection="10" :is-c-h-f-value="true" ></app-number-value>
+          <app-number-value :is-c-h-f-value="true" ></app-number-value>
         </div>
       </div>
 
@@ -239,7 +239,7 @@
           <p>Nombre d'heures</p>
         </div>
         <div class="app-g__coll-6-12" >
-          <app-number-value :numberSubsection="10" :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value :is-c-h-f-value="false" ></app-number-value>
         </div>
       </div>
     </app-section>
@@ -264,7 +264,7 @@
           <p>Honoraires de montage et transport</p>
         </div>
         <div class="app-g__coll-6-12" >
-          <app-number-value :numberSubsection="10" :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value :is-c-h-f-value="false" ></app-number-value>
         </div>
       </div>
 
@@ -284,7 +284,7 @@
           <p>↳ nombre d’heures</p>
         </div>
         <div class="app-g__coll-6-12" >
-          <app-number-value :numberSubsection="10" :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value :is-c-h-f-value="false" ></app-number-value>
         </div>
       </div>
 
@@ -312,8 +312,8 @@
           <p>↳ nombre d’occurences</p>
         </div>
         <div class="app-g__coll-6-12" >
-          <app-number-value :numberSubsection="10" :is-c-h-f-value="false" ></app-number-value>
-          <app-number-value :numberSubsection="10" :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value :is-c-h-f-value="false" ></app-number-value>
         </div>
       </div>
 
@@ -334,8 +334,8 @@
           <p>↳ nombre d’occurences</p>
         </div>
         <div class="app-g__coll-6-12" >
-          <app-number-value :numberSubsection="10" :is-c-h-f-value="false" ></app-number-value>
-          <app-number-value :numberSubsection="10" :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value :is-c-h-f-value="false" ></app-number-value>
         </div>
       </div>
 
@@ -357,8 +357,8 @@
           <p>↳ nombre d’occurences</p>
         </div>
         <div class="app-g__coll-6-12" >
-          <app-number-value :numberSubsection="10" :is-c-h-f-value="false" ></app-number-value>
-          <app-number-value :numberSubsection="10" :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value :is-c-h-f-value="false" ></app-number-value>
+          <app-number-value :is-c-h-f-value="false" ></app-number-value>
         </div>
       </div>
 

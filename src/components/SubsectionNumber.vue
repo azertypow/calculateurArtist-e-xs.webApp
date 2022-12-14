@@ -7,8 +7,8 @@
         class="app-g"
     >
       <div class="app-g__coll-2-12"></div>
-      <div class="app-g__coll-4-12" >{{ numberSubsection.multiplier.text }}</div>
-      <div class="app-g__coll-6-12" >{{ numberSubsection.multiplier.value }}</div>
+      <div class="app-g__coll-4-12" >{{ numberSubsection.multiplier?.text }}</div>
+      <div class="app-g__coll-6-12" >{{ numberSubsection.multiplier?.value }}</div>
     </div>
 
     <div
