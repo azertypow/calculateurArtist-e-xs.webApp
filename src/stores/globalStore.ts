@@ -39,6 +39,7 @@ export const useGlobalStore = defineStore('globalStore', {
                 // ----------
 
 
+
                 // ----------
                 new OptionCalculatorSection(
                     3,
@@ -62,6 +63,8 @@ export const useGlobalStore = defineStore('globalStore', {
                 ),
                 // ----------
 
+
+
                 // ----------
                 new NumberCalculatorSection(
                     5,
@@ -82,6 +85,7 @@ export const useGlobalStore = defineStore('globalStore', {
                 // ----------
 
 
+
                 // ----------
                 new NumberCalculatorSection(
                     6,
@@ -97,6 +101,71 @@ export const useGlobalStore = defineStore('globalStore', {
                     )
                 ),
                 // ----------
+
+
+
+                // ----------
+                new NumberCalculatorSection(
+                    7,
+                    'Honoraires de montage et transport',
+                ).addSubSection(
+                    new NumberCalculatorSubsection(
+                        'nombre d’heures',
+                        0,
+                    ).setAMultiplier(
+                        NaN,
+                        'Coût horaire [texte à valider, connection avec les choix précédent aussi]'
+                    )
+                ),
+                // ----------
+
+
+
+                // ----------
+                new NumberCalculatorSection(
+                    8,
+                    "Forfait par performance",
+                ).addSubSection(
+                    new NumberCalculatorSubsection(
+                        "nombre d’occurences",
+                    ).setAMultiplier(
+                        150,
+                        "Coût horaire [texte à valider, connection avec les choix précédent aussi]"
+                    ),
+                ).addSubSection(
+                    new NumberCalculatorSubsection(
+                        "nombre d’occurences",
+                    ).setAMultiplier(
+                        500,
+                        "Évènement avec préparation"
+                    ),
+                ).addSubSection(
+                    new NumberCalculatorSubsection(
+                        "nombre d’occurences",
+                    ).setAMultiplier(
+                        250,
+                        "Évènement sans préparation"
+                    ),
+                ),
+                // ----------
+
+
+
+                // ----------
+                new NumberCalculatorSection(
+                    9,
+                    "Forfait texte / 1000 frappes",
+                ).addSubSection(
+                    new NumberCalculatorSubsection(
+                        "nombre d’incidences",
+                    ).setAMultiplier(
+                        30,
+                        "Coût forfait text [texte à valider, connection avec les choix précédent aussi]"
+                    ),
+                )
+                // ----------
+
+
 
             ] as OptionOrNumberCalculatorSection<OptionCalculatorSection | NumberCalculatorSection>[],
             calculatorData: {
