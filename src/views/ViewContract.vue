@@ -19,6 +19,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .v-view-contract {
   padding-top: 2rem;
+  padding-bottom: 33.33333vh;
 }
 
 h2 {

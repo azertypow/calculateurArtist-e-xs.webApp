@@ -41,6 +41,11 @@ export class OptionCalculatorSection extends CalculatorSection {
         return this._subSections
     }
 
+    public get status(): 'empty' | 'validate' | 'error' {
+        if(this.value === void(0)) return 'empty'
+        return 'validate'
+    }
+
 }
 
 export class NumberCalculatorSection extends CalculatorSection {
@@ -70,6 +75,11 @@ export class NumberCalculatorSection extends CalculatorSection {
             if (currentSubsection.status !== 'validate') return sumOfPreviousSubsections
             return sumOfPreviousSubsections + currentSubsection.value
         }, 0)
+    }
+
+    public get status(): 'empty' | 'validate' | 'error' {
+        if(this.value === 0) return 'empty'
+        return 'validate'
     }
 }
 
@@ -110,7 +120,7 @@ export class NumberCalculatorSubsection {
     }
 
     public get status(): 'empty' | 'validate' | 'error' {
-        if (this.value === void (0)) return 'empty'
+        if (this.value === 0) return 'empty'
         if (this.validateValueCheck(this.value)) return 'validate'
         return 'error'
     }

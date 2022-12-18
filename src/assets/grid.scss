@@ -1,6 +1,11 @@
 .app-g {
   display: flex;
+
+  &.app-g--align-center {
+    align-items: center;
+  }
 }
+
 
 .app-g__coll-1-12 {width: calc(100% / 12 * 1); display: block; box-sizing: border-box;}
 .app-g__coll-2-12 {width: calc(100% / 12 * 2); display: block; box-sizing: border-box;}

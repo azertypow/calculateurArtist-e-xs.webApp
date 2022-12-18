@@ -1,8 +1,11 @@
 <template>
   <div class="v-app-section">
-    <div class="v-app-section__required-info">Facultatif</div>
+    <div class="v-app-section__required-info">
+      <span v-if="required" class="v-app-section__required-info__true">*</span>
+      <span v-else          class="v-app-section__required-info__false">Facultatif</span>
+    </div>
     <div
-        class="app-g"
+        class="app-g app-g--align-center"
     >
       <div
           class="app-g__coll-2-12"
@@ -44,6 +47,11 @@ export default defineComponent({
       required: true,
       type: String,
     },
+    required: {
+      required: false,
+      type: Boolean,
+      default: false,
+    },
   },
 });
 </script>
@@ -52,12 +60,8 @@ export default defineComponent({
 .v-app-section {
   box-sizing: border-box;
   border-top: solid 1px var(--app-color-border);
-  padding: 3rem 1rem;
+  padding: 2rem 1rem 3rem;
   position: relative;
-
-  > .app-g + .app-g {
-    margin-top: 2rem;
-  }
 
   .app-g__coll-12-12 {
     > .app-g + .app-g {
@@ -66,11 +70,19 @@ export default defineComponent({
   }
 }
 
-.v-app-section__required-info {
+.v-app-section__required-info__true {
+  //font-size:    calc( var(--app-font-size) );
+  //line-height:  1rem;
+  position: absolute;
+  top: 1rem;
+  right: 0;
+}
+
+.v-app-section__required-info__false {
   font-size:    var(--app-font-size);
   line-height:  1rem;
   position: absolute;
-  top: 1rem;
+  top: 2rem;
   right: 0;
 }
 

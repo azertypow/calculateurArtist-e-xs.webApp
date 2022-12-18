@@ -2,13 +2,11 @@
   <div class="v-view-calculator">
     <app-nav></app-nav>
     <h2>RECOMMANDATIONS DE RÉMUNÉRATION POUR UNE EXPOSITION</h2>
-
-<h1>new class system</h1>
-
     <app-section
         v-for="section of sections"
         :title="section.value.title"
         :index="section.value.index"
+        :required="section.value.required"
     >
       <subsection-number
           v-if="section.type === 'number'"
@@ -23,358 +21,22 @@
       ></subsection-option>
     </app-section>
 
-<h1>old class system</h1>
-
-    <app-section
-        :index="1"
-        title="Taille de la structure"
+    <div
+        class="v-view-calculator__status"
     >
-      <div
-          class="app-g"
-      >
-        <div
-            class="app-g__coll-6-12"
-        ></div>
-        <div
-            class="app-g__coll-6-12"
-        >
-          <app-checkbox  textValue="Petite"  description="< 50 000 CHF /année" :activated="true"></app-checkbox>
-        </div>
-      </div>
-      <div
-          class="app-g"
-      >
-        <div
-            class="app-g__coll-6-12"
-        ></div>
-        <div
-            class="app-g__coll-6-12"
-        >
-          <app-checkbox textValue="Moyenne" description="50K–250K CHF /année" :activated="true"></app-checkbox>
-        </div>
-      </div>
-      <div
-          class="app-g"
-      >
-        <div
-            class="app-g__coll-6-12"
-        ></div>
-        <div
-            class="app-g__coll-6-12"
-        >
-          <app-checkbox textValue="Grande"  description="250K–500K CHF /année" :activated="true"></app-checkbox>
-        </div>
-      </div>
-      <div
-          class="app-g"
-      >
-        <div
-            class="app-g__coll-6-12"
-        ></div>
-        <div
-            class="app-g__coll-6-12"
-        >
-          <app-checkbox :activated="true" textValue="Très"    description="> 500K CHF /année"></app-checkbox>
-        </div>
-      </div>
-    </app-section>
+      <span
+          class="v-view-calculator__status__items"
+          v-for="(section, index) of sections"
+          :class="{
+            'is-empty': section.value.status === 'empty',
+          }"
+      ><span
+          v-if="index > 0"
+      > |&nbsp;</span><span
+          class="v-view-calculator__status__items__icon"
+      ></span>&nbsp;{{section.value.title}}</span>
+    </div>
 
-    <app-section
-        :index="2"
-        title="Type d’exposition"
-    >
-      <div
-          class="app-g"
-      >
-        <div class="app-g__coll-6-12"></div>
-        <div class="app-g__coll-6-12">
-          <app-checkbox :activated="true" textValue="Solo"        ></app-checkbox>
-        </div>
-      </div>
-      <div
-          class="app-g"
-      >
-        <div class="app-g__coll-6-12"></div>
-        <div class="app-g__coll-6-12">
-          <app-checkbox :activated="true" textValue="2 à 6 pers." ></app-checkbox>
-        </div>
-      </div>
-      <div
-          class="app-g"
-      >
-        <div class="app-g__coll-6-12"></div>
-        <div class="app-g__coll-6-12">
-          <app-checkbox :activated="true" textValue="7 et plus"   ></app-checkbox>
-        </div>
-      </div>
-    </app-section>
-
-    <app-section
-        :index="3"
-        title="Honoraires de participation et/ou de conception"
-    >
-      <div
-          class="app-g"
-      >
-        <div class="app-g__coll-6-12" ></div>
-        <div class="app-g__coll-6-12" >
-          <app-checkbox :activated="true" textValue="Emploi d’une ou plusieurs œuvres existantes" info="Si la pièce a été produite AVANT la proposition de participation à l’exposition et qu’il n’y a pas de modifications à effectuer sur la pièce pour la présenter, cocher cette case."></app-checkbox>
-        </div>
-      </div>
-      <div
-          class="app-g"
-      >
-        <div class="app-g__coll-6-12" ></div>
-        <div class="app-g__coll-6-12" >
-          <app-checkbox :activated="true" textValue="Emploi d’une ou plusieurs œuvres existantes" ></app-checkbox>
-        </div>
-      </div>
-      <div
-          class="app-g"
-      >
-        <div class="app-g__coll-6-12" ></div>
-        <div class="app-g__coll-6-12" >
-          <app-checkbox :activated="true" textValue="Emploi d’une ou plusieurs œuvres existantes"   ></app-checkbox>
-        </div>
-      </div>
-    </app-section>
-
-    <app-section
-        :index="4"
-        title="Durée de l’exposition (en mois)"
-    >
-      <div
-          class="app-g"
-      >
-        <div class="app-g__coll-6-12" ></div>
-        <div class="app-g__coll-6-12" >
-          <app-number-value :is-c-h-f-value="false" ></app-number-value>
-        </div>
-      </div>
-    </app-section>
-
-    <app-section
-        :index="5"
-        title="Honoraires de réalisation (si réalisé par l’artiste)"
-    >
-      <div
-          class="app-g"
-      >
-        <div
-            class="app-g__coll-2-12"
-        >
-          <div
-              class="v-view-calculator__circle-state-container"
-          >
-            <div class="app-circle app-circle--is-active" ></div>
-          </div>
-        </div>
-        <div class="app-g__coll-4-12 app-remove-child-margin" >
-          <p>Coût horaire</p>
-          <p>↳ nombre d’heures</p>
-        </div>
-        <div class="app-g__coll-6-12" >
-          <app-number-value  :is-c-h-f-value="false" ></app-number-value>
-          <app-number-value  :is-c-h-f-value="false" ></app-number-value>
-        </div>
-      </div>
-      <div
-          class="app-g"
-      >
-        <div
-            class="app-g__coll-2-12"
-        >
-          <div
-              class="v-view-calculator__circle-state-container"
-          >
-            <div class="app-circle app-circle--is-active" ></div>
-          </div>
-        </div>
-        <div class="app-g__coll-4-12 app-remove-child-margin" >
-          <p>Forfait de réalisation</p>
-        </div>
-        <div class="app-g__coll-6-12" >
-          <app-number-value :is-c-h-f-value="false" ></app-number-value>
-        </div>
-      </div>
-    </app-section>
-
-    <app-section
-        :index="6"
-        title="Per Diem"
-    >
-      <div
-          class="app-g"
-      >
-        <div
-            class="app-g__coll-2-12"
-        >
-          <div
-              class="v-view-calculator__circle-state-container"
-          >
-            <div class="app-circle" ></div>
-          </div>
-        </div>
-        <div class="app-g__coll-4-12 app-remove-child-margin" >
-          <p>Per Diem</p>
-        </div>
-        <div class="app-g__coll-6-12" >
-          <app-number-value :is-c-h-f-value="true" ></app-number-value>
-        </div>
-      </div>
-
-      <div
-          class="app-g"
-      >
-        <div
-            class="app-g__coll-2-12"
-        >
-          <div
-              class="v-view-calculator__circle-state-container"
-          >
-            <div class="app-circle" ></div>
-          </div>
-        </div>
-        <div class="app-g__coll-4-12 app-remove-child-margin" >
-          <p>Nombre d'heures</p>
-        </div>
-        <div class="app-g__coll-6-12" >
-          <app-number-value :is-c-h-f-value="false" ></app-number-value>
-        </div>
-      </div>
-    </app-section>
-
-    <app-section
-        :index="7"
-        title="Honoraires de montage et transport"
-    >
-      <div
-          class="app-g"
-      >
-        <div
-            class="app-g__coll-2-12"
-        >
-          <div
-              class="v-view-calculator__circle-state-container"
-          >
-            <div class="app-circle" ></div>
-          </div>
-        </div>
-        <div class="app-g__coll-4-12 app-remove-child-margin" >
-          <p>Honoraires de montage et transport</p>
-        </div>
-        <div class="app-g__coll-6-12" >
-          <app-number-value :is-c-h-f-value="false" ></app-number-value>
-        </div>
-      </div>
-
-      <div
-          class="app-g"
-      >
-        <div
-            class="app-g__coll-2-12"
-        >
-          <div
-              class="v-view-calculator__circle-state-container"
-          >
-            <div class="app-circle" ></div>
-          </div>
-        </div>
-        <div class="app-g__coll-4-12 app-remove-child-margin" >
-          <p>↳ nombre d’heures</p>
-        </div>
-        <div class="app-g__coll-6-12" >
-          <app-number-value :is-c-h-f-value="false" ></app-number-value>
-        </div>
-      </div>
-
-    </app-section>
-
-    <app-section
-        :index="8"
-        title="Forfait par performance"
-    >
-
-      <div
-          class="app-g"
-      >
-        <div
-            class="app-g__coll-2-12"
-        >
-          <div
-              class="v-view-calculator__circle-state-container"
-          >
-            <div class="app-circle" ></div>
-          </div>
-        </div>
-        <div class="app-g__coll-4-12 app-remove-child-margin" >
-          <p>Forfait par performance</p>
-          <p>↳ nombre d’occurences</p>
-        </div>
-        <div class="app-g__coll-6-12" >
-          <app-number-value :is-c-h-f-value="false" ></app-number-value>
-          <app-number-value :is-c-h-f-value="false" ></app-number-value>
-        </div>
-      </div>
-
-      <div
-          class="app-g"
-      >
-        <div
-            class="app-g__coll-2-12"
-        >
-          <div
-              class="v-view-calculator__circle-state-container"
-          >
-            <div class="app-circle" ></div>
-          </div>
-        </div>
-        <div class="app-g__coll-4-12 app-remove-child-margin" >
-          <p>Évènement avec préparation</p>
-          <p>↳ nombre d’occurences</p>
-        </div>
-        <div class="app-g__coll-6-12" >
-          <app-number-value :is-c-h-f-value="false" ></app-number-value>
-          <app-number-value :is-c-h-f-value="false" ></app-number-value>
-        </div>
-      </div>
-
-
-      <div
-          class="app-g"
-      >
-        <div
-            class="app-g__coll-2-12"
-        >
-          <div
-              class="v-view-calculator__circle-state-container"
-          >
-            <div class="app-circle" ></div>
-          </div>
-        </div>
-        <div class="app-g__coll-4-12 app-remove-child-margin" >
-          <p>Évènement sans préparation</p>
-          <p>↳ nombre d’occurences</p>
-        </div>
-        <div class="app-g__coll-6-12" >
-          <app-number-value :is-c-h-f-value="false" ></app-number-value>
-          <app-number-value :is-c-h-f-value="false" ></app-number-value>
-        </div>
-      </div>
-
-    </app-section>
-
-    <app-section
-        :index="9"
-        title="Forfait texte / 1000 frappes"
-    >
-      <div
-          class="app-g"
-      >
-        <div class="app-g__coll-6-12" ></div>
-        <div class="app-g__coll-6-12" ></div>
-      </div>
-    </app-section>
   </div>
 </template>
 
@@ -426,6 +88,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .v-view-calculator {
   padding-top: 2rem;
+  padding-bottom: 33.33333vh;
 }
 
 h2 {
@@ -438,4 +101,34 @@ h2 {
   display: flex;
   justify-content: right;
 }
+
+.v-view-calculator__status {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  line-height: 1.5rem;
+  font-size: 1.5rem;
+  box-sizing: border-box;
+  background: var(--app-color-main);
+  padding: 1rem;
+  text-align: center;
+}
+
+.v-view-calculator__status__items {
+}
+
+.v-view-calculator__status__items__icon {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 100%;
+
+  background-color: var(--app-color-secondary);
+
+  .is-empty & {
+    background-color: var(--app-color-border);
+  }
+}
+
 </style>
