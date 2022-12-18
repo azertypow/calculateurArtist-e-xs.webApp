@@ -33,8 +33,8 @@ export class OptionCalculatorSection extends CalculatorSection {
     }
 
     public set value(value: OptionCalculatorSubsection) {
-        this.onValueChange()
         this._value = value
+        this.onValueChange()
     }
 
     public addSubSection(...subsectionsToAdd: OptionCalculatorSubsection[]): this {
