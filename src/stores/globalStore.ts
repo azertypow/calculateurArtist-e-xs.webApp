@@ -2,26 +2,29 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 import type {OptionOrNumberCalculatorSection} from '../gloabal/CalculatorSection'
 import {
+    ConditionalValueFromSubsectionOption,
     NumberCalculatorSection,
     NumberCalculatorSubsection,
     OptionCalculatorSection, OptionCalculatorSubsection
 } from "../gloabal/CalculatorSection";
+
+const CalculatorSection_1 = new OptionCalculatorSection(
+    1,
+    'Taille de la structure',
+    true
+).addSubSection(
+    new OptionCalculatorSubsection('01', 'Petit', '< 50 000 CHF /année'),
+    new OptionCalculatorSubsection('02', 'Moyen', '50K–250K CHF /année'),
+    new OptionCalculatorSubsection('03', 'Grand', '250K–500K CHF /année'),
+    new OptionCalculatorSubsection('04', 'Très grande', '> 500K CHF /année'),
+)
 
 export const useGlobalStore = defineStore('globalStore', {
     state() {
         return {
             calculatorSections: [
                 // ----------
-                new OptionCalculatorSection(
-                    1,
-                    'Taille de la structure',
-                    true
-                ).addSubSection(
-                    new OptionCalculatorSubsection('01', 'Petit', '< 50 000 CHF /année'),
-                    new OptionCalculatorSubsection('02', 'Moyen', '50K–250K CHF /année'),
-                    new OptionCalculatorSubsection('03', 'Grand', '250K–500K CHF /année'),
-                    new OptionCalculatorSubsection('04', 'Très grande', '> 500K CHF /année'),
-                ),
+                CalculatorSection_1,
                 // ----------
 
 
@@ -74,7 +77,15 @@ export const useGlobalStore = defineStore('globalStore', {
                         "nombre d'heures",
                         0,
                     ).setAMultiplier(
-                        50,
+                        new ConditionalValueFromSubsectionOption(
+                            {
+                                '01': 50,
+                                '02': 100,
+                                '03': 150,
+                                '04': 200,
+                            },
+                            CalculatorSection_1,
+                        ),
                         'Coût horaire',
                     )
                 ).addSubSection(

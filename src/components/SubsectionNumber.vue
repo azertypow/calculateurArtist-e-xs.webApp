@@ -3,19 +3,19 @@
       class="v-subsection-number app-subsection"
   >
     <div
-        v-if="numberSubsection.hasMultiplier"
+        v-if="multiplier"
         class="app-g"
     >
-      <div class="app-g__coll-2-12"></div>
-      <div class="app-g__coll-4-12" >{{ numberSubsection.multiplier?.text }}</div>
-      <div class="app-g__coll-6-12" >{{ numberSubsection.multiplier?.value }}</div>
+      <div class="app-g__coll-2-12 app-with-gutter"></div>
+      <div class="app-g__coll-4-12 app-with-gutter" >{{ multiplier.text }}</div>
+      <div class="app-g__coll-6-12 app-with-gutter" >{{ multiplier.value }}</div>
     </div>
 
     <div
         class="app-g"
     >
-      <div class="app-g__coll-2-12"></div>
-      <div class="app-g__coll-4-12" >
+      <div class="app-g__coll-2-12 app-with-gutter"></div>
+      <div class="app-g__coll-4-12 app-with-gutter" >
         <span v-if="numberSubsection.hasMultiplier" >↳</span>{{ numberSubsection.text }}
       </div>
       <div class="app-g__coll-6-12" >
@@ -40,11 +40,32 @@ export default defineComponent({
   name: 'SubsectionNumber',
   components: {AppNumberValue},
 
+  data() {
+    return {
+      multiplier: undefined as {
+        text: string,
+        value: number,
+      } | undefined
+    }
+  },
+
   props: {
     numberSubsection: {
       required: true,
       type: Object as PropType<NumberCalculatorSubsection>
     }
+  },
+
+  mounted() {
+    this.$nextTick(() => {
+
+      this.numberSubsection.onValueMultiplierChange = () => {
+
+        console.log(this.numberSubsection.multiplier)
+        this.multiplier = this.numberSubsection.multiplier
+      }
+
+    })
   }
 
 });

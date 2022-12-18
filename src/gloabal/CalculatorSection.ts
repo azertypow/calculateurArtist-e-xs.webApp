@@ -20,7 +20,7 @@ export class OptionCalculatorSection extends CalculatorSection {
 
     private _subSections: OptionCalculatorSubsection[] = []
 
-    value?: OptionCalculatorSubsection
+    _value?: OptionCalculatorSubsection
 
     public type: CalculatorSectionType = 'option'
 
@@ -30,6 +30,11 @@ export class OptionCalculatorSection extends CalculatorSection {
                 public info?: string,
     ) {
         super(index, title, required, info)
+    }
+
+    public set value(value: OptionCalculatorSubsection) {
+        this.onValueChange()
+        this._value = value
     }
 
     public addSubSection(...subsectionsToAdd: OptionCalculatorSubsection[]): this {
@@ -42,9 +47,11 @@ export class OptionCalculatorSection extends CalculatorSection {
     }
 
     public get status(): 'empty' | 'validate' | 'error' {
-        if(this.value === void(0)) return 'empty'
+        if(this._value === void(0)) return 'empty'
         return 'validate'
     }
+
+    onValueChange() {}
 
 }
 
@@ -109,14 +116,26 @@ export class NumberCalculatorSubsection {
         return this._multiplier !== undefined
     }
 
-    public get multiplier() { return this._multiplier }
-
-    public setAMultiplier(value: number, text = ''): this {
+    public setAMultiplier(value: number|ConditionalValueFromSubsectionOption, text = ''): this {
         this._multiplier = {
             text,
-            value,
+            value: typeof value === 'number' ? value : value.value,
+        }
+        if(typeof value !== 'number') {
+            value.onChange = () => {
+                console.log('change from NumberCalculatorSubsection')
+                this._multiplier = {
+                    text,
+                    value: value.value,
+                }
+                this.onValueMultiplierChange()
+            }
         }
         return this
+    }
+
+    get multiplier() {
+        return this._multiplier
     }
 
     public get status(): 'empty' | 'validate' | 'error' {
@@ -128,6 +147,8 @@ export class NumberCalculatorSubsection {
     public get result(): number {
         return this._multiplier ? this._multiplier.value * this.value : this.value
     }
+
+    onValueMultiplierChange = () => {}
 }
 
 
@@ -153,7 +174,34 @@ export class OptionCalculatorSubsection {
 
     get isActive(): boolean {
         if(this._parent === undefined) return  false
-        return this._parent.value?.uniqueID === this.uniqueID
+        return this._parent._value?.uniqueID === this.uniqueID
     }
 
+}
+
+export class ConditionalValueFromSubsectionOption {
+
+    constructor(
+        private _conditionKeyValue: {[key: string]: number},
+        private _subsectionOptionToCheck: OptionCalculatorSection,
+    ) {
+        _subsectionOptionToCheck.onValueChange = () => {
+            console.log('change from ConditionalValueFromSubsectionOption')
+            this.onChange()
+        }
+        return this
+    }
+
+    get value(): number {
+
+        console.log( this._subsectionOptionToCheck._value?.uniqueID )
+
+        for(const key in this._conditionKeyValue) {
+            const value = this._conditionKeyValue[key]
+            if(key === this._subsectionOptionToCheck._value?.uniqueID) return  value
+        }
+        return NaN
+    }
+
+    onChange() {}
 }

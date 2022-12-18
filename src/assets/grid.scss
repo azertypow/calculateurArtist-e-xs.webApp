@@ -20,6 +20,12 @@
 .app-g__coll-11-12 {width: calc(100% / 12 * 11); display: block; box-sizing: border-box;}
 .app-g__coll-12-12 {width: calc(100% / 12 * 12); display: block; box-sizing: border-box;}
 
+.app-with-gutter {
+  box-sizing: border-box;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .app-remove-child-margin {
   > *:first-child {
     margin-top: 0;
