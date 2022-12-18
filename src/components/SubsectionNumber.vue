@@ -59,6 +59,8 @@ export default defineComponent({
   mounted() {
     this.$nextTick(() => {
 
+      if(this.numberSubsection.hasMultiplier) this.multiplier = this.numberSubsection.multiplier
+
       this.numberSubsection.onValueMultiplierChange = () => {
 
         console.log(this.numberSubsection.multiplier)

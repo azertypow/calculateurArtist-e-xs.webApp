@@ -1,7 +1,7 @@
 <template>
   <div class="v-app-section">
     <div class="v-app-section__required-info">
-      <span v-if="required" class="v-app-section__required-info__true">*</span>
+      <span v-if="classifiedSection.value.required" class="v-app-section__required-info__true">*</span>
       <span v-else          class="v-app-section__required-info__false">Facultatif</span>
     </div>
     <div
@@ -10,13 +10,13 @@
       <div
           class="app-g__coll-2-12"
       >
-        <div class="v-app-section__index">{{index}}</div>
+        <div class="v-app-section__index">{{classifiedSection.value.index}}</div>
       </div>
 
       <div
           class="app-g__coll-8-12"
       >
-        <div>{{title}}</div>
+        <div>{{classifiedSection.value.title}}</div>
       </div>
     </div>
     <div
@@ -25,7 +25,17 @@
       <div
           class="app-g__coll-12-12"
       >
-        <slot></slot>
+        <subsection-number
+            v-if="sectionIsNumber"
+            v-for="numberSubsection of sectionIsNumber.subSections"
+            :numberSubsection="numberSubsection"
+        >
+        </subsection-number>
+        <subsection-option
+            v-if="sectionIsOption"
+            v-for="optionSubsection of sectionIsOption.subSections"
+            :optionSubsection="optionSubsection"
+        ></subsection-option>
       </div>
     </div>
   </div>
@@ -33,26 +43,46 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue';
+import type {PropType} from 'vue';
+import type {NumberCalculatorSection, OptionCalculatorSection} from "../gloabal/CalculatorSection";
+import SubsectionOption from "./SubsectionOption.vue";
+import SubsectionNumber from "./SubsectionNumber.vue";
 
 export default defineComponent({
   name: 'AppSection',
-  components: {},
+  components: {SubsectionNumber, SubsectionOption},
 
   props: {
-    index: {
+    section: {
       required: true,
-      type: Number,
-    },
-    title: {
-      required: true,
-      type: String,
-    },
-    required: {
-      required: false,
-      type: Boolean,
-      default: false,
+      type: Object as PropType<NumberCalculatorSection | OptionCalculatorSection>,
     },
   },
+
+  computed: {
+    sectionIsNumber(): NumberCalculatorSection | null {
+      if(this.section.type !== 'number') return null
+      return this.section as NumberCalculatorSection
+    },
+
+    sectionIsOption(): OptionCalculatorSection | null {
+      if(this.section.type !== 'option') return null
+      return this.section as OptionCalculatorSection
+    },
+
+
+    classifiedSection(): {type: 'option', value: OptionCalculatorSection} | {type: 'number', value: NumberCalculatorSection}  {
+        if(this.section.type === 'number') return {
+          type: 'number',
+          value: this.section as NumberCalculatorSection,
+        }
+
+        return {
+          type: 'option',
+          value: this.section as OptionCalculatorSection,
+        }
+    }
+  }
 });
 </script>
 

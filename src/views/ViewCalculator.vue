@@ -4,22 +4,8 @@
     <h2>RECOMMANDATIONS DE RÉMUNÉRATION POUR UNE EXPOSITION</h2>
     <app-section
         v-for="section of sections"
-        :title="section.value.title"
-        :index="section.value.index"
-        :required="section.value.required"
-    >
-      <subsection-number
-          v-if="section.type === 'number'"
-          v-for="numberSubsection of section.value.subSections"
-          :numberSubsection="numberSubsection"
-      >
-      </subsection-number>
-      <subsection-option
-          v-if="section.type === 'option'"
-          v-for="optionSubsection of section.value.subSections"
-          :optionSubsection="optionSubsection"
-      ></subsection-option>
-    </app-section>
+        :section="section"
+    ></app-section>
 
     <div
         class="v-view-calculator__status"
@@ -28,13 +14,13 @@
           class="v-view-calculator__status__items"
           v-for="(section, index) of sections"
           :class="{
-            'is-empty': section.value.status === 'empty',
+            'is-empty': section.status === 'empty',
           }"
       ><span
           v-if="index > 0"
       > |&nbsp;</span><span
           class="v-view-calculator__status__items__icon"
-      ></span>&nbsp;{{section.value.title}}</span>
+      ></span>&nbsp;{{section.title}}</span>
     </div>
 
   </div>
@@ -53,6 +39,7 @@ import type {
 } from "../gloabal/CalculatorSection";
 import SubsectionOption from "../components/SubsectionOption.vue";
 import SubsectionNumber from "../components/SubsectionNumber.vue";
+import type {OptionOrNumberCalculatorSection} from "../gloabal/CalculatorSection";
 
 export default defineComponent({
   name: 'ViewCalculator',
@@ -67,20 +54,10 @@ export default defineComponent({
   },
 
   computed: {
-    sections(): {[key: number]: {type: 'option', value: OptionCalculatorSection} | {type: 'number', value: NumberCalculatorSection}}  {
-      return this.globalStore.calculatorSections.map(subsection => {
-        if(subsection.type === 'number') return {
-          type: 'number',
-          value: subsection as NumberCalculatorSection,
-        }
-
-        return {
-          type: 'option',
-          value: subsection as OptionCalculatorSection,
-        }
-      })
+    sections(): OptionOrNumberCalculatorSection<OptionCalculatorSection | NumberCalculatorSection>[] {
+      return this.globalStore.calculatorSections as OptionOrNumberCalculatorSection<OptionCalculatorSection | NumberCalculatorSection>[]
     }
-  },
+  }
 
 });
 </script>
