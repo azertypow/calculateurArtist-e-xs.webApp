@@ -5,8 +5,6 @@ export function conditionalLogicSection_5(
     calculatorSection_2: OptionCalculatorSection,
 ): number {
 
-    console.log(calculatorSection_1._value?.uniqueID)
-
     //-----------------------------------------------------------------
     if(
         calculatorSection_1._value?.uniqueID      === '01'
