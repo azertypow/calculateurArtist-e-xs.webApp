@@ -182,6 +182,37 @@ export const useGlobalStore = defineStore('globalStore', {
 
 
             ] as OptionOrNumberCalculatorSection<OptionCalculatorSection | NumberCalculatorSection>[],
+
+            contractSection: {
+                values: {
+                    'Contrat': {
+                        subsections: [
+                            {
+                                type: 'checkbox',
+                                name: "d'exposition",
+                                value: false,
+                            },
+                            {
+                                type: 'checkbox',
+                                name: "présentation publique",
+                                value: false,
+                            },
+                            {
+                                type: 'options',
+                                name: "production d'œvre(s)",
+                                options: [
+                                    'avec',
+                                    'sans',
+                                ],
+                                value: '',
+                            },
+                        ],
+                    },
+                    "entre": {
+
+                    },
+                }
+            }
         }
     },
 
