@@ -119,14 +119,15 @@ export class NumberCalculatorSubsection {
     public setAMultiplier(value: number|ConditionalValueFromSubsectionOption, text = ''): this {
         this._multiplier = {
             text,
-            value: typeof value === 'number' ? value : value.value,
+            value: typeof value === 'number' ? value : value.defaultValue,
         }
         if(typeof value !== 'number') {
             value.onChange = () => {
                 console.log('change from NumberCalculatorSubsection')
+
                 this._multiplier = {
                     text,
-                    value: value.value,
+                    value: value.calculateValueOnChange(),
                 }
                 this.onValueMultiplierChange()
             }
@@ -182,26 +183,29 @@ export class OptionCalculatorSubsection {
 export class ConditionalValueFromSubsectionOption {
 
     constructor(
-        private _conditionKeyValue: {[key: string]: number},
-        private _subsectionOptionToCheck: OptionCalculatorSection,
+        private _arrayOfSubsectionOptionToCheck: OptionCalculatorSection[],
+        public calculateValueOnChange: ()=> number,
+        public defaultValue = 0,
     ) {
-        _subsectionOptionToCheck.onValueChange = () => {
-            console.log('change from ConditionalValueFromSubsectionOption')
-            this.onChange()
-        }
+        _arrayOfSubsectionOptionToCheck.forEach(subsectionOptionToCheck => {
+            subsectionOptionToCheck.onValueChange = () => {
+                console.log('change from ConditionalValueFromSubsectionOption')
+                this.onChange()
+            }
+        })
         return this
     }
 
-    get value(): number {
-
-        console.log( this._subsectionOptionToCheck._value?.uniqueID )
-
-        for(const key in this._conditionKeyValue) {
-            const value = this._conditionKeyValue[key]
-            if(key === this._subsectionOptionToCheck._value?.uniqueID) return  value
-        }
-        return NaN
-    }
+    // get value(): number {
+    //
+    //     console.log( this._arrayOfSubsectionOptionToCheck._value?.uniqueID )
+    //
+    //     for(const key in this._conditionKeyValue) {
+    //         const value = this._conditionKeyValue[key]
+    //         if(key === this._arrayOfSubsectionOptionToCheck._value?.uniqueID) return  value
+    //     }
+    //     return NaN
+    // }
 
     onChange() {}
 }

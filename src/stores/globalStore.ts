@@ -7,8 +7,9 @@ import {
     NumberCalculatorSubsection,
     OptionCalculatorSection, OptionCalculatorSubsection
 } from "../gloabal/CalculatorSection";
+import {conditionalLogicSection_5} from "./conditionalLogicSection_5";
 
-const CalculatorSection_1 = new OptionCalculatorSection(
+const calculatorSection_1 = new OptionCalculatorSection(
     1,
     'Taille de la structure',
     true
@@ -19,26 +20,23 @@ const CalculatorSection_1 = new OptionCalculatorSection(
     new OptionCalculatorSubsection('04', 'Très grande', '> 500K CHF /année'),
 )
 
+const calculatorSection_2 = new OptionCalculatorSection(
+        2,
+        'Type d’exposition',
+        true
+    ).addSubSection(
+        new OptionCalculatorSubsection('01', 'Solo'),
+        new OptionCalculatorSubsection('02', '2 à 6 pers.'),
+        new OptionCalculatorSubsection('03', '7 et plus', ),
+    )
+
 export const useGlobalStore = defineStore('globalStore', {
     state() {
         return {
             calculatorSections: [
                 // ----------
-                CalculatorSection_1,
-                // ----------
-
-
-
-                // ----------
-                new OptionCalculatorSection(
-                    2,
-                    'Type d’exposition',
-                    true
-                ).addSubSection(
-                    new OptionCalculatorSubsection('01', 'Solo'),
-                    new OptionCalculatorSubsection('02', '2 à 6 pers.'),
-                    new OptionCalculatorSubsection('03', '7 et plus', ),
-                ),
+                calculatorSection_1,
+                calculatorSection_2,
                 // ----------
 
 
@@ -78,13 +76,18 @@ export const useGlobalStore = defineStore('globalStore', {
                         0,
                     ).setAMultiplier(
                         new ConditionalValueFromSubsectionOption(
-                            {
-                                '01': 50,
-                                '02': 100,
-                                '03': 150,
-                                '04': 200,
+                            [
+                                calculatorSection_1,
+                                calculatorSection_2,
+                            ],
+                            () => {
+                                const newValueAfterChange = conditionalLogicSection_5(
+                                    calculatorSection_1,
+                                    calculatorSection_2,
+                                )
+                                console.log(newValueAfterChange)
+                                return newValueAfterChange
                             },
-                            CalculatorSection_1,
                         ),
                         'Coût horaire',
                     )
