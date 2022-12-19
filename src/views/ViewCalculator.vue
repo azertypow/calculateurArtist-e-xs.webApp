@@ -119,6 +119,7 @@ h2 {
   background: var(--app-color-main);
   padding: 1rem;
   text-align: center;
+  border-top: solid 1px var(--app-color-border);
 }
 
 .v-view-calculator__status__items {
@@ -138,7 +139,9 @@ h2 {
 }
 
 .v-view-calculator__result {
-
+  border-top: solid 1px var(--app-color-border);
+  margin-top: 10rem;
+  padding-top: 2rem;
 }
 
 .v-view-calculator__result__result-container {

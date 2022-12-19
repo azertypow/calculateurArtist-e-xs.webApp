@@ -20,8 +20,6 @@
       </div>
     </div>
 
-  <h6 class="app-subsection__result" >is active: {{optionSubsection.isActive}}</h6>
-
   </div>
 </template>
 

@@ -26,7 +26,6 @@
       </div>
     </div>
 
-    <h6 class="app-subsection__result" >result: {{numberSubsection.result}}</h6>
   </div>
 </template>
 
