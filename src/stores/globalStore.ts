@@ -8,6 +8,7 @@ import {
     OptionCalculatorSection, OptionCalculatorSubsection
 } from "../gloabal/CalculatorSection";
 import {conditionalLogicSection_5} from "./conditionalLogicSection_5";
+import {conditionalLogicSection_4} from "./conditionalLogicSection_4";
 
 const calculatorSection_1 = new OptionCalculatorSection(
     1,
@@ -30,6 +31,17 @@ const calculatorSection_2 = new OptionCalculatorSection(
         new OptionCalculatorSubsection('03', '7 et plus', ),
     )
 
+
+const calculatorSection_3 = new OptionCalculatorSection(
+    3,
+    'Emploi d’une ou plusieurs œuvres existantes',
+    true
+).addSubSection(
+    new OptionCalculatorSubsection('01', 'Emploi d’une ou plusieurs œuvres existantes'),
+    new OptionCalculatorSubsection('02', 'Emploi d’une ou plusieurs œuvres existantes'),
+    new OptionCalculatorSubsection('03', 'Emploi d’une ou plusieurs œuvres existantes'),
+)
+
 export const useGlobalStore = defineStore('globalStore', {
     state() {
         return {
@@ -37,30 +49,29 @@ export const useGlobalStore = defineStore('globalStore', {
                 // ----------
                 calculatorSection_1,
                 calculatorSection_2,
-                // ----------
-
-
-
-                // ----------
-                new OptionCalculatorSection(
-                    3,
-                    'Emploi d’une ou plusieurs œuvres existantes',
-                    true
-                ).addSubSection(
-                    new OptionCalculatorSubsection('01', 'Emploi d’une ou plusieurs œuvres existantes'),
-                    new OptionCalculatorSubsection('02', 'Emploi d’une ou plusieurs œuvres existantes'),
-                    new OptionCalculatorSubsection('03', 'Emploi d’une ou plusieurs œuvres existantes'),
-                ),
-                // ----------
-
-
+                calculatorSection_3,
 
                 // ----------
                 new NumberCalculatorSection(
                     4,
                     "Durée de l'exposition (en mois)",
                 ).addSubSection(
-                    new NumberCalculatorSubsection()
+                    new NumberCalculatorSubsection().setAMultiplier(
+                        new ConditionalValueFromSubsectionOption(
+                            [
+                                calculatorSection_1,
+                                calculatorSection_2,
+                                calculatorSection_3,
+                            ],
+                            () => {
+                                return conditionalLogicSection_4(
+                                    calculatorSection_1,
+                                    calculatorSection_2,
+                                    calculatorSection_3,
+                                )
+                            }
+                        )
+                    )
                 ),
                 // ----------
 
