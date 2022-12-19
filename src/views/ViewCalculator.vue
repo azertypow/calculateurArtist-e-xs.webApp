@@ -23,6 +23,23 @@
       ></span>&nbsp;{{section.title}}</span>
     </div>
 
+    <div
+        class="v-view-calculator__result"
+    >
+      <div
+          class="app-g"
+      >
+        <div class="app-g__coll-2-12 app-with-gutter"></div>
+        <div class="app-g__coll-4-12 app-with-gutter" >TOTAL</div>
+        <div class="v-view-calculator__result__result-container app-g__coll-6-12 app-with-gutter"
+        >
+          <div>resultat: {{total}}.— CHF</div>
+          <h6>Complétez l’ensemble des options pour afficher le résultat</h6>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 </template>
 
@@ -56,7 +73,19 @@ export default defineComponent({
   computed: {
     sections(): OptionOrNumberCalculatorSection<OptionCalculatorSection | NumberCalculatorSection>[] {
       return this.globalStore.calculatorSections as OptionOrNumberCalculatorSection<OptionCalculatorSection | NumberCalculatorSection>[]
-    }
+    },
+
+    total(): number {
+      return this.sections.filter(section => {
+        return section.type === 'number'
+      }).reduce((previousTotalOfSection, currentSection) => {
+        return previousTotalOfSection + (currentSection as NumberCalculatorSection)
+            .subSections
+            .reduce((previousSubsectionValue, currentSubsection) => {
+              return previousSubsectionValue + currentSubsection.result
+            }, 0)
+      }, 0)
+    },
   }
 
 });
@@ -106,6 +135,14 @@ h2 {
   .is-empty & {
     background-color: var(--app-color-border);
   }
+}
+
+.v-view-calculator__result {
+
+}
+
+.v-view-calculator__result__result-container {
+  text-align: right;
 }
 
 </style>

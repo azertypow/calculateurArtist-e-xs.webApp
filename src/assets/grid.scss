@@ -8,6 +8,10 @@
   &.app-g--align-end {
     align-items: flex-end;
   }
+
+  &.app-g--rtl {
+    justify-content: right;
+  }
 }
 
 
