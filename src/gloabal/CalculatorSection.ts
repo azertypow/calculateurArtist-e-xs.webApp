@@ -106,6 +106,7 @@ export class NumberCalculatorSubsection {
     constructor(
         public text?: string,
         public value = 0,
+        public unit?: 'CHF' | 'mois' | 'heures',
         public validateValueCheck: (valueToCheck: number) => { testValue: boolean, msg: string } = () => {
             return {
                 testValue: true,

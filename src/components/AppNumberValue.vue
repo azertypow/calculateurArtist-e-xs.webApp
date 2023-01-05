@@ -6,7 +6,7 @@
       <icon-pen></icon-pen>
     </div>
     <div
-        v-if="isCHFValue"
+        v-if="numberSubsection.unit === 'CHF'"
         class="v-app-number-value__device"
     >CHF</div>
     <input
@@ -16,8 +16,12 @@
     >
     <div
         class="v-app-number-value__end"
-        v-if="isCHFValue"
+        v-if="numberSubsection.unit === 'CHF'"
     >.—</div>
+    <div
+        v-else-if="numberSubsection.unit"
+        class="v-app-number-value__device"
+    >{{numberSubsection.unit}}</div>
   </div>
 </template>
 
@@ -37,11 +41,6 @@ export default defineComponent({
       type: Object as PropType<NumberCalculatorSubsection>,
       default: new NumberCalculatorSubsection(),
     },
-    isCHFValue: {
-      required: false,
-      default: false,
-      type: Boolean,
-    }
   },
 
 });
