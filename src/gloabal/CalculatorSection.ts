@@ -34,7 +34,7 @@ export class OptionCalculatorSection extends CalculatorSection {
 
     public set value(value: OptionCalculatorSubsection) {
         this._value = value
-        this.onValueChange()
+        this._onValueChange.forEach(callback => callback())
     }
 
     public addSubSection(...subsectionsToAdd: OptionCalculatorSubsection[]): this {
@@ -51,7 +51,11 @@ export class OptionCalculatorSection extends CalculatorSection {
         return 'validate'
     }
 
-    onValueChange() {}
+    addOnChangeListener( callback: () => void ) {
+        this._onValueChange.push(callback)
+    }
+
+    private _onValueChange: (() => void)[] = []
 
 }
 
@@ -157,11 +161,39 @@ export class OptionCalculatorSubsection {
 
     private _parent?: OptionCalculatorSection
 
-    constructor(
-        public uniqueID: string,
-        public titre: string,
-        public subtitle?: string
-    ) {
+    public uniqueID: string;
+    public titre: string;
+    public subtitle?: string;
+    private readonly _subsectionOptionChangeListener?: ConditionalValueFromSubsectionOption;
+    private _result = 0;
+
+    constructor(params: {
+        numberValue?: number,
+        subsectionOptionChangeListener?: ConditionalValueFromSubsectionOption,
+        subtitle?: string,
+        titre: string,
+        uniqueID: string
+    }) {
+        if(params.numberValue) this._result     = params.numberValue
+        this._subsectionOptionChangeListener    = params.subsectionOptionChangeListener
+        this.subtitle                           = params.subtitle
+        this.titre                              = params.titre
+        this.uniqueID                           = params.uniqueID
+
+        this._initSubsectionOptionChangeListener()
+    }
+
+    private _initSubsectionOptionChangeListener() {
+        if(!this._subsectionOptionChangeListener) return
+        this._result = this._subsectionOptionChangeListener.defaultValue
+        this._subsectionOptionChangeListener.onChange = () => {
+
+            console.log('change from OptionCalculatorSubsection')
+
+            if(!this._subsectionOptionChangeListener) return
+            this._result = this._subsectionOptionChangeListener.calculateValueOnChange()
+            this.onResultChange()
+        }
     }
 
     setParent(parent: OptionCalculatorSection) {
@@ -178,6 +210,23 @@ export class OptionCalculatorSubsection {
         return this._parent._value?.uniqueID === this.uniqueID
     }
 
+    /**
+     * use only for see the value
+     */
+    public get resultInfo() {
+        return this._result
+    }
+
+    /**
+     * use to calculate de value
+     */
+    public get result(): number {
+        if( this.isActive ) return this._result
+        return 0
+    }
+
+    public onResultChange = () => {}
+
 }
 
 export class ConditionalValueFromSubsectionOption {
@@ -188,10 +237,10 @@ export class ConditionalValueFromSubsectionOption {
         public defaultValue = 0,
     ) {
         _arrayOfSubsectionOptionToCheck.forEach(subsectionOptionToCheck => {
-            subsectionOptionToCheck.onValueChange = () => {
+            subsectionOptionToCheck.addOnChangeListener(() => {
                 console.log('change from ConditionalValueFromSubsectionOption')
                 this.onChange()
-            }
+            })
         })
         return this
     }

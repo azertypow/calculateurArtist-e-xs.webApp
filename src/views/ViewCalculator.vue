@@ -76,13 +76,16 @@ export default defineComponent({
     },
 
     total(): number {
-      return this.sections.filter(section => {
-        return section.type === 'number'
-      }).reduce((previousTotalOfSection, currentSection) => {
-        return previousTotalOfSection + (currentSection as NumberCalculatorSection)
-            .subSections
-            .reduce((previousSubsectionValue, currentSubsection) => {
-              return previousSubsectionValue + currentSubsection.result
+      return this.sections.reduce((previousTotalOfSection, currentSection) => {
+        return previousTotalOfSection + (currentSection
+            .subSections as unknown[])
+            .reduce((previousSubsectionValue: number, currentSubsection) => {
+              if(
+                  currentSubsection
+                  && typeof currentSubsection === 'object'
+                  && 'result' in currentSubsection
+              )   return previousSubsectionValue + (currentSubsection.result as number)
+              else return 0
             }, 0)
       }, 0)
     },

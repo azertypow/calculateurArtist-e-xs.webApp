@@ -8,16 +8,17 @@ import {
     OptionCalculatorSection, OptionCalculatorSubsection
 } from "../gloabal/CalculatorSection";
 import {conditionalLogicSection_5} from "./conditionalLogicSection_5";
+import {conditionalLogicSection_4} from "./conditionalLogicSection_4";
 
 const calculatorSection_1 = new OptionCalculatorSection(
     1,
     'Taille de la structure',
     true
 ).addSubSection(
-    new OptionCalculatorSubsection('01', 'Petit', '< 50 000 CHF /année'),
-    new OptionCalculatorSubsection('02', 'Moyen', '50K–250K CHF /année'),
-    new OptionCalculatorSubsection('03', 'Grand', '250K–500K CHF /année'),
-    new OptionCalculatorSubsection('04', 'Très grande', '> 500K CHF /année'),
+    new OptionCalculatorSubsection({uniqueID: '01', titre: 'Petit', subtitle: '< 50 000 CHF /année'}),
+    new OptionCalculatorSubsection({uniqueID: '02', titre: 'Moyen', subtitle: '50K–250K CHF /année'}),
+    new OptionCalculatorSubsection({uniqueID: '03', titre: 'Grand', subtitle: '250K–500K CHF /année'}),
+    new OptionCalculatorSubsection({uniqueID: '04', titre: 'Très grande', subtitle: '> 500K CHF /année'}),
 )
 
 const calculatorSection_2 = new OptionCalculatorSection(
@@ -25,13 +26,13 @@ const calculatorSection_2 = new OptionCalculatorSection(
         'Type d’exposition',
         true
     ).addSubSection(
-        new OptionCalculatorSubsection('01', 'Solo'),
-        new OptionCalculatorSubsection('02', '2 à 6 pers.'),
-        new OptionCalculatorSubsection('03', '7 et plus', ),
+        new OptionCalculatorSubsection({uniqueID: '01', titre: 'Solo'}),
+        new OptionCalculatorSubsection({uniqueID: '02', titre: '2 à 6 pers.'}),
+        new OptionCalculatorSubsection({uniqueID: '03', titre: '7 et plus'}, ),
     )
 
 export const useGlobalStore = defineStore('globalStore', {
-    state() {
+    state: function () {
         return {
             calculatorSections: [
                 // ----------
@@ -40,19 +41,87 @@ export const useGlobalStore = defineStore('globalStore', {
                 // ----------
 
 
-
                 // ----------
                 new OptionCalculatorSection(
                     3,
                     'Emploi d’une ou plusieurs œuvres existantes',
                     true
                 ).addSubSection(
-                    new OptionCalculatorSubsection('01', 'Emploi d’une ou plusieurs œuvres existantes'),
-                    new OptionCalculatorSubsection('02', 'Emploi d’une ou plusieurs œuvres existantes'),
-                    new OptionCalculatorSubsection('03', 'Emploi d’une ou plusieurs œuvres existantes'),
+                    new OptionCalculatorSubsection({
+                        uniqueID: '01',
+                        titre: 'Œuvre existante',
+                        subtitle: undefined,
+                        subsectionOptionChangeListener: new ConditionalValueFromSubsectionOption(
+                            [
+                                calculatorSection_1,
+                                calculatorSection_2,
+                            ],
+                            () => {
+                                switch (calculatorSection_1._value?.uniqueID) {
+                                    case '01':
+                                        switch (calculatorSection_2._value?.uniqueID) {
+                                            case '01':
+                                                return 500
+                                            case '02':
+                                                return 250
+                                            case '03':
+                                                return 100
+                                        }
+                                        break
+                                    case '02':
+                                        switch (calculatorSection_2._value?.uniqueID) {
+                                            case '01':
+                                                return 1000
+                                            case '02':
+                                                return 500
+                                            case '03':
+                                                return 200
+                                        }
+                                        break
+                                    case '03':
+                                        switch (calculatorSection_2._value?.uniqueID) {
+                                            case '01':
+                                                return 3000
+                                            case '02':
+                                                return 1500
+                                            case '03':
+                                                return 600
+                                        }
+                                        break
+                                    case '04':
+                                        switch (calculatorSection_2._value?.uniqueID) {
+                                            case '01':
+                                                return 5000
+                                            case '02':
+                                                return 2500
+                                            case '03':
+                                                return 1000
+                                        }
+                                        break
+                                }
+                                return 999
+                            },
+                            444,
+                        )
+                    }),
+                    new OptionCalculatorSubsection(
+                        {
+                            uniqueID: '02',
+                            titre: 'adaptation d\'une œuvre existante (x1.5)',
+                            subtitle: undefined,
+                            numberValue: 200
+                        },
+                    ),
+                    new OptionCalculatorSubsection(
+                        {
+                            uniqueID: '03',
+                            titre: 'conception d\'une ou plusieurs nouvelles œuvres (x2)',
+                            subtitle: undefined,
+                            numberValue: 300
+                        },
+                    ),
                 ),
                 // ----------
-
 
 
                 // ----------
@@ -60,10 +129,20 @@ export const useGlobalStore = defineStore('globalStore', {
                     4,
                     "Durée de l'exposition (en mois)",
                 ).addSubSection(
-                    new NumberCalculatorSubsection()
+                    new NumberCalculatorSubsection().setAMultiplier(
+                        new ConditionalValueFromSubsectionOption(
+                            [
+                                calculatorSection_1,
+                                calculatorSection_2,
+                            ],
+                            () => conditionalLogicSection_4(
+                                calculatorSection_1,
+                                calculatorSection_2,
+                            ),
+                        )
+                    )
                 ),
                 // ----------
-
 
 
                 // ----------
@@ -99,7 +178,6 @@ export const useGlobalStore = defineStore('globalStore', {
                 // ----------
 
 
-
                 // ----------
                 new NumberCalculatorSection(
                     6,
@@ -117,7 +195,6 @@ export const useGlobalStore = defineStore('globalStore', {
                 // ----------
 
 
-
                 // ----------
                 new NumberCalculatorSection(
                     7,
@@ -132,7 +209,6 @@ export const useGlobalStore = defineStore('globalStore', {
                     )
                 ),
                 // ----------
-
 
 
                 // ----------
@@ -164,7 +240,6 @@ export const useGlobalStore = defineStore('globalStore', {
                 // ----------
 
 
-
                 // ----------
                 new NumberCalculatorSection(
                     9,
@@ -180,8 +255,7 @@ export const useGlobalStore = defineStore('globalStore', {
                 // ----------
 
 
-
-            ] as OptionOrNumberCalculatorSection<OptionCalculatorSection | NumberCalculatorSection>[],
+            ] satisfies Record<number, OptionCalculatorSection | NumberCalculatorSection>,
 
             contractSection: {
                 values: {
@@ -209,7 +283,7 @@ export const useGlobalStore = defineStore('globalStore', {
                         ],
                     },
                     "entre": {
-
+                        subsections: [],
                     },
                 }
             }

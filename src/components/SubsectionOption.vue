@@ -17,6 +17,10 @@
             :textValue="optionSubsection.titre"
             :description="optionSubsection.subtitle"
         ></app-checkbox>
+        <div
+            v-if="numberValue > 0"
+            class="v-subsection-option__info-value"
+        >(&nbsp;{{numberValue}}/heure&nbsp;)</div>
       </div>
     </div>
 
@@ -33,11 +37,28 @@ export default defineComponent({
   name: 'SubsectionOption',
   components: {AppCheckbox},
 
+  data() {
+    return {
+      numberValue: 0
+    }
+  },
+
   props: {
     optionSubsection: {
       required: true,
       type: Object as PropType<OptionCalculatorSubsection>
     }
+  },
+
+  mounted() {
+    this.$nextTick(() => {
+
+      this.numberValue = this.optionSubsection.resultInfo
+      this.optionSubsection.onResultChange = () => {
+        this.numberValue = this.optionSubsection.resultInfo
+      }
+
+    })
   },
 
   methods: {
@@ -53,5 +74,13 @@ export default defineComponent({
 <style lang="scss" scoped>
 .v-subsection-option {
 
+}
+
+.v-subsection-option__info-value {
+  padding-left: 4rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 400;
 }
 </style>
