@@ -9,6 +9,9 @@ import {
 } from "../gloabal/CalculatorSection";
 import {conditionalLogicSection_5} from "./conditionalLogicSection_5";
 import {conditionalLogicSection_4} from "./conditionalLogicSection_4";
+import {conditionalLogicSection_3_option_1} from "./conditionalLogicSection_3_option_1";
+import {conditionalLogicSection_3_option_2} from "./conditionalLogicSection_3_option_2";
+import {conditionalLogicSection_3_option_3} from "./conditionalLogicSection_3_option_3";
 
 const calculatorSection_1 = new OptionCalculatorSection(
     1,
@@ -56,52 +59,8 @@ export const useGlobalStore = defineStore('globalStore', {
                                 calculatorSection_1,
                                 calculatorSection_2,
                             ],
-                            () => {
-                                switch (calculatorSection_1._value?.uniqueID) {
-                                    case '01':
-                                        switch (calculatorSection_2._value?.uniqueID) {
-                                            case '01':
-                                                return 500
-                                            case '02':
-                                                return 250
-                                            case '03':
-                                                return 100
-                                        }
-                                        break
-                                    case '02':
-                                        switch (calculatorSection_2._value?.uniqueID) {
-                                            case '01':
-                                                return 1000
-                                            case '02':
-                                                return 500
-                                            case '03':
-                                                return 200
-                                        }
-                                        break
-                                    case '03':
-                                        switch (calculatorSection_2._value?.uniqueID) {
-                                            case '01':
-                                                return 3000
-                                            case '02':
-                                                return 1500
-                                            case '03':
-                                                return 600
-                                        }
-                                        break
-                                    case '04':
-                                        switch (calculatorSection_2._value?.uniqueID) {
-                                            case '01':
-                                                return 5000
-                                            case '02':
-                                                return 2500
-                                            case '03':
-                                                return 1000
-                                        }
-                                        break
-                                }
-                                return 999
-                            },
-                            444,
+                            () => conditionalLogicSection_3_option_1(calculatorSection_1, calculatorSection_2),
+                            0,
                         )
                     }),
                     new OptionCalculatorSubsection(
@@ -109,7 +68,14 @@ export const useGlobalStore = defineStore('globalStore', {
                             uniqueID: '02',
                             titre: 'adaptation d\'une œuvre existante (x1.5)',
                             subtitle: undefined,
-                            numberValue: 200
+                            subsectionOptionChangeListener: new ConditionalValueFromSubsectionOption(
+                                [
+                                    calculatorSection_1,
+                                    calculatorSection_2,
+                                ],
+                                () => conditionalLogicSection_3_option_2(calculatorSection_1, calculatorSection_2),
+                                0,
+                            )
                         },
                     ),
                     new OptionCalculatorSubsection(
@@ -117,7 +83,15 @@ export const useGlobalStore = defineStore('globalStore', {
                             uniqueID: '03',
                             titre: 'conception d\'une ou plusieurs nouvelles œuvres (x2)',
                             subtitle: undefined,
-                            numberValue: 300
+                            subsectionOptionChangeListener: new ConditionalValueFromSubsectionOption(
+                                [
+                                    calculatorSection_1,
+                                    calculatorSection_2,
+                                ],
+                                () => conditionalLogicSection_3_option_3(calculatorSection_1, calculatorSection_2),
+                                0,
+                            )
+
                         },
                     ),
                 ),
@@ -153,6 +127,7 @@ export const useGlobalStore = defineStore('globalStore', {
                     new NumberCalculatorSubsection(
                         "nombre d'heures",
                         0,
+                        "heures",
                     ).setAMultiplier(
                         new ConditionalValueFromSubsectionOption(
                             [
