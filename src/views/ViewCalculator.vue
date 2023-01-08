@@ -8,19 +8,34 @@
     ></app-section>
 
     <div
-        class="v-view-calculator__status"
+        class="v-view-calculator__footer"
     >
-      <span
-          class="v-view-calculator__status__items"
-          v-for="(section, index) of sections"
-          :class="{
-            'is-empty': section.status === 'empty',
-          }"
-      ><span
-          v-if="index > 0"
-      > |&nbsp;</span><span
-          class="v-view-calculator__status__items__icon"
-      ></span>&nbsp;{{section.title}}</span>
+      <div
+          class="v-view-calculator__footer__result"
+          v-if="total > 0 && showFixedResult"
+      >
+        <div
+            class="v-view-calculator__footer__content"
+        >
+          <div>resultat: {{total}}.— CHF</div>
+        </div>
+      </div>
+      <div
+          class="v-view-calculator__footer__status"
+      >
+        <span
+            class="v-view-calculator__footer__status__items"
+            v-for="(section, index) of sections"
+            :class="{
+              'is-empty': section.status === 'empty',
+            }"
+        ><span
+            class="v-view-calculator__footer__status__separator"
+            v-if="index > 0"
+        > |&nbsp;</span><span
+            class="v-view-calculator__footer__status__items__icon"
+        ></span>&nbsp;{{section.title}}</span>
+      </div>
     </div>
 
     <div
@@ -28,13 +43,22 @@
     >
       <div
           class="app-g"
+          ref="total"
       >
         <div class="app-g__coll-2-12 app-with-gutter"></div>
         <div class="app-g__coll-4-12 app-with-gutter" >TOTAL</div>
         <div class="v-view-calculator__result__result-container app-g__coll-6-12 app-with-gutter"
         >
-          <div>resultat: {{total}}.— CHF</div>
-          <h6>Complétez l’ensemble des options pour afficher le résultat</h6>
+          <div v-if="total>0">resultat: {{total}}.— CHF
+            <div class="v-view-calculator__result__option">collectif d'artiste?
+              <div
+                  class="app-button--toggle"
+                  @click="globalStore.isACollective = !globalStore.isACollective"
+                  :class="{'is-active': globalStore.isACollective}"
+              ></div>
+            </div>
+          </div>
+          <h6 v-else>Complétez l’ensemble des options pour afficher le résultat</h6>
         </div>
       </div>
 
@@ -62,11 +86,29 @@ export default defineComponent({
   name: 'ViewCalculator',
   components: {SubsectionNumber, SubsectionOption, AppNumberValue, AppSection, AppCheckbox, AppNav},
 
+  mounted() {
+    this.$nextTick(() => {
+      document.querySelector('#app')!.addEventListener('scroll', this.getResultPosition)
+    })
+  },
+
+  beforeUnmount() {
+    document.querySelector('#app')!.removeEventListener('scroll', this.getResultPosition)
+  },
+
   data() {
     return {
       globalStore: useGlobalStore(),
       proto: true,
       checkeds: [],
+      showFixedResult: true,
+    }
+  },
+
+  methods: {
+    getResultPosition() {
+      if( !(this.$refs.total instanceof HTMLDivElement)) return
+      this.showFixedResult = this.$refs.total.getBoundingClientRect().top >= window.innerHeight;
     }
   },
 
@@ -76,19 +118,9 @@ export default defineComponent({
     },
 
     total(): number {
-      return this.sections.reduce((previousTotalOfSection, currentSection) => {
-        return previousTotalOfSection + (currentSection
-            .subSections as unknown[])
-            .reduce((previousSubsectionValue: number, currentSubsection) => {
-              if(
-                  currentSubsection
-                  && typeof currentSubsection === 'object'
-                  && 'result' in currentSubsection
-              )   return previousSubsectionValue + (currentSubsection.result as number)
-              else return 0
-            }, 0)
-      }, 0)
-    },
+      return this.globalStore.total
+    }
+
   }
 
 });
@@ -111,34 +143,67 @@ h2 {
   justify-content: right;
 }
 
-.v-view-calculator__status {
+.v-view-calculator__footer {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
+  box-sizing: border-box;
+}
+
+.v-view-calculator__footer__status {
+  position: relative;
+  width: 100%;
   line-height: 1.5rem;
-  font-size: 1.5rem;
+  font-size: var(--app-font-size);
   box-sizing: border-box;
   background: var(--app-color-main);
   padding: 1rem;
   text-align: center;
   border-top: solid 1px var(--app-color-border);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.v-view-calculator__status__items {
+.v-view-calculator__footer__status__items {
+  white-space: nowrap;
 }
 
-.v-view-calculator__status__items__icon {
+.v-view-calculator__footer__status__separator {
+  padding-right: .5em;
+}
+
+.v-view-calculator__footer__status__items__icon {
   display: inline-block;
   width: 1rem;
   height: 1rem;
   border-radius: 100%;
-
+  vertical-align: text-bottom;
   background-color: var(--app-color-secondary);
 
   .is-empty & {
     background-color: var(--app-color-border);
   }
+}
+
+.v-view-calculator__footer__result {
+  position: relative;
+  width: 100%;
+  line-height: 2rem;
+  font-size: 1.4rem;
+  background: var(--app-color-main);
+  border-top: solid 1px var(--app-color-border);
+  box-sizing: border-box;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.v-view-calculator__footer__content {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: auto;
+  max-width: var(--app-max-width);
 }
 
 .v-view-calculator__result {
@@ -151,4 +216,10 @@ h2 {
   text-align: right;
 }
 
+.v-view-calculator__result__option {
+  line-height: 2rem;
+  font-size: 1.4rem;
+  user-select: none;
+  margin-top: 1rem;
+}
 </style>

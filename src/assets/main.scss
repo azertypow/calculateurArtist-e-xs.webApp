@@ -7,7 +7,7 @@
   --app-color-black: #000;
 
   /*grid*/
-  --app-max-width: 1200px;
+  --app-max-width: 100rem;
 
   /*font*/
   --app-font-size: .8rem;
@@ -115,5 +115,38 @@ button,
     bottom: 0;
     margin: 0;
     font-weight: 300;
+  }
+}
+
+.app-button--toggle {
+  display: inline-block;
+  height: 2rem;
+  width: 4rem;
+  background: white;
+  border-radius: 2rem;
+  vertical-align: bottom;
+  position: relative;
+  cursor: pointer;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2rem;
+    height: 2rem;
+    background: black;
+    border-radius: 2rem;
+    opacity: .25;
+  }
+
+  &.is-active {
+    background: var(--app-color-secondary);
+
+    &:before {
+      left: auto;
+      right: 0;
+      opacity: 1;
+    }
   }
 }

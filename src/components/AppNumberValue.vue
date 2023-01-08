@@ -13,6 +13,7 @@
         class="v-app-number-value__value"
         type="number"
         v-model="numberSubsection.value"
+        :min="numberSubsection.min"
     >
     <div
         class="v-app-number-value__end"
@@ -58,6 +59,12 @@ export default defineComponent({
   all: unset;
   display: block;
   border-bottom: dashed black 2px;
+  line-height: 2rem;
+  height: 2rem;
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  text-align: right;
 }
 
 </style>

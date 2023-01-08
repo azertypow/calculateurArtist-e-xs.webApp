@@ -31,6 +31,6 @@ export default defineComponent({
 
 .v-app__main {
   margin: auto;
-  max-width: 100rem;
+  max-width: var(--app-max-width);
 }
 </style>

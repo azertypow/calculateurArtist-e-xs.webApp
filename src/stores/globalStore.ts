@@ -37,6 +37,8 @@ const calculatorSection_2 = new OptionCalculatorSection(
 export const useGlobalStore = defineStore('globalStore', {
     state: function () {
         return {
+            isACollective: false,
+            showFixedResult: true,
             calculatorSections: [
                 // ----------
                 calculatorSection_1,
@@ -102,8 +104,15 @@ export const useGlobalStore = defineStore('globalStore', {
                 new NumberCalculatorSection(
                     4,
                     "Durée de l'exposition (en mois)",
+                    false,
+                    'Montant forfaitaire supplémentaire par mois au-delà du premier mois',
                 ).addSubSection(
-                    new NumberCalculatorSubsection().setAMultiplier(
+                    new NumberCalculatorSubsection(
+                        '',
+                        1,
+                        "mois",
+                        1,
+                    ).setAMultiplier(
                         new ConditionalValueFromSubsectionOption(
                             [
                                 calculatorSection_1,
@@ -113,7 +122,11 @@ export const useGlobalStore = defineStore('globalStore', {
                                 calculatorSection_1,
                                 calculatorSection_2,
                             ),
-                        )
+                        ),
+                        'Montant forfaitaire supplémentaire par mois au-delà du premier mois: ',
+                        "info",
+                        "CHF",
+                        1,
                     )
                 ),
                 // ----------
@@ -147,7 +160,9 @@ export const useGlobalStore = defineStore('globalStore', {
                     )
                 ).addSubSection(
                     new NumberCalculatorSubsection(
-                        'Forfait de réalisation'
+                        'Forfait de réalisation',
+                        0,
+                "CHF",
                     )
                 ),
                 // ----------
@@ -265,5 +280,23 @@ export const useGlobalStore = defineStore('globalStore', {
         }
     },
 
+    getters: {
+        total(): number {
+            const multiply = this.isACollective ? 1.5 : 1
+
+            return this.calculatorSections.reduce((previousTotalOfSection, currentSection) => {
+                return previousTotalOfSection + (currentSection
+                    .subSections as unknown[])
+                    .reduce((previousSubsectionValue: number, currentSubsection) => {
+                        if(
+                            currentSubsection
+                            && typeof currentSubsection === 'object'
+                            && 'result' in currentSubsection
+                        )   return previousSubsectionValue + (currentSubsection.result as number)
+                        else return 0
+                    }, 0)
+            }, 0) * multiply
+        }
+    },
 
 })

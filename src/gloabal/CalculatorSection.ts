@@ -99,6 +99,9 @@ export class NumberCalculatorSubsection {
     private _multiplier?: {
         value: number
         text: string
+        status: 'info' | 'reg'
+        unit?: 'CHF' | 'mois' | 'heures'
+        isActiveIfValueGreaterThan:number
     }
 
     protected parent?: NumberCalculatorSection
@@ -107,6 +110,7 @@ export class NumberCalculatorSubsection {
         public text?: string,
         public value = 0,
         public unit?: 'CHF' | 'mois' | 'heures',
+        public min = 0,
         public validateValueCheck: (valueToCheck: number) => { testValue: boolean, msg: string } = () => {
             return {
                 testValue: true,
@@ -121,10 +125,13 @@ export class NumberCalculatorSubsection {
         return this._multiplier !== undefined
     }
 
-    public setAMultiplier(value: number|ConditionalValueFromSubsectionOption, text = ''): this {
+    public setAMultiplier(value: number|ConditionalValueFromSubsectionOption, text = '', status: 'info' | 'reg' = 'reg', unit?: 'CHF' | 'mois' | 'heures', isActiveIfValueGreaterThan = 0): this {
         this._multiplier = {
             text,
             value: typeof value === 'number' ? value : value.defaultValue,
+            status,
+            unit,
+            isActiveIfValueGreaterThan,
         }
         if(typeof value !== 'number') {
             value.onChange = () => {
@@ -133,6 +140,9 @@ export class NumberCalculatorSubsection {
                 this._multiplier = {
                     text,
                     value: value.calculateValueOnChange(),
+                    status,
+                    unit,
+                    isActiveIfValueGreaterThan,
                 }
                 this.onValueMultiplierChange()
             }
@@ -151,7 +161,8 @@ export class NumberCalculatorSubsection {
     }
 
     public get result(): number {
-        return this._multiplier ? this._multiplier.value * this.value : this.value
+
+        return this._multiplier ? this._multiplier.value * (this.value - this._multiplier.isActiveIfValueGreaterThan) : this.value
     }
 
     onValueMultiplierChange = () => {}

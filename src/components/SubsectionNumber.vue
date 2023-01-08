@@ -3,7 +3,7 @@
       class="v-subsection-number app-subsection"
   >
     <div
-        v-if="multiplier"
+        v-if="multiplier && multiplier.status === 'reg'"
         class="app-g"
     >
       <div class="app-g__coll-2-12 app-with-gutter"></div>
@@ -24,7 +24,16 @@
             :is-c-h-f-value="false"
         ></app-number-value>
       </div>
+
     </div>
+      <div
+          v-if="multiplier && multiplier.status === 'info'"
+          class="app-g v-subsection-number__multiplier--is-info"
+      >
+        <div class="app-g__coll-2-12 app-with-gutter"></div>
+        <div class="app-g__coll-4-12 app-with-gutter" ></div>
+        <div class="app-g__coll-6-12 app-with-gutter" >{{ multiplier.text }}<span v-if="multiplier.unit === 'CHF'">CHF</span> {{ multiplier.value }}<span v-if="multiplier.unit === 'CHF'">.–</span><span v-else-if="multiplier.unit">&nbsp;{{multiplier.unit}}</span></div>
+      </div>
 
   </div>
 </template>
@@ -44,6 +53,8 @@ export default defineComponent({
       multiplier: undefined as {
         text: string,
         value: number,
+        status: 'info' | 'reg'
+        unit?: 'CHF' | 'mois' | 'heures'
       } | undefined
     }
   },
@@ -75,5 +86,11 @@ export default defineComponent({
 <style lang="scss" scoped>
 .v-subsection-number {
 
+}
+
+.v-subsection-number__multiplier--is-info {
+  line-height: 2rem;
+  font-size: 1.4rem;
+  padding-top: 1rem;
 }
 </style>
