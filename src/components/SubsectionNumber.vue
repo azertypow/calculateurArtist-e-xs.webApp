@@ -16,7 +16,7 @@
     >
       <div class="app-g__coll-2-12 app-with-gutter"></div>
       <div class="app-g__coll-4-12 app-with-gutter" >
-        <span v-if="numberSubsection.hasMultiplier" >↳ </span>{{ numberSubsection.text }}
+        <span v-if="numberSubsection.hasMultiplier && numberSubsection.text.length > 0" >↳ </span>{{ numberSubsection.text }}
       </div>
       <div class="app-g__coll-6-12" >
         <app-number-value
