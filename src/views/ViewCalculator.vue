@@ -149,6 +149,7 @@ h2 {
   left: 0;
   width: 100%;
   box-sizing: border-box;
+  z-index: 1000;
 }
 
 .v-view-calculator__footer__status {
