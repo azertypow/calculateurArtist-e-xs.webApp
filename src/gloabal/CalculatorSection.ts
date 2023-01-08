@@ -102,6 +102,7 @@ export class NumberCalculatorSubsection {
         status: 'info' | 'reg'
         unit?: 'CHF' | 'mois' | 'heures'
         isActiveIfValueGreaterThan:number
+        isEditable: boolean
     }
 
     protected parent?: NumberCalculatorSection
@@ -125,12 +126,20 @@ export class NumberCalculatorSubsection {
         return this._multiplier !== undefined
     }
 
-    public setAMultiplier(value: number|ConditionalValueFromSubsectionOption, text = '', status: 'info' | 'reg' = 'reg', unit?: 'CHF' | 'mois' | 'heures', isActiveIfValueGreaterThan = 0): this {
+    public setAMultiplier({
+                              value,
+                              text = '',
+                              isEditable = false,
+                              status = 'reg',
+                              unit,
+                              isActiveIfValueGreaterThan = 0
+                          }: {value: number | ConditionalValueFromSubsectionOption, isEditable?: boolean, text?: string, status?: "info" | "reg", unit?: "CHF" | "mois" | "heures", isActiveIfValueGreaterThan?: number }): this {
         this._multiplier = {
             text,
             value: typeof value === 'number' ? value : value.defaultValue,
             status,
             unit,
+            isEditable,
             isActiveIfValueGreaterThan,
         }
         if(typeof value !== 'number') {
@@ -143,6 +152,7 @@ export class NumberCalculatorSubsection {
                     status,
                     unit,
                     isActiveIfValueGreaterThan,
+                    isEditable,
                 }
                 this.onValueMultiplierChange()
             }

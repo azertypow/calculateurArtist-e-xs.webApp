@@ -8,7 +8,26 @@
     >
       <div class="app-g__coll-2-12 app-with-gutter"></div>
       <div class="app-g__coll-4-12 app-with-gutter" >{{ multiplier.text }}</div>
-      <div class="app-g__coll-6-12 app-with-gutter" >{{ multiplier.value }}</div>
+      <div class="app-g__coll-6-12 app-with-gutter" v-if=" !multiplier.isEditable">{{ multiplier.value }}</div>
+      <div class="v-subsection-number__multiplier-editable" v-else>
+        <div>
+          <icon-pen></icon-pen>
+        </div>
+        <div
+            v-if="multiplier.unit === 'CHF'"
+        >CHF</div>
+        <input  class="app-g__coll-6-12 app-with-gutter app-number-value"
+                v-model.number="multiplier.value"
+                type="number"
+                min="0"
+        >
+        <div
+            v-if="multiplier.unit === 'CHF'"
+        >.—</div>
+        <div
+            v-else-if="multiplier.unit"
+        >{{numberSubsection.unit}}</div>
+      </div>
     </div>
 
     <div
@@ -43,10 +62,11 @@ import {defineComponent} from 'vue';
 import type {PropType} from 'vue';
 import type {NumberCalculatorSubsection} from "../gloabal/CalculatorSection";
 import AppNumberValue from "./AppNumberValue.vue";
+import IconPen from "./IconPen.vue";
 
 export default defineComponent({
   name: 'SubsectionNumber',
-  components: {AppNumberValue},
+  components: {IconPen, AppNumberValue},
 
   data() {
     return {
@@ -55,6 +75,7 @@ export default defineComponent({
         value: number,
         status: 'info' | 'reg'
         unit?: 'CHF' | 'mois' | 'heures'
+        isEditable: boolean
       } | undefined
     }
   },
@@ -92,5 +113,9 @@ export default defineComponent({
   line-height: 2rem;
   font-size: 1.4rem;
   padding-top: 1rem;
+}
+
+.v-subsection-number__multiplier-editable {
+  display: flex;
 }
 </style>

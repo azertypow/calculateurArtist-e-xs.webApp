@@ -113,20 +113,22 @@ export const useGlobalStore = defineStore('globalStore', {
                         "mois",
                         1,
                     ).setAMultiplier(
-                        new ConditionalValueFromSubsectionOption(
-                            [
-                                calculatorSection_1,
-                                calculatorSection_2,
-                            ],
-                            () => conditionalLogicSection_4(
-                                calculatorSection_1,
-                                calculatorSection_2,
+                        {
+                            value: new ConditionalValueFromSubsectionOption(
+                                [
+                                    calculatorSection_1,
+                                    calculatorSection_2,
+                                ],
+                                () => conditionalLogicSection_4(
+                                    calculatorSection_1,
+                                    calculatorSection_2,
+                                ),
                             ),
-                        ),
-                        'Montant forfaitaire supplémentaire par mois au-delà du premier mois: ',
-                        "info",
-                        "CHF",
-                        1,
+                            text: 'Montant forfaitaire supplémentaire par mois au-delà du premier mois: ',
+                            status: "info",
+                            unit: "CHF",
+                            isActiveIfValueGreaterThan: 1
+                        },
                     )
                 ),
                 // ----------
@@ -141,8 +143,11 @@ export const useGlobalStore = defineStore('globalStore', {
                         "nombre d'heures",
                         0,
                         "heures",
-                    ).setAMultiplier(
-                        new ConditionalValueFromSubsectionOption(
+                    ).setAMultiplier({
+                        text: 'Coût horaire',
+                        isEditable: true,
+                        unit: 'CHF',
+                        value: new ConditionalValueFromSubsectionOption(
                             [
                                 calculatorSection_1,
                                 calculatorSection_2,
@@ -155,9 +160,8 @@ export const useGlobalStore = defineStore('globalStore', {
                                 console.log(newValueAfterChange)
                                 return newValueAfterChange
                             },
-                        ),
-                        'Coût horaire',
-                    )
+                        )
+                    })
                 ).addSubSection(
                     new NumberCalculatorSubsection(
                         'Forfait de réalisation',
@@ -193,10 +197,11 @@ export const useGlobalStore = defineStore('globalStore', {
                     new NumberCalculatorSubsection(
                         'nombre d’heures',
                         0,
-                    ).setAMultiplier(
-                        1,
-                        'Coût horaire [texte à valider, connection avec les choix précédent aussi]'
-                    )
+                    ).setAMultiplier({
+                        value: 1,
+                        text: 'Coût horaire [texte à valider, connection avec les choix précédent aussi]',
+                        isEditable: true,
+                    })
                 ),
                 // ----------
 
@@ -209,22 +214,19 @@ export const useGlobalStore = defineStore('globalStore', {
                     new NumberCalculatorSubsection(
                         "nombre d’occurences",
                     ).setAMultiplier(
-                        150,
-                        "Coût horaire [texte à valider, connection avec les choix précédent aussi]"
+                        {value: 150, text: "Coût horaire"}
                     ),
                 ).addSubSection(
                     new NumberCalculatorSubsection(
                         "nombre d’occurences",
                     ).setAMultiplier(
-                        500,
-                        "Évènement avec préparation"
+                        {value: 500, text: "Évènement avec préparation"}
                     ),
                 ).addSubSection(
                     new NumberCalculatorSubsection(
                         "nombre d’occurences",
                     ).setAMultiplier(
-                        250,
-                        "Évènement sans préparation"
+                        {value: 250, text: "Évènement sans préparation"}
                     ),
                 ),
                 // ----------
@@ -238,8 +240,10 @@ export const useGlobalStore = defineStore('globalStore', {
                     new NumberCalculatorSubsection(
                         "nombre d’incidences",
                     ).setAMultiplier(
-                        30,
-                        "Coût forfait text [texte à valider, connection avec les choix précédent aussi]"
+                        {
+                            value: 30,
+                            text: "Coût forfait text [texte à valider, connection avec les choix précédent aussi]"
+                        }
                     ),
                 )
                 // ----------
