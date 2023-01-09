@@ -3,10 +3,10 @@
       class="app-value-string"
       :placeholder="placeholder"
       :style="{
-        width: `${stringLength - 1}ch`,
+        width: `${stringLength}ch`,
       }"
-      v-model="content"
-      @input="handleInput"
+      :value="value"
+      @input="$emit('update:value', $event.target.value)"
   />
 </template>
 
@@ -21,7 +21,7 @@ export default defineComponent({
 
   props: {
     value: {
-      // required: true,
+      required: true,
       type: String,
     },
     placeholder: {
@@ -30,23 +30,11 @@ export default defineComponent({
     },
   },
 
-  data() {
-    return {
-      content: this.value
-    }
-  },
-
-  methods: {
-    handleInput($event: any) {
-      this.$emit('input', this.content)
-    }
-  },
-
   computed: {
     stringLength(): number {
-      if( !this.content ) return this.placeholder.length
-      if(this.content.length < 1) return this.placeholder.length
-      return this.content.length
+      if( !this.value ) return this.placeholder.length
+      if(this.value.length < 1) return this.placeholder.length
+      return this.value.length
     }
   }
 
@@ -56,5 +44,6 @@ export default defineComponent({
 <style lang="scss" scoped>
 .v-content-editable {
   display: inline;
+  white-space: normal;
 }
 </style>

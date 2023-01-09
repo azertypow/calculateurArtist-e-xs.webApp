@@ -94,7 +94,7 @@
       <div class="app-g">
         <div class="app-g__coll-2-12"></div>
         <div class="app-g__coll-6-12">
-          <p>(ci-après «&nbsp;<input class="app-value-string" placeholder="Nom de la structure" v-model="contractStore.structure_name" @input="updateWidth"/>&nbsp;»)
+          <p>(ci-après «&nbsp;<content-editable placeholder="Nom de la structure" :value="contractStore.structure_name" @update:value="contractStore.structure_name = $event"/>&nbsp;»)
           <br>représenté par:</p>
         </div>
       </div>
@@ -171,15 +171,6 @@ export default defineComponent({
       contractStore: useContractStore() as IStateContractStore,
     }
   },
-
-  methods: {
-    updateWidth(e: Event) {
-      if( !(e.target instanceof HTMLInputElement) ) return
-      // console.log(e.target.value)
-      e.target.style.width = `${e.target.value.length}ch`
-    }
-  }
-
 });
 </script>
 
