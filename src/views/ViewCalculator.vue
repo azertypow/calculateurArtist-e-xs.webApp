@@ -50,7 +50,7 @@
         <div class="v-view-calculator__result__result-container app-g__coll-6-12 app-with-gutter"
         >
           <div v-if="total>0">resultat: {{total}}.— CHF
-            <div class="v-view-calculator__result__option">collectif d'artiste?
+            <div class="v-view-calculator__result__option">Collectif d'artiste?
               <div
                   class="app-button--toggle"
                   @click="globalStore.isACollective = !globalStore.isACollective"

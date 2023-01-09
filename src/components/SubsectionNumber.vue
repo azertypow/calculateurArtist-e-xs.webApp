@@ -16,7 +16,7 @@
         <div
             v-if="multiplier.unit === 'CHF'"
         >CHF</div>
-        <input  class="app-g__coll-6-12 app-with-gutter app-number-value"
+        <input  class="app-g__coll-6-12 app-with-gutter app-value-number"
                 v-model.number="multiplier.value"
                 type="number"
                 min="0"
@@ -35,7 +35,7 @@
     >
       <div class="app-g__coll-2-12 app-with-gutter"></div>
       <div class="app-g__coll-4-12 app-with-gutter" >
-        <span v-if="numberSubsection.hasMultiplier && numberSubsection.text.length > 0" >↳ </span>{{ numberSubsection.text }}
+        <span v-if="numberSubsection.hasMultiplier && numberSubsection.text" >↳ </span>{{ numberSubsection.text }}
       </div>
       <div class="app-g__coll-6-12" >
         <app-number-value

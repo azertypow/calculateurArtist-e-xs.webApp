@@ -12,6 +12,7 @@ import {conditionalLogicSection_4} from "./conditionalLogicSection_4";
 import {conditionalLogicSection_3_option_1} from "./conditionalLogicSection_3_option_1";
 import {conditionalLogicSection_3_option_2} from "./conditionalLogicSection_3_option_2";
 import {conditionalLogicSection_3_option_3} from "./conditionalLogicSection_3_option_3";
+import {conditionalLogicSection_8} from "./conditionalLogicSection_8";
 
 const calculatorSection_1 = new OptionCalculatorSection(
     1,
@@ -103,7 +104,7 @@ export const useGlobalStore = defineStore('globalStore', {
                 // ----------
                 new NumberCalculatorSection(
                     4,
-                    "Durée de l'exposition (en mois)",
+                    "Durée de l'exposition",
                     false,
                     'Montant forfaitaire supplémentaire par mois au-delà du premier mois',
                 ).addSubSection(
@@ -178,13 +179,15 @@ export const useGlobalStore = defineStore('globalStore', {
                     'Per Diem',
                 ).addSubSection(
                     new NumberCalculatorSubsection(
-                        'Per Diem\n',
+                        "Nombre de jours",
                         0,
-                    )
-                ).addSubSection(
-                    new NumberCalculatorSubsection(
-                        "Nombre d'heures"
-                    )
+                        'jours',
+                    ).setAMultiplier({
+                        value: 50,
+                        text: 'Montant du pier diem: ',
+                        unit: 'CHF',
+                        status: 'info',
+                    }),
                 ),
                 // ----------
 
@@ -193,14 +196,17 @@ export const useGlobalStore = defineStore('globalStore', {
                 new NumberCalculatorSection(
                     7,
                     'Honoraires de montage et transport',
+                    false,
+                    "recommandation de 60 CHF/h, minimum 23 CHF/h",
                 ).addSubSection(
                     new NumberCalculatorSubsection(
                         'nombre d’heures',
                         0,
                     ).setAMultiplier({
-                        value: 1,
-                        text: 'Coût horaire [texte à valider, connection avec les choix précédent aussi]',
+                        value: 60,
+                        text: 'Coût horaire',
                         isEditable: true,
+                        unit: 'heures',
                     })
                 ),
                 // ----------
@@ -209,24 +215,22 @@ export const useGlobalStore = defineStore('globalStore', {
                 // ----------
                 new NumberCalculatorSection(
                     8,
-                    "Forfait par performance",
+                    "Évenement.s et préparation",
                 ).addSubSection(
                     new NumberCalculatorSubsection(
                         "nombre d’occurences",
-                    ).setAMultiplier(
-                        {value: 150, text: "Coût horaire"}
-                    ),
+                    ).setAMultiplier({
+                        value: new ConditionalValueFromSubsectionOption([
+                            calculatorSection_1,
+                        ], () => conditionalLogicSection_8(calculatorSection_1)),
+                        text: "Evénement avec préparation",
+                        unit: 'CHF',
+                    }),
                 ).addSubSection(
                     new NumberCalculatorSubsection(
                         "nombre d’occurences",
                     ).setAMultiplier(
                         {value: 500, text: "Évènement avec préparation"}
-                    ),
-                ).addSubSection(
-                    new NumberCalculatorSubsection(
-                        "nombre d’occurences",
-                    ).setAMultiplier(
-                        {value: 250, text: "Évènement sans préparation"}
                     ),
                 ),
                 // ----------
@@ -236,13 +240,15 @@ export const useGlobalStore = defineStore('globalStore', {
                 new NumberCalculatorSection(
                     9,
                     "Forfait texte / 1000 frappes",
+                    false,
+                    'source?'
                 ).addSubSection(
                     new NumberCalculatorSubsection(
                         "nombre d’incidences",
                     ).setAMultiplier(
                         {
                             value: 30,
-                            text: "Coût forfait text [texte à valider, connection avec les choix précédent aussi]"
+                            text: "Coût forfait text"
                         }
                     ),
                 )

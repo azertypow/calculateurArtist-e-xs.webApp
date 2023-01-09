@@ -9,7 +9,7 @@ export function conditionalLogicSection_4(
         case "01":
             switch (calculatorSection_2._value?.uniqueID) {
                 case "01": return 125
-                case "02": return 62.5
+                case "02": return 65
                 case "03": return 25
             }
             break;

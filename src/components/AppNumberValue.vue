@@ -10,7 +10,7 @@
         class="v-app-number-value__device"
     >CHF</div>
     <input
-        class="app-number-value"
+        class="app-value-number"
         type="number"
         v-model="numberSubsection.value"
         :min="numberSubsection.min"
