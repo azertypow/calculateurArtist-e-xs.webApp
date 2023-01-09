@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "Suisse_Intl";
+  font-style: normal;
+  src: url('./public/fonts/SuisseIntl/SuisseIntl-Regular-WebXL.woff2') format('woff2'), url('./public/fonts/SuisseIntl/SuisseIntl-Regular-WebXL.woff') format('woff');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Suisse_Intl";
+  font-style: normal;
+  src: url('./public/fonts/SuisseIntl/SuisseIntl-Black-WebXL.woff2') format('woff2'), url('./public/fonts/SuisseIntl/SuisseIntl-Black-WebXL.woff') format('woff');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Suisse_Mono";
+  font-style: normal;
+  src: url('./public/fonts/SuisseIntl-mono/SuisseIntlMono-Regular-WebXL.woff2') format('woff2'), url('./public/fonts/SuisseIntl-mono/SuisseIntlMono-Regular-WebXL.woff') format('woff');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Christiana_bold";
+  font-style: normal;
+  src: url('./public/fonts/Christiana-Bold.woff') format('woff');
+  font-weight: 400;
+}

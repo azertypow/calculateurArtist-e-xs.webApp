@@ -12,6 +12,8 @@ export interface IStateContractStore {
     user_firstname: string
     user_name: string
     user_status: string
+
+    info_date: string,
 }
 
 export const useContractStore = defineStore('contractStore', {
@@ -27,6 +29,7 @@ export const useContractStore = defineStore('contractStore', {
             user_firstname: '',
             user_name: '',
             user_status: '',
+            info_date: '',
         } satisfies IStateContractStore
     },
 })

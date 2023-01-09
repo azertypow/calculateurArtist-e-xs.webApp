@@ -1,12 +1,12 @@
 <template>
   <input
-      class="app-value-string"
+      class="v-content-editable app-value-string"
       :placeholder="placeholder"
       :style="{
         width: `${stringLength}ch`,
       }"
       :value="value"
-      @input="$emit('update:value', $event.target.value)"
+      @input="inputUpdate($event)"
   />
 </template>
 
@@ -30,6 +30,12 @@ export default defineComponent({
     },
   },
 
+  methods: {
+    inputUpdate(e: Event) {
+      if(e.target instanceof HTMLInputElement) this.$emit('update:value', e.target.value)
+    }
+  },
+
   computed: {
     stringLength(): number {
       if( !this.value ) return this.placeholder.length
@@ -45,5 +51,6 @@ export default defineComponent({
 .v-content-editable {
   display: inline;
   white-space: normal;
+  font-family: Suisse_Mono, monospace;
 }
 </style>

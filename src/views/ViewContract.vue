@@ -149,6 +149,10 @@
 
     </div>
 
+    <div class="v-view-contract__section">
+      <app-contract-content/>
+    </div>
+
 
   </div>
 </template>
@@ -160,10 +164,11 @@ import {useGlobalStore} from "../stores/globalStore";
 import {useContractStore} from "../stores/contractStore";
 import type {IStateContractStore} from "../stores/contractStore";
 import ContentEditable from "../components/ContentEditable.vue";
+import AppContractContent from "../components/AppContractContent.vue";
 
 export default defineComponent({
   name: 'ViewContract',
-  components: {ContentEditable, AppNav},
+  components: {AppContractContent, ContentEditable, AppNav},
 
   data() {
     return {
@@ -199,13 +204,5 @@ h2 {
 div > input,
 div > .app-button--check {
   margin-bottom: 1rem !important;
-}
-
-p {
-  input {
-    display: inline !important;
-    font-family: monospace !important;
-    width: auto;
-  }
 }
 </style>
