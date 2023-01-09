@@ -658,6 +658,7 @@
 import {defineComponent} from 'vue';
 import ContentEditable from "./ContentEditable.vue";
 import {useContractStore} from "../stores/contractStore";
+import type {IStateContractStore} from "../stores/contractStore";
 
 export default defineComponent({
   name: 'AppContractContent',
@@ -665,7 +666,7 @@ export default defineComponent({
 
   data() {
     return {
-      contractStore: useContractStore()
+      contractStore: useContractStore() as IStateContractStore
     }
   }
 
