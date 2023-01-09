@@ -150,7 +150,16 @@
     </div>
 
     <div class="v-view-contract__section">
-      <app-contract-content/>
+      <div
+          class="app-g"
+      >
+        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-10-12">
+          <app-contract-content/>
+        </div>
+        <div class="app-g__coll-2-12">
+        </div>
+      </div>
     </div>
 
 
