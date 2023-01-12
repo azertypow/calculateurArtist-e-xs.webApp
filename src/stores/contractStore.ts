@@ -6,7 +6,7 @@ export interface IStateContractStore {
     with_production: boolean
     structure_name: string
     structure_street: string
-    structure_number: number
+    structure_number: string
     structure_city: string
     structure_country: string
 
@@ -26,7 +26,7 @@ export const useContractStore = defineStore('contractStore', {
             with_production: true,
             structure_name: '',
             structure_street: '',
-            structure_number: NaN,
+            structure_number: '',
             structure_city: '',
             structure_country: '',
             user_firstname: '',

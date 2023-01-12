@@ -63,8 +63,10 @@
         >
           <input
               class="app-value-string"
-              v-model="contractStore.structure_street"
+              v-model.number="contractStore.structure_number"
               placeholder="Num."
+              type="number"
+              min="1"
           >
         </div>
       </div>

@@ -8,14 +8,14 @@
           <li>1	Définitions</li>
           <li>2	Préambule</li>
           <li>3	Objet</li>
-          <li>3.1	[Exposition]</li>
-          <li>3.2	[Production]</li>
+          <li :class="{'app-font-remove': contractStore.contract_exposition === false}" >3.1	[Exposition]</li>
+          <li :class="{'app-font-remove': contractStore.with_production === false}">3.2	[Production]</li>
         </ul>
       </li>
 
       <li>II. Obligations de <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name" @update:value="contractStore.structure_name = $event"/>
         <ul>
-          <li>4 [Exposition]</li>
+          <li :class="{'app-font-remove': contractStore.contract_exposition === false}" >4 [Exposition]</li>
           <li>4.1 Lieu d’exposition</li>
           <li>4.2 Prise en charge des frais</li>
           <li :class="{'app-font-remove': contractStore.with_production === false}">4.3 Assurance des œuvres</li>
@@ -29,7 +29,7 @@
 
       <li>III. Obligations de l’Artiste
         <ul>
-          <li>6 [Exposition]</li>
+          <li :class="{'app-font-remove': contractStore.contract_exposition === false}" >6 [Exposition]</li>
           <li>6.1 Obligation de renseigner</li>
           <li>6.2 Collaboration de l’Artiste</li>
           <li>6.3 Utilisation pour ses propres besoins</li>
@@ -145,7 +145,7 @@
 
       <h3>Objet</h3>
 
-      <h4 :class="{'app-font-remove': contractStore.contract === 'd\'exposition'}">[Exposition]</h4>
+      <h4 :class="{'app-font-remove': !contractStore.contract_exposition}">[Exposition]</h4>
       <p>
         <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                           @update:value="contractStore.structure_name = $event"/>
@@ -187,7 +187,7 @@
       <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                         @update:value="contractStore.structure_name = $event"/>
 
-      [Exposition]
+      <h4 :class="{'app-font-remove': contractStore.contract_exposition === false}" >[Exposition]</h4>
 
       Lieu d’exposition
 
@@ -289,7 +289,7 @@
 
       Obligations de l’Artiste
 
-      [Exposition]
+      <h4 :class="{'app-font-remove': contractStore.contract_exposition === false}" >[Exposition]</h4>
 
       L’Artiste s’engage à mettre les Œuvres à disposition de
       <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
@@ -488,7 +488,7 @@
 
       <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                         @update:value="contractStore.structure_name = $event"/>
-      rembourse à l’Artiste les dépenses nécessaires en vue de l’[EXPOSITION]/[PRODUCTION] (frais de voyage, de
+      rembourse à l’Artiste les dépenses nécessaires en vue de <span :class="{'app-font-remove': contractStore.contract_exposition === false}" >l’[EXPOSITION]</span><span :class="{'app-font-remove': !contractStore.contract_exposition || !contractStore.contract_public}" >/</span>[PRODUCTION] (frais de voyage, de
       transport, de logement, de repas, etc.), sur présentation des justificatifs.
 
       [OU]
