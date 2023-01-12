@@ -1,7 +1,8 @@
 import { defineStore } from 'pinia'
 
 export interface IStateContractStore {
-    contract: "d\'exposition" | 'présentation publique'
+    contract_exposition: boolean
+    contract_public: boolean
     with_production: boolean
     structure_name: string
     structure_street: string
@@ -20,7 +21,8 @@ export interface IStateContractStore {
 export const useContractStore = defineStore('contractStore', {
     state: function () {
         return {
-            contract: "d\'exposition",
+            contract_exposition: false,
+            contract_public: false,
             with_production: true,
             structure_name: '',
             structure_street: '',

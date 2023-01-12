@@ -11,9 +11,9 @@
         <div class="app-g__coll-4-12 app-with-gutter"
         >Contrat</div>
         <div class="app-g__coll-6-12 app-with-gutter">
-          <div class="app-button--check" :class="{'is-active': contractStore.contract === 'd\'exposition'}"         @click="contractStore.contract = 'd\'exposition'">d'exposition</div>
+          <div class="app-button--check" :class="{'is-active': contractStore.contract_exposition}" @click="contractStore.contract_exposition = !contractStore.contract_exposition">d'exposition</div>
           <div class="app-with-bottom-spacing" style="padding-left: 3rem">et/ou</div>
-          <div class="app-button--check" :class="{'is-active': contractStore.contract === 'présentation publique'}" @click="contractStore.contract = 'présentation publique'">présentation publique</div>
+          <div class="app-button--check" :class="{'is-active': contractStore.contract_public}" @click="contractStore.contract_public = !contractStore.contract_public">présentation publique</div>
           <div>
             <select v-model="contractStore.with_production" >
               <option :value="true">avec</option>
