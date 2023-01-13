@@ -180,6 +180,9 @@ button,
 }
 
 .app-button--check {
+  cursor: pointer;
+  user-select: none;
+
   &:before {
     content: '';
     display: inline-block;
@@ -201,6 +204,20 @@ button,
   }
 }
 
+.app-object-list {
+  border: solid;
+  padding: 1rem;
+  border-radius: 2rem;
+
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  >*:last-child {
+    margin-bottom: 0;
+  }
+}
+
 select,
 .app-select-style {
   all: unset;
@@ -217,4 +234,16 @@ select,
 .app-font-remove {
   text-decoration: line-through;
   opacity: .5;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

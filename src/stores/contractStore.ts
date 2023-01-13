@@ -16,6 +16,24 @@ export interface IStateContractStore {
 
     info_date: string,
     info_localisation: string,
+
+    entitled: string
+
+    option_honoraryAchievement: boolean
+    option_materials: boolean
+    option_perDiem: boolean
+    option_dailyTax: boolean
+    option_transportation: boolean
+    option_editors: boolean
+    option_toBeCompletedIfNecessary: boolean
+    option_toBeCompletedIfNecessary_content: string
+
+    objectList: {
+        year: string
+        dimensions: string
+        material: string
+        assurance: string
+    }[]
 }
 
 export const useContractStore = defineStore('contractStore', {
@@ -34,6 +52,23 @@ export const useContractStore = defineStore('contractStore', {
             user_status: '',
             info_date: '',
             info_localisation: '',
+            entitled: '',
+            option_honoraryAchievement: false,
+            option_materials: false,
+            option_perDiem: false,
+            option_dailyTax: false,
+            option_transportation: false,
+            option_editors: false,
+            option_toBeCompletedIfNecessary: false,
+            option_toBeCompletedIfNecessary_content: '',
+            objectList: [
+                {
+                    year: '',
+                    dimensions: '',
+                    material: '',
+                    assurance: '',
+                }
+            ]
         } satisfies IStateContractStore
     },
 })
