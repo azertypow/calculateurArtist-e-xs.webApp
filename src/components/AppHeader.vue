@@ -1,8 +1,11 @@
 <template>
   <div class="v-app-header">
-    <div class="v-app-header__title">
-      <h1>CONTRAT-MODÈLE ET RECOMMANDATIONS DE RÉMUNÉRATION POUR UNE&nbsp;EXPOSITION</h1>
+    <div class="v-app-header__top" >
+      <div class="v-app-header__title">
+        <h1>CONTRAT-MODÈLE ET RECOMMANDATIONS DE RÉMUNÉRATION POUR UNE&nbsp;EXPOSITION</h1>
+      </div>
     </div>
+    <app-toggle-header></app-toggle-header>
     <div class="v-app-header__nav-box" >
       <app-nav></app-nav>
     </div>
@@ -12,15 +15,28 @@
 <script lang="ts">
 import {defineComponent} from 'vue';
 import AppNav from "./AppNav.vue";
+import AppToggleHeader from "./AppToggleHeader.vue";
 
 export default defineComponent({
   name: 'AppHeader',
-  components: {AppNav},
+  components: {AppNav, AppToggleHeader},
 
 });
 </script>
 
 <style lang="scss" scoped>
+.v-app-header {
+  padding-top: 13rem;
+}
+
+.v-app-header__top {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--app-color-main);
+}
+
 .v-app-header__title {
   border-bottom: solid 1px var(--app-color-border);
   text-align: center;

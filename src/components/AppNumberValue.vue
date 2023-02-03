@@ -18,11 +18,11 @@
     <div
         class="v-app-number-value__end"
         v-if="numberSubsection.unit === 'CHF'"
-    >.—</div>
+    >&nbsp;&nbsp;&nbsp;.—</div>
     <div
         v-else-if="numberSubsection.unit"
         class="v-app-number-value__device"
-    >{{numberSubsection.unit}}</div>
+    >&nbsp;&nbsp;&nbsp;{{numberSubsection.unit}}</div>
   </div>
 </template>
 

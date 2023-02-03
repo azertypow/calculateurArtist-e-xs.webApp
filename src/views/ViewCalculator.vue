@@ -16,7 +16,7 @@
         <div
             class="v-view-calculator__footer__content"
         >
-          <div>resultat: {{total}}.— CHF</div>
+          <div>résultat: {{total}}.— CHF</div>
         </div>
       </div>
       <div
@@ -48,7 +48,7 @@
         <div class="app-g__coll-4-12 app-with-gutter" >TOTAL</div>
         <div class="v-view-calculator__result__result-container app-g__coll-6-12 app-with-gutter"
         >
-          <div v-if="total>0">resultat: {{total}}.— CHF
+          <div v-if="total>0">résultat: {{total}}.— CHF
             <div class="v-view-calculator__result__option">Collectif d'artiste?
               <div
                   class="app-button--toggle"

@@ -23,7 +23,7 @@
         >
         <div
             v-if="multiplier.unit === 'CHF'"
-        >.—</div>
+        >&nbsp;&nbsp;&nbsp;.—</div>
         <div
             v-else-if="multiplier.unit"
         >{{numberSubsection.unit}}</div>

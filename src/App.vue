@@ -19,10 +19,12 @@
 <script lang="ts">
 import {defineComponent} from 'vue';
 import AppHeader from "./components/AppHeader.vue";
+import AppToggleHeader from "./components/AppToggleHeader.vue";
 
 export default defineComponent({
   name: 'App',
   components: {
+    AppToggleHeader,
     AppHeader,
   },
 
