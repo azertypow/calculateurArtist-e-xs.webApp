@@ -17,7 +17,7 @@
             <select v-model="contractStore.with_production" >
               <option :value="true">avec</option>
               <option :value="false">sans</option>
-            </select> production d'œvre(s)
+            </select> production d’œvre(s)
           </div>
 
         </div>

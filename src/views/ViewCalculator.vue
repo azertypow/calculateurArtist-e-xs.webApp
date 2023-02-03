@@ -29,9 +29,6 @@
               'is-empty': section.status === 'empty',
             }"
         ><span
-            class="v-view-calculator__footer__status__separator"
-            v-if="index > 0"
-        > |&nbsp;</span><span
             class="v-view-calculator__footer__status__items__icon"
         ></span>&nbsp;{{section.title}}</span>
       </div>
@@ -49,7 +46,7 @@
         <div class="v-view-calculator__result__result-container app-g__coll-6-12 app-with-gutter"
         >
           <div v-if="total>0">résultat: {{total}}.— CHF
-            <div class="v-view-calculator__result__option">Collectif d'artiste?
+            <div class="v-view-calculator__result__option">Collectif d’artiste?
               <div
                   class="app-button--toggle"
                   @click="globalStore.isACollective = !globalStore.isACollective"

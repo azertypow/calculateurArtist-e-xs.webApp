@@ -160,7 +160,7 @@
         <content-editable placeholder="date du contrat" :value="contractStore.info_date"
                           @update:value="contractStore.info_date = $event"/>
         au
-        <content-editable placeholder="lieu de l'exposition" :value="contractStore.info_localisation"
+        <content-editable placeholder="lieu de l’exposition" :value="contractStore.info_localisation"
                           @update:value="contractStore.info_localisation = $event"/>
         .
       </p>

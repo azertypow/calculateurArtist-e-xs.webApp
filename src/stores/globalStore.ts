@@ -104,7 +104,7 @@ export const useGlobalStore = defineStore('globalStore', {
                 // ----------
                 new NumberCalculatorSection(
                     4,
-                    "Durée de l'exposition",
+                    "Durée de l’exposition",
                     false,
                     'Montant forfaitaire supplémentaire par mois au-delà du premier mois',
                 ).addSubSection(
@@ -141,7 +141,7 @@ export const useGlobalStore = defineStore('globalStore', {
                     'Honoraires de réalisation (si réalisé par l’artiste)',
                 ).addSubSection(
                     new NumberCalculatorSubsection(
-                        "nombre d'heures",
+                        "nombre d’heures",
                         0,
                         "heures",
                     ).setAMultiplier({
@@ -263,7 +263,7 @@ export const useGlobalStore = defineStore('globalStore', {
                         subsections: [
                             {
                                 type: 'checkbox',
-                                name: "d'exposition",
+                                name: "d’exposition",
                                 value: false,
                             },
                             {
@@ -273,7 +273,7 @@ export const useGlobalStore = defineStore('globalStore', {
                             },
                             {
                                 type: 'options',
-                                name: "production d'œvre(s)",
+                                name: "production d’œvre(s)",
                                 options: [
                                     'avec',
                                     'sans',
