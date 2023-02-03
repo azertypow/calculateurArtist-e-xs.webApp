@@ -7,7 +7,11 @@
     <main
         class="v-app__main"
     >
-      <RouterView />
+      <router-view v-slot="{ Component }">
+        <transition name="vue-transition-page">
+          <component :is="Component" />
+        </transition>
+      </router-view>
     </main>
   </div>
 </template>
