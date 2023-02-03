@@ -1,21 +1,27 @@
 <template>
   <div class="v-app-header">
-    <h1>CONTRAT-MODÈLE ET RECOMMANDATIONS DE RÉMUNÉRATION POUR UNE&nbsp;EXPOSITION</h1>
+    <div class="v-app-header__title">
+      <h1>CONTRAT-MODÈLE ET RECOMMANDATIONS DE RÉMUNÉRATION POUR UNE&nbsp;EXPOSITION</h1>
+    </div>
+    <div class="v-app-header__nav-box" >
+      <app-nav></app-nav>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import {defineComponent} from 'vue';
+import AppNav from "./AppNav.vue";
 
 export default defineComponent({
   name: 'AppHeader',
-  components: {},
+  components: {AppNav},
 
 });
 </script>
 
 <style lang="scss" scoped>
-.v-app-header {
+.v-app-header__title {
   border-bottom: solid 1px var(--app-color-border);
   text-align: center;
   box-sizing: border-box;
@@ -24,6 +30,16 @@ export default defineComponent({
 
   h1 {
     margin: 0;
+  }
+}
+
+.v-app-header__nav-box {
+  position: relative;
+  transform: translate3d(0, 0, 0);
+  transition: transform 1s ease-in-out;
+
+  .is-home & {
+    transform: translate3d(0, calc( -10rem + 50vh - 50% ), 0);
   }
 }
 </style>

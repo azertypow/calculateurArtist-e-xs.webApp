@@ -1,6 +1,5 @@
 <template>
-  <div class="v-view-contract">
-    <app-nav></app-nav>
+  <div class="v-view-contract app-view">
     <h2>GÉNÉRATEUR DE CONTRAT-MODÈLE POUR UNE EXPOSITION</h2>
 
     <div class="v-view-contract__section">

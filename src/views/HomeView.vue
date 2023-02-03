@@ -1,6 +1,5 @@
 <template>
   <div class="v-home-view">
-    <app-nav></app-nav>
   </div>
 </template>
 

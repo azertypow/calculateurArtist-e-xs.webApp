@@ -1,6 +1,5 @@
 <template>
-  <div class="v-view-calculator">
-    <app-nav></app-nav>
+  <div class="v-view-calculator app-view">
     <h2>RECOMMANDATIONS DE RÉMUNÉRATION POUR UNE EXPOSITION</h2>
     <app-section
         v-for="section of sections"

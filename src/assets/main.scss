@@ -247,3 +247,10 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+
+.app-view {
+  > *:first-child {
+    margin-top: 0;
+  }
+}

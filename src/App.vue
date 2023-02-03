@@ -1,5 +1,5 @@
 <template>
-  <div class="v-app">
+  <div class="v-app" :class="{'is-home': isHome}">
     <header>
       <app-header></app-header>
     </header>
@@ -21,6 +21,12 @@ export default defineComponent({
   components: {
     AppHeader,
   },
+
+  computed: {
+    isHome(): boolean {
+      return this.$route.name === 'home'
+    }
+  }
 
 });
 </script>
