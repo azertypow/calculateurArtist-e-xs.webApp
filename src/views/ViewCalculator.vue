@@ -7,6 +7,32 @@
     ></app-section>
 
     <div
+        class="v-view-calculator__result"
+    >
+      <div
+          class="app-g"
+          ref="total"
+      >
+        <div class="app-g__coll-2-12 app-with-gutter"></div>
+        <div class="app-g__coll-4-12 app-with-gutter" >TOTAL</div>
+        <div class="v-view-calculator__result__result-container app-g__coll-6-12 app-with-gutter"
+        >
+          <div v-if="total>0">résultat: {{total}}.— CHF
+            <div class="v-view-calculator__result__option">Collectif d’artiste?
+              <div
+                  class="app-button--toggle"
+                  @click="globalStore.isACollective = !globalStore.isACollective"
+                  :class="{'is-active': globalStore.isACollective}"
+              ></div>
+            </div>
+          </div>
+          <h6 v-else>Complétez l’ensemble des options pour afficher le résultat</h6>
+        </div>
+      </div>
+
+    </div>
+
+    <div
         class="v-view-calculator__footer"
     >
       <div
@@ -32,32 +58,6 @@
             class="v-view-calculator__footer__status__items__icon"
         ></span>&nbsp;{{section.title}}</span>
       </div>
-    </div>
-
-    <div
-        class="v-view-calculator__result"
-    >
-      <div
-          class="app-g"
-          ref="total"
-      >
-        <div class="app-g__coll-2-12 app-with-gutter"></div>
-        <div class="app-g__coll-4-12 app-with-gutter" >TOTAL</div>
-        <div class="v-view-calculator__result__result-container app-g__coll-6-12 app-with-gutter"
-        >
-          <div v-if="total>0">résultat: {{total}}.— CHF
-            <div class="v-view-calculator__result__option">Collectif d’artiste?
-              <div
-                  class="app-button--toggle"
-                  @click="globalStore.isACollective = !globalStore.isACollective"
-                  :class="{'is-active': globalStore.isACollective}"
-              ></div>
-            </div>
-          </div>
-          <h6 v-else>Complétez l’ensemble des options pour afficher le résultat</h6>
-        </div>
-      </div>
-
     </div>
 
   </div>
