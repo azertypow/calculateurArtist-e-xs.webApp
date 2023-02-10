@@ -98,6 +98,7 @@ export default defineComponent({
   padding: 1rem 3rem 1rem 1rem;
   border-radius: 2rem;
   position: relative;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .25);
 }
 
 .v-app-checkbox__description {
