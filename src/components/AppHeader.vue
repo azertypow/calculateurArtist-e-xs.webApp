@@ -51,13 +51,14 @@ export default defineComponent({
 
 .v-app-header__nav-box {
   position: relative;
-  transform: translate3d(0, 0, 0);
-  transition: transform .75s .25s ease-in-out;
   background: var(--app-color-main);
   z-index: 10;
+  transition: transform .75s .25s ease-in-out;
+  transform: translate3d(0, 0, 0);
 
   .is-home & {
     transform: translate3d(0, calc( -10rem + 50vh - 50% ), 0);
+    transition: none;
   }
 }
 </style>
