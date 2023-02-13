@@ -10,6 +10,12 @@ const router = createRouter({
         behavior: 'smooth',
       })
     }
+
+    else {
+      return {
+        top: 0,
+      }
+    }
   },
   routes: [
     {

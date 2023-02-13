@@ -12,6 +12,14 @@
   &.app-g--rtl {
     justify-content: right;
   }
+
+  &.app-g--with-margin-top {
+    margin-top: 1rem;
+  }
+
+  &.app-g--with-margin-top-xl {
+    margin-top: 10rem;
+  }
 }
 
 .app-with-bottom-spacing {

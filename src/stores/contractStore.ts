@@ -15,7 +15,7 @@ export interface IStateContractStore {
     user_status: string
 
 
-    artiste_structureType: 'artistSolo'|'artistGroup'|'collectif'
+    artiste_structureType: 'artistSolo'|'collectif'
     artiste_name: string
     artiste_nationality: string
     artiste_birth: string

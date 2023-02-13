@@ -8,21 +8,25 @@
           <li>1	Définitions</li>
           <li>2	Préambule</li>
           <li>3	Objet</li>
-          <li :class="{'app-font-remove': contractStore.contract_exposition === false}" >3.1	[Exposition]</li>
-          <li :class="{'app-font-remove': contractStore.with_production === false}">3.2	[Production]</li>
+          <ul>
+            <li :class="{'app-font-remove': contractStore.contract_exposition === false}" >3.1	[Exposition]</li>
+            <li :class="{'app-font-remove': contractStore.with_production === false}">3.2	[Production]</li>
+          </ul>
         </ul>
       </li>
 
       <li>II. Obligations de <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name" @update:value="contractStore.structure_name = $event"/>
         <ul>
           <li :class="{'app-font-remove': contractStore.contract_exposition === false}" >4 [Exposition]</li>
-          <li>4.1 Lieu d’exposition</li>
-          <li>4.2 Prise en charge des frais</li>
-          <li :class="{'app-font-remove': contractStore.with_production === false}">4.3 Assurance des œuvres</li>
-          <li>4.4 Instructions de l’Artiste</li>
-          <li>4.5 Communication, publications et documentation</li>
-          <li>4.6 Transport</li>
-          <li>4.7 Montage et démontage</li>
+          <ul>
+            <li>4.1 Lieu d’exposition</li>
+            <li>4.2 Prise en charge des frais</li>
+            <li :class="{'app-font-remove': contractStore.with_production === false}">4.3 Assurance des œuvres</li>
+            <li>4.4 Instructions de l’Artiste</li>
+            <li>4.5 Communication, publications et documentation</li>
+            <li>4.6 Transport</li>
+            <li>4.7 Montage et démontage</li>
+          </ul>
           <li>5 [Production]</li>
         </ul>
       </li>
@@ -30,9 +34,11 @@
       <li>III. Obligations de l’Artiste
         <ul>
           <li :class="{'app-font-remove': contractStore.contract_exposition === false}" >6 [Exposition]</li>
-          <li>6.1 Obligation de renseigner</li>
-          <li>6.2 Collaboration de l’Artiste</li>
-          <li>6.3 Utilisation pour ses propres besoins</li>
+          <ul>
+            <li>6.1 Obligation de renseigner</li>
+            <li>6.2 Collaboration de l’Artiste</li>
+            <li>6.3 Utilisation pour ses propres besoins</li>
+          </ul>
           <li>7 [Production]</li>
         </ul>
       </li>
@@ -41,9 +47,11 @@
         <ul>
           <li>8 Obligation de renseigner</li>
           <li>9 Indemnisation forfaitaire ou cachet</li>
-          <li>9.1 Indemnisation calculée à l’heure</li>
-          <li>9.2 Vente des œuvres [OPTION EXPOSITION + VENTE]</li>
-          <li>9.3 Participation au prix de vente des œuvres [OPTION PARTICIPATION DE LA STRUCTURE AU PRIX DE VENTE]</li>
+          <ul>
+            <li>9.1 Indemnisation calculée à l’heure</li>
+            <li>9.2 Vente des œuvres [OPTION EXPOSITION + VENTE]</li>
+            <li>9.3 Participation au prix de vente des œuvres [OPTION PARTICIPATION DE LA STRUCTURE AU PRIX DE VENTE]</li>
+          </ul>
         </ul>
       </li>
 
@@ -51,7 +59,11 @@
         <ul>
           <li>10 Budget de production</li>
           <li>11 Participation aux frais accessoires</li>
-          <li>VI. Propriété intellectuelle</li>
+        </ul>
+      </li>
+
+      <li>VI. Propriété intellectuelle
+        <ul>
           <li>12 Crédit de production</li>
           <li>13 Droit d’auteur.ice.x</li>
         </ul>
@@ -70,30 +82,10 @@
           <li>17 Médiation</li>
           <li>18 Juridiction compétente
             <ul>
-              <li>Annexe I – Grille de rémunération</li>
+              <li><router-link to="/calculateur" >Annexe I – Grille de rémunération</router-link></li>
               <li><router-link to="#lite-des-oeuvres" >Annexe II – Liste des Œuvres</router-link></li>
             </ul>
           </li>
-          <li>1. Titre de l’œuvre :</li>
-          <li>Année de production :</li>
-          <li>Dimensions :</li>
-          <li>Matériaux :</li>
-          <li>Valeur d’assurance :</li>
-          <li>2. Titre de l’œuvre :</li>
-          <li>Année de production :</li>
-          <li>Dimensions :</li>
-          <li>Matériaux :</li>
-          <li>Valeur d’assurance :</li>
-          <li>3. Titre de l’œuvre :</li>
-          <li>Année de production :</li>
-          <li>Dimensions :</li>
-          <li>Matériaux :</li>
-          <li>Valeur d’assurance :</li>
-          <li>4. Titre de l’œuvre :</li>
-          <li>Année de production :</li>
-          <li>Dimensions :</li>
-          <li>Matériaux :</li>
-          <li>Valeur d’assurance :</li>
         </ul>
       </li>
 
@@ -120,6 +112,8 @@
         parties.
       </p>
 
+      <p style="color: red" >[AVEC OU SANS]</p>
+
       <p :class="{'app-font-remove': contractStore.with_production === false}">
         <strong>Production d’une Œuvre :</strong> Par Production d’une Œuvre, on entend dans le présent contrat aussi
         bien la création d’une Œuvre physique (peinture, sculpture, installation, etc.) que la conception et
@@ -145,8 +139,10 @@
 
       <h3>Objet</h3>
 
+
+<!--      :class="{'app-font-remove': !contractStore.contract_exposition}"-->
       <h4 :class="{'app-font-remove': !contractStore.contract_exposition}">[Exposition]</h4>
-      <p>
+      <p  :class="{'app-font-remove': !contractStore.contract_exposition}" >
         <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                           @update:value="contractStore.structure_name = $event"/>
         organise, en vue de la présentation publique d’une ou plusieurs Œuvres de l’Artiste, une exposition [INTITULEE
@@ -164,7 +160,7 @@
                           @update:value="contractStore.info_localisation = $event"/>
         .
       </p>
-      <p>
+      <p :class="{'app-font-remove': !contractStore.contract_exposition}" >
         L’Artiste accepte de participer à cette exposition et de mettre à disposition de
         <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                           @update:value="contractStore.structure_name = $event"/>
@@ -172,10 +168,12 @@
         publiquement à cette occasion.
       </p>
 
-      [ET/OU]
+      <p
+          :class="{'app-font-remove': !contractStore.contract_exposition && !contractStore.contract_public}"
+      >[ET/OU]</p>
 
-      <h4>[Production]</h4>
-      <p>
+      <h4 :class="{'app-font-remove': !contractStore.contract_public}" >[Production]</h4>
+      <p  :class="{'app-font-remove': !contractStore.contract_public}" >
         <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                           @update:value="contractStore.structure_name = $event"/>
         contribue à la production par l’Artiste d’une ou plusieurs œuvres en participant aux frais de production [ET/OU]
@@ -183,24 +181,28 @@
       </p>
 
 
-      Obligations de
+      <H2>Obligations de
       <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
-                        @update:value="contractStore.structure_name = $event"/>
+                        @update:value="contractStore.structure_name = $event"/></H2>
 
-      <h4 :class="{'app-font-remove': contractStore.contract_exposition === false}" >[Exposition]</h4>
+      <h3 :class="{'app-font-remove': contractStore.contract_exposition === false}" >[Exposition]</h3>
 
-      Lieu d’exposition
+      <h4 :class="{'app-font-remove': contractStore.contract_exposition === false}" >Lieu d’exposition</h4>
 
-      <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
-                        @update:value="contractStore.structure_name = $event"/>
-      s’engage à organiser [L’EXPOSITION / PRESENTATION PUBLIQUE / PROJET ARTISTIQUE] dans le lieu d’exposition suivant
-      : [NOM, ADRESSE], pour la durée prévue à cet effet.
+      <p>
+        <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
+                          @update:value="contractStore.structure_name = $event"/>
+        s’engage à organiser [L’EXPOSITION / PRESENTATION PUBLIQUE / PROJET ARTISTIQUE] dans le lieu d’exposition suivant
+        : [NOM, ADRESSE], pour la durée prévue à cet effet.
+      </p>
 
-      Si des autorisations sont nécessaires pour l’utilisation du lieu d’exposition ou pour l’exposition des Œuvres
-      elles-mêmes,
-      <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
-                        @update:value="contractStore.structure_name = $event"/>
-      s’engage à les acquérir en temps utile.
+      <p :class="{'app-font-remove': contractStore.contract_exposition === false}" >
+        Si des autorisations sont nécessaires pour l’utilisation du lieu d’exposition ou pour l’exposition des Œuvres
+        elles-mêmes,
+        <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
+                          @update:value="contractStore.structure_name = $event"/>
+        s’engage à les acquérir en temps utile.
+      </p>
 
       <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                         @update:value="contractStore.structure_name = $event"/>
@@ -742,7 +744,8 @@ p {
 
 .v-app-contract-content__content {
   .app-font-remove {
-    display: none;
+    //display: none;
+    color: coral;
   }
 }
 

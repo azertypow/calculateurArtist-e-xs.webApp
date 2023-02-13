@@ -24,7 +24,7 @@
       </div>
 
       <div
-          class="app-g app-with-bottom-spacing"
+          class="app-g app-g--with-margin-top-xl"
       >
         <div class="app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12 app-with-gutter"
@@ -75,11 +75,11 @@
         </div>
       </div>
 
-      <div class="app-g">
+      <div class="app-g app-g--with-margin-top">
         <div class="app-g__coll-2-12"></div>
         <div class="app-g__coll-6-12">
-          <p>(ci-après «&nbsp;<content-editable placeholder="Nom de la structure" :value="contractStore.structure_name" @update:value="contractStore.structure_name = $event"/>&nbsp;»)
-          <br>représenté par:</p>
+          <div>(ci-après «&nbsp;<content-editable placeholder="Nom de la structure" :value="contractStore.structure_name" @update:value="contractStore.structure_name = $event"/>&nbsp;»)
+          <br>représenté par:</div>
         </div>
       </div>
 
@@ -110,10 +110,10 @@
         </div>
       </div>
 
-      <div class="app-g">
+      <div class="app-g app-g--with-margin-top">
         <div class="app-g__coll-2-12"></div>
         <div class="app-g__coll-6-12">
-          <p>Agissant en qualité de</p>
+          <div>Agissant en qualité de</div>
         </div>
       </div>
 
@@ -132,16 +132,11 @@
       </div>
 
       <div
-          class="app-g"
+          class="app-g app-g--with-margin-top-xl"
       >
         <div class="app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12">
-          et
-            <select v-model="contractStore.artiste_structureType" >
-              <option value="artistSolo">L’artiste</option>
-              <option value="artistGroup">Les artistes</option>
-              <option value="collectif">Le collectif d’artistes</option>
-            </select>
+          <div>et L’artiste/Les artistes/Le collectif d’artistes</div>
         </div>
         <div class="app-g__coll-4-12 app-with-gutter"></div>
       </div>
@@ -310,5 +305,37 @@ h2 {
 div > input,
 div > .app-button--check {
   margin-bottom: 1rem !important;
+}
+</style>
+
+<style lang="scss">
+body {
+  counter-reset: subsection;
+}
+
+.v-app-contract-content {
+  counter-reset: sub_subsection;
+}
+
+.v-app-contract-content__content {
+  counter-reset: section;
+
+  h2::before {
+    counter-increment: section;
+    content: counter(section) ". ";
+    counter-reset: subsection;
+  }
+
+  h3::before {
+    counter-increment: subsection;
+    content: counter(subsection) ". ";
+    counter-reset: sub_subsection;
+  }
+
+  h4::before {
+    counter-increment: sub_subsection;
+    content: counter(subsection)" . "counter(sub_subsection);
+    margin-right: 1em;
+  }
 }
 </style>
