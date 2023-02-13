@@ -106,6 +106,8 @@ export default defineComponent({
   line-height: 2rem;
   font-size: 1.4rem;
   padding-left: 3rem;
+  margin-top: 1rem;
+  display: block;
 }
 
 .v-app-checkbox__info {

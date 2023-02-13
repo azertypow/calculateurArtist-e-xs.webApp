@@ -79,8 +79,8 @@ export default defineComponent({
 .v-subsection-option__info-value {
   padding-left: 4rem;
   margin-top: 1rem;
-  font-size: 1rem;
-  line-height: 1rem;
+  line-height: 2rem;
+  font-size: 1.4rem;
   font-weight: 400;
 }
 </style>
