@@ -28,24 +28,7 @@
       >
         <div class="app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12 app-with-gutter"
-        >Entre</div>
-      </div>
-      <div
-          class="app-g"
-      >
-        <div class="app-g__coll-2-12"></div>
-        <div class="app-g__coll-4-12 app-with-gutter"
-        >
-          <div class="app-select-style">la structure</div>
-        </div>
-        <div class="app-g__coll-4-12 app-with-gutter"
-        >
-          <input
-              class="app-value-string"
-              v-model="contractStore.structure_name"
-              placeholder="Nom de la structure"
-          >
-        </div>
+        >Entre la structure</div>
       </div>
       <div class="app-g">
         <div class="app-g__coll-2-12"></div>
