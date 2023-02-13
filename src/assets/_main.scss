@@ -63,6 +63,10 @@ h2 {
   font-family: Christiana_bold, serif;
 }
 
+h6 {
+  font-weight: 500;
+}
+
 button,
 .app-button {
   @extend .font-default;

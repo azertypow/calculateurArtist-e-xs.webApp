@@ -10,9 +10,6 @@
           :class="{'is-active': activated}"
       ></span><span class="v-app-checkbox__text"
     >{{ textValue }}
-      <template v-if="description">
-        <br><span class="v-app-checkbox__description" >{{description}}</span>
-      </template>
       <transition name="v-transition-fade">
         <span
             v-if="info && showInfo"
@@ -26,6 +23,9 @@
       >i</span>
     </span>
     </label>
+    <template v-if="description">
+      <span class="v-app-checkbox__description" >{{description}}</span>
+    </template>
   </div>
 </template>
 
@@ -86,6 +86,7 @@ export default defineComponent({
   border-radius: 2rem;
   margin-right: 1rem;
   box-shadow: inset 0 0 0 2px black;
+  flex-shrink: 0;
 
   &.is-active {
     box-shadow: inset 0 0 0 2px black, inset 0 0 0 5px var(--app-color-main);
@@ -104,6 +105,7 @@ export default defineComponent({
 .v-app-checkbox__description {
   line-height: 2rem;
   font-size: 1.4rem;
+  padding-left: 3rem;
 }
 
 .v-app-checkbox__info {

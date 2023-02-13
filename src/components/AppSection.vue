@@ -10,7 +10,10 @@
       <div
           class="app-g__coll-2-12"
       >
-        <div class="v-app-section__index">{{classifiedSection.value.index}}</div>
+        <div
+            :class="{'is-empty': classifiedSection.value.status === 'empty'}"
+            class="v-app-section__index"
+        >{{classifiedSection.value.index}}</div>
       </div>
 
       <div
@@ -105,7 +108,7 @@ export default defineComponent({
   //line-height:  1rem;
   position: absolute;
   top: 1rem;
-  right: 0;
+  right: 1rem;
 }
 
 .v-app-section__required-info__false {
@@ -113,7 +116,7 @@ export default defineComponent({
   line-height:  1rem;
   position: absolute;
   top: 2rem;
-  right: 0;
+  right: 1rem;
 }
 
 .v-app-section__index {
@@ -125,5 +128,9 @@ export default defineComponent({
   border-radius: 2rem;
   text-align: center;
   font-size: 1.5rem;
+
+  &.is-empty {
+    background: white;
+  }
 }
 </style>

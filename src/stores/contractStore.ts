@@ -14,6 +14,16 @@ export interface IStateContractStore {
     user_name: string
     user_status: string
 
+
+    artiste_structureType: 'artistSolo'|'artistGroup'|'collectif'
+    artiste_name: string
+    artiste_nationality: string
+    artiste_birth: string
+    artiste_mail: string
+    artiste_postal: string
+    artiste_mobileNumber: string
+    artiste_gallery: string
+
     info_date: string,
     info_localisation: string,
 
@@ -50,6 +60,16 @@ export const useContractStore = defineStore('contractStore', {
             user_firstname: '',
             user_name: '',
             user_status: '',
+
+            artiste_structureType: 'artistSolo',
+            artiste_postal: '',
+            artiste_mobileNumber: '',
+            artiste_gallery: '',
+            artiste_name: '',
+            artiste_birth: '',
+            artiste_mail: '',
+            artiste_nationality: '',
+
             info_date: '',
             info_localisation: '',
             entitled: '',

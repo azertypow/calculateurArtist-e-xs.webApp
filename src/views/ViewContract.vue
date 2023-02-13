@@ -17,7 +17,7 @@
             <select v-model="contractStore.with_production" >
               <option :value="true">avec</option>
               <option :value="false">sans</option>
-            </select> production d’œvre(s)
+            </select> production d’œuvre(s)
           </div>
 
         </div>
@@ -144,6 +144,119 @@
               class="app-value-string"
               v-model="contractStore.user_status"
               placeholder="Titre"
+          >
+        </div>
+      </div>
+
+      <div
+          class="app-g"
+      >
+        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-4-12">
+          et
+            <select v-model="contractStore.artiste_structureType" >
+              <option value="artistSolo">L’artiste</option>
+              <option value="artistGroup">Les artistes</option>
+              <option value="collectif">Le collectif d’artistes</option>
+            </select>
+        </div>
+        <div class="app-g__coll-4-12 app-with-gutter"></div>
+      </div>
+
+      <div
+          class="app-g"
+      >
+        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-4-12"></div>
+        <div class="app-g__coll-4-12 app-with-gutter">
+          <input
+              class="app-value-string"
+              v-model="contractStore.artiste_name"
+              placeholder="Prénom NOM"
+          >
+        </div>
+      </div>
+
+      <div
+          class="app-g"
+      >
+        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-4-12"></div>
+        <div class="app-g__coll-4-12 app-with-gutter">
+          <input
+              class="app-value-string"
+              v-model="contractStore.artiste_nationality"
+              placeholder="Nationalité"
+          >
+        </div>
+      </div>
+
+      <div
+          class="app-g"
+      >
+        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-4-12"></div>
+        <div class="app-g__coll-4-12 app-with-gutter">
+          <input
+              class="app-value-string"
+              v-model="contractStore.artiste_birth"
+              placeholder="Date de naissance"
+          >
+        </div>
+      </div>
+
+      <div
+          class="app-g"
+      >
+        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-4-12"></div>
+        <div class="app-g__coll-4-12 app-with-gutter">
+          <input
+              class="app-value-string"
+              v-model="contractStore.artiste_mail"
+              placeholder="Adresse électronique"
+          >
+        </div>
+      </div>
+
+      <div
+          class="app-g"
+      >
+        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-4-12"></div>
+        <div class="app-g__coll-4-12 app-with-gutter">
+          <input
+              class="app-value-string"
+              v-model="contractStore.artiste_postal"
+              placeholder="Adresse postale"
+          >
+        </div>
+      </div>
+
+      <div
+          class="app-g"
+      >
+        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-4-12"></div>
+        <div class="app-g__coll-4-12 app-with-gutter">
+          <input
+              class="app-value-string"
+              v-model="contractStore.artiste_mobileNumber"
+              placeholder="Numéro de mobile"
+          >
+        </div>
+      </div>
+
+      <div
+          class="app-g"
+      >
+        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-4-12"></div>
+        <div class="app-g__coll-4-12 app-with-gutter">
+          <input
+              class="app-value-string"
+              v-model="contractStore.artiste_gallery"
+              placeholder="Galerie(s)"
           >
         </div>
       </div>

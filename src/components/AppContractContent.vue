@@ -71,7 +71,7 @@
           <li>18 Juridiction compétente
             <ul>
               <li>Annexe I – Grille de rémunération</li>
-              <li>Annexe II – Liste des Œuvres</li>
+              <li><router-link to="#lite-des-oeuvres" >Annexe II – Liste des Œuvres</router-link></li>
             </ul>
           </li>
           <li>1. Titre de l’œuvre :</li>
@@ -666,7 +666,7 @@
 
       <p>[INSERER LA DERNIER VERSION DE LA GRILLE DE REMUNERATION]</p>
 
-      <h3>Annexe II – Liste des Œuvres</h3>
+      <h3 id="lite-des-oeuvres" >Annexe II – Liste des Œuvres</h3>
 
       <div
           class="app-g"

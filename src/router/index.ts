@@ -2,6 +2,15 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      const elementToScroll = document.querySelector(to.hash)
+      if(elementToScroll instanceof HTMLElement) document.querySelector('#app')!.scroll({
+        top: elementToScroll.getBoundingClientRect().top + document.querySelector('#app')!.scrollTop - (window.innerHeight / 2),
+        behavior: 'smooth',
+      })
+    }
+  },
   routes: [
     {
       path: '/',

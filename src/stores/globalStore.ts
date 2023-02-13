@@ -19,9 +19,9 @@ const calculatorSection_1 = new OptionCalculatorSection(
     'Taille de la structure',
     true
 ).addSubSection(
-    new OptionCalculatorSubsection({uniqueID: '01', titre: 'Petit', subtitle: '< 50 000 CHF /année'}),
-    new OptionCalculatorSubsection({uniqueID: '02', titre: 'Moyen', subtitle: '50K–250K CHF /année'}),
-    new OptionCalculatorSubsection({uniqueID: '03', titre: 'Grand', subtitle: '250K–500K CHF /année'}),
+    new OptionCalculatorSubsection({uniqueID: '01', titre: 'Petite', subtitle: '< 50 000 CHF /année'}),
+    new OptionCalculatorSubsection({uniqueID: '02', titre: 'Moyenne', subtitle: '50K–250K CHF /année'}),
+    new OptionCalculatorSubsection({uniqueID: '03', titre: 'Grande', subtitle: '250K–500K CHF /année'}),
     new OptionCalculatorSubsection({uniqueID: '04', titre: 'Très grande', subtitle: '> 500K CHF /année'}),
 )
 
@@ -105,12 +105,12 @@ export const useGlobalStore = defineStore('globalStore', {
                 new NumberCalculatorSection(
                     4,
                     "Durée de l’exposition",
-                    false,
+                    true,
                     'Montant forfaitaire supplémentaire par mois au-delà du premier mois',
                 ).addSubSection(
                     new NumberCalculatorSubsection(
                         '',
-                        1,
+                        0,
                         "mois",
                         1,
                     ).setAMultiplier(
@@ -273,7 +273,7 @@ export const useGlobalStore = defineStore('globalStore', {
                             },
                             {
                                 type: 'options',
-                                name: "production d’œvre(s)",
+                                name: "production d’œuvre(s)",
                                 options: [
                                     'avec',
                                     'sans',
