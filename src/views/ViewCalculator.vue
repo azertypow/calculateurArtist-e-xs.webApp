@@ -49,14 +49,34 @@
           class="v-view-calculator__footer__status"
       >
         <span
-            class="v-view-calculator__footer__status__items"
+            class="v-view-calculator__footer__status__items app-with-circle-status"
             v-for="(section, index) of sections"
             :class="{
-              'is-empty': section.status === 'empty',
+              'app-with-circle-status--active': section.status !== 'empty',
             }"
-        ><span
-            class="v-view-calculator__footer__status__items__icon"
-        ></span>&nbsp;{{section.title}}</span>
+        >{{section.title}}</span>
+      </div>
+      <div
+          class="v-view-calculator__footer__info"
+      >
+        <app-lexical-bottom></app-lexical-bottom>
+        <div
+            class="v-view-calculator__footer__info__container"
+        >
+          <div>
+            <span class="app-with-circle-status" style="cursor: pointer" @click="toggleLexic">Lexique</span>
+          </div>
+        </div>
+        <div
+            class="v-view-calculator__footer__info__container"
+        >
+          <div>
+            <span>Site en version beta</span>
+          </div>
+          <div>
+            <span>Suggestion&nbsp;?</span>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -77,10 +97,11 @@ import type {
 import SubsectionOption from "../components/SubsectionOption.vue";
 import SubsectionNumber from "../components/SubsectionNumber.vue";
 import type {OptionOrNumberCalculatorSection} from "../gloabal/CalculatorSection";
+import AppLexicalBottom from "../components/AppLexicalBottom.vue";
 
 export default defineComponent({
   name: 'ViewCalculator',
-  components: {SubsectionNumber, SubsectionOption, AppNumberValue, AppSection, AppCheckbox, AppNav},
+  components: {AppLexicalBottom, SubsectionNumber, SubsectionOption, AppNumberValue, AppSection, AppCheckbox, AppNav},
 
   mounted() {
     this.$nextTick(() => {
@@ -98,6 +119,7 @@ export default defineComponent({
       proto: true,
       checkeds: [],
       showFixedResult: true,
+      showLexical: false,
     }
   },
 
@@ -115,8 +137,11 @@ export default defineComponent({
 
     total(): number {
       return this.globalStore.total
-    }
+    },
 
+    toggleLexical() {
+
+    }
   }
 
 });
@@ -160,7 +185,7 @@ h2 {
   border-top: solid 1px var(--app-color-border);
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .v-view-calculator__footer__status__items {
@@ -169,19 +194,6 @@ h2 {
 
 .v-view-calculator__footer__status__separator {
   padding-right: .5em;
-}
-
-.v-view-calculator__footer__status__items__icon {
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 100%;
-  vertical-align: text-bottom;
-  background-color: var(--app-color-secondary);
-
-  .is-empty & {
-    background-color: var(--app-color-border);
-  }
 }
 
 .v-view-calculator__footer__result {
@@ -194,6 +206,29 @@ h2 {
   box-sizing: border-box;
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.v-view-calculator__footer__info {
+  display: flex;
+  line-height: 1.5rem;
+  font-size: var(--app-font-size);
+  position: relative;
+  width: 100%;
+  background: var(--app-color-main);
+  border-top: solid 1px var(--app-color-border);
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem .5rem;
+  box-sizing: border-box;
+
+  .v-view-calculator__footer__info__container {
+    display: flex;
+
+    > div {
+      padding-left: .5rem;
+      padding-right: .5rem;
+    }
+  }
 }
 
 .v-view-calculator__footer__content {

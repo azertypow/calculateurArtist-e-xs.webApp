@@ -1,0 +1,18 @@
+.app-with-circle-status {
+  &:before {
+    content: "";
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 100%;
+    vertical-align: text-bottom;
+    background-color: var(--app-color-border);
+    margin-right: .5em;
+  }
+
+  &.app-with-circle-status--active {
+    &:before {
+      background-color: var(--app-color-secondary);
+    }
+  }
+}
