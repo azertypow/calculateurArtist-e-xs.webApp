@@ -9,7 +9,7 @@
           <li>2	Préambule</li>
           <li>3	Objet</li>
           <ul>
-            <li :class="{'app-font-remove': contractStore.contract_exposition === false}" >3.1	[Exposition]</li>
+            <li :class="{'app-font-remove': contractStore.contract_exposition === false}" >3.1 [Exposition]</li>
             <li :class="{'app-font-remove': contractStore.with_production === false}">3.2	[Production]</li>
           </ul>
         </ul>
