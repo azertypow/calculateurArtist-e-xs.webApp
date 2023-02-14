@@ -215,8 +215,7 @@
       réalise l’exposition à ses frais, prenant à sa charge toutes les dépenses utiles et nécessaires à cette fin
       (p.ex., taxes, frais, frais d’éclairage, frais de publicité, etc.).
 
-      <h4 :class="{'app-font-remove': contractStore.with_production === false}">Assurance des œuvres [SI OBJETS
-        PHYSIQUES]</h4>
+      <h4 :class="{'app-font-remove': contractStore.with_production === false}">Assurance des œuvres</h4>
       <p :class="{'app-font-remove': contractStore.with_production === false}">
         <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                           @update:value="contractStore.structure_name = $event"/>
