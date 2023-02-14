@@ -4,16 +4,41 @@ export type OptionOrNumberCalculatorSection<T extends OptionCalculatorSection | 
     ? OptionCalculatorSection
     : NumberCalculatorSection;
 
+interface ICalculatorSectionParams {
+    index: number;
+    title: string;
+    required?: boolean;
+    info?: string;
+    help: string
+}
+
 class CalculatorSection {
     public type?: CalculatorSectionType
 
+    public index: number;
+
+    public title: string;
+
+    public required = false;
+
+    public info?: string;
+
     constructor(
-        public index: number,
-        public title: string,
-        public required = false,
-        public info?: string,
+        {index, title, required=false, info}: ICalculatorSectionParams,
     ) {
+        this.info = info;
+        this.required = required;
+        this.title = title;
+        this.index = index;
     }
+}
+
+interface IOptionCalculatorSectionParams {
+    index: number
+    title: string
+    required?: boolean
+    info?: string
+    help: string
 }
 
 export class OptionCalculatorSection extends CalculatorSection {
@@ -24,12 +49,24 @@ export class OptionCalculatorSection extends CalculatorSection {
 
     public type: CalculatorSectionType = 'option'
 
-    constructor(public index: number,
-                public title: string,
-                public required = false,
-                public info?: string,
+    public index: number;
+
+    public title: string;
+
+    public required = false;
+
+    public info?: string;
+
+    public help: string;
+
+    constructor({index, title, required=false, info, help}: IOptionCalculatorSectionParams,
     ) {
-        super(index, title, required, info)
+        super({index : index, title : title, required : required, info : info, help: help})
+        this.info = info;
+        this.required = required;
+        this.title = title;
+        this.index = index;
+        this.help = help;
     }
 
     public set value(value: OptionCalculatorSubsection) {
@@ -59,17 +96,37 @@ export class OptionCalculatorSection extends CalculatorSection {
 
 }
 
+interface INumberCalculatorSectionParams {
+    index: number;
+    title: string;
+    required?: boolean;
+    info?: string;
+    help: string;
+}
+
 export class NumberCalculatorSection extends CalculatorSection {
     private _subSections: NumberCalculatorSubsection[] = []
 
     public type: CalculatorSectionType = 'number'
 
-    constructor(public index: number,
-                public title: string,
-                public required = false,
-                public info?: string,
+    public index: number;
+
+    public title: string;
+
+    public required = false;
+
+    public info?: string;
+
+    public help: string;
+
+    constructor({index, title, required=false, info, help}: INumberCalculatorSectionParams,
     ) {
-        super(index, title, required, info);
+        super({index : index, title : title, required : required, info : info, help: help});
+        this.info = info;
+        this.required = required;
+        this.title = title;
+        this.index = index;
+        this.help = help;
     }
 
     public addSubSection(subsection: NumberCalculatorSubsection): this {

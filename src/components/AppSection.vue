@@ -41,6 +41,15 @@
         ></subsection-option>
       </div>
     </div>
+    <div
+        class="app-g"
+    >
+      <div class="app-g__coll-2-12" ></div>
+      <div
+          class="app-g__coll-10-12 v-app-section__help"
+          v-html="section.help"
+      ></div>
+    </div>
   </div>
 </template>
 
@@ -131,6 +140,25 @@ export default defineComponent({
 
   &.is-empty {
     background: white;
+  }
+}
+
+.v-app-section__help {
+  padding-top: 2rem;
+  line-height: 2rem;
+  font-size: 1.4rem;
+  padding-left: 4rem;
+  max-width: 45em;
+  position: relative;
+
+  :before {
+    content: '';
+    position: absolute;
+    top: 3.5rem;
+    left: 1rem;
+    background: black;
+    width: 20px;
+    height: 30px;
   }
 }
 </style>
