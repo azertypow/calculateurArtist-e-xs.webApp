@@ -64,7 +64,7 @@
             class="v-view-calculator__footer__info__container"
         >
           <div>
-            <span class="app-with-circle-status" style="cursor: pointer" @click="toggleLexic">Lexique</span>
+            <span class="app-with-circle-status" style="cursor: pointer" @click="toggleLexical">Lexique</span>
           </div>
         </div>
         <div
@@ -127,6 +127,10 @@ export default defineComponent({
     getResultPosition() {
       if( !(this.$refs.total instanceof HTMLDivElement)) return
       this.showFixedResult = this.$refs.total.getBoundingClientRect().top >= window.innerHeight;
+    },
+
+    toggleLexical() {
+
     }
   },
 
@@ -138,10 +142,6 @@ export default defineComponent({
     total(): number {
       return this.globalStore.total
     },
-
-    toggleLexical() {
-
-    }
   }
 
 });
