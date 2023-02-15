@@ -1,1 +1,0 @@
-import{d as e,A as o,_ as s,o as t,c as _}from"./index.1c68309a.js";const c=e({name:"HomeView",components:{AppNav:o}});const n={class:"v-home-view"};function a(p,d,i,r,m,f){return t(),_("div",n)}const v=s(c,[["render",a],["__scopeId","data-v-0dcab398"]]);export{v as default};
