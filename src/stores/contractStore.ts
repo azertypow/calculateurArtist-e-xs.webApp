@@ -7,6 +7,7 @@ export interface IStateContractStore {
     work_price: string
 
     with_production: boolean
+
     structure_name: string
     structure_street: string
     structure_number: string
@@ -17,6 +18,8 @@ export interface IStateContractStore {
     user_name: string
     user_status: string
 
+
+    delegate_name: string
 
     artiste_structureType: 'artistSolo'|'collectif'
     artiste_name: string
@@ -63,6 +66,8 @@ export const useContractStore = defineStore('contractStore', {
             user_firstname: '',
             user_name: '',
             user_status: '',
+
+            delegate_name: '',
 
             work_price: '',
 

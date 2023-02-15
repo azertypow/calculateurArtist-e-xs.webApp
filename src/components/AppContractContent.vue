@@ -762,10 +762,11 @@
           médiation, ils seront tranchés par voie judiciaire par-devant les Tribunaux genevois.</p>
 
 
-        <p>Fait à [LIEU] en deux exemplaires, le
-          <content-editable placeholder="date du contrat" :value="contractStore.info_date"
-                            @update:value="contractStore.info_date = $event"/>
-          :
+        <p>Fait à <content-editable placeholder="date du contrat" :value="contractStore.info_localisation"
+                                    @update:value="contractStore.info_localisation = $event"/> en deux exemplaires,
+
+          le <content-editable placeholder="date du contrat" :value="contractStore.info_date"
+                            @update:value="contractStore.info_date = $event"/>&nbsp;:
         </p>
 
 
@@ -775,9 +776,15 @@
           , Pour l’Artiste :
         </p>
 
-        <p>[Prénom NOM du représentant]</p>
+        <p>
+          <content-editable placeholder="Prénom NOM du représentant" :value="contractStore.delegate_name"
+                            @update:value="contractStore.delegate_name = $event"/>
+        </p>
 
-        <p>[Prénom NOM de l’Artiste]</p>
+        <p>
+          <content-editable placeholder="Prénom NOM de l’Artiste" :value="contractStore.artiste_name"
+                            @update:value="contractStore.artiste_name = $event"/>
+        </p>
 
         <h4>Annexe I – Grille de rémunération</h4>
 
@@ -798,19 +805,19 @@
             <div class="app-object-list">
               <h4>Titre de l’œuvre :</h4>
               <p>Année de production&nbsp;:
-                <content-editable placeholder="Nom de la structure" :value="object.year"
+                <content-editable placeholder="Année de production" :value="object.year"
                                   @update:value="object.year        = $event"/>
               </p>
               <p>Dimensions&nbsp;:
-                <content-editable placeholder="Nom de la structure" :value="object.dimensions"
+                <content-editable placeholder="Dimensions" :value="object.dimensions"
                                   @update:value="object.dimensions  = $event"/>
               </p>
               <p>Matériaux&nbsp;:
-                <content-editable placeholder="Nom de la structure" :value="object.material"
+                <content-editable placeholder="Matériaux" :value="object.material"
                                   @update:value="object.material    = $event"/>
               </p>
               <p>Valeur d’assurance&nbsp;:
-                <content-editable placeholder="Nom de la structure" :value="object.assurance"
+                <content-editable placeholder="Valeur d’assurance" :value="object.assurance"
                                   @update:value="object.assurance   = $event"/>
               </p>
             </div>
