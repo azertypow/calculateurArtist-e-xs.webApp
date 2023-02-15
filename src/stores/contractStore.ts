@@ -3,6 +3,9 @@ import { defineStore } from 'pinia'
 export interface IStateContractStore {
     contract_exposition: boolean
     contract_public: boolean
+
+    work_price: string
+
     with_production: boolean
     structure_name: string
     structure_street: string
@@ -60,6 +63,8 @@ export const useContractStore = defineStore('contractStore', {
             user_firstname: '',
             user_name: '',
             user_status: '',
+
+            work_price: '',
 
             artiste_structureType: 'artistSolo',
             artiste_postal: '',

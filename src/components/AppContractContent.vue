@@ -15,7 +15,7 @@
         </ul>
       </li>
 
-      <li>II. Obligations de <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name" @update:value="contractStore.structure_name = $event"/>
+      <li id="var-structure_name" >II. Obligations de <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name" @update:value="contractStore.structure_name = $event"/>
         <ul>
           <li :class="{'app-font-remove': contractStore.contract_exposition === false}" >4 [Exposition]</li>
           <ul>
@@ -189,10 +189,7 @@
 
 
 
-      <h2>Obligations de
-      <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
-                        @update:value="contractStore.structure_name = $event"/>
-      </h2>
+      <h2>Obligations de <template v-if="contractStore.structure_name" >{{contractStore.structure_name}}</template><template v-else><router-link to="#var-structure_name">complétez le nom de la structure </router-link></template> </h2>
       <div class="v-app-contract-content__content__subsection">
 
         <h3 :class="{'app-font-remove': contractStore.contract_exposition === false}">[Exposition]</h3>
@@ -451,7 +448,10 @@
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
           verse à l’Artiste, à titre de rémunération pour l’exposition <span class="dev-error" >[et/ou]</span> conception/adaptation <span class="dev-error" >[et/ou]</span> réalisation
-          de son ou ses Œuvre(s), une somme de [XXX], hors TVA, déterminée selon l’activité déployée et les critères
+          de son ou ses Œuvre(s), une somme de 
+          <content-editable placeholder="[XXX]" :value="contractStore.work_price"
+                            @update:value="contractStore.work_price = $event"/>,
+          hors TVA, déterminée selon l’activité déployée et les critères
           prévus dans la « Grille de rémunération » (Annexe I).
         </p>
 
@@ -466,7 +466,10 @@
           préalablement par les Parties en vue de la mise en place de l’exposition, sont facturés à
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
-          à un tarif horaire de [XXX], déterminé sur la base des critères prévus par la « Grille de rémunération »
+          à un tarif horaire de 
+          <content-editable placeholder="[XXX]" :value="contractStore.work_price"
+                            @update:value="contractStore.work_price = $event"/>,
+          déterminé sur la base des critères prévus par la « Grille de rémunération »
           (Annexe&nbsp;I).
         </p>
 
@@ -553,7 +556,10 @@
           sont produites avec un budget de production.
         </p>
 
-        <p>Le budget global de [XXX] comprend (à cocher) :</p>
+        <p>Le budget global de 
+          <content-editable placeholder="[XXX]" :value="contractStore.work_price"
+                            @update:value="contractStore.work_price = $event"/>
+          comprend (à cocher) :</p>
 
         <p
             :class="{'is-active': contractStore.option_honoraryAchievement}"
@@ -616,7 +622,7 @@
           La prise en charge du budget de production incombe à
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
-          <span class="dev-error" >[OU]</span> à {{contractStore.artiste_name}} <span class="dev-error">[OU]</span> <span class="dev-error">[clé de répartition]</span>.
+          <span class="dev-error" > [OU]</span> à {{contractStore.artiste_name}} <span class="dev-error">[OU]</span> <span class="dev-error">[clé de répartition]</span>.
         </p>
 
         <p>
@@ -648,7 +654,10 @@
           A titre de participation aux frais occasionnés à l’Artiste par l’exécution du présent contrat,
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
-          verse à l’Artiste un montant forfaitaire de [XXX], payable dans les 30 jours dès la conclusion du contrat.
+          verse à l’Artiste un montant forfaitaire de
+          <content-editable placeholder="[XXX]" :value="contractStore.work_price"
+                            @update:value="contractStore.work_price = $event"/>,
+          payable dans les 30 jours dès la conclusion du contrat.
         </p>
       </div>
 
