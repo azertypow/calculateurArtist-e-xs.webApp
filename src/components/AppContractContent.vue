@@ -27,7 +27,7 @@
             <li>4.6 Transport</li>
             <li>4.7 Montage et démontage</li>
           </ul>
-          <li>5 [Production]</li>
+          <li :class="{'app-font-remove': !contractStore.with_production}" >5 [Production]</li>
         </ul>
       </li>
 
@@ -141,7 +141,6 @@
         <h3>Objet</h3>
 
 
-        <!--      :class="{'app-font-remove': !contractStore.contract_exposition}"-->
         <h4 :class="{'app-font-remove': !contractStore.contract_exposition}">[Exposition]</h4>
         <p :class="{'app-font-remove': !contractStore.contract_exposition}">
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
@@ -171,20 +170,20 @@
 
         <p
             class="dev-error"
-            :class="{'app-font-remove': !contractStore.contract_exposition && !contractStore.contract_public}"
+            :class="{'app-font-remove': !contractStore.contract_exposition || !contractStore.contract_public}"
         >[ET/OU]</p>
 
-        <h4 :class="{'app-font-remove': !contractStore.contract_public}">[Production]</h4>
-        <p :class="{'app-font-remove': !contractStore.contract_public}">
+        <h4 :class="{'app-font-remove': !contractStore.with_production}">[Production]</h4>
+        <p :class="{'app-font-remove': !contractStore.with_production}">
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
           contribue à la production par l’Artiste d’une ou plusieurs œuvres en participant aux frais de production
         </p>
 
-        <p class="dev-error" >[ET/OU]</p>
+        <p class="dev-error"  :class="{'app-font-remove': !contractStore.with_production}" >[ET/OU]</p>
 
-        <p>
-          en le rémunérant selon les conditions définies ci-après sous titre IV.
+        <p :class="{'app-font-remove': !contractStore.with_production}" >
+          <router-link to="#section_IV" >en le rémunérant selon les conditions définies ci-après sous titre IV.</router-link>
         </p>
       </div>
 
@@ -399,7 +398,7 @@
           photographies.
         </p>
 
-        <h3>[AVEC OU SANS]</h3>
+        <p class="dev-error">[AVEC OU SANS]</p>
 
         <h3 :class="{'app-font-remove': contractStore.with_production === false}">[Production]</h3>
 
@@ -433,7 +432,7 @@
 
 
 
-      <h2>Rémunération de l’Artiste</h2>
+      <h2 id="section_IV" >Rémunération de l’Artiste</h2>
       <div class="v-app-contract-content__content__subsection">
 
         <h3>Obligation de renseigner</h3>
@@ -631,11 +630,17 @@
         <p>
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
-          rembourse à l’Artiste les dépenses nécessaires en vue de <span
-            :class="{'app-font-remove': contractStore.contract_exposition === false}">l’[EXPOSITION]</span><span
-            :class="{'app-font-remove': !contractStore.contract_exposition || !contractStore.contract_public}">/</span>[PRODUCTION]
-          (frais de voyage, de
-          transport, de logement, de repas, etc.), sur présentation des justificatifs.
+          rembourse à l’Artiste les dépenses nécessaires en vue de
+          <span
+            :class="{'app-font-remove': contractStore.contract_exposition === false}"
+          >l’[EXPOSITION]</span>
+          <span
+            :class="{'app-font-remove': !contractStore.contract_exposition || !contractStore.with_production}"
+          >/</span>
+          <span
+              :class="{'app-font-remove': !contractStore.with_production}"
+          >[PRODUCTION]</span>
+          (frais de voyage, de transport, de logement, de repas, etc.), sur présentation des justificatifs.
         </p>
 
         <p class="dev-error" >[OU]</p>
@@ -898,7 +903,7 @@ h4 + p {
     padding-right: 2rem;
     white-space: nowrap;
     counter-increment: section;
-    content: counter(section) ". ";
+    content: counter(section, upper-roman) ". ";
   }
 
   .v-app-contract-content__content__subsection {
@@ -917,7 +922,7 @@ h4 + p {
       padding-right: 2rem;
       white-space: nowrap;
       counter-increment: subsection;
-      content: counter(section) ' . ' counter(subsection) " . ";
+      content: counter(section, upper-roman) ' . ' counter(subsection) " . ";
       counter-reset: sub_subsection;
     }
 
@@ -929,7 +934,7 @@ h4 + p {
       padding-right: 2rem;
       white-space: nowrap;
       counter-increment: sub_subsection;
-      content: counter(section) ' . ' counter(subsection)" . "counter(sub_subsection);
+      content: counter(section, upper-roman) ' . ' counter(subsection)" . "counter(sub_subsection);
       margin-right: 1em;
     }
   }
