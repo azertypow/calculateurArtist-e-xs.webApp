@@ -307,35 +307,3 @@ div > .app-button--check {
   margin-bottom: 1rem !important;
 }
 </style>
-
-<style lang="scss">
-body {
-  counter-reset: subsection;
-}
-
-.v-app-contract-content {
-  counter-reset: sub_subsection;
-}
-
-.v-app-contract-content__content {
-  counter-reset: section;
-
-  h2::before {
-    counter-increment: section;
-    content: counter(section) ". ";
-    counter-reset: subsection;
-  }
-
-  h3::before {
-    counter-increment: subsection;
-    content: counter(subsection) ". ";
-    counter-reset: sub_subsection;
-  }
-
-  h4::before {
-    counter-increment: sub_subsection;
-    content: counter(subsection)" . "counter(sub_subsection);
-    margin-right: 1em;
-  }
-}
-</style>
