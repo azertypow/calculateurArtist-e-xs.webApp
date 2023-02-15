@@ -32,54 +32,6 @@
 
     </div>
 
-    <div
-        class="v-view-calculator__footer"
-    >
-      <div
-          class="v-view-calculator__footer__result"
-          v-if="total > 0 && showFixedResult"
-      >
-        <div
-            class="v-view-calculator__footer__content"
-        >
-          <div>résultat: {{total}}.— CHF</div>
-        </div>
-      </div>
-      <div
-          class="v-view-calculator__footer__status"
-      >
-        <span
-            class="v-view-calculator__footer__status__items app-with-circle-status"
-            v-for="(section, index) of sections"
-            :class="{
-              'app-with-circle-status--active': section.status !== 'empty',
-            }"
-        >{{section.title}}</span>
-      </div>
-      <div
-          class="v-view-calculator__footer__info"
-      >
-        <app-lexical-bottom></app-lexical-bottom>
-        <div
-            class="v-view-calculator__footer__info__container"
-        >
-          <div>
-            <span class="app-with-circle-status" style="cursor: pointer" @click="toggleLexical">Lexique</span>
-          </div>
-        </div>
-        <div
-            class="v-view-calculator__footer__info__container"
-        >
-          <div>
-            <span>Site en version beta</span>
-          </div>
-          <div>
-            <span>Suggestion&nbsp;?</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
 </template>
 
@@ -97,11 +49,11 @@ import type {
 import SubsectionOption from "../components/SubsectionOption.vue";
 import SubsectionNumber from "../components/SubsectionNumber.vue";
 import type {OptionOrNumberCalculatorSection} from "../gloabal/CalculatorSection";
-import AppLexicalBottom from "../components/AppLexicalBottom.vue";
+import AppPanel from "../components/AppPanel.vue";
 
 export default defineComponent({
   name: 'ViewCalculator',
-  components: {AppLexicalBottom, SubsectionNumber, SubsectionOption, AppNumberValue, AppSection, AppCheckbox, AppNav},
+  components: {AppPanel, SubsectionNumber, SubsectionOption, AppNumberValue, AppSection, AppCheckbox, AppNav},
 
   mounted() {
     this.$nextTick(() => {
@@ -118,20 +70,14 @@ export default defineComponent({
       globalStore: useGlobalStore(),
       proto: true,
       checkeds: [],
-      showFixedResult: true,
-      showLexical: false,
     }
   },
 
   methods: {
     getResultPosition() {
       if( !(this.$refs.total instanceof HTMLDivElement)) return
-      this.showFixedResult = this.$refs.total.getBoundingClientRect().top >= window.innerHeight;
+      this.globalStore.showFixedResult = this.$refs.total.getBoundingClientRect().top >= window.innerHeight;
     },
-
-    toggleLexical() {
-
-    }
   },
 
   computed: {
@@ -162,80 +108,6 @@ h2 {
 .v-view-calculator__circle-state-container {
   display: flex;
   justify-content: right;
-}
-
-.v-view-calculator__footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  box-sizing: border-box;
-  z-index: 1000;
-}
-
-.v-view-calculator__footer__status {
-  position: relative;
-  width: 100%;
-  line-height: 1.5rem;
-  font-size: var(--app-font-size);
-  box-sizing: border-box;
-  background: var(--app-color-main);
-  padding: 1rem;
-  text-align: center;
-  border-top: solid 1px var(--app-color-border);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.v-view-calculator__footer__status__items {
-  white-space: nowrap;
-}
-
-.v-view-calculator__footer__status__separator {
-  padding-right: .5em;
-}
-
-.v-view-calculator__footer__result {
-  position: relative;
-  width: 100%;
-  line-height: 2rem;
-  font-size: 1.4rem;
-  background: var(--app-color-main);
-  border-top: solid 1px var(--app-color-border);
-  box-sizing: border-box;
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-.v-view-calculator__footer__info {
-  display: flex;
-  line-height: 1.5rem;
-  font-size: var(--app-font-size);
-  position: relative;
-  width: 100%;
-  background: var(--app-color-main);
-  border-top: solid 1px var(--app-color-border);
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem .5rem;
-  box-sizing: border-box;
-
-  .v-view-calculator__footer__info__container {
-    display: flex;
-
-    > div {
-      padding-left: .5rem;
-      padding-right: .5rem;
-    }
-  }
-}
-
-.v-view-calculator__footer__content {
-  display: flex;
-  flex-direction: row-reverse;
-  margin: auto;
-  max-width: var(--app-max-width);
 }
 
 .v-view-calculator__result {

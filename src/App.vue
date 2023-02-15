@@ -13,6 +13,8 @@
         </transition>
       </router-view>
     </main>
+
+    <app-footer></app-footer>
   </div>
 </template>
 
@@ -20,10 +22,12 @@
 import {defineComponent} from 'vue';
 import AppHeader from "./components/AppHeader.vue";
 import AppToggleHeader from "./components/AppToggleHeader.vue";
+import AppFooter from "./components/AppFooter.vue";
 
 export default defineComponent({
   name: 'App',
   components: {
+    AppFooter,
     AppToggleHeader,
     AppHeader,
   },

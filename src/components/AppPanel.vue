@@ -1,6 +1,6 @@
 <template>
-  <div class="v-app-lexical-bottom">
-
+  <div class="v-app-panel">
+    <slot></slot>
   </div>
 </template>
 
@@ -8,14 +8,14 @@
 import {defineComponent} from 'vue';
 
 export default defineComponent({
-  name: 'AppLexicalBottom',
+  name: 'AppPanel',
   components: {},
 
 });
 </script>
 
 <style lang="scss" scoped>
-.v-app-lexical-bottom {
+.v-app-panel {
   height: calc(100%);
   position: fixed;
 }

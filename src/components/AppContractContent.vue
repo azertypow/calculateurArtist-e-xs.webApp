@@ -42,7 +42,7 @@
               <li>Utilisation pour ses propres besoins</li>
             </ul>
           </li>
-          <li>[Production]</li>
+          <li :class="{'app-font-remove': !contractStore.with_production}" >[Production]</li>
         </ul>
       </li>
 

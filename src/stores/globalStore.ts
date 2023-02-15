@@ -50,6 +50,11 @@ help:`
 export const useGlobalStore = defineStore('globalStore', {
     state: function () {
         return {
+
+            showLexical: false,
+            showInfo: false,
+            showHelpers: false,
+
             isACollective: false,
             showFixedResult: true,
             calculatorSections: [
