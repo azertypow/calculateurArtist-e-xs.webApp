@@ -774,11 +774,10 @@
 
 <!--        cartel container-->
         <div
-            class="app-g"
-            style="flex-wrap: wrap"
+            class="app-g v-app-contract-content__list-oeuvre"
         >
           <div
-              class="app-g__coll-6-12"
+              class="app-g__coll-6-12 app-with-gutter"
               v-for="object of contractStore.objectList"
           >
 
@@ -888,10 +887,10 @@ h4 + p {
 .v-app-contract-content__content {
   counter-reset: section subsection sub_subsection;
 
-  h2 {
+  > h2 {
     position: relative;
   }
-  h2::before {
+  > h2::before {
     position: absolute;
     top: 0;
     right: 100%;
@@ -905,11 +904,12 @@ h4 + p {
   .v-app-contract-content__content__subsection {
     counter-reset: subsection sub_subsection;
 
-    h3, h4 {
+    > h3,
+    > h4 {
       position: relative;
     }
 
-    h3::before {
+    > h3::before {
       position: absolute;
       top: 0;
       right: 100%;
@@ -921,7 +921,7 @@ h4 + p {
       counter-reset: sub_subsection;
     }
 
-    h4::before {
+    > h4::before {
       position: absolute;
       top: 0;
       right: 100%;
@@ -933,6 +933,13 @@ h4 + p {
       margin-right: 1em;
     }
   }
+}
+
+.v-app-contract-content__list-oeuvre {
+  flex-wrap: wrap;
+  padding-top: 2rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
 }
 
 </style>
