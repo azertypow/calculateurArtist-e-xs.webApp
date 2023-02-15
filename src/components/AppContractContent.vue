@@ -389,8 +389,7 @@
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
           doit également mettre à la disposition de l’Artiste les photographies qu’elle a prises. L’Artiste peut en
-          faire
-          librement usage.
+          faire librement usage.
         </p>
 
         <p>
