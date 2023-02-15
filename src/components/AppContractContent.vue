@@ -2,85 +2,89 @@
   <div class="v-app-contract-content">
     <h2>Table des matières</h2>
 
-    <ul>
-      <li>I.	Objet du contrat
+    <ul class="v-app-contract-content__lexical">
+      <li>Objet du contrat
         <ul>
-          <li>1	Définitions</li>
-          <li>2	Préambule</li>
-          <li>3	Objet</li>
-          <ul>
-            <li :class="{'app-font-remove': contractStore.contract_exposition === false}" >3.1 [Exposition]</li>
-            <li :class="{'app-font-remove': contractStore.with_production === false}">3.2	[Production]</li>
-          </ul>
+          <li>Définitions</li>
+          <li>Préambule</li>
+          <li>Objet
+            <ul>
+              <li :class="{'app-font-remove': contractStore.contract_exposition === false}" >[Exposition]</li>
+              <li :class="{'app-font-remove': contractStore.with_production === false}"     >[Production]</li>
+            </ul>
+          </li>
         </ul>
       </li>
 
-      <li id="var-structure_name" >II. Obligations de <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name" @update:value="contractStore.structure_name = $event"/>
+      <li id="var-structure_name" >Obligations de <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name" @update:value="contractStore.structure_name = $event"/>
         <ul>
-          <li :class="{'app-font-remove': contractStore.contract_exposition === false}" >4 [Exposition]</li>
-          <ul>
-            <li>4.1 Lieu d’exposition</li>
-            <li>4.2 Prise en charge des frais</li>
-            <li :class="{'app-font-remove': contractStore.with_production === false}">4.3 Assurance des œuvres</li>
-            <li>4.4 Instructions de l’Artiste</li>
-            <li>4.5 Communication, publications et documentation</li>
-            <li>4.6 Transport</li>
-            <li>4.7 Montage et démontage</li>
-          </ul>
-          <li :class="{'app-font-remove': !contractStore.with_production}" >5 [Production]</li>
+          <li :class="{'app-font-remove': contractStore.contract_exposition === false}" >[Exposition]
+            <ul>
+              <li>Lieu d’exposition</li>
+              <li>Prise en charge des frais</li>
+              <li :class="{'app-font-remove': contractStore.with_production === false}">Assurance des œuvres</li>
+              <li>Instructions de l’Artiste</li>
+              <li>Communication, publications et documentation</li>
+              <li>Transport</li>
+              <li>Montage et démontage</li>
+            </ul>
+          </li>
+          <li :class="{'app-font-remove': !contractStore.with_production}" >[Production]</li>
         </ul>
       </li>
 
-      <li>III. Obligations de l’Artiste
+      <li>Obligations de l’Artiste
         <ul>
-          <li :class="{'app-font-remove': contractStore.contract_exposition === false}" >6 [Exposition]</li>
-          <ul>
-            <li>6.1 Obligation de renseigner</li>
-            <li>6.2 Collaboration de l’Artiste</li>
-            <li>6.3 Utilisation pour ses propres besoins</li>
-          </ul>
-          <li>7 [Production]</li>
+          <li :class="{'app-font-remove': contractStore.contract_exposition === false}" >[Exposition]
+            <ul>
+              <li>Obligation de renseigner</li>
+              <li>Collaboration de l’Artiste</li>
+              <li>Utilisation pour ses propres besoins</li>
+            </ul>
+          </li>
+          <li>[Production]</li>
         </ul>
       </li>
 
-      <li>IV. Rémunération de l’Artiste
+      <li>Rémunération de l’Artiste
         <ul>
-          <li>8 Obligation de renseigner</li>
-          <li>9 Indemnisation forfaitaire ou cachet</li>
-          <ul>
-            <li>9.1 Indemnisation calculée à l’heure</li>
-            <li>9.2 Vente des œuvres [OPTION EXPOSITION + VENTE]</li>
-            <li>9.3 Participation au prix de vente des œuvres [OPTION PARTICIPATION DE LA STRUCTURE AU PRIX DE VENTE]</li>
-          </ul>
+          <li>Obligation de renseigner</li>
+          <li>Indemnisation forfaitaire ou cachet
+            <ul>
+              <li>Indemnisation calculée à l’heure</li>
+              <li>Vente des œuvres [OPTION EXPOSITION + VENTE]</li>
+              <li>Participation au prix de vente des œuvres [OPTION PARTICIPATION DE LA STRUCTURE AU PRIX DE VENTE]</li>
+            </ul>
+          </li>
         </ul>
       </li>
 
-      <li>V. De la participation aux frais engagés par l’Artiste
+      <li>De la participation aux frais engagés par l’Artiste
         <ul>
-          <li>10 Budget de production</li>
-          <li>11 Participation aux frais accessoires</li>
+          <li>Budget de production</li>
+          <li>Participation aux frais accessoires</li>
         </ul>
       </li>
 
-      <li>VI. Propriété intellectuelle
+      <li>Propriété intellectuelle
         <ul>
-          <li>12 Crédit de production</li>
-          <li>13 Droit d’auteur.ice.x</li>
+          <li>Crédit de production</li>
+          <li>Droit d’auteur.ice.x</li>
         </ul>
       </li>
 
-      <li>VII. Fin du contrat
+      <li>Fin du contrat
         <ul>
-          <li>14 Défaut de <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name" @update:value="contractStore.structure_name = $event"/></li>
-          <li>15 Défaut de l’artiste</li>
+          <li>Défaut de <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name" @update:value="contractStore.structure_name = $event"/></li>
+          <li>Défaut de l’artiste</li>
         </ul>
       </li>
 
-      <li>VIII. Droit applicable, médiation et juridiction compétente
+      <li>Droit applicable, médiation et juridiction compétente
         <ul>
-          <li>16 Droit applicable</li>
-          <li>17 Médiation</li>
-          <li>18 Juridiction compétente
+          <li>Droit applicable</li>
+          <li>Médiation</li>
+          <li>Juridiction compétente
             <ul>
               <li><router-link to="/calculateur" >Annexe I – Grille de rémunération</router-link></li>
               <li><router-link to="#lite-des-oeuvres" >Annexe II – Liste des Œuvres</router-link></li>
@@ -882,6 +886,69 @@ h4 {
 p {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
+}
+
+ul.v-app-contract-content__lexical {
+  counter-reset: lexical-section lexical-subsection lexical-sub_subsection;
+  font-variant-numeric: tabular-nums;
+  -moz-font-feature-settings: "tnum";
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings: "tnum";
+
+  > li {
+    position: relative;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      right: 100%;
+      box-sizing: border-box;
+      padding-right: 2rem;
+      white-space: nowrap;
+      counter-increment: lexical-section;
+      content: counter(lexical-section, upper-roman);
+    }
+
+    > ul {
+      counter-reset: lexical-subsection lexical-sub_subsection;
+
+      > li {
+        position: relative;
+
+        &:before {
+          position: absolute;
+          top: 0;
+          right: 100%;
+          box-sizing: border-box;
+          padding-right: 2rem;
+          white-space: nowrap;
+          counter-increment: lexical-subsection;
+          content: counter(lexical-subsection);
+        }
+
+        > ul {
+          padding-left: 2rem;
+          counter-reset: lexical-sub_subsection;
+
+          > li {
+            position: relative;
+
+            &:before {
+              position: absolute;
+              top: 0;
+              right: 100%;
+              box-sizing: border-box;
+              padding-right: 2rem;
+              white-space: nowrap;
+              counter-increment: lexical-sub_subsection;
+              content: counter(lexical-subsection) ". " counter(lexical-sub_subsection);
+            }
+          }
+        }
+      }
+    }
+  }
+
 }
 
 .v-app-contract-content__content {
