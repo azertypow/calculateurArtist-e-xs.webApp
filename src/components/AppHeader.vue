@@ -1,11 +1,10 @@
 <template>
   <div class="v-app-header">
     <div class="v-app-header__top" >
-      <div class="v-app-header__title">
+      <router-link class="v-app-header__title" to="/">
         <h1>CONTRAT-MODÈLE ET RECOMMANDATIONS DE RÉMUNÉRATION POUR UNE&nbsp;EXPOSITION</h1>
-      </div>
+      </router-link>
     </div>
-    <app-toggle-header></app-toggle-header>
     <div class="v-app-header__nav-box" >
       <app-nav></app-nav>
     </div>
@@ -15,11 +14,10 @@
 <script lang="ts">
 import {defineComponent} from 'vue';
 import AppNav from "./AppNav.vue";
-import AppToggleHeader from "./AppToggleHeader.vue";
 
 export default defineComponent({
   name: 'AppHeader',
-  components: {AppNav, AppToggleHeader},
+  components: {AppNav},
 
 });
 </script>
@@ -43,6 +41,8 @@ export default defineComponent({
   box-sizing: border-box;
   height: 10rem;
   padding-top: 1rem;
+  display: block;
+  box-shadow: none;
 
   h1 {
     margin: 0;

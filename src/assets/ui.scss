@@ -1,4 +1,7 @@
 .app-with-circle-status {
+  cursor: pointer;
+  user-select: none !important;
+
   &:before {
     content: "";
     display: inline-block;

@@ -149,8 +149,11 @@
         <p :class="{'app-font-remove': !contractStore.contract_exposition}">
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
-          organise, en vue de la présentation publique d’une ou plusieurs Œuvres de l’Artiste, une exposition [INTITULEE
-          XXX], laquelle se tiendra du
+          organise, en vue de la présentation publique d’une ou plusieurs Œuvres de l’Artiste, une exposition
+          <content-editable placeholder="INTITULEE XXX" :value="contractStore.exposition_name"
+                            @update:value="contractStore.exposition_name = $event"/>,
+          ,
+          laquelle se tiendra du
           <content-editable placeholder="date du contrat" :value="contractStore.info_date"
                             @update:value="contractStore.info_date = $event"/>
           au
@@ -203,8 +206,15 @@
         <p>
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
-          s’engage à organiser [L’EXPOSITION / PRESENTATION PUBLIQUE / PROJET ARTISTIQUE] dans le lieu d’exposition
-          suivant&nbsp;: [NOM, ADRESSE], pour la durée prévue à cet effet.
+          s’engage à organiser
+          <span :class="{'app-font-remove': !contractStore.contract_exposition}"                                  >L’EXPOSITION</span>
+          <span :class="{'app-font-remove': !contractStore.contract_exposition || !contractStore.contract_public}" > / </span>
+          <span :class="{'app-font-remove': !contractStore.contract_public}"                                      >PRESENTATION PUBLIQUE</span>
+          dans le lieu d’exposition
+          suivant&nbsp;:
+          <content-editable placeholder="Nom et lieu" :value="contractStore.info_localisation"
+                            @update:value="contractStore.info_localisation = $event"/>,
+          pour la durée prévue à cet effet.
         </p>
 
         <p :class="{'app-font-remove': contractStore.contract_exposition === false}">
@@ -318,7 +328,7 @@
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
           s’engage à prendre en charge les frais de production des Œuvres réalisées par l’Artiste, selon les conditions
-          définies ci-après sous titre V.
+          définies ci-après sous titre&nbsp;V.
         </p>
       </div>
 
@@ -894,9 +904,18 @@ ul.v-app-contract-content__lexical {
   -moz-font-feature-settings: "tnum";
   -webkit-font-feature-settings: "tnum";
   font-feature-settings: "tnum";
+  padding-left: 0;
+
+  li:before {
+    width: 6rem;
+  }
 
   > li {
     position: relative;
+    margin-bottom: 3rem;
+    display: block;
+    font-family: Christiana_bold, serif;
+    font-size: 2.5rem;
 
     &:before {
       position: absolute;
@@ -907,10 +926,16 @@ ul.v-app-contract-content__lexical {
       white-space: nowrap;
       counter-increment: lexical-section;
       content: counter(lexical-section, upper-roman);
+      font-family: Christiana_bold, serif;
+      font-size: 2.5rem;
     }
 
     > ul {
+      padding-top: 1rem;
+      padding-left: 0;
       counter-reset: lexical-subsection lexical-sub_subsection;
+      font-family: Suisse_Intl, sans-serif;
+      font-size: 1.8rem;
 
       > li {
         position: relative;
@@ -927,7 +952,7 @@ ul.v-app-contract-content__lexical {
         }
 
         > ul {
-          padding-left: 2rem;
+          padding-left: 0rem;
           counter-reset: lexical-sub_subsection;
 
           > li {
@@ -954,11 +979,13 @@ ul.v-app-contract-content__lexical {
 .v-app-contract-content__content {
   .app-font-remove {
     //display: none;
-    color: coral;
+    //color: coral;
+    opacity: .5;
   }
 
   .dev-error {
-    color: red;
+    //color: red;
+    opacity: .5;
   }
 }
 

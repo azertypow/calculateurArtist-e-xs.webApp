@@ -8,6 +8,8 @@ export interface IStateContractStore {
 
     with_production: boolean
 
+    exposition_name: string
+
     structure_name: string
     structure_street: string
     structure_number: string
@@ -66,6 +68,8 @@ export const useContractStore = defineStore('contractStore', {
             user_firstname: '',
             user_name: '',
             user_status: '',
+
+            exposition_name: '',
 
             delegate_name: '',
 

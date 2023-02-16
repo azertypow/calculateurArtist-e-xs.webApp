@@ -48,6 +48,7 @@
       <div
           class="app-g__coll-10-12 v-app-section__help"
           v-html="section.help"
+          v-if="showHelpers"
       ></div>
     </div>
   </div>
@@ -59,6 +60,7 @@ import type {PropType} from 'vue';
 import type {NumberCalculatorSection, OptionCalculatorSection} from "../gloabal/CalculatorSection";
 import SubsectionOption from "./SubsectionOption.vue";
 import SubsectionNumber from "./SubsectionNumber.vue";
+import {useGlobalStore} from "../stores/globalStore";
 
 export default defineComponent({
   name: 'AppSection',
@@ -72,6 +74,11 @@ export default defineComponent({
   },
 
   computed: {
+
+    showHelpers(): boolean {
+      return useGlobalStore().showHelpers
+    },
+
     sectionIsNumber(): NumberCalculatorSection | null {
       if(this.section.type !== 'number') return null
       return this.section as NumberCalculatorSection
@@ -147,18 +154,38 @@ export default defineComponent({
   padding-top: 2rem;
   line-height: 2rem;
   font-size: 1.4rem;
-  padding-left: 4rem;
-  max-width: 45em;
+  max-width: 40em;
   position: relative;
 
-  :before {
+  &:before {
     content: '';
     position: absolute;
-    top: 3.5rem;
-    left: 1rem;
-    background: black;
-    width: 20px;
-    height: 30px;
+    top: 4rem;
+    left: 0;
+    transform: translateX( calc(-100% - 1rem ));
+
+    width: 1rem;
+    height: 2rem;
+    background-image: url("./src/assets/icons/lightbulb.svg");
+    background-size: 9.268px auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  > ul {
+    padding-left: 0;
+
+    > li {
+      display: block;
+      position: relative;
+      padding-left: 2rem;
+
+      &:before {
+        content: '—';
+        position: absolute;
+        left: 0;
+      }
+    }
   }
 }
 </style>
