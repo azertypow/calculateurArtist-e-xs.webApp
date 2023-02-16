@@ -166,7 +166,7 @@ export default defineComponent({
 
     width: 1rem;
     height: 2rem;
-    background-image: url("./src/assets/icons/lightbulb.svg");
+    background-image: url("../assets/icons/lightbulb.svg");
     background-size: 9.268px auto;
     background-position: center center;
     background-repeat: no-repeat;

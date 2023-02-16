@@ -20,7 +20,7 @@
         <div
             v-if="numberValue > 0"
             class="v-subsection-option__info-value"
-        >(&nbsp;{{numberValue}}/heure&nbsp;)</div>
+        >CHF {{numberValue}}.—</div>
       </div>
     </div>
 

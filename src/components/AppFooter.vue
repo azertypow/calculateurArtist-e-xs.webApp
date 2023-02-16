@@ -2,9 +2,15 @@
   <div
       class="v-app-footer"
   >
+
+    <div
+        v-if="!isHome"
+        class="app-button v-app-footer__button-export"
+    >exporter en PDF [comming soon]</div>
+
     <div
         class="v-app-footer__result"
-        v-if="total > 0 && globalStore.showFixedResult"
+        v-if="total > 0 && globalStore.showFixedResult && !isHome"
     >
       <div
           class="v-app-footer__content"
@@ -145,14 +151,17 @@
             class="v-app-footer__info__container__box"
         >
           <div class="app-with-circle-status"
+               v-if="!isHome"
                @click="globalStore.showLexical = !globalStore.showLexical"
                :class="{'app-with-circle-status--active': globalStore.showLexical}"
           >Lexique</div>
           <div class="app-with-circle-status"
+               v-if="!isHome"
                @click="globalStore.showInfo = !globalStore.showInfo"
                :class="{'app-with-circle-status--active': globalStore.showInfo}"
           >Information</div>
           <div class="app-with-circle-status"
+               v-if="!isHome"
                @click="globalStore.showHelpers = !globalStore.showHelpers"
                :class="{'app-with-circle-status--active': globalStore.showHelpers}"
           >Aide</div>
@@ -193,6 +202,10 @@ export default defineComponent({
   },
 
   computed: {
+    isHome(): boolean {
+      return this.$router.currentRoute.value.path === '/'
+    },
+
     curentPageName(): string {
       return this.$router.currentRoute.value.name as string | ''
     },
@@ -292,6 +305,15 @@ export default defineComponent({
       }
     }
   }
+}
+
+.v-app-footer__button-export {
+  position: absolute;
+  right: 2rem;
+  top: 0;
+  transform: translateY( calc(-100% - 2rem) );
+  z-index: 1000;
+  font-size: 1.2rem;
 }
 
 .v-app-footer__panel__signature {
