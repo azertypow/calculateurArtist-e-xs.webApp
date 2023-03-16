@@ -534,7 +534,12 @@
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
           est en droit de réclamer la déduction du budget de production, tel que celui-ci est défini à l’art. 10 du
-          présent contrat, pendant un délai de [Max 3 ans] à compter de la signature du présent contrat.
+          présent contrat, pendant un délai de
+
+          <content-editable placeholder="Max 3 ans" :value="contractStore.structure_reclamationDelay"
+                            @update:value="contractStore.structure_reclamationDelay = $event"/>
+
+          à compter de la signature du présent contrat.
         </p>
 
         <p>

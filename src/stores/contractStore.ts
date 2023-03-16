@@ -15,6 +15,7 @@ export interface IStateContractStore {
     structure_number: string
     structure_city: string
     structure_country: string
+    structure_reclamationDelay: string
 
     user_firstname: string
     user_name: string
@@ -68,6 +69,7 @@ export const useContractStore = defineStore('contractStore', {
             structure_number: '',
             structure_city: '',
             structure_country: '',
+            structure_reclamationDelay: '',
             user_firstname: '',
             user_name: '',
             user_status: '',
