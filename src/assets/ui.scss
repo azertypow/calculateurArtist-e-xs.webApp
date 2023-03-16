@@ -13,6 +13,12 @@
     margin-right: .5em;
   }
 
+  &.app-with-circle-status--white {
+    &:before {
+      background-color: white;
+    }
+  }
+
   &.app-with-circle-status--active {
     &:before {
       background-color: var(--app-color-secondary);

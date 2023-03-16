@@ -26,7 +26,7 @@
           class="v-app-footer__status__container"
       >
         <span
-            class="v-app-footer__status__items app-with-circle-status"
+            class="v-app-footer__status__items app-with-circle-status app-with-circle-status--white"
             v-for="(section, index) of sections"
             :class="{
               'app-with-circle-status--active': section.status !== 'empty',
