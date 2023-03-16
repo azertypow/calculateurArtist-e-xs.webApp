@@ -50,14 +50,6 @@
               leur prévoyance sociale ainsi que leur statut et reconnaissance en tant que professionnel·le·x·s
               de manière plus générale.
             </p>
-
-            <p>Suite à L’enquête sur les conditions de travail des artistes* à Genève,
-              publiée en septembre 2020 et réalisée par Garage, Clovis Duran (anciennement membre du groupe Rosa Brux),
-              Hélène Mariéthoz, Lab-of-Arts sous mandat du canton et de la Ville de Genève,
-              les mandants souhaitent faire évoluer et contribuer à l’amélioration des conditions de travail des artistes.
-              Garage, Rosa Brux et Lab-of-Arts ont été mandatés pour réaliser un contrat modèle contenant les éléments
-              qui devraient figurer en priorité dans un contrat entre un·e·x artiste et une structure,
-              ainsi qu’une grille tarifaire.</p>
           </template>
 
           <template v-slot:right >
@@ -71,8 +63,6 @@
               <li>Introduction d’un forfait de conception pour chaque type d’exposition</li>
               <li>Application d’une rémunération horaire pour la réalisation de chaque type d’exposition La grille de rémunération a pour but de s’appliquer à tout type de structures (les Centres d’art et les musées, les espaces d’exposition publics ou privés, subventionnés ou non par la Ville de Genève ou le canton de Genève), distingués dans la grille tarifaire annexe.</li>
             </ul>
-
-            <p>Au niveau fédéral, cantonal et municipal, l’amélioration des conditions de travail des artistes est aujourd’hui une préoccupation des collectivités publiques, en particulier les aspects de la rémunération des artistes, leur prévoyance sociale ainsi que leur statut et reconnaissance en tant que professionnel·le·x·s de manière plus générale.</p>
 
             <p class="v-app-footer__panel__signature">Site réalisé par Clovis Duran (graphisme) et Nicolas Baldran (développement)</p>
           </template>
@@ -181,7 +171,7 @@
             <span>Site en version beta</span>
           </div>
           <div>
-            <span>Suggestion&nbsp;?</span>
+            <a href >Suggestion&nbsp;?</a>
           </div>
         </div>
       </div>

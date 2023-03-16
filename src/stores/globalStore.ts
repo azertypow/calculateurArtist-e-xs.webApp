@@ -315,7 +315,7 @@ help:`
                     ).setAMultiplier(
                         {
                             value: 30,
-                            text: "Coût forfait text"
+                            text: "Coût forfait texte / 1000 frappes"
                         }
                     ),
                 )
