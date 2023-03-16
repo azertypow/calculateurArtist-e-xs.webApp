@@ -6,7 +6,7 @@
     <div
         v-if="!isHome"
         class="app-button v-app-footer__button-export"
-    >exporter en PDF [comming soon]</div>
+    >exporter en PDF [coming soon]</div>
 
     <div
         class="v-app-footer__result"
