@@ -100,6 +100,23 @@ export default defineComponent({
   border-radius: 2rem;
   position: relative;
   box-shadow: 0 3px 6px rgba(0, 0, 0, .25);
+
+  &:after {
+    content: "";
+    position: absolute;
+    right: .75rem;
+    width: 2rem;
+    height: 2rem;
+    background: url("../assets/icons/done_FILL0_wght400_GRAD0_opsz48.svg");
+    background-position: center;
+    background-size: auto 100%;
+  }
+
+  .is-active+&:after {
+    background: url("../assets/icons/task_alt_FILL0_wght400_GRAD0_opsz48.svg");
+    background-position: center;
+    background-size: auto 100%;
+  }
 }
 
 .v-app-checkbox__description {
