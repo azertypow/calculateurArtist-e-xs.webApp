@@ -117,6 +117,10 @@ export default defineComponent({
     background-position: center;
     background-size: auto 100%;
   }
+
+  .is-active+& {
+    background-color: var(--app-color-secondary);
+  }
 }
 
 .v-app-checkbox__description {
