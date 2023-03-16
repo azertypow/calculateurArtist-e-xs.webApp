@@ -620,17 +620,29 @@
         >
           Monteurs.trices et techniciens.nes externes et/ou internes
         </p>
-        <p
-            :class="{'is-active': contractStore.option_toBeCompletedIfNecessary}"
-            class="app-button--check"
-            @click="contractStore.option_toBeCompletedIfNecessary = !contractStore.option_toBeCompletedIfNecessary"
+        <template
+            v-for="toBeCompletedIfNecessary of contractStore.option_arrayOf_toBeCompletedIfNecessary"
         >
-          <content-editable
-              placeholder="(A compléter si nécessaire)"
-              :value="contractStore.option_toBeCompletedIfNecessary_content"
-              @update:value="contractStore.option_toBeCompletedIfNecessary_content = $event"
-          />
-        </p>
+          <p
+              :class="{'is-active': toBeCompletedIfNecessary.option_toBeCompletedIfNecessary}"
+              class="app-button--check"
+              @click="toBeCompletedIfNecessary.option_toBeCompletedIfNecessary = !toBeCompletedIfNecessary.option_toBeCompletedIfNecessary"
+          >
+            <content-editable
+                placeholder="(A compléter si nécessaire)"
+                :value="toBeCompletedIfNecessary.option_toBeCompletedIfNecessary_content"
+                @update:value="toBeCompletedIfNecessary.option_toBeCompletedIfNecessary_content = $event"
+            />
+          </p>
+        </template>
+
+        <button
+            @click="contractStore.option_arrayOf_toBeCompletedIfNecessary.push({
+                    option_toBeCompletedIfNecessary: false,
+                    option_toBeCompletedIfNecessary_content: '',
+                })"
+            class="app-button"
+        >[+] ajouter une entré</button>
 
         <p>
           La prise en charge du budget de production incombe à

@@ -43,8 +43,11 @@ export interface IStateContractStore {
     option_dailyTax: boolean
     option_transportation: boolean
     option_editors: boolean
-    option_toBeCompletedIfNecessary: boolean
-    option_toBeCompletedIfNecessary_content: string
+
+    option_arrayOf_toBeCompletedIfNecessary: {
+        option_toBeCompletedIfNecessary: boolean
+        option_toBeCompletedIfNecessary_content: string
+    }[]
 
     objectList: {
         year: string
@@ -93,8 +96,13 @@ export const useContractStore = defineStore('contractStore', {
             option_dailyTax: false,
             option_transportation: false,
             option_editors: false,
-            option_toBeCompletedIfNecessary: false,
-            option_toBeCompletedIfNecessary_content: '',
+            option_arrayOf_toBeCompletedIfNecessary: [
+                {
+                    option_toBeCompletedIfNecessary: false,
+                    option_toBeCompletedIfNecessary_content: '',
+                }
+            ],
+
             objectList: [
                 {
                     year: '',
