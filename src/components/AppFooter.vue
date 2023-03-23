@@ -150,12 +150,12 @@
         >
           <div class="app-with-circle-status"
                v-if="!isHome"
-               @click="globalStore.showLexical = !globalStore.showLexical"
+               @click="openLexical"
                :class="{'app-with-circle-status--active': globalStore.showLexical}"
           >Lexique</div>
           <div class="app-with-circle-status"
                v-if="!isHome"
-               @click="globalStore.showInfo = !globalStore.showInfo"
+               @click="openInfo"
                :class="{'app-with-circle-status--active': globalStore.showInfo}"
           >Information</div>
           <div class="app-with-circle-status"
@@ -215,7 +215,19 @@ export default defineComponent({
     total(): number {
       return this.globalStore.total
     },
-  }
+  },
+
+  methods: {
+    openLexical() {
+      this.globalStore.showInfo = false
+      this.globalStore.showLexical = !this.globalStore.showLexical
+    },
+
+    openInfo() {
+      this.globalStore.showLexical = false
+      this.globalStore.showInfo = !this.globalStore.showInfo
+    },
+  },
 
 
 });
