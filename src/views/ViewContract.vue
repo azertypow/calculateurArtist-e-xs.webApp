@@ -14,10 +14,14 @@
           <div class="app-with-bottom-spacing" style="padding-left: 3rem">et/ou</div>
           <div class="app-button--check" :class="{'is-active': contractStore.contract_public}" @click="contractStore.contract_public = !contractStore.contract_public">présentation publique</div>
           <div>
-            <select v-model="contractStore.with_production" >
-              <option :value="true">avec</option>
-              <option :value="false">sans</option>
-            </select> production d’œuvre(s)
+            <div
+                class="app-select-style-box"
+            >
+              <select v-model="contractStore.with_production" >
+                <option :value="true">avec</option>
+                <option :value="false">sans</option>
+              </select>
+            </div>production d’œuvre(s)
           </div>
 
         </div>
@@ -149,8 +153,22 @@
         <div class="app-g__coll-4-12 app-with-gutter">
           <input
               class="app-value-string"
+              v-model="contractStore.artiste_firstname"
+              placeholder="Prénom"
+          >
+        </div>
+      </div>
+
+      <div
+          class="app-g"
+      >
+        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-4-12"></div>
+        <div class="app-g__coll-4-12 app-with-gutter">
+          <input
+              class="app-value-string"
               v-model="contractStore.artiste_name"
-              placeholder="Prénom NOM"
+              placeholder="NOM"
           >
         </div>
       </div>
