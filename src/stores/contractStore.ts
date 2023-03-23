@@ -17,6 +17,9 @@ export interface IStateContractStore {
     structure_country: string
     structure_reclamationDelay: string
 
+    artiste_hasCommission: boolean
+    commission_percent: string
+
     user_firstname: string
     user_name: string
     user_status: string
@@ -24,7 +27,13 @@ export interface IStateContractStore {
 
     delegate_name: string
 
+    participationAuFrais_rembourser:  '' | 'rembourse à l’Artiste les dépenses nécessaires' | 'A titre de participation aux frais occasionnés'
+
+    artiste_angagementPretEtRedaction: "prêter son concours" | "rédiger les textes décrivant sa démarche artistique"
+
+    artiste_renumerationPercent: string
     artiste_structureType: 'artistSolo'|'collectif'
+    artiste_firstname: string
     artiste_name: string
     artiste_nationality: string
     artiste_birth: string
@@ -32,6 +41,10 @@ export interface IStateContractStore {
     artiste_postal: string
     artiste_mobileNumber: string
     artiste_gallery: string
+
+    clef_de_repartition: string
+
+    option_chargeBudgetDeProd: 'artiste' | 'structure' | 'clef_de_repartition'
 
     info_date: string,
     info_localisation: string,
@@ -80,15 +93,27 @@ export const useContractStore = defineStore('contractStore', {
 
             work_price: '',
 
+            artiste_renumerationPercent: '',
             artiste_structureType: 'artistSolo',
             artiste_postal: '',
             artiste_mobileNumber: '',
             artiste_gallery: '',
             artiste_name: '',
+            artiste_firstname: '',
             artiste_birth: '',
             artiste_mail: '',
             artiste_nationality: '',
 
+            clef_de_repartition: '',
+
+            option_chargeBudgetDeProd: "structure",
+
+            artiste_hasCommission: true,
+            commission_percent: '',
+
+            participationAuFrais_rembourser: '',
+
+            artiste_angagementPretEtRedaction: "prêter son concours",
             info_date: '',
             info_localisation: '',
             entitled: '',
