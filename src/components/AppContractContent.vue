@@ -86,7 +86,7 @@
           <li>Médiation</li>
           <li>Juridiction compétente
             <ul>
-              <li><router-link to="/calculateur" >Annexe I – Grille de rémunération</router-link></li>
+              <li><router-link to="/calculateur" >Annexe I – Formulaire de rémunération</router-link></li>
               <li><router-link to="#lite-des-oeuvres" >Annexe II – Liste des Œuvres</router-link></li>
             </ul>
           </li>
@@ -294,7 +294,7 @@
           parmi lesquels sont également compris les frais administratifs et de douane.
         </p>
         <p>
-          Si l’Artiste est chargé du transport des Œuvres, il sera rémunéré selon la « Grille de rémunération » (Annexe
+          Si l’Artiste est chargé du transport des Œuvres, il sera rémunéré selon le « Formulaire de rémunération » (Annexe
           I)
           et l’ensemble des frais liés au transport lui seront remboursés.
         </p>
@@ -315,7 +315,7 @@
           disposition et, le cas échéant, les mettre à sa disposition.
         </p>
 
-        <p>Si l’Artiste est chargé du montage et du démontage, il sera rémunéré selon la « Grille de rémunération »
+        <p>Si l’Artiste est chargé du montage et du démontage, il sera rémunéré selon le « Formulaire de rémunération »
           (Annexe&nbsp;&nbsp;I)
           et l’ensemble des frais lui seront remboursés.</p>
 
@@ -372,15 +372,24 @@
         </p>
 
         <h4>Collaboration de l’Artiste</h4>
-        <p>
+
+
+        <p
+            :class="{'is-active': contractStore.artiste_angagementPretEtRedaction === 'prêter son concours'}"
+            class="app-button--check"
+            @click="contractStore.artiste_angagementPretEtRedaction = 'prêter son concours'"
+        >
           L’Artiste s’engage à prêter son concours, si nécessaire, à la conception des textes décrivant sa démarche
           artistique et son projet. La version définitive desdits textes doit faire l’objet de l’approbation de
           l’Artiste.
         </p>
-        <p class="dev-error" >[OU]</p>
-        <p>
+        <p
+            :class="{'is-active': contractStore.artiste_angagementPretEtRedaction === 'rédiger les textes décrivant sa démarche artistique'}"
+            class="app-button--check"
+            @click="contractStore.artiste_angagementPretEtRedaction = 'rédiger les textes décrivant sa démarche artistique'"
+        >
           L’Artiste s’engage à rédiger les textes décrivant sa démarche artistique et son projet. Il sera rémunéré
-            selon la « Grille de rémunération » (Annexe I).
+            selon le « Formulaire de rémunération » (Annexe I).
         </p>
 
         <p>
@@ -462,11 +471,11 @@
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
           verse à l’Artiste, à titre de rémunération pour l’exposition <span class="dev-error" >[et/ou]</span> conception/adaptation <span class="dev-error" >[et/ou]</span> réalisation
-          de son ou ses Œuvre(s), une somme de 
+          de son ou ses Œuvre(s), une somme de
           <content-editable placeholder="[XXX]" :value="contractStore.work_price"
                             @update:value="contractStore.work_price = $event"/>,
           hors TVA, déterminée selon l’activité déployée et les critères
-          prévus dans la « Grille de rémunération » (Annexe I).
+          prévus dans le « Formulaire de rémunération » (Annexe I).
         </p>
 
         <p>Le versement sera effectué sur réception d’une facture payable dans les 30 jours.</p>
@@ -480,10 +489,10 @@
           préalablement par les Parties en vue de la mise en place de l’exposition, sont facturés à
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
-          à un tarif horaire de 
+          à un tarif horaire de
           <content-editable placeholder="[XXX]" :value="contractStore.work_price"
                             @update:value="contractStore.work_price = $event"/>,
-          déterminé sur la base des critères prévus par la « Grille de rémunération »
+          déterminé sur la base des critères prévus par le « Formulaire de rémunération »
           (Annexe&nbsp;I).
         </p>
 
@@ -542,16 +551,24 @@
           à compter de la signature du présent contrat.
         </p>
 
-        <p>
+        <p
+            :class="{'is-active': contractStore.artiste_hasCommission}"
+            class="app-button--check"
+            @click="contractStore.artiste_hasCommission = true"
+        >
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
-          a droit, en cas de vente d’une Œuvre de l’Artiste lors de l’exposition, à une commission de [%] sur le prix de
-          vente.
+          a droit, en cas de vente d’une Œuvre de l’Artiste lors de l’exposition, à une commission de
+          <content-editable placeholder="pourcentage" :value="contractStore.commission_percent"
+                            @update:value="contractStore.commission_percent = $event"/>%
+          sur le prix de vente.
         </p>
 
-        <p class="dev-error" >[OU]</p>
-
-        <p>
+        <p
+            :class="{'is-active': !contractStore.artiste_hasCommission}"
+            class="app-button--check"
+            @click="contractStore.artiste_hasCommission = false"
+        >
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
           ne prend pas de commission sur le prix en cas de vente d’une Œuvre de l’Artiste lors de l’exposition.
@@ -559,9 +576,6 @@
       </div>
 
       <p class="dev-error" >[ET/OU]</p>
-
-
-
 
       <h2>De la participation aux frais engagés par l’Artiste</h2>
       <div class="v-app-contract-content__content__subsection">
@@ -575,7 +589,7 @@
           sont produites avec un budget de production.
         </p>
 
-        <p>Le budget global de 
+        <p>Le budget global de
           <content-editable placeholder="[XXX]" :value="contractStore.work_price"
                             @update:value="contractStore.work_price = $event"/>
           comprend (à cocher) :</p>
@@ -585,7 +599,7 @@
             class="app-button--check"
             @click="contractStore.option_honoraryAchievement = !contractStore.option_honoraryAchievement"
         >
-          Honoraires de réalisation par l’Artiste ou externalisés selon la « Grille de rémunération » (Annexe I)
+          Honoraires de réalisation par l’Artiste ou externalisés selon le « Formulaire de rémunération » (Annexe I)
         </p>
 
         <p
@@ -650,10 +664,37 @@
         >[+] ajouter une entré</button>
 
         <p>
-          La prise en charge du budget de production incombe à
+          La prise en charge du budget de production incombe à :
+        </p>
+
+        <p
+            :class="{'is-active': contractStore.option_chargeBudgetDeProd === 'structure'}"
+            class="app-button--check"
+            @click="contractStore.option_chargeBudgetDeProd = 'structure'"
+        >
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
-          <span class="dev-error" > [OU]</span> à {{contractStore.artiste_name}} <span class="dev-error">[OU]</span> <span class="dev-error">[clé de répartition]</span>.
+        </p>
+
+        <p
+            :class="{'is-active': contractStore.option_chargeBudgetDeProd === 'artiste'}"
+            class="app-button--check"
+            @click="contractStore.option_chargeBudgetDeProd = 'artiste'"
+        >
+          <content-editable placeholder="Prénom" :value="contractStore.artiste_firstname"
+                            @update:value="contractStore.artiste_firstname = $event"/>
+          &nbsp;
+          <content-editable placeholder="NOM" :value="contractStore.artiste_name"
+                            @update:value="contractStore.artiste_name = $event"/>
+        </p>
+
+        <p
+            :class="{'is-active': contractStore.option_chargeBudgetDeProd === 'clef_de_repartition'}"
+            class="app-button--check"
+            @click="contractStore.option_chargeBudgetDeProd = 'clef_de_repartition'"
+        >
+          <content-editable placeholder="clé de répartition" :value="contractStore.clef_de_repartition"
+                            @update:value="contractStore.clef_de_repartition = $event"/>
         </p>
 
         <p>
@@ -663,7 +704,11 @@
 
         <h3>Participation aux frais accessoires</h3>
 
-        <p>
+        <p
+            :class="{'is-active': contractStore.participationAuFrais_rembourser === 'rembourse à l’Artiste les dépenses nécessaires'}"
+            class="app-button--check"
+            @click="contractStore.participationAuFrais_rembourser = 'rembourse à l’Artiste les dépenses nécessaires'"
+        >
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
           rembourse à l’Artiste les dépenses nécessaires en vue de
@@ -679,9 +724,11 @@
           (frais de voyage, de transport, de logement, de repas, etc.), sur présentation des justificatifs.
         </p>
 
-        <p class="dev-error" >[OU]</p>
-
-        <p>
+        <p
+            :class="{'is-active': contractStore.participationAuFrais_rembourser === 'A titre de participation aux frais occasionnés'}"
+            class="app-button--check"
+            @click="contractStore.participationAuFrais_rembourser = 'A titre de participation aux frais occasionnés'"
+        >
           A titre de participation aux frais occasionnés à l’Artiste par l’exécution du présent contrat,
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
@@ -712,9 +759,12 @@
         <p>En-dehors des clauses figurant ci-dessus et des cessions de droits nécessaires à la bonne exécution du
           contrat, l’Artiste conserve l’entier des droits d’auteur sur l’Œuvre.</p>
 
-        <p>L’Artiste a droit à une rémunération [%] sur le montant de rémunération pour la cession de certains droits
+        <p>L’Artiste a droit à une rémunération
+          <content-editable placeholder="pourcentage" :value="contractStore.artiste_renumerationPercent"
+                            @update:value="contractStore.artiste_renumerationPercent = $event"/>%
+          sur le montant de rémunération pour la cession de certains droits
           d’auteur selon les termes du présent contrat. Cette rémunération est incluse dans la rémunération facturée par
-          l’Artiste et déterminée selon les critères prévus dans la « Grille de rémunération » (Annexe I).</p>
+          l’Artiste et déterminée selon les critères prévus dans le « Formulaire de rémunération » (Annexe I).</p>
       </div>
 
 
@@ -817,7 +867,7 @@
                             @update:value="contractStore.artiste_name = $event"/>
         </p>
 
-        <h4>Annexe I – Grille de rémunération</h4>
+        <h4>Annexe I – Formulaire de rémunération</h4>
 
         <p>[INSERER LA DERNIER VERSION DE LA GRILLE DE REMUNERATION]</p>
 
