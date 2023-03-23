@@ -61,7 +61,7 @@
               <li>Distinction de la typologie du projet (œuvre existante, adaptation d’une œuvre existante et conception d’une nouvelle œuvre)</li>
               <li>Prise en compte de la durée de l’exposition</li>
               <li>Introduction d’un forfait de conception pour chaque type d’exposition</li>
-              <li>Application d’une rémunération horaire pour la réalisation de chaque type d’exposition La grille de rémunération a pour but de s’appliquer à tout type de structures (les Centres d’art et les musées, les espaces d’exposition publics ou privés, subventionnés ou non par la Ville de Genève ou le canton de Genève), distingués dans la grille tarifaire annexe.</li>
+              <li>Application d’une rémunération horaire pour la réalisation de chaque type d’exposition Le formulaire de rémunération a pour but de s’appliquer à tout type de structures (les Centres d’art et les musées, les espaces d’exposition publics ou privés, subventionnés ou non par la Ville de Genève ou le canton de Genève), distingués dans la grille tarifaire annexe.</li>
             </ul>
 
             <p class="v-app-footer__panel__signature">Site réalisé par Clovis Duran (graphisme) et Nicolas Baldran (développement)</p>
