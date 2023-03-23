@@ -171,7 +171,7 @@
             <span>Site en version beta</span>
           </div>
           <div>
-            <a href >Suggestion&nbsp;?</a>
+            <a style="text-decoration: none; box-shadow: none" target="_blank" href="mailto:webmaster@example.com?subject=Suggestion%20webApplication" >Suggestion&nbsp;?</a>
           </div>
         </div>
       </div>
