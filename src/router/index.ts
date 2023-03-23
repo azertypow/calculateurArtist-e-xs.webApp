@@ -1,4 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+import {useGlobalStore} from "../stores/globalStore"
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -34,6 +35,12 @@ const router = createRouter({
       component: () => import('../views/ViewContract.vue'),
     },
   ]
+})
+
+router.beforeEach((to, from, next) => {
+  useGlobalStore().showLexical  = false
+  useGlobalStore().showInfo     = false
+  next()
 })
 
 export default router
