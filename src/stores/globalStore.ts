@@ -53,7 +53,7 @@ export const useGlobalStore = defineStore('globalStore', {
 
             showLexical: false,
             showInfo: false,
-            showHelpers: true,
+            showHelpers: false,
 
             isACollective: false,
             showFixedResult: true,
