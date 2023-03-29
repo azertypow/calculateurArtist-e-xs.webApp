@@ -2,7 +2,7 @@
   <div class="v-app-header">
     <div class="v-app-header__top" >
       <router-link class="v-app-header__title" to="/">
-        <h1>CONTRAT-MODÈLE ET RECOMMANDATIONS DE RÉMUNÉRATION POUR UNE&nbsp;EXPOSITION</h1>
+        <h1>Condition Artist.exs</h1>
       </router-link>
     </div>
     <div class="v-app-header__nav-box" >
@@ -24,7 +24,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .v-app-header {
-  padding-top: 13rem;
+  padding-top: 9rem;
 }
 
 .v-app-header__top {
@@ -33,13 +33,14 @@ export default defineComponent({
   top: 0;
   left: 0;
   background: var(--app-color-main);
+  width: 100%;
 }
 
 .v-app-header__title {
   border-bottom: solid 1px var(--app-color-border);
   text-align: center;
   box-sizing: border-box;
-  height: 10rem;
+  height: 7rem;
   padding-top: 1rem;
   display: block;
   box-shadow: none;
