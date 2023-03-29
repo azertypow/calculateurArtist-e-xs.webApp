@@ -58,6 +58,15 @@ export interface IStateContractStore {
     option_transportation: boolean
     option_editors: boolean
 
+    option_indemnisation_remunerePourLExpo: boolean
+    option_indemnisation_conceptionEtAdaptation: boolean
+    option_indemnisation_verseUneSomme: boolean
+
+    option_structureContributionForTheProduction: {
+        byParticipation: boolean
+        remuneration: boolean
+    }
+
     option_arrayOf_toBeCompletedIfNecessary: {
         option_toBeCompletedIfNecessary: boolean
         option_toBeCompletedIfNecessary_content: string
@@ -123,6 +132,15 @@ export const useContractStore = defineStore('contractStore', {
             option_dailyTax: false,
             option_transportation: false,
             option_editors: false,
+            option_indemnisation_remunerePourLExpo: false,
+            option_indemnisation_conceptionEtAdaptation: false,
+            option_indemnisation_verseUneSomme: false,
+
+            option_structureContributionForTheProduction: {
+                byParticipation: false,
+                remuneration: false,
+            },
+
             option_arrayOf_toBeCompletedIfNecessary: [
                 {
                     option_toBeCompletedIfNecessary: false,
