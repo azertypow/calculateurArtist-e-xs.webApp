@@ -273,10 +273,12 @@ help:`
                 // ----------
                 new NumberCalculatorSection(
                     {index : 8, title : "Évenement",
-help: `<p>Dans le cas ou la structure propose la rédaction de textes par l'artiste, forfait texte pour 1000 frappes. Le nombre d'incidences détermine la longueur du texte produit arrondis au millier de frappes le plus proche.</p>
-<ul>Exemples : 
-<li>Si le texte produit contient 1312 caractères espaces compris, compter 1 occurence.</li>
-<li>Si le texte produit contient 29’979 caractères espaces compris, compter 30 occurences.</li>
+help: `
+<ul>
+<li>Événement avec préparation : présentation publique nécessitant un temps de préparation.</li>
+<li>Exemples : lecture, conférence, workshop, modération de rencontre, etc.</li>
+<li>Événement sans préparation : présentation publique ne nécessitant pas de temps de préparation.</li>
+<li>Exemples : présence lors de visite guidée, projection en présence de l’artiste, participation à une table ronde, etc.</li>
 </ul>
 `},
                 ).addSubSection(
@@ -306,12 +308,10 @@ help: `<p>Dans le cas ou la structure propose la rédaction de textes par l'arti
                 // ----------
                 new NumberCalculatorSection(
                     {index : 9, title : "Texte", required : false, info : 'source?',
-help:`
-<ul>
-<li>Événement avec préparation : présentation publique nécessitant un temps de préparation.</li>
-<li>Exemples : lecture, conférence, workshop, modération de rencontre, etc.</li>
-<li>Événement sans préparation : présentation publique ne nécessitant pas de temps de préparation.</li>
-<li>Exemples : présence lors de visite guidée, projection en présence de l’artiste, participation à une table ronde, etc.</li>
+help:`<p>Dans le cas ou la structure propose la rédaction de textes par l'artiste, forfait texte pour 1000 frappes. Le nombre d'incidences détermine la longueur du texte produit arrondis au millier de frappes le plus proche.</p>
+<ul>Exemples : 
+<li>Si le texte produit contient 1312 caractères espaces compris, compter 1 occurence.</li>
+<li>Si le texte produit contient 29’979 caractères espaces compris, compter 30 occurences.</li>
 </ul>
 `}
                 ).addSubSection(
