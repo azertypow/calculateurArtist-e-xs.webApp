@@ -264,7 +264,7 @@ help:`
                         value: 60,
                         text: 'Coût horaire',
                         isEditable: true,
-                        unit: 'heures',
+                        unit: 'CHF',
                     })
                 ),
                 // ----------
@@ -320,7 +320,8 @@ help:`<p>Dans le cas ou la structure propose la rédaction de textes par l'artis
                     ).setAMultiplier(
                         {
                             value: 30,
-                            text: "Coût forfait texte / 1000 frappes"
+                            text: "Coût forfait texte / 1000 frappes",
+                            unit: "CHF"
                         }
                     ),
                 )
