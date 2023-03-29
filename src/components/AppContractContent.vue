@@ -372,7 +372,7 @@
 
 
 <!-- contractStore.with_production-->
-        <h3 :class="{'app-font-remove': contractStore.with_production === false}">[Production]</h3>
+        <h3 :class="{'app-font-remove': contractStore.with_production === false}">Production</h3>
         <p
             :class="{'app-font-remove': contractStore.with_production === false}"
         >
@@ -469,7 +469,7 @@
           photographies.
         </p>
 
-        <h3 :class="{'app-font-remove': contractStore.with_production === false}">[Production]</h3>
+        <h3 :class="{'app-font-remove': contractStore.with_production === false}">Production</h3>
 
         <p
             :class="{'app-font-remove': contractStore.with_production === false}"
