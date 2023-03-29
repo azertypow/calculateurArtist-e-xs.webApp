@@ -51,9 +51,9 @@
           <li>Obligation de renseigner</li>
           <li>Indemnisation forfaitaire ou cachet
             <ul>
-              <li>Indemnisation calculée à l’heure</li>
-              <li>Vente des œuvres (si exposition et vente]</li>
-              <li>Participation au prix de vente des œuvres [OPTION PARTICIPATION DE LA STRUCTURE AU PRIX DE VENTE]</li>
+              <li>Indemnisation calculée à l’heure (si indemnisation calculée à l’heure)</li>
+              <li>Vente des œuvres (si exposition et vente)</li>
+              <li>Participation au prix de vente des œuvres (si participation de la structure au prix de vente)</li>
             </ul>
           </li>
         </ul>
@@ -553,11 +553,20 @@
 
         <p>Le versement sera effectué sur réception d’une facture payable dans les 30 jours.</p>
 
-        <p class="dev-error" >[ET/OU]</p>
+        <h4
+            :class="{'app-font-remove': contractStore.option_indemnisationCalculHeure === false}"
+        >
+          Indemnisation calculée à l’heure
+          <br><span
+            :class="{'is-active': contractStore.option_indemnisationCalculHeure}"
+            class="app-button--check"
+            @click="contractStore.option_indemnisationCalculHeure = !contractStore.option_indemnisationCalculHeure"
+        >(si indemnisation calculée à l’heure? )</span>
+        </h4>
 
-        <h4>Indemnisation calculée à l’heure</h4>
-
-        <p>
+        <p
+            :class="{'app-font-remove': contractStore.option_indemnisationCalculHeure === false}"
+        >
           Les travaux de l’Artiste (ou des auxiliaires travaillant pour son compte), en tant que cela a été convenu
           préalablement par les Parties en vue de la mise en place de l’exposition, sont facturés à
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
@@ -569,38 +578,63 @@
           (Annexe&nbsp;I).
         </p>
 
-        <p>Le versement sera effectué sur réception d’une facture payable dans les 30 jours.</p>
+        <p
+            :class="{'app-font-remove': contractStore.option_indemnisationCalculHeure === false}"
+        >Le versement sera effectué sur réception d’une facture payable dans les 30 jours.</p>
 
-        <p class="dev-error" >[ET/OU]</p>
+        <h4
+            :class="{'app-font-remove': contractStore.option_expositionEtVente === false}"
+        >
+          Vente des œuvres
+          <br><span
+              :class="{'is-active': contractStore.option_expositionEtVente}"
+              class="app-button--check"
+              @click="contractStore.option_expositionEtVente = !contractStore.option_expositionEtVente"
+            >(si exposition et vente)</span>
+        </h4>
 
-        <h4>Vente des œuvres [OPTION EXPOSITION + VENTE]</h4>
-
-        <p>
+        <p
+            :class="{'app-font-remove': contractStore.option_expositionEtVente === false}"
+        >
           L’Artiste fixe librement le prix de ses Œuvres, qui doivent être compris comme un prix minimum.
         </p>
-        <p>
+        <p
+            :class="{'app-font-remove': contractStore.option_expositionEtVente === false}"
+        >
           Chaque vente doit faire l’objet d’un contrat écrit, détaillant la ou les Œuvre(s) vendue(s) conformément à
           l’Annexe II « Liste des Œuvres » et indiquant le prix convenu par les parties au contrat de vente.
         </p>
-        <p>
+        <p
+            :class="{'app-font-remove': contractStore.option_expositionEtVente === false}"
+        >
           Les Œuvres vendues durant l’exposition sont directement livrées à l’acheteur par
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
           et restent propriété de l’Artiste jusqu’au moment du paiement.
         </p>
 
-        <p class="dev-error" >[ET/OU]</p>
+        <h4
+            :class="{'app-font-remove': contractStore.option_participationPrixDeVente === false}"
+        >Participation au prix de vente des œuvres
+          <br><span
+              :class="{'is-active': contractStore.option_participationPrixDeVente}"
+              class="app-button--check"
+              @click="contractStore.option_participationPrixDeVente = !contractStore.option_participationPrixDeVente"
+          >(si participation de la structure au prix de vente)</span>
+        </h4>
 
-        <h4>Participation au prix de vente des œuvres [OPTION PARTICIPATION DE LA STRUCTURE AU PRIX DE VENTE]</h4>
-
-        <p>
+        <p
+            :class="{'app-font-remove': contractStore.option_participationPrixDeVente === false}"
+        >
           Des rabais sur la vente ne peuvent être accordés qu’en cas d’accord entre l’Artiste et
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
           .
         </p>
 
-        <p>
+        <p
+            :class="{'app-font-remove': contractStore.option_participationPrixDeVente === false}"
+        >
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
           est tenue de verser la part revenant à l’Artiste dans les 30 jours à compter du paiement par l’acheteur. Un
@@ -608,7 +642,9 @@
           l’Artiste.
         </p>
 
-        <p>
+        <p
+            :class="{'app-font-remove': contractStore.option_participationPrixDeVente === false}"
+        >
           En cas de participation de
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
@@ -625,7 +661,10 @@
         </p>
 
         <p
-            :class="{'is-active': contractStore.artiste_hasCommission}"
+            :class="{
+              'is-active': contractStore.artiste_hasCommission,
+              'app-font-remove': contractStore.option_participationPrixDeVente === false,
+            }"
             class="app-button--check"
             @click="contractStore.artiste_hasCommission = true"
         >
@@ -638,7 +677,10 @@
         </p>
 
         <p
-            :class="{'is-active': !contractStore.artiste_hasCommission}"
+            :class="{
+              'is-active': !contractStore.artiste_hasCommission,
+              'app-font-remove': contractStore.option_participationPrixDeVente === false,
+            }"
             class="app-button--check"
             @click="contractStore.artiste_hasCommission = false"
         >

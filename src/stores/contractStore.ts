@@ -62,6 +62,10 @@ export interface IStateContractStore {
     option_indemnisation_conceptionEtAdaptation: boolean
     option_indemnisation_verseUneSomme: boolean
 
+    option_indemnisationCalculHeure: boolean
+    option_expositionEtVente: boolean
+    option_participationPrixDeVente: boolean
+
     option_structureContributionForTheProduction: {
         byParticipation: boolean
         remuneration: boolean
@@ -135,6 +139,10 @@ export const useContractStore = defineStore('contractStore', {
             option_indemnisation_remunerePourLExpo: false,
             option_indemnisation_conceptionEtAdaptation: false,
             option_indemnisation_verseUneSomme: false,
+
+            option_indemnisationCalculHeure: false,
+            option_expositionEtVente: false,
+            option_participationPrixDeVente: false,
 
             option_structureContributionForTheProduction: {
                 byParticipation: false,
