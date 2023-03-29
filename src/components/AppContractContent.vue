@@ -52,7 +52,7 @@
           <li>Indemnisation forfaitaire ou cachet
             <ul>
               <li>Indemnisation calculée à l’heure</li>
-              <li>Vente des œuvres [OPTION EXPOSITION + VENTE]</li>
+              <li>Vente des œuvres (si exposition et vente]</li>
               <li>Participation au prix de vente des œuvres [OPTION PARTICIPATION DE LA STRUCTURE AU PRIX DE VENTE]</li>
             </ul>
           </li>
@@ -388,7 +388,7 @@
 
       <h2>Obligations de l’Artiste</h2>
       <div class="v-app-contract-content__content__subsection">
-        <h3 :class="{'app-font-remove': contractStore.contract_exposition === false}">[Exposition]</h3>
+        <h3 :class="{'app-font-remove': contractStore.contract_exposition === false}">Exposition</h3>
 
         <p :class="{'app-font-remove': contractStore.contract_exposition === false}">
           L’Artiste s’engage à mettre les Œuvres à disposition de
@@ -411,7 +411,12 @@
         <p>Sur demande de
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
-          , l’Artiste [LA] renseigne sur ses autres expositions en cours ou à venir, lors desquelles il serait prévu de
+          , l’Artiste
+          <content-editable placeholder="Prénom de l'artiste" :value="contractStore.artiste_firstname"
+                                        @update:value="contractStore.structure_name = $event"/>
+          <content-editable placeholder="Nom de l'artiste" :value="contractStore.artiste_name"
+                            @update:value="contractStore.structure_name = $event"/>
+          renseigne sur ses autres expositions en cours ou à venir, lors desquelles il serait prévu de
           présenter des Œuvres objet du présent contrat.
         </p>
 
@@ -780,13 +785,13 @@
           rembourse à l’Artiste les dépenses nécessaires en vue de
           <span
             :class="{'app-font-remove': contractStore.contract_exposition === false}"
-          >l’[EXPOSITION]</span>
+          >l’exposition</span>
           <span
             :class="{'app-font-remove': !contractStore.contract_exposition || !contractStore.with_production}"
           >/</span>
           <span
               :class="{'app-font-remove': !contractStore.with_production}"
-          >[PRODUCTION]</span>
+          >la production</span>
           (frais de voyage, de transport, de logement, de repas, etc.), sur présentation des justificatifs.
         </p>
 
