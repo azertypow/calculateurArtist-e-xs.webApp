@@ -8,7 +8,15 @@
     >
       <div class="app-g__coll-2-12 app-with-gutter"></div>
       <div class="app-g__coll-4-12 app-with-gutter" >{{ multiplier.text }}</div>
-      <div class="app-g__coll-6-12 app-with-gutter" v-if=" !multiplier.isEditable">{{ multiplier.value }}</div>
+      <div class="app-g__coll-6-12 app-with-gutter" v-if=" !multiplier.isEditable"
+        >
+        <span
+            v-if="multiplier.unit === 'CHF'"
+        >CHF</span>
+        {{ multiplier.value }}
+        <span
+          v-if="multiplier.unit === 'CHF'"
+        >&nbsp;&nbsp;&nbsp;.—</span></div>
       <div class="v-subsection-number__multiplier-editable" v-else>
         <div>
           <icon-pen></icon-pen>
