@@ -13,6 +13,7 @@ import {conditionalLogicSection_3_option_1} from "./conditionalLogicSection_3_op
 import {conditionalLogicSection_3_option_2} from "./conditionalLogicSection_3_option_2";
 import {conditionalLogicSection_3_option_3} from "./conditionalLogicSection_3_option_3";
 import {conditionalLogicSection_8} from "./conditionalLogicSection_8";
+import {conditionalLogicSection_8_sans} from "./conditionalLogicSection_8_sans"
 
 const calculatorSection_1 = new OptionCalculatorSection(
     {index : 1, title : 'Subventions', required : true,
@@ -285,15 +286,19 @@ help: `<p>Dans le cas ou la structure propose la rédaction de textes par l'arti
                         value: new ConditionalValueFromSubsectionOption([
                             calculatorSection_1,
                         ], () => conditionalLogicSection_8(calculatorSection_1)),
-                        text: "Evénement avec préparation",
+                        text: "Événement avec préparation",
                         unit: 'CHF',
                     }),
                 ).addSubSection(
                     new NumberCalculatorSubsection(
                         "nombre d’occurences",
-                    ).setAMultiplier(
-                        {value: 500, text: "Évènement avec préparation"}
-                    ),
+                    ).setAMultiplier({
+                      value: new ConditionalValueFromSubsectionOption([
+                        calculatorSection_1,
+                      ], () => conditionalLogicSection_8_sans(calculatorSection_1)),
+                      text: "Événement sans préparation",
+                      unit: 'CHF',
+                    }),
                 ),
                 // ----------
 
