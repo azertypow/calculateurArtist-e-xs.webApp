@@ -1,6 +1,6 @@
 <template>
   <div class="v-view-calculator app-view">
-    <h2>RECOMMANDATIONS DE RÉMUNÉRATION POUR UNE EXPOSITION</h2>
+    <h2 class="app-with-gutter">RECOMMANDATIONS DE RÉMUNÉRATION POUR UNE EXPOSITION</h2>
     <app-section
         v-for="section of sections"
         :section="section"
