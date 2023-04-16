@@ -4,6 +4,11 @@ export type OptionOrNumberCalculatorSection<T extends OptionCalculatorSection | 
     ? OptionCalculatorSection
     : NumberCalculatorSection;
 
+export type OptionOrNumberCalculatorSubsection<T extends OptionCalculatorSubsection | NumberCalculatorSubsection> = T extends OptionCalculatorSubsection
+  ? OptionCalculatorSubsection
+  : NumberCalculatorSubsection;
+
+
 interface ICalculatorSectionParams {
     index: number;
     title: string;

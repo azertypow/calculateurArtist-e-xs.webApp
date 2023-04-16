@@ -17,7 +17,9 @@
         <div class="app-g__coll-4-12 app-with-gutter" >TOTAL</div>
         <div class="v-view-calculator__result__result-container app-g__coll-6-12 app-with-gutter"
         >
-          <div v-if="total>0">résultat: {{total}}.— CHF
+          <div
+              v-if="typeof globalTotal === 'number'"
+          >résultat: {{globalTotal}}.— CHF
             <div class="v-view-calculator__result__option">Collectif d’artiste?
               <div
                   class="app-button--toggle"
@@ -26,7 +28,7 @@
               ></div>
             </div>
           </div>
-          <h6 v-else>Complétez l’ensemble des options pour afficher le résultat</h6>
+          <h6 v-else>{{globalTotal.errorMessage}}</h6>
         </div>
       </div>
 
@@ -85,8 +87,8 @@ export default defineComponent({
       return this.globalStore.calculatorSections as OptionOrNumberCalculatorSection<OptionCalculatorSection | NumberCalculatorSection>[]
     },
 
-    total(): number {
-      return this.globalStore.total
+    globalTotal(): number | {errorMessage: string} {
+      return this.globalStore.globalTotal
     },
   }
 

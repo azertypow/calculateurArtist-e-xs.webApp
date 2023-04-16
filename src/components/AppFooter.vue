@@ -10,12 +10,12 @@
 
     <div
         class="v-app-footer__result"
-        v-if="total > 0 && globalStore.showFixedResult && !isHome"
     >
       <div
           class="v-app-footer__content"
       >
-        <div>résultat: {{total}}.— CHF</div>
+        <div v-if="typeof globalTotal === 'number'" >résultat: {{globalTotal}}.— CHF</div>
+        <div v-else                                 >{{globalTotal.errorMessage}}</div>
       </div>
     </div>
     <div
@@ -212,8 +212,8 @@ export default defineComponent({
       return this.globalStore.calculatorSections as OptionOrNumberCalculatorSection<OptionCalculatorSection | NumberCalculatorSection>[]
     },
 
-    total(): number {
-      return this.globalStore.total
+    globalTotal(): number | {errorMessage: string} {
+      return this.globalStore.globalTotal
     },
   },
 

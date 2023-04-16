@@ -1,6 +1,6 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
-import type {OptionOrNumberCalculatorSection} from '../gloabal/CalculatorSection'
+import type {OptionOrNumberCalculatorSection, OptionOrNumberCalculatorSubsection} from '../gloabal/CalculatorSection'
 import {
     ConditionalValueFromSubsectionOption,
     NumberCalculatorSection,
@@ -205,7 +205,6 @@ help:`
                                     calculatorSection_1,
                                     calculatorSection_2,
                                 )
-                                console.log(newValueAfterChange)
                                 return newValueAfterChange
                             },
                         )
@@ -364,22 +363,34 @@ help:`<p>Dans le cas ou la structure propose la rédaction de textes par l'artis
     },
 
     getters: {
-        total(): number {
-            const multiply = this.isACollective ? 1.5 : 1
+      globalTotal(): number | {errorMessage: string} {
 
-            return this.calculatorSections.reduce((previousTotalOfSection, currentSection) => {
-                return previousTotalOfSection + (currentSection
-                    .subSections as unknown[])
-                    .reduce((previousSubsectionValue: number, currentSubsection) => {
-                        if(
-                            currentSubsection
-                            && typeof currentSubsection === 'object'
-                            && 'result' in currentSubsection
-                        )   return previousSubsectionValue + (currentSubsection.result as number)
-                        else return 0
-                    }, 0)
-            }, 0) * multiply
+        let errorForTotalCalculation: null | {errorMessage: string} = null
+        for (const section of this.calculatorSections) {
+          if (section.required && section.status === 'empty') {
+            errorForTotalCalculation = {
+              errorMessage: `Vous devez remplir la partie ${section.title}.`
+            }
+            break
+          }
         }
+        if(errorForTotalCalculation) return errorForTotalCalculation
+
+        const multiply = this.isACollective ? 1.5 : 1
+
+        return this.calculatorSections.reduce((previousTotalOfSection, currentSection) => {
+          return previousTotalOfSection + (currentSection
+            .subSections as unknown[])
+            .reduce((previousSubsectionValue: number, currentSubsection) => {
+              if (
+                currentSubsection
+                && typeof currentSubsection === 'object'
+                && 'result' in currentSubsection
+              ) return previousSubsectionValue + (currentSubsection.result as number)
+              else return 0
+            }, 0)
+        }, 0) * multiply
+      }
     },
 
 })
