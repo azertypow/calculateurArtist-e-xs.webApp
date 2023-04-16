@@ -1,5 +1,6 @@
 .app-g {
   display: flex;
+  flex-wrap: wrap;
 
   &.app-g--align-center {
     align-items: center;
