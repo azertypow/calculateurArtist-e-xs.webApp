@@ -39,7 +39,7 @@
     </div>
 
     <div
-        class="app-g app-g--align-end"
+        class="app-g"
     >
       <div class="app-g__coll-2-12 app-with-gutter"></div>
       <div class="app-g__coll-4-12 app-with-gutter" >
