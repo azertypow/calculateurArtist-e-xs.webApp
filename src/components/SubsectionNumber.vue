@@ -6,9 +6,9 @@
         v-if="multiplier && multiplier.status === 'reg'"
         class="app-g app-g--align-end"
     >
-      <div class="app-g__coll-2-12 app-with-gutter"></div>
-      <div class="app-g__coll-4-12 app-with-gutter" >{{ multiplier.text }}</div>
-      <div class="app-g__coll-6-12 app-with-gutter" v-if=" !multiplier.isEditable"
+      <div class="app-g__coll-sm-0-12 app-g__coll-2-12 app-with-gutter"></div>
+      <div class="app-g__coll-xs-12-12 app-g__coll-sm-4-12 app-g__coll-4-12 app-with-gutter" >{{ multiplier.text }}</div>
+      <div class="app-g__coll-xs-12-12 app-g__coll-sm-8-12 app-g__coll-6-12 app-with-gutter" v-if=" !multiplier.isEditable"
         >
         <span
             v-if="multiplier.unit === 'CHF'"
@@ -17,7 +17,7 @@
         <span
           v-if="multiplier.unit === 'CHF'"
         >&nbsp;&nbsp;&nbsp;.—</span></div>
-      <div class="v-subsection-number__multiplier-editable" v-else>
+      <div class="app-g__coll-xs-12-12 app-g__coll-sm-8-12 app-g__coll-6-12 v-subsection-number__multiplier-editable" v-else>
         <div>
           <icon-pen></icon-pen>
         </div>
@@ -39,13 +39,13 @@
     </div>
 
     <div
-        class="app-g"
+        class="app-g app-g--align-end"
     >
-      <div class="app-g__coll-2-12 app-with-gutter"></div>
-      <div class="app-g__coll-4-12 app-with-gutter" >
+      <div class="app-g__coll-sm-0-12 app-g__coll-2-12 app-with-gutter"></div>
+      <div class="app-g__coll-xs-12-12 app-g__coll-sm-4-12 app-g__coll-4-12 app-with-gutter" >
         <span v-if="numberSubsection.hasMultiplier && numberSubsection.text" >↳ </span>{{ numberSubsection.text }}
       </div>
-      <div class="app-g__coll-6-12" >
+      <div class="app-g__coll-xs-12-12 app-g__coll-sm-8-12 app-g__coll-6-12" >
         <app-number-value
             :numberSubsection="numberSubsection"
             :is-c-h-f-value="false"
@@ -53,14 +53,17 @@
       </div>
 
     </div>
-      <div
-          v-if="multiplier && multiplier.status === 'info'"
-          class="app-g v-subsection-number__multiplier--is-info"
-      >
-        <div class="app-g__coll-2-12 app-with-gutter"></div>
-        <div class="app-g__coll-4-12 app-with-gutter" ></div>
-        <div class="app-g__coll-6-12 app-with-gutter" >{{ multiplier.text }}<span v-if="multiplier.unit === 'CHF'">CHF</span> {{ multiplier.value }}<span v-if="multiplier.unit === 'CHF'">.–</span><span v-else-if="multiplier.unit">&nbsp;{{multiplier.unit}}</span></div>
+    <div
+        v-if="multiplier && multiplier.status === 'info'"
+        class="app-g v-subsection-number__multiplier--is-info"
+    >
+      <div class="app-g__coll-sm-0-12 app-g__coll-2-12 app-with-gutter"></div>
+      <div class="app-g__coll-xs-12-12 app-g__coll-sm-4-12 app-g__coll-4-12 app-with-gutter"></div>
+      <div class="app-g__coll-xs-12-12 app-g__coll-sm-8-12 app-g__coll-6-12 app-with-gutter">{{ multiplier.text }}<span
+          v-if="multiplier.unit === 'CHF'">CHF</span> {{ multiplier.value }}<span
+          v-if="multiplier.unit === 'CHF'">.–</span><span v-else-if="multiplier.unit">&nbsp;{{ multiplier.unit }}</span>
       </div>
+    </div>
 
   </div>
 </template>
@@ -114,7 +117,11 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .v-subsection-number {
-
+  @media (max-width: 700px) {// align with grid!
+    > * {
+      margin-top: 2rem;
+    }
+  }
 }
 
 .v-subsection-number__multiplier--is-info {

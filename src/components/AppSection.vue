@@ -8,7 +8,7 @@
         class="app-g app-g--align-center"
     >
       <div
-          class="app-g__coll-2-12"
+          class="app-g__coll-sm-auto app-g__coll-2-12"
       >
         <div
             :class="{'is-empty': classifiedSection.value.status === 'empty'}"
@@ -17,7 +17,7 @@
       </div>
 
       <div
-          class="app-g__coll-8-12"
+          class="app-g__coll-8-12 app-with-gutter"
       >
         <div>{{classifiedSection.value.title}}</div>
       </div>

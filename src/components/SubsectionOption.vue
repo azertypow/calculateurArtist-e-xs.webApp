@@ -6,10 +6,10 @@
         class="app-g"
     >
       <div
-          class="app-g__coll-6-12"
+          class="app-g__coll-xs-12-12 app-g__coll-sm-4-12 app-g__coll-6-12"
       ></div>
       <div
-          class="app-g__coll-6-12"
+          class="app-g__coll-xs-12-12 app-g__coll-sm-8-12 app-g__coll-6-12"
       >
         <app-checkbox
             @click="activeThisSubsection"
