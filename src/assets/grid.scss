@@ -40,6 +40,40 @@
 .app-g__coll-11-12 {width: calc(100% / 12 * 11); display: block; box-sizing: border-box;}
 .app-g__coll-12-12 {width: calc(100% / 12 * 12); display: block; box-sizing: border-box;}
 
+@media (max-width: 900px) {
+  .app-g__coll-sm-auto   {width: auto;  display: block; box-sizing: border-box;}
+  .app-g__coll-sm-0-12   {                             display: none !important;}
+  .app-g__coll-sm-1-12   {width: calc(100% / 12 * 1);  display: block; box-sizing: border-box;}
+  .app-g__coll-sm-2-12   {width: calc(100% / 12 * 2);  display: block; box-sizing: border-box;}
+  .app-g__coll-sm-3-12   {width: calc(100% / 12 * 3);  display: block; box-sizing: border-box;}
+  .app-g__coll-sm-4-12   {width: calc(100% / 12 * 4);  display: block; box-sizing: border-box;}
+  .app-g__coll-sm-5-12   {width: calc(100% / 12 * 5);  display: block; box-sizing: border-box;}
+  .app-g__coll-sm-6-12   {width: calc(100% / 12 * 6);  display: block; box-sizing: border-box;}
+  .app-g__coll-sm-7-12   {width: calc(100% / 12 * 7);  display: block; box-sizing: border-box;}
+  .app-g__coll-sm-8-12   {width: calc(100% / 12 * 8);  display: block; box-sizing: border-box;}
+  .app-g__coll-sm-9-12   {width: calc(100% / 12 * 9);  display: block; box-sizing: border-box;}
+  .app-g__coll-sm-10-12  {width: calc(100% / 12 * 10); display: block; box-sizing: border-box;}
+  .app-g__coll-sm-11-12  {width: calc(100% / 12 * 11); display: block; box-sizing: border-box;}
+  .app-g__coll-sm-12-12  {width: calc(100% / 12 * 12); display: block; box-sizing: border-box;}
+}
+
+@media (max-width: 700px) {
+  .app-g__coll-xl-auto   {width: auto;  display: block; box-sizing: border-box;}
+  .app-g__coll-xl-0-12   {                             display: none !important;}
+  .app-g__coll-xl-1-12   {width: calc(100% / 12 * 1);  display: block; box-sizing: border-box;}
+  .app-g__coll-xl-2-12   {width: calc(100% / 12 * 2);  display: block; box-sizing: border-box;}
+  .app-g__coll-xl-3-12   {width: calc(100% / 12 * 3);  display: block; box-sizing: border-box;}
+  .app-g__coll-xl-4-12   {width: calc(100% / 12 * 4);  display: block; box-sizing: border-box;}
+  .app-g__coll-xl-5-12   {width: calc(100% / 12 * 5);  display: block; box-sizing: border-box;}
+  .app-g__coll-xl-6-12   {width: calc(100% / 12 * 6);  display: block; box-sizing: border-box;}
+  .app-g__coll-xl-7-12   {width: calc(100% / 12 * 7);  display: block; box-sizing: border-box;}
+  .app-g__coll-xl-8-12   {width: calc(100% / 12 * 8);  display: block; box-sizing: border-box;}
+  .app-g__coll-xl-9-12   {width: calc(100% / 12 * 9);  display: block; box-sizing: border-box;}
+  .app-g__coll-xl-10-12  {width: calc(100% / 12 * 10); display: block; box-sizing: border-box;}
+  .app-g__coll-xl-11-12  {width: calc(100% / 12 * 11); display: block; box-sizing: border-box;}
+  .app-g__coll-xl-12-12  {width: calc(100% / 12 * 12); display: block; box-sizing: border-box;}
+}
+
 .app-with-gutter {
   box-sizing: border-box;
   padding-left: 1rem;
