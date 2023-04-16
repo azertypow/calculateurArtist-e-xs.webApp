@@ -24,7 +24,7 @@
         <div
             v-if="multiplier.unit === 'CHF'"
         >CHF</div>
-        <input  class="app-g__coll-6-12 app-with-gutter app-value-number"
+        <input  class="app-value-number"
                 v-model.number="multiplier.value"
                 type="number"
                 min="0"
