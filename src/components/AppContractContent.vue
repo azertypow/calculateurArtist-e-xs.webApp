@@ -1224,7 +1224,6 @@ h4 + p {
       white-space: nowrap;
       counter-increment: sub_subsection;
       content: counter(section, upper-roman) ' . ' counter(subsection)" . "counter(sub_subsection);
-      margin-right: 1em;
     }
   }
 }
