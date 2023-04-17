@@ -195,19 +195,7 @@ help:`
                         text: 'Coût horaire',
                         isEditable: true,
                         unit: 'CHF',
-                        value: new ConditionalValueFromSubsectionOption(
-                            [
-                                calculatorSection_1,
-                                calculatorSection_2,
-                            ],
-                            () => {
-                                const newValueAfterChange = conditionalLogicSection_5(
-                                    calculatorSection_1,
-                                    calculatorSection_2,
-                                )
-                                return newValueAfterChange
-                            },
-                        )
+                        value: 0,
                     })
                 ).addSubSection(
                     new NumberCalculatorSubsection(
