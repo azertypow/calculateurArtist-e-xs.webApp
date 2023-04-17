@@ -1209,6 +1209,12 @@ h4 + p {
     white-space: nowrap;
     counter-increment: section;
     content: counter(section, upper-roman) ". ";
+
+    @media (max-width: 700px) {
+      padding-right: 1rem;
+      font-size: 1.2rem;
+      line-height: 2.75rem;
+    }
   }
 
   .v-app-contract-content__content__subsection {
@@ -1229,6 +1235,12 @@ h4 + p {
       counter-increment: subsection;
       content: counter(section, upper-roman) ' . ' counter(subsection) " . ";
       counter-reset: sub_subsection;
+
+      @media (max-width: 700px) {
+        padding-right: 1rem;
+        font-size: 1.2rem;
+        line-height: 3.25rem;
+      }
     }
 
     > h4::before {
@@ -1240,6 +1252,12 @@ h4 + p {
       white-space: nowrap;
       counter-increment: sub_subsection;
       content: counter(section, upper-roman) ' . ' counter(subsection)" . "counter(sub_subsection);
+
+      @media (max-width: 700px) {
+        padding-right: 1rem;
+        font-size: 1.2rem;
+        line-height: 2.25rem;
+      }
     }
   }
 }
