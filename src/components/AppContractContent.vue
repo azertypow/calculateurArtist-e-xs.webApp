@@ -1265,6 +1265,12 @@ h4 + p {
   padding-top: 2rem;
   margin-left: -1rem;
   margin-right: -1rem;
+
+  > * + * {
+    @media (max-width: 900px) {
+      margin-top: 2rem;
+    }
+  }
 }
 
 </style>
