@@ -7,8 +7,22 @@
 
 @font-face {
   font-family: "Suisse_Intl";
+  font-style: italic;
+  src: url('../fonts/SuisseIntl/SuisseIntl-RegularItalic-WebXL.woff2') format('woff2'), url('../fonts/SuisseIntl/SuisseIntl-Regular-WebXL.woff') format('woff');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Suisse_Intl";
   font-style: normal;
   src: url('../fonts/SuisseIntl/SuisseIntl-SemiBold-WebXL.woff2') format('woff2'), url('../fonts/SuisseIntl/SuisseIntl-Medium-WebXL.woff') format('woff');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Suisse_Intl";
+  font-style: italic;
+  src: url('../fonts/SuisseIntl/SuisseIntl-SemiBoldItalic-WebXL.woff2') format('woff2'), url('../fonts/SuisseIntl/SuisseIntl-Medium-WebXL.woff') format('woff');
   font-weight: 500;
 }
 
