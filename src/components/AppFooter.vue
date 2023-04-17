@@ -25,13 +25,13 @@
       <div
           class="v-app-footer__status__container"
       >
-        <span
+        <div
             class="v-app-footer__status__items app-with-circle-status app-with-circle-status--white"
             v-for="(section, index) of sections"
             :class="{
               'app-with-circle-status--active': section.status !== 'empty',
             }"
-        >{{section.title}}</span>
+        ><span class="v-app-footer__status__items__name" >{{section.title}}</span><span class="v-app-footer__status__items__index" >{{index + 1}}</span></div>
       </div>
     </div>
     <div
@@ -275,13 +275,40 @@ export default defineComponent({
     justify-content: space-between;
     padding: 1rem;
     line-height: 1.5rem;
-    font-size: var(--app-font-size);
-    max-width: var(--app-max-width);
+    font-size: 1.4rem;
     margin: auto;
+
+    @media (max-width: 1280px) { // footer special breakpoint
+      justify-content: flex-start;
+      max-width: var(--app-max-width);
+    }
   }
 
   .v-app-footer__status__items {
     white-space: nowrap;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    @media (max-width: 1280px) { // footer special breakpoint
+      margin-right: 2rem;
+    }
+  }
+
+  .v-app-footer__status__items__name {
+    display: block;
+
+    @media (max-width: 1280px) { // footer special breakpoint
+      display: none;
+    }
+  }
+
+  .v-app-footer__status__items__index {
+    display: none;
+
+    @media (max-width: 1280px) { // footer special breakpoint
+      display: block;
+    }
   }
 
   .v-app-footer__status__separator {
@@ -299,7 +326,7 @@ export default defineComponent({
       margin: auto;
       display: flex;
       line-height: 1.5rem;
-      font-size: var(--app-font-size);
+      font-size: 1.4rem;
       align-items: center;
       justify-content: space-between;
       padding: 1rem .5rem;
