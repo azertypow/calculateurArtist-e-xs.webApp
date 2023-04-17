@@ -221,8 +221,7 @@ a {
   all: unset;
   display: block;
   border-bottom: solid black 2px;
-  line-height: 2rem;
-  height: 2rem;
+  line-height: inherit;
   font-size: inherit;
   font-weight: inherit;
   font-family: inherit;

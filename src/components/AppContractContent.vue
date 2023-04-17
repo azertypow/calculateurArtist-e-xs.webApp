@@ -3,7 +3,8 @@
     <h2>Table des matières</h2>
 
     <ul class="v-app-contract-content__lexical">
-      <li>Objet du contrat
+      <li>
+        <h3>Objet du contrat</h3>
         <ul>
           <li>Définitions</li>
           <li>Préambule</li>
@@ -16,7 +17,8 @@
         </ul>
       </li>
 
-      <li id="var-structure_name" >Obligations de <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name" @update:value="contractStore.structure_name = $event"/>
+      <li id="var-structure_name" >
+        <h3>Obligations de <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name" @update:value="contractStore.structure_name = $event"/></h3>
         <ul>
           <li :class="{'app-font-remove': contractStore.contract_exposition === false}" >Exposition
             <ul>
@@ -33,7 +35,8 @@
         </ul>
       </li>
 
-      <li>Obligations de l’Artiste
+      <li>
+        <h3>Obligations de l’Artiste</h3>
         <ul>
           <li :class="{'app-font-remove': contractStore.contract_exposition === false}" >Exposition
             <ul>
@@ -46,7 +49,8 @@
         </ul>
       </li>
 
-      <li>Rémunération de l’Artiste
+      <li>
+        <h3>Rémunération de l’Artiste</h3>
         <ul>
           <li>Obligation de renseigner</li>
           <li>Indemnisation forfaitaire ou cachet
@@ -59,28 +63,32 @@
         </ul>
       </li>
 
-      <li>De la participation aux frais engagés par l’Artiste
+      <li>
+        <h3>De la participation aux frais engagés par l’Artiste</h3>
         <ul>
           <li>Budget de production</li>
           <li>Participation aux frais accessoires</li>
         </ul>
       </li>
 
-      <li>Propriété intellectuelle
+      <li>
+        <h3>Propriété intellectuelle</h3>
         <ul>
           <li>Crédit de production</li>
           <li>Droit d’auteur.ice.x</li>
         </ul>
       </li>
 
-      <li>Fin du contrat
+      <li>
+        <h3>Fin du contrat</h3>
         <ul>
           <li>Défaut de <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name" @update:value="contractStore.structure_name = $event"/></li>
           <li>Défaut de l’artiste</li>
         </ul>
       </li>
 
-      <li>Droit applicable, médiation et juridiction compétente
+      <li>
+        <h3>Droit applicable, médiation et juridiction compétente</h3>
         <ul>
           <li>Droit applicable</li>
           <li>Médiation</li>
@@ -1096,6 +1104,14 @@ ul.v-app-contract-content__lexical {
     display: block;
     font-family: Christiana_bold, serif;
     font-size: 2.5rem;
+
+    > h3 {
+      margin-top: 0;
+
+      + ul {
+        margin-top: 0;
+      }
+    }
 
     &:before {
       position: absolute;
