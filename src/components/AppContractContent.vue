@@ -991,7 +991,7 @@
             class="app-g v-app-contract-content__list-oeuvre"
         >
           <div
-              class="app-g__coll-6-12 app-with-gutter"
+              class="app-g__coll-sm-12-12 app-g__coll-6-12 app-with-gutter"
               v-for="object of contractStore.objectList"
           >
 

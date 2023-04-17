@@ -31,6 +31,10 @@ html,body {
 
 html {
   font-size: 12px;
+
+  @media (max-width: 700px) {// align with grid
+    font-size: 10px;
+  }
 }
 
 body {
