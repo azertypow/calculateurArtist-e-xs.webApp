@@ -37,9 +37,15 @@ export default defineComponent({
   margin: auto;
   max-width: var(--app-max-width);
   display: flex;
+  flex-wrap: wrap;
 
   > div {
     width: 50%;
+    box-sizing: border-box;
+
+    @media (max-width: 700px) {
+      width: 100%;
+    }
   }
 }
 </style>
