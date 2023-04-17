@@ -962,7 +962,7 @@
           médiation, ils seront tranchés par voie judiciaire par-devant les Tribunaux genevois.</p>
 
 
-        <p>Fait à <content-editable placeholder="date du contrat" :value="contractStore.info_localisation"
+        <p>Fait à <content-editable placeholder="lieu" :value="contractStore.info_localisation"
                                     @update:value="contractStore.info_localisation = $event"/> en deux exemplaires,
 
           le <content-editable placeholder="date du contrat" :value="contractStore.info_date_sign_contract"
@@ -970,19 +970,21 @@
         </p>
 
 
-        <p>Pour
+        <p>Pour le représentant de
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
-                            @update:value="contractStore.structure_name = $event"/>
-          , Pour l’Artiste :
+                            @update:value="contractStore.structure_name = $event"/>&nbsp;:
+          <br><content-editable placeholder="Prénom" :value="contractStore.struct_representant_firstname"
+                            @update:value="contractStore.struct_representant_firstname = $event"/>
+
+          <br><content-editable placeholder="NOM" :value="contractStore.struct_representant_name"
+                            @update:value="contractStore.struct_representant_name = $event"/>
+
         </p>
 
-        <p>
-          <content-editable placeholder="Prénom NOM du représentant" :value="contractStore.delegate_name"
-                            @update:value="contractStore.delegate_name = $event"/>
-        </p>
-
-        <p>
-          <content-editable placeholder="Prénom NOM de l’Artiste" :value="contractStore.artiste_name"
+        <p>Pour l'artiste&nbsp;:
+          <br><content-editable placeholder="Prénom" :value="contractStore.artiste_firstname"
+                            @update:value="contractStore.artiste_firstname = $event"/>
+          <br><content-editable placeholder="Nom" :value="contractStore.artiste_name"
                             @update:value="contractStore.artiste_name = $event"/>
         </p>
 

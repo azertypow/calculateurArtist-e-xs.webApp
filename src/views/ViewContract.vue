@@ -95,8 +95,8 @@
         <div class="app-g__coll-4-12 app-with-gutter">
           <input
               class="app-value-string"
-              v-model="contractStore.user_name"
-              placeholder="Nom"
+              v-model="contractStore.struct_representant_firstname"
+              placeholder="Prénom"
           >
         </div>
       </div>
@@ -108,8 +108,8 @@
         <div class="app-g__coll-4-12 app-with-gutter">
           <input
               class="app-value-string"
-              v-model="contractStore.user_firstname"
-              placeholder="Prénom"
+              v-model="contractStore.struct_representant_name"
+              placeholder="Nom"
           >
         </div>
       </div>
@@ -129,7 +129,7 @@
         <div class="app-g__coll-4-12 app-with-gutter">
           <input
               class="app-value-string"
-              v-model="contractStore.user_status"
+              v-model="contractStore.struct_representant_status"
               placeholder="Titre"
           >
         </div>

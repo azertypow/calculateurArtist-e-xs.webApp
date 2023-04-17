@@ -20,12 +20,10 @@ export interface IStateContractStore {
     artiste_hasCommission: boolean
     commission_percent: string
 
-    user_firstname: string
-    user_name: string
-    user_status: string
+    struct_representant_firstname: string
+    struct_representant_name: string
+    struct_representant_status: string
 
-
-    delegate_name: string
 
     participationAuFrais_rembourser:  '' | 'rembourse à l’Artiste les dépenses nécessaires' | 'A titre de participation aux frais occasionnés'
 
@@ -99,13 +97,11 @@ export const useContractStore = defineStore('contractStore', {
             structure_city: '',
             structure_country: '',
             structure_reclamationDelay: '',
-            user_firstname: '',
-            user_name: '',
-            user_status: '',
+            struct_representant_firstname: '',
+            struct_representant_name: '',
+            struct_representant_status: '',
 
             exposition_name: '',
-
-            delegate_name: '',
 
             work_price: '',
 
