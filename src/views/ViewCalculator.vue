@@ -28,7 +28,7 @@
               ></div>
             </div>
           </div>
-          <h6 v-else>{{globalTotal.errorMessage}}</h6>
+          <h6 style="margin: 0" v-else>{{globalTotal.errorMessage}}</h6>
         </div>
       </div>
 
