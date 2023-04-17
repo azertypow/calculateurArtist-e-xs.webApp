@@ -118,7 +118,7 @@
           littéraire ou artistique, qui a un caractère individuel, quelles qu’en soient la valeur ou la destination.
         </p>
 
-        <p :class="{'app-font-remove': contractStore.with_production === true}">
+        <p :class="{'app-font-remove': contractStore.contract_exposition === false}">
           <strong>Exposition d’une Œuvre :</strong> Par Exposition d’une Œuvre, on entend dans le présent contrat aussi
           bien l’exposition d’une Œuvre physique (peinture, sculpture, installation, etc.) que toute production,
           prestation ou performance réalisée par l’Artiste et/ou ses auxiliaires, selon les termes de l’accord entre les
