@@ -1,12 +1,12 @@
 <template>
   <div class="v-view-contract app-view">
-    <h2>GÉNÉRATEUR DE CONTRAT-MODÈLE POUR UNE EXPOSITION</h2>
+    <h2 class="app-with-gutter">GÉNÉRATEUR DE CONTRAT-MODÈLE POUR UNE EXPOSITION</h2>
 
     <div class="v-view-contract__section">
       <div
           class="app-g"
       >
-        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-sm-0-12  app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12 app-with-gutter"
         >Contrat</div>
         <div class="app-g__coll-6-12 app-with-gutter">
@@ -30,12 +30,12 @@
       <div
           class="app-g app-g--with-margin-top-xl"
       >
-        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12 app-with-gutter"
         >Entre la structure</div>
       </div>
       <div class="app-g">
-        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12"></div>
         <div class="app-g__coll-4-12 app-with-gutter"
         >
@@ -57,7 +57,7 @@
         </div>
       </div>
       <div class="app-g">
-        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12"></div>
         <div class="app-g__coll-4-12 app-with-gutter">
           <input
@@ -68,7 +68,7 @@
         </div>
       </div>
       <div class="app-g">
-        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12"></div>
         <div class="app-g__coll-4-12 app-with-gutter">
           <input
@@ -80,7 +80,7 @@
       </div>
 
       <div class="app-g app-g--with-margin-top">
-        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-6-12">
           <div>(ci-après «&nbsp;<content-editable placeholder="Nom de la structure" :value="contractStore.structure_name" @update:value="contractStore.structure_name = $event"/>&nbsp;»)
           <br>représenté par:</div>
@@ -90,7 +90,7 @@
       <div
           class="app-g"
       >
-        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12"></div>
         <div class="app-g__coll-4-12 app-with-gutter">
           <input
@@ -103,7 +103,7 @@
       <div
           class="app-g"
       >
-        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12"></div>
         <div class="app-g__coll-4-12 app-with-gutter">
           <input
@@ -115,7 +115,7 @@
       </div>
 
       <div class="app-g app-g--with-margin-top">
-        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-6-12">
           <div>Agissant en qualité de</div>
         </div>
@@ -124,7 +124,7 @@
       <div
           class="app-g"
       >
-        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12"></div>
         <div class="app-g__coll-4-12 app-with-gutter">
           <input
@@ -138,7 +138,7 @@
       <div
           class="app-g app-g--with-margin-top-xl"
       >
-        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12">
           <div>et L’artiste/Les artistes/Le collectif d’artistes</div>
         </div>
@@ -148,7 +148,7 @@
       <div
           class="app-g"
       >
-        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12"></div>
         <div class="app-g__coll-4-12 app-with-gutter">
           <input
@@ -162,7 +162,7 @@
       <div
           class="app-g"
       >
-        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12"></div>
         <div class="app-g__coll-4-12 app-with-gutter">
           <input
@@ -176,7 +176,7 @@
       <div
           class="app-g"
       >
-        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12"></div>
         <div class="app-g__coll-4-12 app-with-gutter">
           <input
@@ -190,7 +190,7 @@
       <div
           class="app-g"
       >
-        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12"></div>
         <div class="app-g__coll-4-12 app-with-gutter">
           <input
@@ -204,7 +204,7 @@
       <div
           class="app-g"
       >
-        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12"></div>
         <div class="app-g__coll-4-12 app-with-gutter">
           <input
@@ -218,7 +218,7 @@
       <div
           class="app-g"
       >
-        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12"></div>
         <div class="app-g__coll-4-12 app-with-gutter">
           <input
@@ -232,7 +232,7 @@
       <div
           class="app-g"
       >
-        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12"></div>
         <div class="app-g__coll-4-12 app-with-gutter">
           <input
@@ -246,7 +246,7 @@
       <div
           class="app-g"
       >
-        <div class="app-g__coll-2-12"></div>
+        <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12"></div>
         <div class="app-g__coll-4-12 app-with-gutter">
           <input
