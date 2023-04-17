@@ -46,7 +46,10 @@ export interface IStateContractStore {
 
     option_chargeBudgetDeProd: 'artiste' | 'structure' | 'clef_de_repartition'
 
-    info_date: string,
+    info_date_expo_from: string,
+    info_date_expo_to: string,
+    info_date_delay: string,
+    info_date_sign_contract: string,
     info_localisation: string,
 
     entitled: string
@@ -127,7 +130,12 @@ export const useContractStore = defineStore('contractStore', {
             participationAuFrais_rembourser: '',
 
             artiste_angagementPretEtRedaction: "prêter son concours",
-            info_date: '',
+
+            info_date_expo_from: '',
+            info_date_expo_to: '',
+            info_date_delay: '',
+            info_date_sign_contract: '',
+
             info_localisation: '',
             entitled: '',
             option_honoraryAchievement: false,

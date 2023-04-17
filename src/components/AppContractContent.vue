@@ -160,14 +160,12 @@
                             @update:value="contractStore.exposition_name = $event"/>,
           ,
           laquelle se tiendra du
-          <content-editable placeholder="date du contrat" :value="contractStore.info_date"
-                            @update:value="contractStore.info_date = $event"/>
+          <content-editable placeholder="date du contrat" :value="contractStore.info_date_expo_from"
+                            @update:value="contractStore.info_date_expo_from = $event"/>
           au
-          <content-editable placeholder="date du contrat" :value="contractStore.info_date"
-                            @update:value="contractStore.info_date = $event"/>
+          <content-editable placeholder="date du contrat" :value="contractStore.info_date_expo_to"
+                            @update:value="contractStore.info_date_expo_to = $event"/>
           ,
-          <content-editable placeholder="date du contrat" :value="contractStore.info_date"
-                            @update:value="contractStore.info_date = $event"/>
           au
           <content-editable placeholder="lieu de l’exposition" :value="contractStore.info_localisation"
                             @update:value="contractStore.info_localisation = $event"/>
@@ -406,11 +404,11 @@
           <content-editable placeholder="INTITULEE XXX" :value="contractStore.entitled"
                             @update:value="contractStore.entitled = $event"/>
           , qui se tiendra du
-          <content-editable placeholder="date du contrat" :value="contractStore.info_date"
-                            @update:value="contractStore.info_date = $event"/>
+          <content-editable placeholder="date du contrat" :value="contractStore.info_date_expo_from"
+                            @update:value="contractStore.info_date_expo_from = $event"/>
           au
-          <content-editable placeholder="date du contrat" :value="contractStore.info_date"
-                            @update:value="contractStore.info_date = $event"/>
+          <content-editable placeholder="date du contrat" :value="contractStore.info_date_expo_to"
+                            @update:value="contractStore.info_date_expo_to = $event"/>
           .
         </p>
 
@@ -499,8 +497,8 @@
         >
           Dans la mesure où lesdites Œuvres sont destinées à une présentation publique, celles-ci devront être réalisées
           dans le respect des délais fixés
-          <content-editable placeholder="date du contrat" :value="contractStore.info_date"
-                            @update:value="contractStore.info_date = $event"/>
+          <content-editable placeholder="date du contrat" :value="contractStore.info_date_delay"
+                            @update:value="contractStore.info_date_delay = $event"/>
           , afin de permettre leur mise en place dans les meilleures conditions.
         </p>
 
@@ -967,8 +965,8 @@
         <p>Fait à <content-editable placeholder="date du contrat" :value="contractStore.info_localisation"
                                     @update:value="contractStore.info_localisation = $event"/> en deux exemplaires,
 
-          le <content-editable placeholder="date du contrat" :value="contractStore.info_date"
-                            @update:value="contractStore.info_date = $event"/>&nbsp;:
+          le <content-editable placeholder="date du contrat" :value="contractStore.info_date_sign_contract"
+                            @update:value="contractStore.info_date_sign_contract = $event"/>&nbsp;:
         </p>
 
 
