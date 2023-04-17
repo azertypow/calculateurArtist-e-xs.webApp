@@ -24,11 +24,11 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .v-app-panel {
-  height: calc(100% - 10rem - 4rem);
+  height: calc(100% - 6.6rem - 4rem);
   width: 100%;
   background: var(--app-color-main);
   position: fixed;
-  top: 10rem;
+  top: 7rem;
   left: 0;
   overflow: auto;
 }
