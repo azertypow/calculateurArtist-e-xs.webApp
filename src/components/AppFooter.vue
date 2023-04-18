@@ -6,6 +6,7 @@
     <div
         v-if="!isHome"
         class="app-button v-app-footer__button-export"
+        @click="pdfExport"
     >exporter en PDF</div>
 
     <div
@@ -188,6 +189,7 @@ import type {
   OptionOrNumberCalculatorSection
 } from "../gloabal/CalculatorSection";
 import {useGlobalStore} from "../stores/globalStore";
+import * as html2pdf from 'html2pdf.js';
 
 export default defineComponent({
   name: 'AppFooter',
@@ -226,6 +228,31 @@ export default defineComponent({
     openInfo() {
       this.globalStore.showLexical = false
       this.globalStore.showInfo = !this.globalStore.showInfo
+    },
+
+    async pdfExport() {
+      const htmlToExport = document.querySelector('.v-app-contract-content')
+      if(! (htmlToExport instanceof HTMLElement) ) return
+
+      const toSaveContainer = html2pdf().set({
+        html2canvas: {
+          scale: 2,
+        },
+        jsPDF: {
+          unit: "cm",
+          format: "a4"
+        },
+      }).from(htmlToExport).toContainer()
+
+      await toSaveContainer
+
+      toSaveContainer.prop.container.querySelector('.v-app-contract-content').style.color = 'blue'
+
+      toSaveContainer
+          .toCanvas()
+          .toPdf()
+          .save()
+
     },
   },
 
