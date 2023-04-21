@@ -4,11 +4,12 @@
   >
 
     <div
-        v-if="!isHome"
+        v-if="isContrat"
         class="app-button v-app-footer__button-export"
     >exporter en PDF</div>
 
     <div
+        v-if="isCalculateur"
         class="v-app-footer__result"
     >
       <div
@@ -210,6 +211,14 @@ export default defineComponent({
   computed: {
     isHome(): boolean {
       return this.$router.currentRoute.value.path === '/'
+    },
+
+    isContrat(): boolean {
+      return this.$router.currentRoute.value.path === '/contrat'
+    },
+
+    isCalculateur(): boolean {
+      return this.$router.currentRoute.value.path === '/calculateur'
     },
 
     curentPageName(): string {
