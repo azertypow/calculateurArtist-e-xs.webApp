@@ -16,7 +16,7 @@
         {{ multiplier.value }}
         <span
           v-if="multiplier.unit === 'CHF'"
-        >&nbsp;&nbsp;&nbsp;.—</span></div>
+        >.—</span></div>
       <div class="app-g__coll-xs-12-12 app-g__coll-sm-8-12 app-g__coll-6-12 v-subsection-number__multiplier-editable" v-else>
         <div>
           <icon-pen></icon-pen>
@@ -31,7 +31,7 @@
         >
         <div
             v-if="multiplier.unit === 'CHF'"
-        >&nbsp;&nbsp;&nbsp;.—</div>
+        >.—</div>
         <div
             v-else-if="multiplier.unit"
         >{{numberSubsection.unit}}</div>
