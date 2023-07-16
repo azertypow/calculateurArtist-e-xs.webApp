@@ -257,7 +257,6 @@ export default defineComponent({
       const containerForHtmlToExport = document.createElement('div')
 
       containerForHtmlToExport.appendChild(htmlToExport.cloneNode(true))
-      console.log( containerForHtmlToExport )
       containerForHtmlToExport.classList.add('to-export')
 
 
