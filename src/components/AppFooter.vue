@@ -4,9 +4,9 @@
   >
 
     <div
-        v-if="!isHome"
+        v-if="!isHome && !waitPDFExport"
         class="app-button v-app-footer__button-export"
-        @click="pdfExport"
+        @click="onClickOnExportPDF"
     >exporter en PDF</div>
 
     <div
@@ -14,6 +14,7 @@
     >
       <div
           class="v-app-footer__content"
+          v-if="router().currentRoute.value.name === 'calculator' "
       >
         <div v-if="typeof globalTotal === 'number'" >résultat: {{globalTotal}}.— CHF</div>
         <div v-else                                 >{{globalTotal.errorMessage}}</div>
@@ -190,6 +191,7 @@ import type {
 } from "../gloabal/CalculatorSection";
 import {useGlobalStore} from "../stores/globalStore";
 import * as html2pdf from 'html2pdf.js';
+import router from "../router";
 
 export default defineComponent({
   name: 'AppFooter',
@@ -206,6 +208,10 @@ export default defineComponent({
       return this.$router.currentRoute.value.path === '/'
     },
 
+    waitPDFExport(): boolean {
+        return this.globalStore.waitPDFExport
+    },
+
     curentPageName(): string {
       return this.$router.currentRoute.value.name as string | ''
     },
@@ -220,6 +226,9 @@ export default defineComponent({
   },
 
   methods: {
+      router() {
+          return router
+      },
     openLexical() {
       this.globalStore.showInfo = false
       this.globalStore.showLexical = !this.globalStore.showLexical
@@ -230,9 +239,27 @@ export default defineComponent({
       this.globalStore.showInfo = !this.globalStore.showInfo
     },
 
+    onClickOnExportPDF() {
+        this.globalStore.waitPDFExport = true
+        window.setTimeout(() => {
+          this.pdfExport().then(() => {
+              window.setTimeout(() => {
+                  this.globalStore.waitPDFExport = false
+              }, 1_000)
+          })
+        }, 500)
+    },
+
     async pdfExport() {
       const htmlToExport = document.querySelector('.v-app-contract-content')
       if(! (htmlToExport instanceof HTMLElement) ) return
+
+      const containerForHtmlToExport = document.createElement('div')
+
+      containerForHtmlToExport.appendChild(htmlToExport.cloneNode(true))
+      console.log( containerForHtmlToExport )
+      containerForHtmlToExport.classList.add('to-export')
+
 
       const toSaveContainer = html2pdf().set({
         html2canvas: {
@@ -242,17 +269,16 @@ export default defineComponent({
           unit: "cm",
           format: "a4"
         },
-      }).from(htmlToExport).toContainer()
+      }).from(containerForHtmlToExport).toContainer()
 
       await toSaveContainer
 
-      toSaveContainer.prop.container.querySelector('.v-app-contract-content').style.color = 'blue'
+      // toSaveContainer.prop.container.querySelector('.v-app-contract-content').style.color = 'blue'
 
-      toSaveContainer
+      await toSaveContainer
           .toCanvas()
           .toPdf()
           .save()
-
     },
   },
 
@@ -383,5 +409,12 @@ export default defineComponent({
 .v-app-footer__panel__signature {
   margin-top: 10rem;
   padding-left: 5rem;
+}
+</style>
+
+<style
+  lang="scss">
+.to-export {
+    color: red !important;
 }
 </style>

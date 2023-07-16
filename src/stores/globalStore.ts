@@ -52,6 +52,8 @@ export const useGlobalStore = defineStore('globalStore', {
     state: function () {
         return {
 
+            waitPDFExport: false,
+
             showLexical: false,
             showInfo: false,
             showHelpers: false,
