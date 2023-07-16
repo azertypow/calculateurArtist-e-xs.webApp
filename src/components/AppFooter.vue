@@ -229,56 +229,56 @@ export default defineComponent({
       router() {
           return router
       },
-    openLexical() {
-      this.globalStore.showInfo = false
-      this.globalStore.showLexical = !this.globalStore.showLexical
-    },
+      openLexical() {
+          this.globalStore.showInfo = false
+          this.globalStore.showLexical = !this.globalStore.showLexical
+      },
 
-    openInfo() {
-      this.globalStore.showLexical = false
-      this.globalStore.showInfo = !this.globalStore.showInfo
-    },
+      openInfo() {
+          this.globalStore.showLexical = false
+          this.globalStore.showInfo = !this.globalStore.showInfo
+      },
 
-    onClickOnExportPDF() {
-        this.globalStore.waitPDFExport = true
-        window.setTimeout(() => {
-          this.pdfExport().then(() => {
-              window.setTimeout(() => {
-                  this.globalStore.waitPDFExport = false
-              }, 1_000)
-          })
-        }, 500)
-    },
+      onClickOnExportPDF() {
+          this.globalStore.waitPDFExport = true
+          window.setTimeout(() => {
+              this.pdfExport().then(() => {
+                  window.setTimeout(() => {
+                      this.globalStore.waitPDFExport = false
+                  }, 1_000)
+              })
+          }, 500)
+      },
 
-    async pdfExport() {
-      const htmlToExport = document.querySelector('.v-app-contract-content')
-      if(! (htmlToExport instanceof HTMLElement) ) return
+      async pdfExport() {
+          const htmlToExport = document.querySelector('.v-app-contract-content')
+          if (!(htmlToExport instanceof HTMLElement)) return
 
-      const containerForHtmlToExport = document.createElement('div')
+          const containerForHtmlToExport = document.createElement('div')
 
-      containerForHtmlToExport.appendChild(htmlToExport.cloneNode(true))
-      containerForHtmlToExport.classList.add('to-export')
+          containerForHtmlToExport.appendChild(htmlToExport.cloneNode(true))
+          containerForHtmlToExport.classList.add('to-export')
 
 
-      const toSaveContainer = html2pdf().set({
-        html2canvas: {
-          scale: 2,
-        },
-        jsPDF: {
-          unit: "cm",
-          format: "a4"
-        },
-      }).from(containerForHtmlToExport).toContainer()
+          const toSaveContainer = html2pdf().set({
+              html2canvas: {
+                  scale: 2,
+              },
+              jsPDF: {
+                  unit: "cm",
+                  format: "a4"
+              },
+          }).from(containerForHtmlToExport).toContainer()
 
-      await toSaveContainer
+          await toSaveContainer
 
-      // toSaveContainer.prop.container.querySelector('.v-app-contract-content').style.color = 'blue'
+          // toSaveContainer.prop.container.querySelector('.v-app-contract-content').style.color = 'blue'
 
-      await toSaveContainer
-          .toCanvas()
-          .toPdf()
-          .save()
-    },
+          await toSaveContainer
+              .toCanvas()
+              .toPdf()
+              .save()
+      },
   },
 
 
