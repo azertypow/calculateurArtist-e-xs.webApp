@@ -1,5 +1,7 @@
 <template>
-  <div class="v-app-contract-content">
+  <div class="v-app-contract-content to-export">
+  <!--  //todo export add class hear-->
+
     <h2>Table des matières</h2>
 
     <ul class="v-app-contract-content__lexical">
@@ -70,7 +72,7 @@
           <li>Participation aux frais accessoires</li>
         </ul>
       </li>
-
+        <div class="html2pdf__page-break" ></div>
       <li>
         <h3>Propriété intellectuelle</h3>
         <ul>
@@ -107,6 +109,7 @@
     <div
         class="v-app-contract-content__content"
     >
+      <div class="html2pdf__page-break" ></div>
       <h2>Objet du contrat</h2>
       <div class="v-app-contract-content__content__subsection">
 
@@ -131,7 +134,7 @@
           l’élaboration de toute production, prestation ou performance réalisée par l’Artiste et/ou ses auxiliaires,
           selon les termes de l’accord entre les parties.
         </p>
-
+          <div class="html2pdf__page-break" ></div>
         <h3>Préambule</h3>
 
         <p>(A)
@@ -208,7 +211,7 @@
       </div>
 
 
-
+      <div class="html2pdf__page-break" ></div>
       <h2>Obligations de <template v-if="contractStore.structure_name" >{{contractStore.structure_name}}</template><template v-else><router-link to="#var-structure_name">complétez le nom de la structure </router-link></template> </h2>
       <div class="v-app-contract-content__content__subsection">
 
@@ -300,6 +303,7 @@
           d’ouverture usuelles.
         </p>
 
+          <div class="html2pdf__page-break" ></div>
         <h4
             :class="{'app-font-remove': contractStore.contract_exposition === false}"
         >Communication, publications et documentation</h4>
@@ -391,7 +395,7 @@
       </div>
 
 
-
+      <div class="html2pdf__page-break" ></div>
       <h2>Obligations de l’Artiste</h2>
       <div class="v-app-contract-content__content__subsection">
         <h3 :class="{'app-font-remove': contractStore.contract_exposition === false}">Exposition</h3>
@@ -511,7 +515,7 @@
       </div>
 
 
-
+      <div class="html2pdf__page-break" ></div>
       <h2 id="section_IV" >Rémunération de l’Artiste</h2>
       <div class="v-app-contract-content__content__subsection">
 
@@ -696,6 +700,7 @@
         </p>
       </div>
 
+      <div class="html2pdf__page-break" ></div>
       <h2>De la participation aux frais engagés par l’Artiste</h2>
       <div class="v-app-contract-content__content__subsection">
 
@@ -821,6 +826,7 @@
           la signature du contrat.
         </p>
 
+          <div class="html2pdf__page-break" ></div>
         <h3>Participation aux frais accessoires</h3>
 
         <p
@@ -859,7 +865,7 @@
       </div>
 
 
-
+      <div class="html2pdf__page-break" ></div>
       <h2>Propriété intellectuelle</h2>
       <div class="v-app-contract-content__content__subsection">
 
@@ -887,7 +893,7 @@
       </div>
 
 
-
+      <div class="html2pdf__page-break" ></div>
       <h2>Fin du contrat</h2>
       <div class="v-app-contract-content__content__subsection">
         <h3>Défaut de
@@ -944,6 +950,7 @@
         </p>
       </div>
 
+      <div class="html2pdf__page-break" ></div>
       <h2>Droit applicable, médiation et juridiction compétente</h2>
       <div class="v-app-contract-content__content__subsection">
 
@@ -1033,7 +1040,7 @@
 
       <div
           @click="contractStore.objectList.push({assurance:'',year:'',material:'',dimensions:''})"
-          class="app-button"
+          class="app-button remove-for-pdf-export"
           style="display: inline-block; margin-top: 2.5rem">[+] ajouter une œuvre
       </div>
 
