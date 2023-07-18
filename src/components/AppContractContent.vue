@@ -1,5 +1,5 @@
 <template>
-  <div class="v-app-contract-content to-export">
+  <div class="v-app-contract-content">
   <!--  //todo export add class hear-->
 
     <h2>Table des matières</h2>
