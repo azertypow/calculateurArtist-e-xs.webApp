@@ -227,10 +227,7 @@
                             @update:value="contractStore.structure_name = $event"/>
           s’engage à organiser
           <span :class="{'app-font-remove': !contractStore.contract_exposition}"                                  >L’EXPOSITION</span>
-          <span :class="{'app-font-remove': !contractStore.contract_exposition || !contractStore.contract_public}" > / </span>
-          <span :class="{'app-font-remove': !contractStore.contract_public}"                                      >PRESENTATION PUBLIQUE</span>
-          dans le lieu d’exposition
-          suivant&nbsp;:
+          dans le lieu d’exposition suivant&nbsp;:
           <content-editable placeholder="Nom et lieu" :value="contractStore.info_localisation"
                             @update:value="contractStore.info_localisation = $event"/>,
           pour la durée prévue à cet effet.

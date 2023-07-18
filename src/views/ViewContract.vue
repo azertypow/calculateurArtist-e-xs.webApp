@@ -11,11 +11,9 @@
         >Contrat</div>
         <div class="app-g__coll-6-12 app-with-gutter">
           <div class="app-button--check" :class="{'is-active': contractStore.contract_exposition}" @click="contractStore.contract_exposition = !contractStore.contract_exposition">d'exposition</div>
-          <div class="app-with-bottom-spacing" style="padding-left: 3rem">et/ou</div>
-          <div class="app-button--check" :class="{'is-active': contractStore.contract_public}" @click="contractStore.contract_public = !contractStore.contract_public">présentation publique</div>
           <div>
             <div
-                class="app-select-style-box"
+                class="app-select-style-box" style="margin-right: 1rem;"
             >
               <select v-model="contractStore.with_production" >
                 <option :value="true">avec</option>
@@ -140,7 +138,7 @@
       >
         <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12">
-          <div>et L’artiste/Les artistes/Le collectif d’artistes</div>
+          <div>et L’artiste/Les artistes/Le collectif d’artistes/La Galerie</div>
         </div>
         <div class="app-g__coll-4-12 app-with-gutter"></div>
       </div>

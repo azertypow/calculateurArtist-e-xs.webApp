@@ -2,7 +2,6 @@ import { defineStore } from 'pinia'
 
 export interface IStateContractStore {
     contract_exposition: boolean
-    contract_public: boolean
 
     work_price: string
 
@@ -89,7 +88,6 @@ export const useContractStore = defineStore('contractStore', {
     state: function () {
         return {
             contract_exposition: false,
-            contract_public: false,
             with_production: true,
             structure_name: '',
             structure_street: '',
