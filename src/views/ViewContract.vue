@@ -2,6 +2,8 @@
   <div class="v-view-contract app-view">
     <h2 class="app-with-gutter">GÉNÉRATEUR DE CONTRAT-MODÈLE POUR UNE EXPOSITION</h2>
 
+      <p>Ce site internet est un générateur de contrats-modèles. Il s’agit d’une base qui vise à clarifier et à aider à préciser les conditions de travail des artist.exs, ainsi qu’à favoriser la négociation de leurs engagements. Il cherche à prendre en compte les intérêts des deux parties au contrat. Toutefois, dans la mesure où chaque situation est particulière, vous avez la possibilité d’adapter le modèle à vos besoins. En cas de doute, n’hésitez pas à consulter une permanence ou à prendre des conseils juridiques.</p>
+
     <div class="v-view-contract__section">
       <div
           class="app-g"
