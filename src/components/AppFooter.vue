@@ -3,9 +3,21 @@
       class="v-app-footer"
   >
 
+      <div
+              v-if="!isHome && !waitPDFExport"
+              class="app-button  v-app-footer__button v-app-footer__button-html"
+              @click="onClickOnExportPDF"
+      >copy to clipboard</div>
+
+      <div
+              v-if="!isHome && !waitPDFExport"
+              class="app-button  v-app-footer__button v-app-footer__button-html"
+              @click="onClickOnExportPDF"
+      >version texte</div>
+
     <div
         v-if="!isHome && !waitPDFExport"
-        class="app-button v-app-footer__button-export"
+        class="app-button v-app-footer__button v-app-footer__button-export"
         @click="onClickOnExportPDF"
     >exporter en PDF</div>
 
@@ -46,28 +58,80 @@
             v-if="globalStore.showInfo"
         >
           <template v-slot:left >
-            <p>Au niveau fédéral, cantonal et municipal,
-              l’amélioration des conditions de travail des artistes est aujourd’hui une préoccupation
-              des collectivités publiques, en particulier les aspects de la rémunération des artistes,
-              leur prévoyance sociale ainsi que leur statut et reconnaissance en tant que professionnel·le·x·s
-              de manière plus générale.
-            </p>
+              <h4>Introduction</h4>
+              <p>
+                  Au niveau fédéral, cantonal et municipal, l’amélioration des conditions de travail des artistes est aujourd’hui une préoccupation des collectivités publiques, en particulier les aspects de la rémunération des artistes, leur prévoyance sociale ainsi que leur statut et reconnaissance en tant que professionnels de manière plus générale.
+              </p>
+              <p>
+                  Cette grille de rémunération est basée sur le guide Honoraires des artistes réalisé par Visarte en 2020 et en propose une version augmentée avec une liste précise des différents cas de figure et tarifs adaptés aux réalités des artistes à Genève.
+              </p>
+              <p>
+                  Elle s’applique à tous types de structures, notamment les Centres d’art et les musées, les espaces d’exposition publics ou privés, subventionnés ou non par la Ville de Genève ou le canton de Genève.
+              </p>
+              <p>
+                En étant librement diffusé, ce document a pour ambition de devenir une norme en Suisse et de permettre ainsi aux structures et aux artistes de délimiter précisément leur cadre de travail avec des conditions harmonisées.
+              </p>
           </template>
 
           <template v-slot:right >
-            <p>Cette dernière proposition est basée sur le guide Honoraires
-              des artistes réalisé par Visarte en 2020, elle en reprend la base tarifaire et les éléments constituant
-              et en propose une version affinée, avec une liste des différents cas de figure, notamment :
-            </p>
-            <ul>
-              <li>Distinction de la typologie du projet (œuvre existante, adaptation d’une œuvre existante et conception d’une nouvelle œuvre)</li>
-              <li>Prise en compte de la durée de l’exposition</li>
-              <li>Introduction d’un forfait de conception pour chaque type d’exposition</li>
-              <li>Application d’une rémunération horaire pour la réalisation de chaque type d’exposition Le formulaire de rémunération a pour but de s’appliquer à tout type de structures (les Centres d’art et les musées, les espaces d’exposition publics ou privés, subventionnés ou non par la Ville de Genève ou le canton de Genève), distingués dans la grille tarifaire annexe.</li>
-            </ul>
+              <h4>Comment cela fonctionne&nbsp;?</h4>
 
-            <p class="v-app-footer__panel__signature">Site réalisé par Clovis Duran (graphisme) et Nicolas Baldran (développement)</p>
+              <p>La grille de rémunération</p>
+              <p>L’objectif de cette grille est de proposer une rémunération pour le travail fourni par chaque artiste dans le cadre d’une invitation à réaliser une exposition et/ou autres prestations. Ces directives sont utiles autant pour les artistes que pour les structures présentant des projets artistiques.</p>
+              <p>La grille indique la rémunération minimum par artiste et par exposition, le montant est défini en fonction de cinq critères principaux&nbsp;:</p>
+              <ul>
+                <li>La nature de l’œuvre (nouvelle production, adaptation ou œuvre existante)</li>
+                <li>Le nombre d’artistes participant à l’exposition</li>
+                <li>Le budget global de la structure (hors frais fixes de loyer)</li>
+                <li>Le nombre annuel de visiteur·euse·x·s de la structure</li>
+                <li>La durée de l’exposition</li>
+              </ul>
+              <p>Cette grille propose des recommandations minimales pour la rémunération, il est donc tout à fait envisageable de mieux rétribuer l’artiste que les montants proposés.</p>
+              <p>Afin de déterminer la catégorie qui s’applique à une structure, il convient d’utiliser celle étant la plus favorable pour l’artiste. Si une structure a peu de visiteur·euse·x·s mais un budget la plaçant dans une catégorie supérieure, c’est la catégorie relevant du budget qui est appliquée.</p>
           </template>
+
+            <template v-slot:left-bottom>
+                <h4>Crédits</h4>
+                <p>
+                    <br>Projet piloté par :
+                    <br><a href="https://www.visarte-geneve.ch/" >Visarte.Genève</a>
+                </p>
+
+                <p>Grille de rémunération :
+                    <br>Clovis Duran, Julie Marmet, Ramaya Tegegne
+                </p>
+
+                <p>Rédaction du contrat-modèle :
+                    <br>Lab-of-Arts
+                </p>
+
+                <p>Développement :
+                    <br>Nicolas Baldran
+                </p>
+
+                <p>Bibliothèques :
+                    <br><a href="https://vuejs.org/">Vue.js
+                    </a>
+                    <br><a href="">html2pdf.js</a>
+                    <br>
+                </p>
+
+                <p>Graphisme :
+                    <br>Clovis Duran
+                </p>
+
+                <p>Communication :
+                    <br>Camille Dumond
+                </p>
+
+                <p>Typographies :
+                    <br>Christiana, Gudrun Zapf-von Hesse
+                    <br>Suisse Intl, Swiss Typefaces
+                </p>
+
+                <p>Les noms des personnes sont organisés ci-dessus par ordre alphabétique.</p>
+            </template>
+
 
         </app-panel>
       </transition>
@@ -337,8 +401,8 @@ export default defineComponent({
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 1rem;
-    line-height: 1.5rem;
+    padding: 0 1rem;
+    line-height: 2rem;
     font-size: 1.4rem;
     margin: auto;
 
@@ -389,11 +453,11 @@ export default defineComponent({
       max-width: var(--app-max-width);
       margin: auto;
       display: flex;
-      line-height: 1.5rem;
+      line-height: 2rem;
       font-size: 1.4rem;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem .5rem;
+      padding: 0 .5rem;
       box-sizing: border-box;
     }
 
@@ -408,13 +472,20 @@ export default defineComponent({
   }
 }
 
-.v-app-footer__button-export {
+.v-app-footer__button {
   position: absolute;
-  right: 2rem;
   top: 0;
   transform: translateY( calc(-100% - 2rem) );
   z-index: 1000;
   font-size: 1.2rem;
+}
+
+.v-app-footer__button-html {
+  right: 15rem;
+}
+
+.v-app-footer__button-export {
+  right: 2rem;
 }
 
 .v-app-footer__panel__signature {
@@ -452,8 +523,8 @@ export default defineComponent({
 
   h2 {
     margin-top:   0 !important;
-    font-size:    calc( var(--font-size) * 3)!important;
-    line-height:  calc( var(--line-height) * 3)!important;
+    font-size:    calc( var(--font-size) * 2)!important;
+    line-height:  calc( var(--line-height) *2)!important;
   }
 
   h3 {

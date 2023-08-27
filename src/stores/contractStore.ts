@@ -7,6 +7,8 @@ export interface IStateContractStore {
 
     with_production: boolean
 
+    with_physical_objects: boolean
+
     exposition_name: string
 
     structure_name: string
@@ -102,6 +104,8 @@ export const useContractStore = defineStore('contractStore', {
             exposition_name: '',
 
             work_price: '',
+
+            with_physical_objects: true,
 
             artiste_renumerationPercent: '',
             artiste_structureType: 'artistSolo',

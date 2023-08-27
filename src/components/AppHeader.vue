@@ -2,7 +2,7 @@
   <div class="v-app-header">
     <div class="v-app-header__top" >
       <router-link class="v-app-header__title" to="/">
-        <h1>Condition Artist.exs</h1>
+        <h1>Travail des artistes</h1>
       </router-link>
     </div>
     <div class="v-app-header__nav-box" >

@@ -359,7 +359,7 @@ help:`<p>Dans le cas ou la structure propose la rédaction de textes par l'artis
         for (const section of this.calculatorSections) {
           if (section.required && section.status === 'empty') {
             errorForTotalCalculation = {
-              errorMessage: `Vous devez remplir la partie ${section.title}.`
+              errorMessage: `Remplir la partie ${section.index}. ${section.title} pour afficher le total.`
             }
             break
           }

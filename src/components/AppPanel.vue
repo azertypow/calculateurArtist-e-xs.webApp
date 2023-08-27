@@ -8,6 +8,10 @@
       <div class="app-with-gutter" >
         <slot name="right" ></slot>
       </div>
+
+        <div class="">
+            <slot name="left-bottom"></slot>
+        </div>
     </div>
   </div>
 </template>
@@ -24,7 +28,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .v-app-panel {
-  height: calc(100% - 6.6rem - 4rem);
+  height: calc(100% - 7rem - 4rem - 2px);
   width: 100%;
   background: var(--app-color-main);
   position: fixed;

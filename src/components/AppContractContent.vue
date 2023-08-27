@@ -1,5 +1,5 @@
 <template>
-  <div class="v-app-contract-content">
+  <div class="v-app-contract-content to-export">
   <!--  //todo export add class hear-->
 
     <h2>Table des matières</h2>
@@ -12,8 +12,8 @@
           <li>Préambule</li>
           <li>Objet
             <ul>
-              <li :class="{'app-font-remove': contractStore.contract_exposition === false}" >Exposition</li>
-              <li :class="{'app-font-remove': contractStore.with_production === false}"     >Production</li>
+              <li class="app-contract_exposition" :class="{'app-font-remove': contractStore.contract_exposition === false}" >Exposition</li>
+              <li class="app-contract-with_production" :class="{'app-font-remove': contractStore.with_production === false}"     >Production</li>
             </ul>
           </li>
         </ul>
@@ -22,32 +22,32 @@
       <li id="var-structure_name" >
         <h3>Obligations de <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name" @update:value="contractStore.structure_name = $event"/></h3>
         <ul>
-          <li :class="{'app-font-remove': contractStore.contract_exposition === false}" >Exposition
+          <li class="app-contract_exposition" :class="{'app-font-remove': contractStore.contract_exposition === false}" >Exposition
             <ul>
               <li>Lieu d’exposition</li>
               <li>Prise en charge des frais</li>
-              <li :class="{'app-font-remove': contractStore.with_production === false}">Assurance des œuvres</li>
+              <li :class="{'app-font-remove': contractStore.with_physical_objects === false}">Assurance des œuvres</li>
               <li>Instructions de l’Artiste</li>
               <li>Communication, publications et documentation</li>
               <li>Transport</li>
               <li>Montage et démontage</li>
             </ul>
           </li>
-          <li :class="{'app-font-remove': !contractStore.with_production}" >Production</li>
+          <li class="app-contract-with_production" :class="{'app-font-remove': !contractStore.with_production}" >Production</li>
         </ul>
       </li>
 
       <li>
         <h3>Obligations de l’Artiste</h3>
         <ul>
-          <li :class="{'app-font-remove': contractStore.contract_exposition === false}" >Exposition
+          <li class="app-contract_exposition" :class="{'app-font-remove': contractStore.contract_exposition === false}" >Exposition
             <ul>
               <li>Obligation de renseigner</li>
               <li>Collaboration de l’Artiste</li>
               <li>Utilisation pour ses propres besoins</li>
             </ul>
           </li>
-          <li :class="{'app-font-remove': !contractStore.with_production}" >Production</li>
+          <li class="app-contract-with_production" :class="{'app-font-remove': !contractStore.with_production}" >Production</li>
         </ul>
       </li>
 
@@ -121,41 +121,52 @@
           littéraire ou artistique, qui a un caractère individuel, quelles qu’en soient la valeur ou la destination.
         </p>
 
-        <p :class="{'app-font-remove': contractStore.contract_exposition === false}">
+        <p class="app-contract_exposition" :class="{'app-font-remove': contractStore.contract_exposition === false}">
           <strong>Exposition d’une Œuvre :</strong> Par Exposition d’une Œuvre, on entend dans le présent contrat aussi
           bien l’exposition d’une Œuvre physique (peinture, sculpture, installation, etc.) que toute production,
           prestation ou performance réalisée par l’Artiste et/ou ses auxiliaires, selon les termes de l’accord entre les
           parties.
         </p>
 
-        <p :class="{'app-font-remove': contractStore.with_production === false}">
+        <p class="app-contract-with_production" :class="{'app-font-remove': contractStore.with_production === false}">
           <strong>Production d’une Œuvre :</strong> Par Production d’une Œuvre, on entend dans le présent contrat aussi
           bien la création d’une Œuvre physique (peinture, sculpture, installation, etc.) que la conception et
           l’élaboration de toute production, prestation ou performance réalisée par l’Artiste et/ou ses auxiliaires,
           selon les termes de l’accord entre les parties.
         </p>
-          <div class="html2pdf__page-break" ></div>
-        <h3>Préambule</h3>
 
-        <p>(A)
+        <div class="html2pdf__page-break" ></div>
+
+
+        <h3
+            class="app-contract_exposition app-contract-with_production"
+            :class="{'app-font-remove': !contractStore.contract_exposition && !contractStore.with_production}"
+        >Préambule</h3>
+
+        <p
+                class="app-contract_exposition" :class="{'app-font-remove': !contractStore.contract_exposition}"
+        >(A)
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
           s’engage à présenter publiquement une ou des Œuvres de l’Artiste, dans le cadre d’une exposition qu’elle
           organise.
         </p>
 
-        <p :class="{'app-font-remove': contractStore.with_production === false}">
+        <p class="app-contract-with_production" :class="{'app-font-remove': contractStore.with_production === false}">
           (B) En vue de sa/leur présentation publique,
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
           mandate l’Artiste pour la réalisation d’une ou de plusieurs nouvelles Œuvres.
         </p>
 
-        <h3>Objet</h3>
+        <h3
+                class="app-contract_exposition app-contract-with_production"
+                :class="{'app-font-remove': !contractStore.contract_exposition && !contractStore.with_production}"
+        >Objet</h3>
 
 
-        <h4 :class="{'app-font-remove': !contractStore.contract_exposition}">Exposition</h4>
-        <p :class="{'app-font-remove': !contractStore.contract_exposition}">
+        <h4 class="app-contract_exposition" :class="{'app-font-remove': !contractStore.contract_exposition}">Exposition</h4>
+        <p class="app-contract_exposition" :class="{'app-font-remove': !contractStore.contract_exposition}">
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
           organise, en vue de la présentation publique d’une ou plusieurs Œuvres de l’Artiste, une exposition
@@ -174,7 +185,7 @@
                             @update:value="contractStore.info_localisation = $event"/>
           .
         </p>
-        <p :class="{'app-font-remove': !contractStore.contract_exposition}">
+        <p class="app-contract_exposition" :class="{'app-font-remove': !contractStore.contract_exposition}">
           L’Artiste accepte de participer à cette exposition et de mettre à disposition de
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
@@ -182,8 +193,8 @@
           publiquement à cette occasion.
         </p>
 
-        <h4 :class="{'app-font-remove': !contractStore.with_production}">Production</h4>
-        <p :class="{'app-font-remove': !contractStore.with_production}">
+        <h4 class="app-contract-with_production" :class="{'app-font-remove': !contractStore.with_production}">Production</h4>
+        <p class="app-contract-with_production" :class="{'app-font-remove': !contractStore.with_production}">
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
           contribue à la production par l’Artiste d’une ou plusieurs œuvres
@@ -193,7 +204,7 @@
               'app-font-remove': !contractStore.with_production,
               'is-active': contractStore.option_structureContributionForTheProduction.byParticipation,
             }"
-            class="app-button--check"
+            class="app-button--check app-contract-with_production"
             @click="contractStore.option_structureContributionForTheProduction.byParticipation = !contractStore.option_structureContributionForTheProduction.byParticipation"
         >
           en participant aux frais de production
@@ -203,7 +214,7 @@
               'app-font-remove': !contractStore.with_production,
               'is-active': contractStore.option_structureContributionForTheProduction.remuneration,
             }"
-           class="app-button--check"
+           class="app-button--check app-contract-with_production"
            @click="contractStore.option_structureContributionForTheProduction.remuneration = !contractStore.option_structureContributionForTheProduction.remuneration"
         >
           <router-link to="#section_IV" >en le rémunérant selon les conditions définies ci-après sous titre IV.</router-link>
@@ -212,21 +223,25 @@
 
 
       <div class="html2pdf__page-break" ></div>
-      <h2>Obligations de <template v-if="contractStore.structure_name" >{{contractStore.structure_name}}</template><template v-else><router-link to="#var-structure_name">complétez le nom de la structure </router-link></template> </h2>
+
+      <h2
+              class="app-contract_exposition app-contract-with_production"
+              :class="{'app-font-remove': !contractStore.contract_exposition && !contractStore.with_production}"
+      >Obligations de <template v-if="contractStore.structure_name" >{{contractStore.structure_name}}</template><template v-else><router-link to="#var-structure_name">complétez le nom de la structure </router-link></template> </h2>
       <div class="v-app-contract-content__content__subsection">
 
 <!-- contractStore.contract_exposition === false-->
-        <h3 :class="{'app-font-remove': contractStore.contract_exposition === false}">Exposition</h3>
+        <h3 class="app-contract_exposition" :class="{'app-font-remove': contractStore.contract_exposition === false}">Exposition</h3>
 
-        <h4 :class="{'app-font-remove': contractStore.contract_exposition === false}">Lieu d’exposition</h4>
+        <h4 class="app-contract_exposition" :class="{'app-font-remove': contractStore.contract_exposition === false}">Lieu d’exposition</h4>
 
         <p
-            :class="{'app-font-remove': contractStore.contract_exposition === false}"
+            class="app-contract_exposition" :class="{'app-font-remove': contractStore.contract_exposition === false}"
         >
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
           s’engage à organiser
-          <span :class="{'app-font-remove': !contractStore.contract_exposition}"                                  >L’EXPOSITION</span>
+          <span class="app-contract_exposition" :class="{'app-font-remove': !contractStore.contract_exposition}"                                  >L’EXPOSITION</span>
           dans le lieu d’exposition suivant&nbsp;:
           <content-editable placeholder="Nom et lieu" :value="contractStore.info_localisation"
                             @update:value="contractStore.info_localisation = $event"/>,
@@ -234,6 +249,7 @@
         </p>
 
         <p
+            class="app-contract_exposition"
             :class="{'app-font-remove': contractStore.contract_exposition === false}"
         >
           Si des autorisations sont nécessaires pour l’utilisation du lieu d’exposition ou pour l’exposition des Œuvres
@@ -244,6 +260,7 @@
         </p>
 
         <p
+            class="app-contract_exposition"
             :class="{'app-font-remove': contractStore.contract_exposition === false}"
         >
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
@@ -253,10 +270,12 @@
         </p>
 
         <h4
+            class="app-contract_exposition"
             :class="{'app-font-remove': contractStore.contract_exposition === false}"
         >Prise en charge des frais</h4>
 
         <p
+            class="app-contract_exposition"
             :class="{'app-font-remove': contractStore.contract_exposition === false}"
         >
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
@@ -266,10 +285,12 @@
         </p>
 
         <h4
-            :class="{'app-font-remove': contractStore.with_production === false}"
+            class="app-contract_exposition"
+            :class="{'app-font-remove': contractStore.with_physical_objects === false || contractStore.contract_exposition === false}"
         >Assurance des œuvres</h4>
         <p
-            :class="{'app-font-remove': contractStore.with_production === false}"
+            class="app-contract_exposition"
+            :class="{'app-font-remove': contractStore.with_physical_objects === false || contractStore.contract_exposition === false}"
         >
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
@@ -279,9 +300,11 @@
 
 
         <h4
+            class="app-contract_exposition"
             :class="{'app-font-remove': contractStore.contract_exposition === false}"
         >Instructions de l’Artiste</h4>
         <p
+            class="app-contract_exposition"
             :class="{'app-font-remove': contractStore.contract_exposition === false}"
         >
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
@@ -291,20 +314,23 @@
           normes de sécurité ainsi que des conditions d’accès des publics.
         </p>
         <p
+            class="app-contract_exposition"
             :class="{'app-font-remove': contractStore.contract_exposition === false}"
         >
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
-          garantit, sur le lieu d’exposition, la protection des œuvres et des droits de l’Artiste, en recourant à tous
+          garantit, sur le lieu d’exposition, la protection des œuvres, cas échéant leur entretien, et la protection des droits de l’Artiste, en recourant à tous
           les moyens à sa disposition, et à faire en sorte que l’exposition soit accessible au public durant les heures
           d’ouverture usuelles.
         </p>
 
           <div class="html2pdf__page-break" ></div>
         <h4
+            class="app-contract_exposition"
             :class="{'app-font-remove': contractStore.contract_exposition === false}"
         >Communication, publications et documentation</h4>
         <p
+            class="app-contract_exposition"
             :class="{'app-font-remove': contractStore.contract_exposition === false}"
         >
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
@@ -314,6 +340,7 @@
         </p>
 
         <p
+            class="app-contract_exposition"
             :class="{'app-font-remove': contractStore.contract_exposition === false}"
         >
           A cette fin,
@@ -322,6 +349,7 @@
           est en droit de publier des images des Œuvres de l’Artiste parmi celles faisant partie de l’exposition.
         </p>
         <p
+            class="app-contract_exposition"
             :class="{'app-font-remove': contractStore.contract_exposition === false}"
         >
           Toute autre publication, en dehors du cadre restreint de la promotion de l’exposition, nécessite l’approbation
@@ -329,10 +357,12 @@
         </p>
 
         <h4
+            class="app-contract_exposition"
             :class="{'app-font-remove': contractStore.contract_exposition === false}"
         >Transport</h4>
 
         <p
+            class="app-contract_exposition"
             :class="{'app-font-remove': contractStore.contract_exposition === false}"
         >
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
@@ -341,6 +371,7 @@
           parmi lesquels sont également compris les frais administratifs et de douane.
         </p>
         <p
+            class="app-contract_exposition"
             :class="{'app-font-remove': contractStore.contract_exposition === false}"
         >
           Si l’Artiste est chargé du transport des Œuvres, il sera rémunéré selon le « Formulaire de rémunération » (Annexe
@@ -349,10 +380,12 @@
         </p>
 
         <h4
+            class="app-contract_exposition"
             :class="{'app-font-remove': contractStore.contract_exposition === false}"
         >Montage et démontage</h4>
 
         <p
+            class="app-contract_exposition"
             :class="{'app-font-remove': contractStore.contract_exposition === false}"
         >Le montage et le démontage des Œuvres s’effectue sous la responsabilité de
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
@@ -362,6 +395,7 @@
         </p>
 
         <p
+            class="app-contract_exposition"
             :class="{'app-font-remove': contractStore.contract_exposition === false}"
         >À cette fin, il appartient à
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
@@ -371,6 +405,7 @@
         </p>
 
         <p
+            class="app-contract_exposition"
             :class="{'app-font-remove': contractStore.contract_exposition === false}"
         >Si l’Artiste est chargé du montage et du démontage, il sera rémunéré selon le « Formulaire de rémunération »
           (Annexe&nbsp;&nbsp;I)
@@ -379,9 +414,9 @@
 
 
 <!-- contractStore.with_production-->
-        <h3 :class="{'app-font-remove': contractStore.with_production === false}">Production</h3>
+        <h3 class="app-contract-with_production" :class="{'app-font-remove': contractStore.with_production === false}">Production</h3>
         <p
-            :class="{'app-font-remove': contractStore.with_production === false}"
+                class="app-contract-with_production" :class="{'app-font-remove': contractStore.with_production === false}"
         >
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
@@ -395,9 +430,13 @@
       <div class="html2pdf__page-break" ></div>
       <h2>Obligations de l’Artiste</h2>
       <div class="v-app-contract-content__content__subsection">
-        <h3 :class="{'app-font-remove': contractStore.contract_exposition === false}">Exposition</h3>
+        <h3
+                class="app-contract_exposition"
+                :class="{'app-font-remove': contractStore.contract_exposition === false}">Exposition</h3>
 
-        <p :class="{'app-font-remove': contractStore.contract_exposition === false}">
+        <p
+                class="app-contract_exposition"
+                :class="{'app-font-remove': contractStore.contract_exposition === false}">
           L’Artiste s’engage à mettre les Œuvres à disposition de
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
@@ -413,9 +452,15 @@
           .
         </p>
 
-        <h4>Obligation de renseigner</h4>
+        <h4
+                class="app-contract_exposition"
+                :class="{'app-font-remove': contractStore.contract_exposition === false}"
+        >Obligation de renseigner</h4>
 
-        <p>Sur demande de
+        <p
+                class="app-contract_exposition"
+                :class="{'app-font-remove': contractStore.contract_exposition === false}"
+        >Sur demande de
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
           , l’Artiste
@@ -427,7 +472,10 @@
           présenter des Œuvres objet du présent contrat.
         </p>
 
-        <p>
+        <p
+                class="app-contract_exposition"
+                :class="{'app-font-remove': contractStore.contract_exposition === false}"
+        >
           L’Artiste est également tenu de tenir régulièrement informé
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
@@ -435,12 +483,18 @@
           initialement.
         </p>
 
-        <h4>Collaboration de l’Artiste</h4>
+        <h4
+                class="app-contract_exposition"
+                :class="{'app-font-remove': contractStore.contract_exposition === false}"
+        >Collaboration de l’Artiste</h4>
 
 
         <p
-            :class="{'is-active': contractStore.artiste_angagementPretEtRedaction === 'prêter son concours'}"
-            class="app-button--check"
+            :class="{
+            'is-active': contractStore.artiste_angagementPretEtRedaction === 'prêter son concours',
+            'app-font-remove': contractStore.contract_exposition === false,
+            }"
+            class="app-button--check app-contract_exposition"
             @click="contractStore.artiste_angagementPretEtRedaction = 'prêter son concours'"
         >
           L’Artiste s’engage à prêter son concours, si nécessaire, à la conception des textes décrivant sa démarche
@@ -448,24 +502,36 @@
           l’Artiste.
         </p>
         <p
-            :class="{'is-active': contractStore.artiste_angagementPretEtRedaction === 'rédiger les textes décrivant sa démarche artistique'}"
-            class="app-button--check"
+            :class="{
+              'is-active': contractStore.artiste_angagementPretEtRedaction === 'rédiger les textes décrivant sa démarche artistique',
+              'app-font-remove': contractStore.contract_exposition === false,
+            }"
+            class="app-button--check app-contract_exposition"
             @click="contractStore.artiste_angagementPretEtRedaction = 'rédiger les textes décrivant sa démarche artistique'"
         >
           L’Artiste s’engage à rédiger les textes décrivant sa démarche artistique et son projet. Il sera rémunéré
             selon le « Formulaire de rémunération » (Annexe I).
         </p>
 
-        <p>
+        <p
+                class="app-contract_exposition"
+                :class="{'app-font-remove': contractStore.contract_exposition === false}"
+        >
           Ces textes peuvent être utilisés par
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
           à des fins de communication avant et durant la tenue de l’exposition.
         </p>
 
-        <h4>Utilisation pour ses propres besoins</h4>
+        <h4
+                class="app-contract_exposition"
+                :class="{'app-font-remove': contractStore.contract_exposition === false}"
+        >Utilisation pour ses propres besoins</h4>
 
-        <p>
+        <p
+                class="app-contract_exposition"
+                :class="{'app-font-remove': contractStore.contract_exposition === false}"
+        >
           L’Artiste est en droit de mentionner la présente collaboration avec
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
@@ -476,14 +542,18 @@
           faire librement usage.
         </p>
 
-        <p>
+        <p
+                class="app-contract_exposition"
+                :class="{'app-font-remove': contractStore.contract_exposition === false}"
+        >
           Par ailleurs, l’Artiste a le droit de photographier ses Œuvres sur le lieu d’exposition et de publier ces
           photographies.
         </p>
 
-        <h3 :class="{'app-font-remove': contractStore.with_production === false}">Production</h3>
+        <h3 class="app-contract-with_production" :class="{'app-font-remove': contractStore.with_production === false}">Production</h3>
 
         <p
+            class="app-contract-with_production"
             :class="{'app-font-remove': contractStore.with_production === false}"
         >
           L’Artiste s’engage à réaliser une ou plusieurs Œuvres afin que celles-ci soient présentées dans le cadre de
@@ -494,6 +564,7 @@
         </p>
 
         <p
+            class="app-contract-with_production"
             :class="{'app-font-remove': contractStore.with_production === false}"
         >
           Dans la mesure où lesdites Œuvres sont destinées à une présentation publique, celles-ci devront être réalisées
@@ -504,6 +575,7 @@
         </p>
 
         <p
+            class="app-contract-with_production"
             :class="{'app-font-remove': contractStore.with_production === false}"
         >
           L’Artiste s’engage à concevoir ses Œuvres en tenant compte des conditions particulières du lieu d’exposition
@@ -525,54 +597,62 @@
           tous les documents et informations permettant de déterminer son statut en matière de sécurité sociale, afin
           notamment de pouvoir fixer les modalités de sa rémunération [indépendant ou rémunération par le biais d’une
           personne morale].
+<!--            todo: question-->
         </p>
 
         <h3>Indemnisation forfaitaire ou cachet</h3>
 
         <p>
-          <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
-                            @update:value="contractStore.structure_name = $event"/>
-          verse à l’Artiste,
+          <content-editable placeholder="Nom de la structure"
+                            :value="contractStore.structure_name"
+                            @update:value="contractStore.structure_name = $event"
+          />
+
+            verse à l’Artiste, une somme de
+            <content-editable placeholder="[XXX]"
+                              :value="contractStore.work_price"
+                              @update:value="contractStore.work_price = $event"
+            />
+            , hors TVA, déterminée selon l’activité déployée et les critères prévus dans la « Grille de rémunération » (Annexe I), à titre de rémunération pour
         </p>
 
         <p
             :class="{'is-active': contractStore.option_indemnisation_remunerePourLExpo}"
             class="app-button--check"
             @click="contractStore.option_indemnisation_remunerePourLExpo = !contractStore.option_indemnisation_remunerePourLExpo"
-        >à titre de rémunération pour l’exposition</p>
+        >l’exposition</p>
 
         <p
             :class="{'is-active': contractStore.option_indemnisation_conceptionEtAdaptation}"
             class="app-button--check"
             @click="contractStore.option_indemnisation_conceptionEtAdaptation = !contractStore.option_indemnisation_conceptionEtAdaptation"
-        >conception/adaptation</p>
+        >la conception/adaptation</p>
 
         <p
             :class="{'is-active': contractStore.option_indemnisation_verseUneSomme}"
             class="app-button--check"
             @click="contractStore.option_indemnisation_verseUneSomme = !contractStore.option_indemnisation_verseUneSomme"
-        >réalisation de son ou ses Œuvre(s), une somme de
-          <content-editable placeholder="[XXX]" :value="contractStore.work_price"
-                            @update:value="contractStore.work_price = $event"/>,
-          hors TVA, déterminée selon l’activité déployée et les critères
-          prévus dans le « Formulaire de rémunération » (Annexe I).</p>
+        >la réalisation de son ou ses Œuvre(s)</p>
 
 
         <p>Le versement sera effectué sur réception d’une facture payable dans les 30 jours.</p>
+          <div
+                  style="margin-top: 2rem"
+                  :class="{'is-active': contractStore.option_indemnisationCalculHeure}"
+                  class="app-button--check app-contract_exposition"
+                  @click="contractStore.option_indemnisationCalculHeure = !contractStore.option_indemnisationCalculHeure"
+          >Indemnisation calculée à l’heure?</div>
 
         <h4
-            :class="{'app-font-remove': contractStore.option_indemnisationCalculHeure === false}"
+            class="app-contract_exposition"
+            :class="{'app-font-remove': contractStore.option_indemnisationCalculHeure === false || contractStore.contract_exposition === false}"
         >
           Indemnisation calculée à l’heure
-          <br><span
-            :class="{'is-active': contractStore.option_indemnisationCalculHeure}"
-            class="app-button--check"
-            @click="contractStore.option_indemnisationCalculHeure = !contractStore.option_indemnisationCalculHeure"
-        >(si indemnisation calculée à l’heure? )</span>
         </h4>
 
         <p
-            :class="{'app-font-remove': contractStore.option_indemnisationCalculHeure === false}"
+            class="app-contract_exposition"
+            :class="{'app-font-remove': contractStore.option_indemnisationCalculHeure === false || contractStore.contract_exposition === false}"
         >
           Les travaux de l’Artiste (ou des auxiliaires travaillant pour son compte), en tant que cela a été convenu
           préalablement par les Parties en vue de la mise en place de l’exposition, sont facturés à
@@ -586,19 +666,22 @@
         </p>
 
         <p
-            :class="{'app-font-remove': contractStore.option_indemnisationCalculHeure === false}"
+            class="app-contract_exposition"
+            :class="{'app-font-remove': contractStore.option_indemnisationCalculHeure === false || contractStore.contract_exposition === false}"
         >Le versement sera effectué sur réception d’une facture payable dans les 30 jours.</p>
 
         <h4
             :class="{'app-font-remove': contractStore.option_expositionEtVente === false}"
         >
           Vente des œuvres
-          <br><span
-              :class="{'is-active': contractStore.option_expositionEtVente}"
-              class="app-button--check"
-              @click="contractStore.option_expositionEtVente = !contractStore.option_expositionEtVente"
-            >(si exposition et vente)</span>
         </h4>
+
+        <div
+                style="margin-top: 2rem"
+                :class="{'is-active': contractStore.option_expositionEtVente}"
+                class="app-button--check"
+                @click="contractStore.option_expositionEtVente = !contractStore.option_expositionEtVente"
+        >Exposition et vente?</div>
 
         <p
             :class="{'app-font-remove': contractStore.option_expositionEtVente === false}"
@@ -623,12 +706,15 @@
         <h4
             :class="{'app-font-remove': contractStore.option_participationPrixDeVente === false}"
         >Participation au prix de vente des œuvres
-          <br><span
-              :class="{'is-active': contractStore.option_participationPrixDeVente}"
-              class="app-button--check"
-              @click="contractStore.option_participationPrixDeVente = !contractStore.option_participationPrixDeVente"
-          >(si participation de la structure au prix de vente)</span>
         </h4>
+
+
+        <div
+            style="margin-top: 2rem"
+            :class="{'is-active': contractStore.option_participationPrixDeVente}"
+            class="app-button--check"
+            @click="contractStore.option_participationPrixDeVente = !contractStore.option_participationPrixDeVente"
+        >Participation de la structure au prix de vente?</div>
 
         <p
             :class="{'app-font-remove': contractStore.option_participationPrixDeVente === false}"
@@ -670,15 +756,19 @@
         <p
             :class="{
               'is-active': contractStore.artiste_hasCommission,
-              'app-font-remove': contractStore.option_participationPrixDeVente === false,
+              'app-font-remove': contractStore.option_participationPrixDeVente === false || !contractStore.contract_exposition,
             }"
-            class="app-button--check"
+            class="app-button--check app-contract_exposition"
             @click="contractStore.artiste_hasCommission = true"
         >
-          <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
+          <content-editable
+                            placeholder="Nom de la structure"
+                            :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
           a droit, en cas de vente d’une Œuvre de l’Artiste lors de l’exposition, à une commission de
-          <content-editable placeholder="pourcentage" :value="contractStore.commission_percent"
+          <content-editable
+                            placeholder="pourcentage"
+                            :value="contractStore.commission_percent"
                             @update:value="contractStore.commission_percent = $event"/>%
           sur le prix de vente.
         </p>
@@ -686,9 +776,9 @@
         <p
             :class="{
               'is-active': !contractStore.artiste_hasCommission,
-              'app-font-remove': contractStore.option_participationPrixDeVente === false,
+              'app-font-remove': contractStore.option_participationPrixDeVente === false || !contractStore.contract_exposition,
             }"
-            class="app-button--check"
+            class="app-button--check app-contract_exposition"
             @click="contractStore.artiste_hasCommission = false"
         >
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
@@ -701,127 +791,160 @@
       <h2>De la participation aux frais engagés par l’Artiste</h2>
       <div class="v-app-contract-content__content__subsection">
 
-        <h3>Budget de production</h3>
+<!--        condution with production -->
+          <h3
+                  class="app-contract-with_production"
+                  :class="{'app-font-remove': contractStore.with_production === false}"
+          >Budget de production</h3>
 
-        <p>
-          La ou les œuvre(s) commandée(s) par
-          <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
-                            @update:value="contractStore.structure_name = $event"/>
-          sont produites avec un budget de production.
-        </p>
-
-        <p>Le budget global de
-          <content-editable placeholder="[XXX]" :value="contractStore.work_price"
-                            @update:value="contractStore.work_price = $event"/>
-          comprend (à cocher) :</p>
-
-        <p
-            :class="{'is-active': contractStore.option_honoraryAchievement}"
-            class="app-button--check"
-            @click="contractStore.option_honoraryAchievement = !contractStore.option_honoraryAchievement"
-        >
-          Honoraires de réalisation par l’Artiste ou externalisés selon le « Formulaire de rémunération » (Annexe I)
-        </p>
-
-        <p
-            :class="{'is-active': contractStore.option_materials}"
-            class="app-button--check"
-            @click="contractStore.option_materials = !contractStore.option_materials"
-        >
-          Matériaux
-        </p>
-
-        <p
-            :class="{'is-active': contractStore.option_perDiem}"
-            class="app-button--check"
-            @click="contractStore.option_perDiem = !contractStore.option_perDiem"
-        >
-          Per diem
-        </p>
-
-        <p
-            :class="{'is-active': contractStore.option_dailyTax}"
-            class="app-button--check"
-            @click="contractStore.option_dailyTax = !contractStore.option_dailyTax"
-        >
-          Taux journalier pour performeur.euse
-        </p>
-        <p
-            :class="{'is-active': contractStore.option_transportation}"
-            class="app-button--check"
-            @click="contractStore.option_transportation = !contractStore.option_transportation"
-        >
-          Transport
-        </p>
-        <p
-            :class="{'is-active': contractStore.option_editors}"
-            class="app-button--check"
-            @click="contractStore.option_editors = !contractStore.option_editors"
-        >
-          Monteurs.trices et techniciens.nes externes et/ou internes
-        </p>
-        <template
-            v-for="toBeCompletedIfNecessary of contractStore.option_arrayOf_toBeCompletedIfNecessary"
-        >
           <p
-              :class="{'is-active': toBeCompletedIfNecessary.option_toBeCompletedIfNecessary}"
-              class="app-button--check"
-              @click="toBeCompletedIfNecessary.option_toBeCompletedIfNecessary = !toBeCompletedIfNecessary.option_toBeCompletedIfNecessary"
+                  class="app-contract-with_production"
+                  :class="{'app-font-remove': contractStore.with_production === false}"
           >
-            <content-editable
-                placeholder="(A compléter si nécessaire)"
-                :value="toBeCompletedIfNecessary.option_toBeCompletedIfNecessary_content"
-                @update:value="toBeCompletedIfNecessary.option_toBeCompletedIfNecessary_content = $event"
-            />
+            La ou les œuvre(s) commandée(s) par
+            <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
+                              @update:value="contractStore.structure_name = $event"/>
+            sont produites avec un budget de production.
           </p>
-        </template>
 
-        <button
-            @click="contractStore.option_arrayOf_toBeCompletedIfNecessary.push({
-                    option_toBeCompletedIfNecessary: false,
-                    option_toBeCompletedIfNecessary_content: '',
-                })"
-            class="app-button"
-        >[+] ajouter une entré</button>
+          <p
+                  class="app-contract-with_production"
+                  :class="{'app-font-remove': contractStore.with_production === false}"
+          >Le budget global de
+            <content-editable placeholder="[XXX]" :value="contractStore.work_price"
+                              @update:value="contractStore.work_price = $event"/>
+            comprend (à cocher) :</p>
 
-        <p>
-          La prise en charge du budget de production incombe à :
-        </p>
+          <p
+              :class="{
+              'is-active': contractStore.option_honoraryAchievement,
+              'app-font-remove': contractStore.with_production === false
+              }"
+              class="app-button--check app-contract-with_production"
+              @click="contractStore.option_honoraryAchievement = !contractStore.option_honoraryAchievement"
+          >
+            Honoraires de réalisation par l’Artiste ou externalisés selon le « Formulaire de rémunération » (Annexe I)
+          </p>
 
-        <p
-            :class="{'is-active': contractStore.option_chargeBudgetDeProd === 'structure'}"
-            class="app-button--check"
-            @click="contractStore.option_chargeBudgetDeProd = 'structure'"
-        >
-          <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
-                            @update:value="contractStore.structure_name = $event"/>
-        </p>
+          <p
+              :class="{
+              'is-active': contractStore.option_materials,
+              'app-font-remove': contractStore.with_production === false
+              }"
+              class="app-button--check app-contract-with_production"
+              @click="contractStore.option_materials = !contractStore.option_materials"
+          >
+            Matériaux
+          </p>
 
-        <p
-            :class="{'is-active': contractStore.option_chargeBudgetDeProd === 'artiste'}"
-            class="app-button--check"
-            @click="contractStore.option_chargeBudgetDeProd = 'artiste'"
-        >
-          <content-editable placeholder="Prénom" :value="contractStore.artiste_firstname"
-                            @update:value="contractStore.artiste_firstname = $event"/>
-          &nbsp;
-          <content-editable placeholder="NOM" :value="contractStore.artiste_name"
-                            @update:value="contractStore.artiste_name = $event"/>
-        </p>
+          <p
+              :class="{
+              'is-active': contractStore.option_perDiem,
+              'app-font-remove': contractStore.with_production === false
+              }"
+              class="app-button--check app-contract-with_production"
+              @click="contractStore.option_perDiem = !contractStore.option_perDiem"
+          >
+            Per diem
+          </p>
 
-        <p
-            :class="{'is-active': contractStore.option_chargeBudgetDeProd === 'clef_de_repartition'}"
-            class="app-button--check"
-            @click="contractStore.option_chargeBudgetDeProd = 'clef_de_repartition'"
-        >
-          <content-editable placeholder="clé de répartition" :value="contractStore.clef_de_repartition"
-                            @update:value="contractStore.clef_de_repartition = $event"/>
-        </p>
+          <p
+              :class="{
+              'is-active': contractStore.option_dailyTax,
+              'app-font-remove': contractStore.with_production === false
+              }"
+              class="app-button--check app-contract-with_production"
+              @click="contractStore.option_dailyTax = !contractStore.option_dailyTax"
+          >
+            Taux journalier pour performeur.euse
+          </p>
+          <p
+              :class="{
+              'is-active': contractStore.option_transportation,
+              'app-font-remove': contractStore.with_production === false
+              }"
+              class="app-button--check app-contract-with_production"
+              @click="contractStore.option_transportation = !contractStore.option_transportation"
+          >
+            Transport
+          </p>
+          <p
+              :class="{
+              'is-active': contractStore.option_editors,
+              'app-font-remove': contractStore.with_production === false
+              }"
+              class="app-button--check app-contract-with_production"
+              @click="contractStore.option_editors = !contractStore.option_editors"
+          >
+            Monteurs.trices et techniciens.nes externes et/ou internes
+          </p>
+          <template
+              v-for="toBeCompletedIfNecessary of contractStore.option_arrayOf_toBeCompletedIfNecessary"
+          >
+            <p
+                :class="{
+                'is-active': toBeCompletedIfNecessary.option_toBeCompletedIfNecessary,
+                'app-font-remove': contractStore.with_production === false
+                }"
+                class="app-button--check app-contract-with_production"
+                @click="toBeCompletedIfNecessary.option_toBeCompletedIfNecessary = !toBeCompletedIfNecessary.option_toBeCompletedIfNecessary"
+            >
+              <content-editable
+                  placeholder="(A compléter si nécessaire)"
+                  :value="toBeCompletedIfNecessary.option_toBeCompletedIfNecessary_content"
+                  @update:value="toBeCompletedIfNecessary.option_toBeCompletedIfNecessary_content = $event"
+              />
+            </p>
+          </template>
 
-        <p>
-          Les Parties peuvent convenir d’une avance sur le budget de production convenu, payable dans les 30 jours dès
-          la signature du contrat.
-        </p>
+          <button
+                  :class="{'app-font-remove': contractStore.with_production === false}"
+              @click="contractStore.option_arrayOf_toBeCompletedIfNecessary.push({
+                      option_toBeCompletedIfNecessary: false,
+                      option_toBeCompletedIfNecessary_content: '',
+                  })"
+              class="app-button app-contract-with_production"
+          >[+] ajouter une entré</button>
+
+          <p
+                  class="app-contract-with_production"
+                  :class="{'app-font-remove': contractStore.with_production === false}"
+          >
+            La prise en charge du budget de production incombe à :
+          </p>
+
+          <p
+              :class="{
+              'is-active': contractStore.option_chargeBudgetDeProd === 'structure',
+              'app-font-remove': contractStore.with_production === false
+              }"
+              class="app-button--check app-contract-with_production"
+              @click="contractStore.option_chargeBudgetDeProd = 'structure'"
+          >
+            <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
+                              @update:value="contractStore.structure_name = $event"/>
+          </p>
+
+          <p
+              :class="{
+              'is-active': contractStore.option_chargeBudgetDeProd === 'clef_de_repartition',
+              'app-font-remove': contractStore.with_production === false
+              }"
+              class="app-button--check app-contract-with_production"
+              @click="contractStore.option_chargeBudgetDeProd = 'clef_de_repartition'"
+          >
+            <content-editable placeholder="clé de répartition" :value="contractStore.clef_de_repartition"
+                              @update:value="contractStore.clef_de_repartition = $event"/>
+          </p>
+
+          <p
+                  class="app-contract-with_production"
+                  :class="{'app-font-remove': contractStore.with_production === false}"
+          >
+            Les Parties peuvent convenir d’une avance sur le budget de production convenu, payable dans les 30 jours dès
+            la signature du contrat.
+          </p>
+      <!-- [END]        condution with production -->
 
           <div class="html2pdf__page-break" ></div>
         <h3>Participation aux frais accessoires</h3>
@@ -835,12 +958,15 @@
                             @update:value="contractStore.structure_name = $event"/>
           rembourse à l’Artiste les dépenses nécessaires en vue de
           <span
+            class="app-contract_exposition"
             :class="{'app-font-remove': contractStore.contract_exposition === false}"
           >l’exposition</span>
           <span
+            class="app-contract_exposition app-contract-with_production"
             :class="{'app-font-remove': !contractStore.contract_exposition || !contractStore.with_production}"
           >/</span>
           <span
+              class="app-contract-with_production"
               :class="{'app-font-remove': !contractStore.with_production}"
           >la production</span>
           (frais de voyage, de transport, de logement, de repas, etc.), sur présentation des justificatifs.
@@ -876,9 +1002,20 @@
           communication et formes de présentation de l’Œuvre par l’Artiste.
         </p>
 
+        <h3>Propriété de l’œuvre</h3>
+
+        <p>Sauf accord contraire, la contribution financière et/ou matériel de
+            <content-editable placeholder="Nom de la structure"
+                              :value="contractStore.structure_name"
+                              @update:value="contractStore.structure_name = $event"/>
+            à la production ou à l’exposition d’une œuvre n’emporte pas de transfert de propriété en faveur de
+            <content-editable placeholder="Nom de la structure"
+                              :value="contractStore.structure_name"
+                              @update:value="contractStore.structure_name = $event"/>.</p>
+
         <h3>Droit d’auteur.ice.x</h3>
 
-        <p>En-dehors des clauses figurant ci-dessus et des cessions de droits nécessaires à la bonne exécution du
+        <p>En-dehors des clauses figurant ci-dessus (sous VI. 1) et des cessions de droits strictement nécessaires à la bonne exécution du
           contrat, l’Artiste conserve l’entier des droits d’auteur sur l’Œuvre.</p>
 
         <p>L’Artiste a droit à une rémunération
@@ -1278,6 +1415,18 @@ h4 + p {
     }
   }
 }
+
+//.app-contract_exposition {
+//  background-color: #00ffff !important;
+//}
+//
+//.app-contract-with_production {
+//  background-color: #00ff00 !important;
+//}
+//
+//.app-contract_exposition.app-contract-with_production {
+//  box-shadow: 0 0 0 20px red;
+//}
 
 </style>
 
