@@ -1,9 +1,5 @@
 <template>
   <div class="v-app-contract-content to-export">
-  <!--  //todo export add class hear-->
-
-    <h2>Table des matières</h2>
-
     <ul class="v-app-contract-content__lexical">
       <li>
         <h3>Objet du contrat</h3>
