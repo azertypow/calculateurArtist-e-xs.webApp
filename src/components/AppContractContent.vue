@@ -1285,7 +1285,7 @@ ul.v-app-contract-content__lexical {
           padding-right: 2rem;
           white-space: nowrap;
           counter-increment: lexical-subsection;
-          content: counter(lexical-subsection);
+          content: counter(lexical-section) '.' counter(lexical-subsection);
         }
 
         > ul {
@@ -1303,7 +1303,7 @@ ul.v-app-contract-content__lexical {
               padding-right: 2rem;
               white-space: nowrap;
               counter-increment: lexical-sub_subsection;
-              content: counter(lexical-subsection) ". " counter(lexical-sub_subsection);
+              content: counter(lexical-section) '.' counter(lexical-subsection) "." counter(lexical-sub_subsection);
             }
           }
         }
