@@ -1,5 +1,5 @@
 <template>
-  <div class="v-app-contract-content to-export">
+  <div class="v-app-contract-content">
     <ul class="v-app-contract-content__lexical">
       <li>
         <h3>Objet du contrat</h3>
@@ -68,7 +68,7 @@
           <li>Participation aux frais accessoires</li>
         </ul>
       </li>
-        <div class="html2pdf__page-break" ></div>
+
       <li>
         <h3>Propriété intellectuelle</h3>
         <ul>
@@ -76,6 +76,8 @@
           <li>Droit d’auteur.ice.x</li>
         </ul>
       </li>
+
+        <div class="html2pdf__page-break" ></div>
 
       <li>
         <h3>Fin du contrat</h3>
@@ -1125,9 +1127,12 @@
                             @update:value="contractStore.artiste_name = $event"/>
         </p>
 
+
         <h4>Annexe I – Formulaire de rémunération</h4>
 
         <p>[INSERER LA DERNIER VERSION DE LA GRILLE DE REMUNERATION]</p>
+
+        <div class="html2pdf__page-break" ></div>
 
         <h4 id="lite-des-oeuvres">Annexe II – Liste des Œuvres</h4>
 
@@ -1136,8 +1141,11 @@
             class="app-g v-app-contract-content__list-oeuvre"
         >
           <div
+              v-for="(object, index) of contractStore.objectList"
               class="app-g__coll-sm-12-12 app-g__coll-6-12 app-with-gutter"
-              v-for="object of contractStore.objectList"
+              :class="{
+                'html2pdf__page-break': index !== 0
+              }"
           >
 
 <!--            list-->
@@ -1401,14 +1409,11 @@ h4 + p {
 
 .v-app-contract-content__list-oeuvre {
   flex-wrap: wrap;
-  padding-top: 2rem;
+  padding-top: 0;
   margin-left: -1rem;
   margin-right: -1rem;
-
-  > * + * {
-    @media (max-width: 900px) {
+  > * {
       margin-top: 2rem;
-    }
   }
 }
 

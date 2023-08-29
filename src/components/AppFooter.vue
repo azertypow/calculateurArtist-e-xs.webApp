@@ -3,17 +3,17 @@
       class="v-app-footer"
   >
 
-      <div
-              v-if="!isHome && !waitPDFExport"
-              class="app-button  v-app-footer__button v-app-footer__button-html"
-              @click="onClickOnExportPDF"
-      >copy to clipboard</div>
+<!--      <div-->
+<!--              v-if="!isHome && !waitPDFExport"-->
+<!--              class="app-button  v-app-footer__button v-app-footer__button-html"-->
+<!--              @click="onClickOnExportPDF"-->
+<!--      >copy to clipboard</div>-->
 
-      <div
-              v-if="!isHome && !waitPDFExport"
-              class="app-button  v-app-footer__button v-app-footer__button-html"
-              @click="onClickOnExportPDF"
-      >version texte</div>
+<!--      <div-->
+<!--              v-if="!isHome && !waitPDFExport"-->
+<!--              class="app-button  v-app-footer__button v-app-footer__button-html"-->
+<!--              @click="onClickOnExportPDF"-->
+<!--      >version texte</div>-->
 
     <div
         v-if="!isHome && !waitPDFExport"
@@ -237,7 +237,7 @@
             <span>Site en version beta</span>
           </div>
           <div>
-            <a style="text-decoration: none; box-shadow: none" target="_blank" href="mailto:webmaster@example.com?subject=Suggestion%20webApplication" >Suggestion&nbsp;?</a>
+            <a style="text-decoration: none; box-shadow: none" target="_blank" href="" >Suggestion&nbsp;?</a>
           </div>
         </div>
       </div>
@@ -290,6 +290,15 @@ export default defineComponent({
   },
 
   methods: {
+
+    sendUserMsg() {
+      const user = "nico"
+      const domain = "villa1203.ch"
+
+      window.open()
+      mailto:`${user}@${domain}?subject=Suggestion%20webApplication`
+    },
+
       router() {
           return router
       },
@@ -497,26 +506,28 @@ export default defineComponent({
 <style
   lang="scss">
 .to-export {
-  --page-height: 1120px;
-  --page-width: 590px;
-  --margin-top-end-bottom: 120px; //top 100px + bottom 20px
+  --page-width: 790px;
+  --padding-left: calc( var(--page-width) / 5 );
+  --padding-right: 10px;
   --font-size: 15px;
   --line-height: 20px;
 
   background-color: white !important;
   position: relative !important;
-  box-sizing: border-box !important;
-  width: var(--page-width) !important;
-  padding-left: calc( ( var(--page-width) / 5) + 10px) !important;
-  padding-right: calc(10px) !important;
+  box-sizing: content-box !important;
+  width: calc( var(--page-width) - var(--padding-left) - var(--padding-right) )!important;
+  padding-left: var(--padding-left) !important;
+  padding-right: 0 !important;
 
-  * {
-    font-size: var(--font-size) !important;
-    line-height: var(--line-height) !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: none !important;
-  }
+
+
+  //* {
+  //  font-size: var(--font-size) !important;
+  //  line-height: var(--line-height) !important;
+  //  margin: 0 !important;
+  //  padding: 0 !important;
+  //  border: none !important;
+  //}
 
   // todo ici
   // https://github.com/eKoopmans/html2pdf.js#progress-tracking
@@ -533,18 +544,63 @@ export default defineComponent({
     line-height:  calc( var(--line-height) * 2)!important;
   }
 
-  .v-app-contract-content__lexical h3 {
-    margin-top: calc( var(--line-height) * 1)!important;
-    font-size:    calc( var(--font-size) * 1)!important;
-    line-height:  calc( var(--line-height) * 1)!important;
-  }
-
   h4 {
     margin-top: calc( var(--line-height) * 2)!important;
   }
 
-  .v-app-contract-content__lexical {
+  p {
+    font-size: var(--font-size) !important;
+    line-height: var(--line-height) !important;
+    margin-top: 0 !important;
+    margin-bottom: var(--line-height) !important;
+  }
+
+  ul.v-app-contract-content__lexical {
     font-weight: 400 !important;
+    margin-top: 0;
+
+    > li {
+      margin-bottom: 0 !important;
+
+      &:before {
+        font-size:    calc( var(--font-size) * 1)!important;
+        line-height:  calc( var(--line-height) * 1)!important;
+      }
+
+      &:first-child {
+        > h3 {
+          margin-top: 0 !important;
+        }
+      }
+
+      > h3 {
+        margin-top: calc( var(--line-height) * 1)!important;
+        font-size:    calc( var(--font-size) * 1)!important;
+        line-height:  calc( var(--line-height) * 1)!important;
+      }
+      > ul {
+        padding-top: 0 !important;
+        margin-bottom: 0;
+
+        > li {
+          font-size:    calc( var(--font-size) * 1)!important;
+          line-height:  calc( var(--line-height) * 1)!important;
+
+          &:before {
+            font-size:    calc( var(--font-size) * 1)!important;
+            line-height:  calc( var(--line-height) * 1)!important;
+          }
+
+          ul {
+            margin: 0;
+
+            li {
+              padding-left: 1rem !important;
+            }
+          }
+        }
+      }
+    }
   }
 
   p {
@@ -599,34 +655,13 @@ export default defineComponent({
     display: none !important;
   }
 
-  .to-export__line {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: red;
-
-    &:nth-child(1)  {top:   calc( ( var(--page-height) - var(--margin-top-end-bottom) ) *  0   )}
-    &:nth-child(2)  {top:   calc( ( var(--page-height) - var(--margin-top-end-bottom) ) *  1   )}
-    &:nth-child(3)  {top:   calc( ( var(--page-height) - var(--margin-top-end-bottom) ) *  2   )}
-    &:nth-child(4)  {top:   calc( ( var(--page-height) - var(--margin-top-end-bottom) ) *  3   )}
-    &:nth-child(5)  {top:   calc( ( var(--page-height) - var(--margin-top-end-bottom) ) *  4   )}
-    &:nth-child(6)  {top:   calc( ( var(--page-height) - var(--margin-top-end-bottom) ) *  5   )}
-    &:nth-child(7)  {top:   calc( ( var(--page-height) - var(--margin-top-end-bottom) ) *  6   )}
-    &:nth-child(8)  {top:   calc( ( var(--page-height) - var(--margin-top-end-bottom) ) *  7   )}
-    &:nth-child(9)  {top:   calc( ( var(--page-height) - var(--margin-top-end-bottom) ) *  8   )}
-    &:nth-child(10) {top:   calc( ( var(--page-height) - var(--margin-top-end-bottom) ) *  9   )}
-    &:nth-child(11) {top:   calc( ( var(--page-height) - var(--margin-top-end-bottom) ) *  10  )}
-    &:nth-child(12) {top:   calc( ( var(--page-height) - var(--margin-top-end-bottom) ) *  11  )}
-    &:nth-child(13) {top:   calc( ( var(--page-height) - var(--margin-top-end-bottom) ) *  12  )}
-    &:nth-child(14) {top:   calc( ( var(--page-height) - var(--margin-top-end-bottom) ) *  13  )}
-    &:nth-child(15) {top:   calc( ( var(--page-height) - var(--margin-top-end-bottom) ) *  14  )}
-    &:nth-child(16) {top:   calc( ( var(--page-height) - var(--margin-top-end-bottom) ) *  15  )}
-    &:nth-child(17) {top:   calc( ( var(--page-height) - var(--margin-top-end-bottom) ) *  16  )}
-    &:nth-child(18) {top:   calc( ( var(--page-height) - var(--margin-top-end-bottom) ) *  17  )}
-    &:nth-child(19) {top:   calc( ( var(--page-height) - var(--margin-top-end-bottom) ) *  18  )}
-    &:nth-child(20) {top:   calc( ( var(--page-height) - var(--margin-top-end-bottom) ) *  19  )}
+  .v-app-contract-content__content > h2::before,
+  .v-app-contract-content__content__subsection > h3::before {
+    top: 0 !important;
+    padding-top: 1rem;
+    font-size:  calc( var(--font-size) )!important;
+    line-height: calc( var(--line-height)) !important;
   }
+
 }
 </style>
