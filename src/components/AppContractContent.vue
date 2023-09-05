@@ -902,7 +902,7 @@
                       option_toBeCompletedIfNecessary_content: '',
                   })"
               class="app-button app-contract-with_production"
-          >[+] ajouter une entré</button>
+          >[+] ajouter une entrée</button>
 
           <p
                   class="app-contract-with_production"
