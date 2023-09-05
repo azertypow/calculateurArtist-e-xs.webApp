@@ -59,35 +59,56 @@
         >
           <template v-slot:left >
               <h4>Introduction</h4>
-              <p>
-                  Au niveau fédéral, cantonal et municipal, l’amélioration des conditions de travail des artistes est aujourd’hui une préoccupation des collectivités publiques, en particulier les aspects de la rémunération des artistes, leur prévoyance sociale ainsi que leur statut et reconnaissance en tant que professionnels de manière plus générale.
-              </p>
-              <p>
-                  Cette grille de rémunération est basée sur le guide Honoraires des artistes réalisé par Visarte en 2020 et en propose une version augmentée avec une liste précise des différents cas de figure et tarifs adaptés aux réalités des artistes à Genève.
-              </p>
-              <p>
-                  Elle s’applique à tous types de structures, notamment les Centres d’art et les musées, les espaces d’exposition publics ou privés, subventionnés ou non par la Ville de Genève ou le canton de Genève.
-              </p>
-              <p>
-                En étant librement diffusé, ce document a pour ambition de devenir une norme en Suisse et de permettre ainsi aux structures et aux artistes de délimiter précisément leur cadre de travail avec des conditions harmonisées.
-              </p>
+
+              <p>Dans l’optique d’améliorer le financement des projets en arts visuels, notamment les budgets affectés aux rémunérations des artistes, Visarte.Genève, en collaboration avec Visarte Suisse met à disposition publique une grille de rémunération, un calculateur de rémunération et le contrat d’exposition réalisés sous mandat de la Ville et du Canton de Genève. La base de ces rémunérations s’inspire des recommandations de Visarte Suisse 2020. Ces recommandations concernent uniquement la rémunération et non les frais de production matérielle qui font l’objet d’un calcul basé sur les frais effectifs et qui figureront dans le contrat.</p>
+
+              <p>Ces outils ont pour objectifs :</p>
+              <ul>
+                  <li>La prise en considération des coûts réels d’un projet en arts visuels</li>
+                  <li>L’amélioration des pratiques de rémunération des artistes</li>
+                  <li>Une harmonisation des pratiques pour l’ensemble des acteur·ice·x·s</li>
+                  <li>L’établissement des termes de négociation de leurs engagements.</li>
+              </ul>
+
+              <p>Ils s’adressent aux artistes, curateur·trice·x·s, aux structures et institutions privées et publiques d’accueil et/ou de subventionnement ayant des relations de travail avec des artistes visuels.</p>
+
+              <h4>La grille de rémunération et le calculateur de rémunération</h4>
+              <p>La grille de rémunération est présentée sous forme de tableau à la demande des structures pour l’établissement de leurs budgets. Les structures sont listées en fonction du montant de leur budget artistique annuel.</p>
+              <p>Le calculateur reprend la grille de rémunération sous forme de dérouleur permettant un calcul automatique et circonstancié. Les chiffres dans l’un et l’autre format sont identiques. Tous deux permettent une meilleure prise en compte de la valeur du travail des artistes et de la réalité financière du montage d’un projet artistique : recherche, conception, développement, création d’œuvre, accrochage, communication, médiation, rencontres publiques…</p>
+
+              <p>→ Ces chiffres offrent une base de référence à laquelle doit s’ajouter la prise en compte du contexte spécifique à chaque collaboration. Il s’agit de montants minimaux qui permettent la négociation des parties sur une base commune.</p>
+              <p>→ Les montants sont toujours compris en coût total d’embauche (ou super-brut), indifféremment si salarié·e·x·s, indépendant·e·x·s, en associations, location de services ou honoraire libre.</p>
+              <p>→ La rémunération de l’artiste est constituée d’un montant forfaitaire pour la conception de l'œuvre, ainsi que d’un montant pour la réalisation de cette dernière (qui peut être forfaitaire ou horaire).</p>
+              <p>→ Le taux horaire est évalué par l’artiste, en discussion avec la structure. Dans tous les cas, il ne doit pas être inférieur au minimum légal en vigueur (à Genève, il est de 24 CHF brut en 2023 pour les salarié·e·x·s (coût total d’embauche en fonction des cotisations payées ± 28.50 CHF) et de 90 CHF minimum pour les indépendants selon les recommandations de Visarte Suisse.</p>
+              <p>→ Le montant final de rémunération proposé représente le coût total du travail de l’artiste pour une exposition, hors frais de production.</p>
+              <p>→ Il est possible pour l’artiste et la structure de s’engager vers un modèle de co-financement ou de co-production entre la structure et l’artiste. Dans ce cas, l’un et l’autre collaborent à des demandes de soutien supplémentaires et s’engagent à les mener à bien.</p>
+
+
+
+              <h4>Le contrat d’exposition</h4>
+              <p>Ce générateur de contrats-modèles se base sur le contrat réalisé sous mandat de la Ville et de l’Etat de Genève par Visarte et l’association d’avocats Lab-of-Arts. Il vise à clarifier et aide à préciser les conditions de travail des artiste·x·s, ainsi qu’à favoriser la négociation de leurs engagements. Il prend en compte les intérêts des deux parties au contrat. Dans la mesure où chaque situation est particulière, vous avez la possibilité d’adapter le modèle à vos besoins. En cas de doute, n’hésitez pas à consulter la permanence d’aide mise en place par Visarte·Genève ou à prendre des conseils juridiques.</p>
+              <p>Ce générateur présente 3 parties :</p>
+              <ul>
+                <li>Le dérouleur avec espaces d’inscription. Certains sont facultatifs</li>
+                <li>Le contrat dans son intégralité avec mise en évidence des articles relatifs à votre situation (à l’impression, seuls ceux-ci sont pris en compte)</li>
+                <li>Les annexes</li>
+              </ul>
+
+
+
           </template>
 
           <template v-slot:right >
               <h4>Comment cela fonctionne&nbsp;?</h4>
 
-              <p>La grille de rémunération</p>
-              <p>L’objectif de cette grille est de proposer une rémunération pour le travail fourni par chaque artiste dans le cadre d’une invitation à réaliser une exposition et/ou autres prestations. Ces directives sont utiles autant pour les artistes que pour les structures présentant des projets artistiques.</p>
-              <p>La grille indique la rémunération minimum par artiste et par exposition, le montant est défini en fonction de cinq critères principaux&nbsp;:</p>
+              <p>Grille et calculateur indiquent la rémunération minimum par artiste défini en fonction de quatre critères principaux :</p>
               <ul>
-                <li>La nature de l’œuvre (nouvelle production, adaptation ou œuvre existante)</li>
-                <li>Le nombre d’artistes participant à l’exposition</li>
-                <li>Le budget global de la structure (hors frais fixes de loyer)</li>
-                <li>Le nombre annuel de visiteur·euse·x·s de la structure</li>
-                <li>La durée de l’exposition</li>
+                  <li>Le budget artistique annuel de la structure (hors frais fixes de loyer)</li>
+                  <li>La nature de l’œuvre (nouvelle production, adaptation ou œuvre existante)</li>
+                  <li>Le nombre d’artistes participant à l’exposition</li>
+                  <li>La durée de l’exposition</li>
               </ul>
-              <p>Cette grille propose des recommandations minimales pour la rémunération, il est donc tout à fait envisageable de mieux rétribuer l’artiste que les montants proposés.</p>
-              <p>Afin de déterminer la catégorie qui s’applique à une structure, il convient d’utiliser celle étant la plus favorable pour l’artiste. Si une structure a peu de visiteur·euse·x·s mais un budget la plaçant dans une catégorie supérieure, c’est la catégorie relevant du budget qui est appliquée.</p>
+
           </template>
 
             <template v-slot:left-bottom>
@@ -310,7 +331,7 @@
                v-if="!isHome"
                @click="openInfo"
                :class="{'app-with-circle-status--active': globalStore.showInfo}"
-          >Information</div>
+          >À propos</div>
           <div class="app-with-circle-status"
                v-if="!isHome"
                @click="globalStore.showHelpers = !globalStore.showHelpers"
