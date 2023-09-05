@@ -16,9 +16,9 @@ import {conditionalLogicSection_8} from "./conditionalLogicSection_8";
 import {conditionalLogicSection_8_sans} from "./conditionalLogicSection_8_sans"
 
 const calculatorSection_1 = new OptionCalculatorSection(
-    {index : 1, title : 'Subventions', required : true,
+    {index : 1, title : 'Budget artistique annuel', required : true,
 help:`
-<p>Choisir la catégorie par rapport aux subventions que la structure reçoit par année </p>
+<p>Choisir la catégorie par rapport au budget annuel artistique de la&nbsp;structure</p>
 <p>Les quatre catégories proposées sont :
 <ul>
     <li>Petite&nbsp;: moins de 50 000 CHF</li> 
@@ -71,7 +71,7 @@ export const useGlobalStore = defineStore('globalStore', {
                 new OptionCalculatorSection(
                     {index : 3, title : 'Œuvres', required : true,
 help:`
-<p>Préciser la nature des œuvres présentées pour l'exposition, selon trois critères possibles. Si différentes oeuvres rentrent dans différentes catégories, choisir l'option la plus avantageuse pour l'artiste.
+<p>Préciser la nature des œuvres présentées pour l'exposition, selon trois critères possibles. Si différentes œuvres rentrent dans différentes catégories, choisir l'option la plus avantageuse pour l'artiste.
 Les choix des options sont classées de la moins avantageuse à la plus avantageuse financièrement pour l'artiste.</p>
 
 <p>Exemple : Si une exposition regroupe des œuvres déjà existantes et des nouvelles créations d'un artiste, alors c’est la catégorie «conception d'une ou plusieurs nouvelles œuvres» qui est appliquée.</p>
@@ -177,14 +177,14 @@ help:`
     <li> Soit définir en amont un montant forfaitaire </li>
 </ul>
 
-<p>Option 2 : Si le ou les oeuvres sont produites par l'artiste + une autre personne morale ou physique, deux possibilités  :  
+<p>Option 2 : Si le ou les œuvres sont produites par l'artiste + une autre personne morale ou physique, deux possibilités  :  
 <ul>
 <li> La strucutre rémunère elle-même l'intervenant.e externe et cela n'apparait dans les calculs ci-dessous. Pour la rémunération de l'artiste, faire comme dans l'option 1 </li>
 <li> L'artiste rémunère les personnes morales ou physiques employées pour la réalisation de ses pièces. La structure lui octroie un montant forfaitaire, permettant de se rémunérer et de rémunérer les autres personnes. Dans ce cas, prévoir un montant forfaitaire qui comprend la rémunération pour tout le monde. </li></ul>
 
 <p>Option 3 : 
 <ul>
-<li>Si le ou les oeuvres ne sont pas produites par l'artiste, le coût de production n'entre pas dans le calcul des honoraires de l'artiste et donc n'apparait pas dans ce calculateur. </li></ul>
+<li>Si le ou les œuvres ne sont pas produites par l'artiste, le coût de production n'entre pas dans le calcul des honoraires de l'artiste et donc n'apparait pas dans ce calculateur. </li></ul>
 
 <p>Dans tous les cas, ces décisions doivent se prendre en accord avec la structure. </p>
 `},
