@@ -193,7 +193,7 @@
             <h4>Œuvre(s) existante(s)</h4>
             <p>Œuvre(s) ayant déjà été réalisée(s), qu’elle(s) ai(en)t été présentée(s) publique- ment ou non et qui ne nécessite(nt) aucune modification.</p>
 
-            Adaptation d’une ou plusieurs œuvre(s) existante(s)
+            <h4>Adaptation d’une ou plusieurs œuvre(s) existante(s)</h4>
             <p>Œuvre(s) ayant déjà été réalisée(s), qu’elle(s) ai(en)t été présentée(s) publique- ment ou non et qui nécessite(nt) des modifications. Conception d’une ou plusieurs nouvelles œuvres Œuvre(s) inédite(s) et non encore réalisée(s), n’ayant jamais été présentée(s) publiquement et/ou développée(s) à la demande de la structure. ↦ Afin de déterminer quelle catégorie s’applique à une œuvre, il convient d’utiliser celle étant la plus favorable pour l’artiste. Si une exposition regroupe des œuvres déjà existantes et des nouvelles créations, alors c’est la catégorie relevant de la nouvelle œuvre qui est appliquée.</p>
 
             <h4>Exposition</h4>
@@ -203,6 +203,54 @@
             <p>Exposition présentant le travail de plusieurs artistes qui exposent ensemble leurs travaux sans les concevoir conjointement. Si l’exposition ne se déroule pas dans la totalité de la surface de la structure, alors il convient d’appliquer la catégorie d’espace la plus adaptée à la surface spécifique au sein de la structure.</p>
 
             <p>Montant forfaitaire supplémentaire par mois au-delà du premier mois Le montant forfaitaire supplémentaire mensuel compense la non-disponibilité de l’œuvre pour une autre utilisation pendant l’exposition. Il s’applique au-delà d’un mois d’exposition.</p>
+
+
+
+
+              <h4>Honoraires de conception</h4>
+              <p>La rémunération est entendue pour les prestations et services suivants :</p>
+              <ul>
+                <li>Recherches, conception des œuvres et/ou adaptation aux conditions de présentation</li>
+                <li>Préparation, suivi, coordination, correspondance</li>
+                <li>Rendez-vous présentiels ou virtuels, visites des lieux, temps de déplacement</li>
+                <li>Supervision de l’installation du projet (en cas d’un travail important pour l’installation par l’artiste, une rémunération supplémentaire doit être prévue par jour de travail sur place)</li>
+                <li>La mise à disposition d’œuvres le temps de l’exposition.</li>
+              </ul>
+
+              <p>Sont inclus dans les honoraires de conception :</p>
+              <ul>
+                  <li>les cotisations aux assurances sociales</li>
+                  <li>les frais d’infrastructure de l’artiste (loyer de l’atelier, ordinateur, etc.)</li>
+              </ul>
+
+              <p>Les honoraires de conception ne comprennent pas :</p>
+              <ul>
+                  <li>La réalisation, fabrication, production des œuvres elles-mêmes (qu’elles soient réalisées par l’artiste ou par une personne auxiliaire).</li>
+                  <li>Les coûts et services de programmation de base</li>
+                  <li>Les dépenses de production, de déplacement et d’hébergement</li>
+                  <li>L’achat d’œuvres d’art ou les droits d’auteur·trice·x</li>
+                  <li>La TVA pour les services assujettis à la TVA</li>
+                  <li>La réalisation d’un catalogue ou autre publication d’envergure</li>
+                  <li>La réalisation de prestations telles que : présentation publique, visite guidée, conférences, workshop, table ronde, etc.</li>
+              </ul>
+
+              <p>Dans tous les cas, les honoraires sont compris comme une rémunération forfaitaire et les montants calculés a minima.</p>
+              <p>La forme sous laquelle sont versés ces honoraires dépend du statut de l’artiste en matière d’assurances sociales. Les honoraires des personnes indépendantes enregistrées sont versés contre facture. En ce qui concerne les personnes employées par une association, la loi exige que les honoraires soient versés comme salaire en tenant compte des cotisations aux assurances sociales.</p>
+
+              <h4>Prestations supplémentaires</h4>
+              <p>Ensemble de prestations qui débordent le cadre fixé par les honoraires de conception et qui font l’objet d’une rémunération supplémentaire.</p>
+
+              <h4>Événement avec préparation</h4>
+              <p>Présentation publique nécessitant un temps de préparation.</p>
+              <p>Exemples : lecture, conférence, workshop, modération de rencontre, etc.</p>
+
+              <h4>Événement sans préparation</h4>
+              <p>Présentation publique ne nécessitant pas de temps de préparation.</p>
+              <p>Exemples : présence lors de visite guidée, projection en présence de l’artiste, Participation à une table ronde, etc.</p>
+
+              <h4>Montant final</h4>
+              <p>Les montants sont compris en coût total employeur·euse·x, pour les salarié·e·x·s comme pour les indépendant·e·x·s.</p>
+
           </template>
 
         </app-panel>
