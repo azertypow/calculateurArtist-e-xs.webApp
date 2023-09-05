@@ -201,7 +201,7 @@ help:`
                     })
                 ).addSubSection(
                     new NumberCalculatorSubsection(
-                        'Forfait de réalisation',
+                        'Et/ou forfait de réalisation',
                         0,
                 "CHF",
                     )
