@@ -144,7 +144,7 @@
         >
 
           <template v-slot:left>
-            <h3>Artiste</h3>
+            <h4>Artiste</h4>
             <p>
               L’artiste est créateur·trice·x de propriété intellectuelle en vertu de la législation suisse sur le droit
               d’auteur. L’artiste dispose des droits de la personnalité et des droits patrimoniaux sur ses œuvres. L’artiste
@@ -162,13 +162,13 @@
               <li>etc.</li>
             </ul>
 
-            <h3>Collectif d’artistes</h3>
+            <h4>Collectif d’artistes</h4>
             <p>
               Groupe de personnes se définissant sous une même entité. Dans le cadre de ce document, à chaque fois que le
               terme «artiste» apparaît de manière générique, il peut être remplacé par « collectif d’artistes ».
             </p>
 
-            <h3>Structure</h3>
+            <h4>Structure</h4>
             <p>
               Organisation avec ou sans buts lucratifs, publique ou privée, qui mandate et présente des projets artistiques&nbsp;:
             </p>
