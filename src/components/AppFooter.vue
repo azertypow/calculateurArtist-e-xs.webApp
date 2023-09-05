@@ -162,6 +162,18 @@
               <li>etc.</li>
             </ul>
 
+
+            <h4>Adaptation d’une ou plusieurs œuvre(s) existante(s)</h4>
+              <p>Œuvre(s) ayant déjà été réalisée(s), qu’elle(s) ai(en)t été présentée(s) publique- ment ou non et qui nécessite(nt) des modifications. Conception d’une ou plusieurs nouvelles œuvres Œuvre(s) inédite(s) et non encore réalisée(s), n’ayant jamais été présentée(s) publiquement et/ou développée(s) à la demande de la structure. ↦ Afin de déterminer quelle catégorie s’applique à une œuvre, il convient d’utiliser celle étant la plus favorable pour l’artiste. Si une exposition regroupe des œuvres déjà existantes et des nouvelles créations, alors c’est la catégorie relevant de la nouvelle œuvre qui est appliquée.</p>
+
+              <h4>Exposition</h4>
+              <p>La présentation publique d’une ou plusieurs œuvres réalisées par l’artiste et/ou des personnes auxiliaires. Exposition individuelle Exposition présentant le travail d’un·e·x seul·e·x artiste ou d’un collectif d’artistes.</p>
+
+              <h4>Exposition collective</h4>
+              <p>Exposition présentant le travail de plusieurs artistes qui exposent ensemble leurs travaux sans les concevoir conjointement. Si l’exposition ne se déroule pas dans la totalité de la surface de la structure, alors il convient d’appliquer la catégorie d’espace la plus adaptée à la surface spécifique au sein de la structure.</p>
+
+              <p>Montant forfaitaire supplémentaire par mois au-delà du premier mois Le montant forfaitaire supplémentaire mensuel compense la non-disponibilité de l’œuvre pour une autre utilisation pendant l’exposition. Il s’applique au-delà d’un mois d’exposition.</p>
+
             <h4>Collectif d’artistes</h4>
             <p>
               Groupe de personnes se définissant sous une même entité. Dans le cadre de ce document, à chaque fois que le
@@ -184,6 +196,15 @@
               <li>Services publiques</li>
               <li>etc.</li>
             </ul>
+
+              <h4>Événement avec préparation</h4>
+              <p>Présentation publique nécessitant un temps de préparation.</p>
+              <p>Exemples : lecture, conférence, workshop, modération de rencontre, etc.</p>
+
+              <h4>Événement sans préparation</h4>
+              <p>Présentation publique ne nécessitant pas de temps de préparation.</p>
+              <p>Exemples : présence lors de visite guidée, projection en présence de l’artiste, Participation à une table ronde, etc.</p>
+
           </template>
 
           <template v-slot:right >
@@ -192,20 +213,6 @@
 
             <h4>Œuvre(s) existante(s)</h4>
             <p>Œuvre(s) ayant déjà été réalisée(s), qu’elle(s) ai(en)t été présentée(s) publique- ment ou non et qui ne nécessite(nt) aucune modification.</p>
-
-            <h4>Adaptation d’une ou plusieurs œuvre(s) existante(s)</h4>
-            <p>Œuvre(s) ayant déjà été réalisée(s), qu’elle(s) ai(en)t été présentée(s) publique- ment ou non et qui nécessite(nt) des modifications. Conception d’une ou plusieurs nouvelles œuvres Œuvre(s) inédite(s) et non encore réalisée(s), n’ayant jamais été présentée(s) publiquement et/ou développée(s) à la demande de la structure. ↦ Afin de déterminer quelle catégorie s’applique à une œuvre, il convient d’utiliser celle étant la plus favorable pour l’artiste. Si une exposition regroupe des œuvres déjà existantes et des nouvelles créations, alors c’est la catégorie relevant de la nouvelle œuvre qui est appliquée.</p>
-
-            <h4>Exposition</h4>
-            <p>La présentation publique d’une ou plusieurs œuvres réalisées par l’artiste et/ou des personnes auxiliaires. Exposition individuelle Exposition présentant le travail d’un·e·x seul·e·x artiste ou d’un collectif d’artistes.</p>
-
-            <h4>Exposition collective</h4>
-            <p>Exposition présentant le travail de plusieurs artistes qui exposent ensemble leurs travaux sans les concevoir conjointement. Si l’exposition ne se déroule pas dans la totalité de la surface de la structure, alors il convient d’appliquer la catégorie d’espace la plus adaptée à la surface spécifique au sein de la structure.</p>
-
-            <p>Montant forfaitaire supplémentaire par mois au-delà du premier mois Le montant forfaitaire supplémentaire mensuel compense la non-disponibilité de l’œuvre pour une autre utilisation pendant l’exposition. Il s’applique au-delà d’un mois d’exposition.</p>
-
-
-
 
               <h4>Honoraires de conception</h4>
               <p>La rémunération est entendue pour les prestations et services suivants :</p>
@@ -237,19 +244,11 @@
               <p>Dans tous les cas, les honoraires sont compris comme une rémunération forfaitaire et les montants calculés a minima.</p>
               <p>La forme sous laquelle sont versés ces honoraires dépend du statut de l’artiste en matière d’assurances sociales. Les honoraires des personnes indépendantes enregistrées sont versés contre facture. En ce qui concerne les personnes employées par une association, la loi exige que les honoraires soient versés comme salaire en tenant compte des cotisations aux assurances sociales.</p>
 
-              <h4>Prestations supplémentaires</h4>
-              <p>Ensemble de prestations qui débordent le cadre fixé par les honoraires de conception et qui font l’objet d’une rémunération supplémentaire.</p>
-
-              <h4>Événement avec préparation</h4>
-              <p>Présentation publique nécessitant un temps de préparation.</p>
-              <p>Exemples : lecture, conférence, workshop, modération de rencontre, etc.</p>
-
-              <h4>Événement sans préparation</h4>
-              <p>Présentation publique ne nécessitant pas de temps de préparation.</p>
-              <p>Exemples : présence lors de visite guidée, projection en présence de l’artiste, Participation à une table ronde, etc.</p>
-
               <h4>Montant final</h4>
               <p>Les montants sont compris en coût total employeur·euse·x, pour les salarié·e·x·s comme pour les indépendant·e·x·s.</p>
+
+              <h4>Prestations supplémentaires</h4>
+              <p>Ensemble de prestations qui débordent le cadre fixé par les honoraires de conception et qui font l’objet d’une rémunération supplémentaire.</p>
 
           </template>
 
