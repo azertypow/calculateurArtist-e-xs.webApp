@@ -175,6 +175,24 @@
                       regroupe des œuvres déjà existantes et des nouvelles créations, alors c’est la catégorie relevant
                       de la nouvelle œuvre qui est appliquée.</p>
 
+
+                  <h4>Collectif d’artistes</h4>
+                  <p>
+                      Groupe de personnes se définissant sous une même entité. Dans le cadre de ce document, à chaque
+                      fois que le
+                      terme «artiste» apparaît de manière générique, il peut être remplacé par « collectif d’artistes ».
+                  </p>
+
+                  <h4>Événement avec préparation</h4>
+                  <p>Présentation publique nécessitant un temps de préparation.</p>
+                  <p>Exemples : lecture, conférence, workshop, modération de rencontre, etc.</p>
+
+                  <h4>Événement sans préparation</h4>
+                  <p>Présentation publique ne nécessitant pas de temps de préparation.</p>
+                  <p>Exemples : présence lors de visite guidée, projection en présence de l’artiste, Participation à une
+                      table ronde, etc.</p>
+
+
                   <h4>Exposition</h4>
                   <p>La présentation publique d’une ou plusieurs œuvres réalisées par l’artiste et/ou des personnes
                       auxiliaires. Exposition individuelle Exposition présentant le travail d’un·e·x seul·e·x artiste ou
@@ -190,54 +208,9 @@
                       supplémentaire mensuel compense la non-disponibilité de l’œuvre pour une autre utilisation pendant
                       l’exposition. Il s’applique au-delà d’un mois d’exposition.</p>
 
-                  <h4>Collectif d’artistes</h4>
-                  <p>
-                      Groupe de personnes se définissant sous une même entité. Dans le cadre de ce document, à chaque
-                      fois que le
-                      terme «artiste» apparaît de manière générique, il peut être remplacé par « collectif d’artistes ».
-                  </p>
-
-                  <h4>Structure</h4>
-                  <p>
-                      Organisation avec ou sans buts lucratifs, publique ou privée, qui mandate et présente des projets
-                      artistiques&nbsp;:
-                  </p>
-
-                  <ul>
-                      <li>Musées</li>
-                      <li>Centres d’Art</li>
-                      <li>Espaces d’exposition</li>
-                      <li>Offspaces (petits espaces d’art autogérés)</li>
-                      <li>Galeries commerciales</li>
-                      <li>Festivals</li>
-                      <li>Manifestation</li>
-                      <li>Services publiques</li>
-                      <li>etc.</li>
-                  </ul>
-
-                  <h4>Événement avec préparation</h4>
-                  <p>Présentation publique nécessitant un temps de préparation.</p>
-                  <p>Exemples : lecture, conférence, workshop, modération de rencontre, etc.</p>
-
-                  <h4>Événement sans préparation</h4>
-                  <p>Présentation publique ne nécessitant pas de temps de préparation.</p>
-                  <p>Exemples : présence lors de visite guidée, projection en présence de l’artiste, Participation à une
-                      table ronde, etc.</p>
-
               </template>
 
               <template v-slot:right>
-                  <h4>Œuvre(s)</h4>
-                  <p>Toute création de l’esprit, littéraire ou artistique, qui a un caractère individuel, quelles qu’en
-                      soient la valeur ou la destination. (selon l’art. 2 de la Loi fédérale sur le droit d’auteur et
-                      les droits voisins (LDA)). L’œuvre peut donc être constituée d’œuvres physiques, de performances,
-                      de projections ou de la programmation-même dans le cadre du travail d’un·e·x curateur·trice·x
-                      indépendant·e·x.</p>
-
-                  <h4>Œuvre(s) existante(s)</h4>
-                  <p>Œuvre(s) ayant déjà été réalisée(s), qu’elle(s) ai(en)t été présentée(s) publique- ment ou non et
-                      qui ne nécessite(nt) aucune modification.</p>
-
                   <h4>Honoraires de conception</h4>
                   <p>La rémunération est entendue pour les prestations et services suivants :</p>
                   <ul>
@@ -283,9 +256,39 @@
                   <p>Les montants sont compris en coût total employeur·euse·x, pour les salarié·e·x·s comme pour les
                       indépendant·e·x·s.</p>
 
+                  <h4>Œuvre(s)</h4>
+                  <p>Toute création de l’esprit, littéraire ou artistique, qui a un caractère individuel, quelles qu’en
+                      soient la valeur ou la destination. (selon l’art. 2 de la Loi fédérale sur le droit d’auteur et
+                      les droits voisins (LDA)). L’œuvre peut donc être constituée d’œuvres physiques, de performances,
+                      de projections ou de la programmation-même dans le cadre du travail d’un·e·x curateur·trice·x
+                      indépendant·e·x.</p>
+
+                  <h4>Œuvre(s) existante(s)</h4>
+                  <p>Œuvre(s) ayant déjà été réalisée(s), qu’elle(s) ai(en)t été présentée(s) publique- ment ou non et
+                      qui ne nécessite(nt) aucune modification.</p>
+
                   <h4>Prestations supplémentaires</h4>
                   <p>Ensemble de prestations qui débordent le cadre fixé par les honoraires de conception et qui font
                       l’objet d’une rémunération supplémentaire.</p>
+
+
+                  <h4>Structure</h4>
+                  <p>
+                      Organisation avec ou sans buts lucratifs, publique ou privée, qui mandate et présente des projets
+                      artistiques&nbsp;:
+                  </p>
+
+                  <ul>
+                      <li>Musées</li>
+                      <li>Centres d’Art</li>
+                      <li>Espaces d’exposition</li>
+                      <li>Offspaces (petits espaces d’art autogérés)</li>
+                      <li>Galeries commerciales</li>
+                      <li>Festivals</li>
+                      <li>Manifestation</li>
+                      <li>Services publiques</li>
+                      <li>etc.</li>
+                  </ul>
 
               </template>
 
