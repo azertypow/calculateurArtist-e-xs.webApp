@@ -200,7 +200,8 @@
                   <p>Œuvre(s) ayant déjà été réalisée(s), qu’elle(s) ai(en)t été présentée(s) publiquement ou non et
                       qui nécessite(nt) des modifications. Conception d’une ou plusieurs nouvelles œuvres Œuvre(s)
                       inédite(s) et non encore réalisée(s), n’ayant jamais été présentée(s) publiquement et/ou
-                      développée(s) à la demande de la structure. ↦ Afin de déterminer quelle catégorie s’applique à une
+                      développée(s) à la demande de la structure.
+                      <br>↦ Afin de déterminer quelle catégorie s’applique à une
                       œuvre, il convient d’utiliser celle étant la plus favorable pour l’artiste. Si une exposition
                       regroupe des œuvres déjà existantes et des nouvelles créations, alors c’est la catégorie relevant
                       de la nouvelle œuvre qui est appliquée.</p>
