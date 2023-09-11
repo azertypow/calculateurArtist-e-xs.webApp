@@ -197,7 +197,7 @@
 
 
                   <h4>Adaptation d’une ou plusieurs œuvre(s) existante(s)</h4>
-                  <p>Œuvre(s) ayant déjà été réalisée(s), qu’elle(s) ai(en)t été présentée(s) publique- ment ou non et
+                  <p>Œuvre(s) ayant déjà été réalisée(s), qu’elle(s) ai(en)t été présentée(s) publiquement ou non et
                       qui nécessite(nt) des modifications. Conception d’une ou plusieurs nouvelles œuvres Œuvre(s)
                       inédite(s) et non encore réalisée(s), n’ayant jamais été présentée(s) publiquement et/ou
                       développée(s) à la demande de la structure. ↦ Afin de déterminer quelle catégorie s’applique à une
@@ -209,8 +209,7 @@
                   <h4>Collectif d’artistes</h4>
                   <p>
                       Groupe de personnes se définissant sous une même entité. Dans le cadre de ce document, à chaque
-                      fois que le
-                      terme «artiste» apparaît de manière générique, il peut être remplacé par « collectif d’artistes ».
+                      fois que le terme «artiste» apparaît de manière générique, il peut être remplacé par « collectif d’artistes ».
                   </p>
 
                   <h4>Événement avec préparation</h4>
@@ -294,7 +293,7 @@
                       indépendant·e·x.</p>
 
                   <h4>Œuvre(s) existante(s)</h4>
-                  <p>Œuvre(s) ayant déjà été réalisée(s), qu’elle(s) ai(en)t été présentée(s) publique- ment ou non et
+                  <p>Œuvre(s) ayant déjà été réalisée(s), qu’elle(s) ai(en)t été présentée(s) publiquement ou non et
                       qui ne nécessite(nt) aucune modification.</p>
 
                   <h4>Prestations supplémentaires</h4>
