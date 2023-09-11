@@ -316,7 +316,7 @@
                       <li>Galeries commerciales</li>
                       <li>Festivals</li>
                       <li>Manifestation</li>
-                      <li>Services publiques</li>
+                      <li>Services publics</li>
                       <li>etc.</li>
                   </ul>
 
