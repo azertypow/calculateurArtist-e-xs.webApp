@@ -253,11 +253,18 @@ help:`
                         'nombre d’heures',
                         0,
                     ).setAMultiplier({
-                        value: 60,
+                        value: 0,
                         text: 'Coût horaire',
                         isEditable: true,
                         unit: 'CHF',
                     })
+                ).addSubSection(
+                    new NumberCalculatorSubsection(
+                        'Forfait',
+                        0,
+                        "CHF",
+                        0,
+                    )
                 ),
                 // ----------
 
