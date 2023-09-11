@@ -634,12 +634,20 @@
 
 
         <p>Le versement sera effectué sur réception d’une facture payable dans les 30 jours.</p>
-          <div
-                  style="margin-top: 2rem"
-                  :class="{'is-active': contractStore.option_indemnisationCalculHeure}"
-                  class="app-button--check app-contract_exposition"
-                  @click="contractStore.option_indemnisationCalculHeure = !contractStore.option_indemnisationCalculHeure"
-          >Indemnisation calculée à l’heure?</div>
+
+        <div
+                v-if="contractStore.contract_exposition"
+                style="margin-top: 8rem"
+        >
+            <div
+                    class="app-select-style-box"
+            >
+                <select v-model="contractStore.option_indemnisationCalculHeure" >
+                    <option :value="true">avec</option>
+                    <option :value="false">sans</option>
+                </select>
+            </div> Indemnisation calculée à l’heure?
+        </div>
 
         <h4
             class="app-contract_exposition"
