@@ -177,7 +177,7 @@ help:`
 
 <p>Option 2 : Si le ou les œuvres sont produites par l'artiste + une autre personne morale ou physique&nbsp;:  
 <ul>
-<li> La structure rémunère elle-même l'intervenant.e.x.s externe et cela n'apparaît dans les calculs ci-dessous. Pour la rémunération de l'artiste, faire comme dans l'option 1 </li>
+<li> La structure rémunère elle-même l'intervenant.e.x.s externe et cela n'apparaît dans les calculs ci-dessous. Pour la rémunération de l'artiste, se référer à l'option 1 </li>
 <li> L'artiste rémunère les personnes morales ou physiques employées pour la réalisation de ses pièces. La structure lui octroie un montant forfaitaire, permettant de se rémunérer et de rémunérer les autres personnes. Dans ce cas, prévoir un montant forfaitaire qui comprend la rémunération pour tout le monde. </li></ul>
 
 <p>Option 3 : 
