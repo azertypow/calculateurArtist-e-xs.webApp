@@ -182,7 +182,7 @@ help:`
 
 <p>Option 3 : 
 <ul>
-<li>Si le ou les œuvres ne sont pas produites par l'artiste, le coût de production n'entre pas dans le calcul des honoraires de l'artiste et donc n'apparait pas dans ce calculateur. </li></ul>
+<li>Si le ou les œuvres ne sont pas produites par l'artiste, le coût de production n'entre pas dans le calcul des honoraires de l'artiste et n'apparait donc pas dans ce calculateur.</li></ul>
 
 <p>Dans tous les cas, ces décisions doivent se prendre en accord avec la structure. </p>
 `},
