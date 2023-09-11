@@ -260,7 +260,7 @@ help:`
 
                 // ----------
                 new NumberCalculatorSection(
-                    {index : 8, title : "Évenement",
+                    {index : 8, title : "Événement",
 help: `
 <ul>
 <li>Événement avec préparation : présentation publique nécessitant un temps de préparation.</li>
