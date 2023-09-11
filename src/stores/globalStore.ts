@@ -38,11 +38,11 @@ help:`
 const calculatorSection_2 = new OptionCalculatorSection(
         {index : 2, title : 'Exposant·e·x·s', required : true,
 help:`
-<p>Choisir l'une des options par rapport au nombre de personnes invitées. à exposer. 
+<p>Choisir l'une des options par rapport au nombre de artist.e.x.s invitées. à exposer. 
 </br>N.B&nbsp;: Un collectif d'artistes est considéré dans ce décompte comme une personne. Cocher&nbsp;cependant en toute fin de page la case «collectif d'artistes» pour mettre à jour la somme à percevoir.</p>
 `}
     ).addSubSection(
-        new OptionCalculatorSubsection({uniqueID: '01', titre: '1 personne'}),
+        new OptionCalculatorSubsection({uniqueID: '01', titre: '1 artiste'}),
         new OptionCalculatorSubsection({uniqueID: '02', titre: '2 à 6 personnes'}),
         new OptionCalculatorSubsection({uniqueID: '03', titre: '7 personnes ou plus'}, ),
     )
