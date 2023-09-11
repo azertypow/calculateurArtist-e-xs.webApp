@@ -26,7 +26,7 @@ help:`
     <li>Grande&nbsp;: entre 250 000 et 500&nbsp;000 CHF</li>
     <li>Très grande&nbsp;: supérieur à 500&nbsp;000 CHF</li> 
 </ul>
-<p>L'idéal est de remplir ce barème conjointement entre la structure et l'artiste. Si l'artiste remplit seul ce document, choisir l’option qui vous semble la plus probable.</p>
+<p>Il est recommandé aux parties de remplir conjointement le formulaire en ligne.</p>
         `}
 ).addSubSection(
     new OptionCalculatorSubsection({uniqueID: '01', titre: 'Petite', subtitle: '< 50 000 CHF /année'}),
