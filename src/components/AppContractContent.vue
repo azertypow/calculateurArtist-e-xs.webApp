@@ -668,18 +668,21 @@
             :class="{'app-font-remove': contractStore.option_indemnisationCalculHeure === false || contractStore.contract_exposition === false}"
         >Le versement sera effectué sur réception d’une facture payable dans les 30 jours.</p>
 
+          <div
+                  class="app-select-style-box"
+          >
+              <select v-model="contractStore.option_expositionEtVente" >
+                  <option :value="true">avec</option>
+                  <option :value="false">sans</option>
+              </select>
+          </div> exposition et vente?
+        </div>
+
         <h4
             :class="{'app-font-remove': contractStore.option_expositionEtVente === false}"
         >
           Vente des œuvres
         </h4>
-
-        <div
-                style="margin-top: 2rem"
-                :class="{'is-active': contractStore.option_expositionEtVente}"
-                class="app-button--check"
-                @click="contractStore.option_expositionEtVente = !contractStore.option_expositionEtVente"
-        >Exposition et vente?</div>
 
         <p
             :class="{'app-font-remove': contractStore.option_expositionEtVente === false}"
