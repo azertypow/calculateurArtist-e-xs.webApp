@@ -224,8 +224,9 @@
 
 
                   <h4>Exposition</h4>
-                  <p>La présentation publique d’une ou plusieurs œuvres réalisées par l’artiste et/ou des personnes
-                      auxiliaires. Exposition individuelle Exposition présentant le travail d’un·e·x seul·e·x artiste ou
+                  <p>La présentation publique d’une ou plusieurs œuvres réalisées par l’artiste et/ou des personnes auxiliaires.</p>
+                  <h4>Exposition individuelle</h4>
+                  <p>Exposition présentant le travail d’un·e·x seul·e·x artiste ou
                       d’un collectif d’artistes.</p>
 
                   <h4>Exposition collective</h4>
