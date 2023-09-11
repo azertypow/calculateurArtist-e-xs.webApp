@@ -308,7 +308,7 @@ help: `
                 // ----------
                 new NumberCalculatorSection(
                     {index : 9, title : "Texte", required : false, info : 'source?',
-help:`<p>Dans le cas ou la structure propose la rédaction de textes par l'artiste, forfait texte pour 1000 frappes. Le nombre d'incidences détermine la longueur du texte produit arrondis au millier de frappes le plus proche.</p>
+help:`<p>Les textes commandés par la structure à l'artiste sont rémunérés pas 1000 frappes (espaces compris). La longueur du texte final est arrondi au millier de frappes le plus proche.</p>
 <ul>Exemples : 
 <li>Si le texte produit contient 1312 caractères espaces compris, compter 1 occurence.</li>
 <li>Si le texte produit contient 29’979 caractères espaces compris, compter 30 occurences.</li>
