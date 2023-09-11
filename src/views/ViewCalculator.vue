@@ -32,6 +32,12 @@
                   :class="{'is-active': globalStore.isACollective}"
               ></div>
             </div>
+            <div
+                    v-if="globalStore.isACollective"
+                    class="v-view-calculator__result__option_info"
+            >
+              Les collectifs d'artistes sont rémunérés selon un coefficient de 1.5.
+            </div>
           </div>
           <h6 style="margin: 0" v-else>{{globalTotal.errorMessage}}</h6>
         </div>
@@ -131,6 +137,13 @@ h2 {
   line-height: 2rem;
   font-size: 1.4rem;
   user-select: none;
+  margin-top: 1rem;
+
+}
+.v-view-calculator__result__option_info {
+  line-height: 2rem;
+  font-size: 1.4rem;
+  max-width: 40em;
   margin-top: 1rem;
 }
 </style>
