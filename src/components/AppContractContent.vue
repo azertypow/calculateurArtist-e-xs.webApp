@@ -611,7 +611,7 @@
                               :value="contractStore.work_price"
                               @update:value="contractStore.work_price = $event"
             />
-            , hors TVA, déterminée selon l’activité déployée et les critères prévus dans la « Grille de rémunération » (Annexe I), à titre de rémunération pour
+            , hors TVA, déterminée selon l’activité déployée et les critères prévus dans la « <router-link to="/calculateur">Grille de rémunération</router-link> » (Annexe I), à titre de rémunération pour
         </p>
 
         <p
