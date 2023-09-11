@@ -315,7 +315,7 @@ help:`<p>Dans le cas ou la structure propose la rédaction de textes par l'artis
 `}
                 ).addSubSection(
                     new NumberCalculatorSubsection(
-                        "nombre d’incidences",
+                        "nombre d’occurrences",
                     ).setAMultiplier(
                         {
                             value: 30,
