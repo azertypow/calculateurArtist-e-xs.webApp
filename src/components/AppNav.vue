@@ -53,6 +53,13 @@ export default defineComponent({
   padding-top: 2rem;
   padding-bottom: 2rem;
   width: 100%;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 0;
+    padding-bottom: 1rem;
+  }
 }
 
 .v-app-nav__link {
