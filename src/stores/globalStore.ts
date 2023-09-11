@@ -14,6 +14,7 @@ import {conditionalLogicSection_3_option_2} from "./conditionalLogicSection_3_op
 import {conditionalLogicSection_3_option_3} from "./conditionalLogicSection_3_option_3";
 import {conditionalLogicSection_8} from "./conditionalLogicSection_8";
 import {conditionalLogicSection_8_sans} from "./conditionalLogicSection_8_sans"
+import {conditionalLogicSection_9} from "./conditionalLogicSection_9";
 
 const calculatorSection_1 = new OptionCalculatorSection(
     {index : 1, title : 'Budget artistique annuel', required : true,
@@ -318,7 +319,9 @@ help:`<p>Dans le cas ou la structure propose la rédaction de textes par l'artis
                         "nombre d’occurrences",
                     ).setAMultiplier(
                         {
-                            value: 30,
+                            value: new ConditionalValueFromSubsectionOption([
+                                calculatorSection_1,
+                            ], () => conditionalLogicSection_9(calculatorSection_1)),
                             text: "Coût forfait texte / 1000 frappes",
                             unit: "CHF"
                         }
