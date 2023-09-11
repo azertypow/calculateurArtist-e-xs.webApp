@@ -13,6 +13,16 @@
     margin-right: .5em;
   }
 
+  &.app-with-circle-status--xs-rm {
+    &:before {
+      content: "";
+
+      @media (max-width: 1280px) {
+        content: none;
+      }
+    }
+  }
+
   &.app-with-circle-status--white {
     &:before {
       background-color: white;

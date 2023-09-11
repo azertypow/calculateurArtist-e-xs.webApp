@@ -22,6 +22,7 @@
     >exporter en PDF</div>
 
     <div
+        v-if="isCalculateur"
         class="v-app-footer__result"
     >
       <div
@@ -40,12 +41,20 @@
           class="v-app-footer__status__container"
       >
         <div
-            class="v-app-footer__status__items app-with-circle-status app-with-circle-status--white"
+            class="v-app-footer__status__items app-with-circle-status app-with-circle-status--xs-rm app-with-circle-status--white"
             v-for="(section, index) of sections"
             :class="{
               'app-with-circle-status--active': section.status !== 'empty',
             }"
-        ><span class="v-app-footer__status__items__name" >{{section.title}}</span><span class="v-app-footer__status__items__index" >{{index + 1}}</span></div>
+        >
+          <span class="v-app-footer__status__items__name"         >{{section.title}}</span>
+          <span
+              class="v-app-footer__status__items__index__phone"
+              :class="{
+              'v-app-footer__status__items__index__phone--active': section.status !== 'empty',
+            }"
+          >{{index + 1}}</span>
+        </div>
       </div>
     </div>
     <div
@@ -384,6 +393,14 @@ export default defineComponent({
         return this.globalStore.waitPDFExport
     },
 
+    isContrat(): boolean {
+      return this.$router.currentRoute.value.path === '/contrat'
+    },
+
+    isCalculateur(): boolean {
+      return this.$router.currentRoute.value.path === '/calculateur'
+    },
+
     curentPageName(): string {
       return this.$router.currentRoute.value.name as string | ''
     },
@@ -549,7 +566,25 @@ export default defineComponent({
   }
 
   .v-app-footer__status__items__index {
+    display: block;
+
+    @media (max-width: 1280px) { // footer special breakpoint
+      display: none;
+    }
+  }
+
+  .v-app-footer__status__items__index__phone {
+    background: white;
     display: none;
+    height: 2rem;
+    width: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    border-radius: 50%;
+
+    &.v-app-footer__status__items__index__phone--active {
+      background: var(--app-color-secondary);
+    }
 
     @media (max-width: 1280px) { // footer special breakpoint
       display: block;
