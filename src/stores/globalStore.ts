@@ -73,7 +73,7 @@ help:`
 <p>Préciser la nature des œuvres présentées pour l'exposition, selon trois critères possibles. Si différentes œuvres entrent dans différentes catégories, choisir l'option la plus avantageuse pour l'artiste.
 Les options sont classées de la moins avantageuse à la plus avantageuse pour l'artiste.</p>
 
-<p>Exemple : Si une exposition regroupe des œuvres déjà existantes et des nouvelles créations d'un artiste, alors c’est la catégorie «conception d'une ou plusieurs nouvelles œuvres» qui est appliquée.</p>
+<p>Exemple : Si une exposition regroupe des œuvres déjà existantes et de nouvelles créations d'un artiste, alors c’est la catégorie «conception d'une ou plusieurs nouvelles œuvres» qui est appliquée.</p>
 `}
                 ).addSubSection(
                     new OptionCalculatorSubsection({
