@@ -30,10 +30,10 @@ help:`
 <p>Il est recommandé aux parties de remplir conjointement le formulaire en ligne.</p>
         `}
 ).addSubSection(
-    new OptionCalculatorSubsection({uniqueID: '01', titre: 'Petite', subtitle: '< 50 000 CHF /année'}),
-    new OptionCalculatorSubsection({uniqueID: '02', titre: 'Moyenne', subtitle: '50K–250K CHF /année'}),
-    new OptionCalculatorSubsection({uniqueID: '03', titre: 'Grande', subtitle: '250K–500K CHF /année'}),
-    new OptionCalculatorSubsection({uniqueID: '04', titre: 'Très grande', subtitle: '> 500K CHF /année'}),
+    new OptionCalculatorSubsection({uniqueID: '01', titre: 'petite', subtitle: '< 50 000 CHF /année'}),
+    new OptionCalculatorSubsection({uniqueID: '02', titre: 'moyenne', subtitle: '50K–250K CHF /année'}),
+    new OptionCalculatorSubsection({uniqueID: '03', titre: 'grande', subtitle: '250K–500K CHF /année'}),
+    new OptionCalculatorSubsection({uniqueID: '04', titre: 'très grande', subtitle: '> 500K CHF /année'}),
 )
 
 const calculatorSection_2 = new OptionCalculatorSection(
@@ -79,7 +79,7 @@ Les options sont classées de la moins avantageuse à la plus avantageuse pour l
                 ).addSubSection(
                     new OptionCalculatorSubsection({
                         uniqueID: '01',
-                        titre: 'Œuvre(s) existante(s)',
+                        titre: 'œuvre(s) existante(s)',
                         subtitle: undefined,
                         subsectionOptionChangeListener: new ConditionalValueFromSubsectionOption(
                             [
@@ -93,7 +93,7 @@ Les options sont classées de la moins avantageuse à la plus avantageuse pour l
                     new OptionCalculatorSubsection(
                         {
                             uniqueID: '02',
-                            titre: 'Adaptation d’œuvre(s) existante(s)',
+                            titre: 'adaptation d’œuvre(s) existante(s)',
                             subtitle: undefined,
                             subsectionOptionChangeListener: new ConditionalValueFromSubsectionOption(
                                 [
@@ -108,7 +108,7 @@ Les options sont classées de la moins avantageuse à la plus avantageuse pour l
                     new OptionCalculatorSubsection(
                         {
                             uniqueID: '03',
-                            titre: 'Conception de nouvelle(s) œuvre(s)',
+                            titre: 'conception de nouvelle(s) œuvre(s)',
                             subtitle: undefined,
                             subsectionOptionChangeListener: new ConditionalValueFromSubsectionOption(
                                 [
