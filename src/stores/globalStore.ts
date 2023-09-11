@@ -232,17 +232,22 @@ help:`
 
                 // ----------
                 new NumberCalculatorSection(
-                    {index : 7, title : 'Montage et transport', required : true, info : "recommandation de 60 CHF/h, minimum 23 CHF/h",
-help:`
-<p>Lorsque l'artiste se charge du montage et/ou du transport de ses pièces, soit :</p>
- 
-<ul>
-    <li>définir un coût horaire ainsi qu'un nombre d'heures</li>
-    <li>définir un forfait</li> 
-</ul>
-
-<p>Ces décisions se prennent en accord avec la structure.</p>
-`},
+                    {
+                        index : 7,
+                        title : 'Montage et transport',
+                        required : true,
+                        info : "recommandation de 60 CHF/h, minimum 23 CHF/h",
+                        help:`
+                            <p>Lorsque l'artiste se charge du montage et/ou du transport de ses pièces, soit :</p>
+                             
+                            <ul>
+                                <li>définir un coût horaire ainsi qu'un nombre d'heures</li>
+                                <li>définir un forfait</li> 
+                            </ul>
+                            
+                            <p>Ces décisions se prennent en accord avec la structure.</p>
+                        `
+                    },
                 ).addSubSection(
                     new NumberCalculatorSubsection(
                         'nombre d’heures',
