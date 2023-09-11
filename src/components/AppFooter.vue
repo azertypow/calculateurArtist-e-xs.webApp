@@ -29,7 +29,7 @@
           class="v-app-footer__content"
           v-if="router().currentRoute.value.name === 'calculator' "
       >
-        <div v-if="typeof globalTotal === 'number'" >résultat: {{globalTotal}}.— CHF</div>
+        <div v-if="typeof globalTotal === 'number'" style="font-size: 2rem; line-height: 4rem" >résultat: {{globalTotal}}.— CHF</div>
         <div v-else                                 >{{globalTotal.errorMessage}}</div>
       </div>
     </div>
