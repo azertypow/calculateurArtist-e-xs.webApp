@@ -304,7 +304,7 @@
 
                   <h4>Structure</h4>
                   <p>
-                      Organisation avec ou sans buts lucratifs, publique ou privée, qui mandate et présente des projets
+                      Organisation avec ou sans buts lucratifs, publique ou privée, qui mandate, subventionne et/ou présente des projets
                       artistiques&nbsp;:
                   </p>
 
