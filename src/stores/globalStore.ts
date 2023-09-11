@@ -222,7 +222,7 @@ help:`
                         'jours',
                     ).setAMultiplier({
                         value: 50,
-                        text: 'Montant du pier diem: ',
+                        text: 'Montant du per diem: ',
                         unit: 'CHF',
                         status: 'info',
                     }),
