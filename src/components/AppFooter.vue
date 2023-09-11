@@ -182,7 +182,7 @@
                       œuvres. L’artiste
                       a une activité professionnelle dans le domaine de l’art contemporain et fournit des contenus et
                       des services
-                      dans un contexte de présentation des arts visuels. Le présent barème concerne notamment :
+                      dans un contexte de présentation des arts visuels. Cette grille de rémunération concerne notamment :
                   </p>
 
                   <ul>
