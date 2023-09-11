@@ -544,6 +544,8 @@ export default defineComponent({
     @media (max-width: 1280px) { // footer special breakpoint
       justify-content: flex-start;
       max-width: var(--app-max-width);
+      padding-top: .5rem;
+      padding-bottom: .5rem;
     }
   }
 
