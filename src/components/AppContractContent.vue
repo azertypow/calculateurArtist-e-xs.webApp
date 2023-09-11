@@ -668,6 +668,7 @@
             :class="{'app-font-remove': contractStore.option_indemnisationCalculHeure === false || contractStore.contract_exposition === false}"
         >Le versement sera effectué sur réception d’une facture payable dans les 30 jours.</p>
 
+        <div>
           <div
                   class="app-select-style-box"
           >
