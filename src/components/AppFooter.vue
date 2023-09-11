@@ -203,7 +203,7 @@
                       développée(s) à la demande de la structure.
                       <br>↦ Afin de déterminer quelle catégorie s’applique à une
                       œuvre, il convient d’utiliser celle étant la plus favorable pour l’artiste. Si une exposition
-                      regroupe des œuvres déjà existantes et des nouvelles créations, alors c’est la catégorie relevant
+                      regroupe des œuvres déjà existantes et de nouvelles créations, alors c’est la catégorie relevant
                       de la nouvelle œuvre qui est appliquée.</p>
 
 
