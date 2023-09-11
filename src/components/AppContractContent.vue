@@ -715,18 +715,24 @@
           et restent propriété de l’Artiste jusqu’au moment du paiement.
         </p>
 
+
+          <div
+                  style="margin-top: 8rem"
+          >
+              <div
+                      class="app-select-style-box"
+              >
+                  <select v-model="contractStore.option_participationPrixDeVente" >
+                      <option :value="true">avec</option>
+                      <option :value="false">sans</option>
+                  </select>
+              </div> Participation de la structure au prix de vente?
+          </div>
+
         <h4
             :class="{'app-font-remove': contractStore.option_participationPrixDeVente === false}"
         >Participation au prix de vente des œuvres
         </h4>
-
-
-        <div
-            style="margin-top: 2rem"
-            :class="{'is-active': contractStore.option_participationPrixDeVente}"
-            class="app-button--check"
-            @click="contractStore.option_participationPrixDeVente = !contractStore.option_participationPrixDeVente"
-        >Participation de la structure au prix de vente?</div>
 
         <p
             :class="{'app-font-remove': contractStore.option_participationPrixDeVente === false}"
