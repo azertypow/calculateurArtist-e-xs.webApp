@@ -19,7 +19,6 @@
           <li>Le dérouleur avec espaces d'inscription</li>
           <li>Le contrat dans son intégralité avec mise en évidence des articles relatifs à votre situation (à l'impression, seuls ceux-ci sont pris en compte.)</li>
           <li>Les annexes</li>
-          <li></li>
       </ul>
 
     <div class="v-view-contract__section">
