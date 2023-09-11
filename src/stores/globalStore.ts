@@ -238,11 +238,11 @@ help:`
                         required : true,
                         info : "recommandation de 60 CHF/h, minimum 23 CHF/h",
                         help:`
-                            <p>Lorsque l'artiste se charge du montage et/ou du transport de ses pièces, soit :</p>
+                            <p>Lorsque l'artiste se charge du montage et/ou du transport de ses pièces&nbsp;:</p>
                              
                             <ul>
-                                <li>définir un coût horaire ainsi qu'un nombre d'heures</li>
-                                <li>définir un forfait</li> 
+                                <li><span style="color: red" >soit</span> compléter par le nombre d'heures estimées</li>
+                                <li><span style="color: red" >soit</span> définir un forfait</li> 
                             </ul>
                             
                             <p>Ces décisions se prennent en accord avec la structure.</p>
