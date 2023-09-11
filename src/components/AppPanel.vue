@@ -26,7 +26,16 @@ import {useGlobalStore} from "../stores/globalStore";
 
 export default defineComponent({
   name: 'AppPanel',
-  components: {},
+
+    mounted() {
+      window.addEventListener('keyup', this.listernerEscapeKeyUp)
+    },
+
+    unmounted() {
+        window.removeEventListener('keyup', this.listernerEscapeKeyUp)
+    },
+
+    components: {},
 
     data() {
         return {
@@ -39,7 +48,11 @@ export default defineComponent({
         closeLexicAndInfoPanels() {
             this.globalStore.showInfo     = false
             this.globalStore.showLexical  = false
-        }
+        },
+        listernerEscapeKeyUp(ev: KeyboardEvent) {
+            console.log('key pressed', ev.code === 'Escape')
+            if (ev.code === 'Escape') this.closeLexicAndInfoPanels()
+        },
     },
 });
 </script>
