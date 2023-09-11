@@ -128,8 +128,7 @@ Les options sont classées de la moins avantageuse à la plus avantageuse pour l
                 new NumberCalculatorSection(
                     {index : 4, title : "Durée de l’exposition", required : true, info : 'Montant forfaitaire supplémentaire par mois au-delà du premier mois',
 help:`
-<p>La durée minimal de l'exposition est fixée à un mois. 
-Pour les expositions qui vont au delà d'un mois, arrondir à l'unité la plus proche.</p>
+<p>Les frais liés à la durée correspondent à des frais de location. Ils sont donc progressifs. La durée minimale de ces frais est fixée à un mois. Concernant la progression, arrondir la durée mensuelle à l'unité la plus proche.</p>
 
 <p>Exemples :</p>
  
