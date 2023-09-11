@@ -213,7 +213,7 @@ help:`
 help:`
 <p>Indemnité forfaitaire visant à dédommager l'artiste pour ses frais de repas et de déplacement lors du montage de l'exposition par exemple.</p>
 
-<p>Le nombre de jour se détermine en accord avec la structure.</p>
+<p>Le nombre de jours se détermine en accord avec la structure.</p>
 `},
                 ).addSubSection(
                     new NumberCalculatorSubsection(
