@@ -5,9 +5,6 @@
         <h1>Travail des artistes</h1>
       </router-link>
     </div>
-    <div class="v-app-header__nav-box" >
-      <app-nav></app-nav>
-    </div>
   </div>
 </template>
 

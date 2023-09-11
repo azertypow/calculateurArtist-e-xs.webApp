@@ -1,5 +1,10 @@
 <template>
   <div class="v-home-view">
+      <div class="v-home-view__nav-box" >
+          <app-nav
+                  :with-description = 'true'
+          ></app-nav>
+      </div>
   </div>
 </template>
 

@@ -1,7 +1,25 @@
 <template>
   <div class="v-app-nav">
-    <router-link :to="{name:'calculator'}" class="app-button" ><icon-calculator></icon-calculator></router-link>
-    <router-link :to="{name:'contract'}"   class="app-button" ><icon-contract></icon-contract></router-link>
+    <router-link
+            :to="{name:'calculator'}"
+            class="v-app-nav__link app-button"
+    >
+        <icon-calculator></icon-calculator>
+        <div
+                v-if="withDescription"
+                class="v-app-nav__link__desc"
+        >RECOMMANDATIONS DE&nbsp;RÉMUNÉRATION POUR UNE&nbsp;EXPOSITION</div>
+    </router-link>
+    <router-link
+            :to="{name:'contract'}"
+            class="v-app-nav__link app-button"
+    >
+        <icon-contract></icon-contract>
+        <div
+                v-if="withDescription"
+                class="v-app-nav__link__desc"
+        >GÉNÉRATEUR DE&nbsp;CONTRAT&#8209;MODÈLE POUR UNE&nbsp;EXPOSITION</div>
+    </router-link>
   </div>
 </template>
 
@@ -16,6 +34,14 @@ import IconDelet from "./IconDelete.vue";
 export default defineComponent({
   name: 'AppNav',
   components: {IconDelet, IconPen, IconIsValidate, IconContract, IconCalculator},
+
+    props: {
+        withDescription: {
+            type: Boolean,
+            default: false,
+            required: false,
+        },
+    },
 });
 </script>
 
@@ -27,10 +53,24 @@ export default defineComponent({
   padding-top: 2rem;
   padding-bottom: 2rem;
   width: 100%;
-
-  > * {
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
 }
+
+.v-app-nav__link {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 18rem;
+}
+
+.v-app-nav__link__desc {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  font-family: Christiana_bold, serif;
+}
+
 </style>
