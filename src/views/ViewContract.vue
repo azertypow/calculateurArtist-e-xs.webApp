@@ -270,6 +270,20 @@
         </div>
       </div>
 
+      <div
+              class="app-g"
+      >
+          <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
+          <div class="app-g__coll-4-12"></div>
+          <div class="app-g__coll-4-12 app-with-gutter">
+              <input
+                      class="app-value-string"
+                      v-model="contractStore.artiste_represente_par"
+                      placeholder="Représenté par"
+              >
+          </div>
+      </div>
+
     </div>
 
     <div class="v-view-contract__section">

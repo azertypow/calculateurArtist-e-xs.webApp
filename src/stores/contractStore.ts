@@ -40,6 +40,7 @@ export interface IStateContractStore {
     artiste_postal: string
     artiste_mobileNumber: string
     artiste_gallery: string
+    artiste_represente_par: string
 
     clef_de_repartition: string
 
@@ -112,6 +113,7 @@ export const useContractStore = defineStore('contractStore', {
             artiste_postal: '',
             artiste_mobileNumber: '',
             artiste_gallery: '',
+            artiste_represente_par: '',
             artiste_name: '',
             artiste_firstname: '',
             artiste_birth: '',
