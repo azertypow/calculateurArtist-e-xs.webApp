@@ -6,21 +6,22 @@
             ></app-nav>
         </div>
 
-        <h2 class="app-with-gutter">Resources</h2>
+        <h2 class="app-with-gutter">GRILLE DE RÉMUNÉRATION DES ARTISTES</h2>
 
         <div class="v-files-resources__section">
             <div
                 class="app-g app-g--justify-center"
             >
                 <a
-                    class="app-button"
+                    class="app-button app-button__variante"
                     href="/calculateurArtist-e-xs.webApp/tableau_remuneration_v3.pdf"
                     download="tableau_remuneration.pdf"
+                    style="flex-direction: row"
                 >
                     <icon-download/>
                     <div
                         class="app-button__desc"
-                    >GRILLE DE RÉMUNÉRATION<br>DES ARTISTES</div>
+                    >GRILLE DE RÉMUNÉRATION DES ARTISTES</div>
                 </a>
             </div>
         </div>
@@ -45,7 +46,9 @@ export default defineComponent({
 h2 {
     text-align: center;
     border-top: solid 1px var(--app-color-border);
-    padding-top: 2rem;
+    padding-top: 1rem;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
 }
 
 .v-files-resources__section {

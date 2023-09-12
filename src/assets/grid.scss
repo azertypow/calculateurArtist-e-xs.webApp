@@ -6,6 +6,10 @@
     justify-content: center;
   }
 
+  &.app-g--justify-end {
+    justify-content: flex-end;
+  }
+
   &.app-g--align-start {
     align-items: flex-start;
   }

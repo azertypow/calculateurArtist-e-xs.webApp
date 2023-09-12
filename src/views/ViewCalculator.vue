@@ -134,7 +134,6 @@ h2 {
   font-size: 1.4rem;
   user-select: none;
   margin-top: 1rem;
-
 }
 .v-view-calculator__result__option_info {
   line-height: 2rem;

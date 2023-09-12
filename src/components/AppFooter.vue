@@ -29,8 +29,27 @@
           class="v-app-footer__content"
           v-if="router().currentRoute.value.name === 'calculator' "
       >
-        <div v-if="typeof globalTotal === 'number'" style="font-size: 2rem; line-height: 4rem" >résultat: {{globalTotal}}.— CHF</div>
+          <div
+                  v-if="typeof globalTotal === 'number'"
+                  class="app-g app-g--align-center app-g--justify-end"
+                  style="gap: 2rem"
+          >
+              <div style="font-size: 2rem; line-height: 4rem" >résultat: {{globalTotal}}.— CHF</div>
+          </div>
         <div v-else                                 >{{globalTotal.errorMessage}}</div>
+          <div
+              v-if="typeof globalTotal === 'number'"
+              class="v-app-footer__content__artiste-option"
+          >
+              <div>
+                  Collectif d’artiste?
+              </div>
+              <div
+                  class="app-button--toggle app-button--toggle--is-small"
+                  @click="globalStore.isACollective = !globalStore.isACollective"
+                  :class="{'is-active': globalStore.isACollective}"
+              ></div>
+          </div>
       </div>
     </div>
     <div
@@ -516,6 +535,7 @@ export default defineComponent({
     box-sizing: border-box;
     padding-left: 2rem;
     padding-right: 2rem;
+    box-shadow: 0 10px 20px 10px hsl(114.8deg 100% 75%);
   }
 
   .v-app-footer__content {
@@ -523,6 +543,18 @@ export default defineComponent({
     flex-direction: row-reverse;
     margin: auto;
     max-width: var(--app-max-width);
+      justify-content: center;
+      position: relative;
+
+      .v-app-footer__content__artiste-option {
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translate(0, -50%);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
   }
 
   .v-app-footer__status {

@@ -125,6 +125,10 @@ button,
     background-color: var(--app-color-secondary);
   }
 
+  &.app-button__variante {
+    background-color: transparent;
+    box-shadow: none;
+  }
 
   .app-button__desc {
     margin-bottom: 1rem;
@@ -204,6 +208,16 @@ a {
     background: black;
     border-radius: 2rem;
     opacity: .25;
+  }
+
+  &.app-button--toggle--is-small {
+    height: 1.25rem;
+    width: 2.25rem;
+
+    &:before {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
   }
 
   &.is-active {
