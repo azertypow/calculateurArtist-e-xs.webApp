@@ -17,17 +17,20 @@ import {conditionalLogicSection_8_sans} from "./conditionalLogicSection_8_sans"
 import {conditionalLogicSection_9} from "./conditionalLogicSection_9";
 
 const calculatorSection_1 = new OptionCalculatorSection(
-    {index : 1, title : 'Budget artistique annuel', required : true,
-help:`
-<p>Choisir la catégorie par rapport au budget annuel artistique de la&nbsp;structure</p>
-<p>Les quatre catégories proposées sont :
-<ul>
-    <li>Petite&nbsp;: moins de 50 000 CHF</li> 
-    <li>Moyenne&nbsp;: entre 50 000 et 250&nbsp;000 CHF</li> 
-    <li>Grande&nbsp;: entre 250 000 et 500&nbsp;000 CHF</li>
-    <li>Très grande&nbsp;: supérieur à 500&nbsp;000 CHF</li> 
-</ul>
-<p>Il est recommandé aux parties de remplir conjointement le formulaire en ligne.</p>
+    {index : 1, title : 'Budget annuel de la structure', required : true,
+        help:`
+            <p>Choisir la catégorie par rapport au budget annuel de la structure ou du projet (hors frais fixes de loyer).</p>
+            <p>La délimitation des structures et des projets peut être difficile à établir selon les cas de figure. En cas de doute entre deux catégories, il est recommandé de choisir la plus haute.</p> 
+            <p>Les quatre catégories proposées sont :</p>
+            
+            <ul>
+                <li>Petite : moins de 50 000 CHF</li>
+                <li>Moyenne : entre 50 000 et 250 000 CHF</li>
+                <li>Grande : entre 250 000 et 500 000 CHF</li>
+                <li>Très grande : supérieur à 500 000 CHF</li>
+            </ul>
+            
+            <p>Il est recommandé aux parties de remplir conjointement le formulaire en ligne.</p>
         `}
 ).addSubSection(
     new OptionCalculatorSubsection({uniqueID: '01', titre: 'petite', subtitle: '< 50 000 CHF /année'}),
@@ -172,13 +175,13 @@ help:`
 help:`
 <p>Option 1 : Si le ou les œuvres sont produites par l’artiste&nbsp;: 
 <ul>
-    <li> Soit définir en amont un nombre d’heures nécessaire à la réalisation du travail ainsi que son coût horaire. Conformément aux directives de Visarte Suisse, le montant horaire ne peut être inférieur à 90CHF pour les indépendants et selon la loi genevoise sur le salaire minimum de 24CHF pour les salarié.e.x.s.</li>
+    <li> Soit définir en amont un nombre d’heures nécessaire à la réalisation du travail ainsi que son coût horaire. Conformément aux directives de Visarte Suisse, le montant horaire ne peut être inférieur à 90CHF pour les indépendants et selon la loi genevoise sur le salaire minimum de 24CHF pour les salarié·e·x·s.</li>
     <li> Soit définir en amont un montant forfaitaire </li>
 </ul>
 
 <p>Option 2 : Si le ou les œuvres sont produites par l’artiste + une autre personne morale ou physique&nbsp;:  
 <ul>
-<li> La structure rémunère elle-même l’intervenant.e.x.s externe et cela n'apparaît dans les calculs ci-dessous. Pour la rémunération de l’artiste, se référer à l'option&nbsp;1</li>
+<li> La structure rémunère elle-même l’intervenant·e·x·s externe et cela n'apparaît dans les calculs ci-dessous. Pour la rémunération de l’artiste, se référer à l'option&nbsp;1</li>
 <li> L’artiste rémunère les personnes morales ou physiques employées pour la réalisation de ses pièces. Envisager dans ce cas un forfait.</li></ul>
 
 <p>Option 3 : 

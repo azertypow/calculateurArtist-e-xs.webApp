@@ -88,56 +88,69 @@
           <template v-slot:left >
               <h4>Introduction</h4>
 
-              <p>Dans l’optique d’améliorer le financement des projets en arts visuels, notamment les budgets affectés aux rémunérations des artistes, Visarte.Genève, en collaboration avec Visarte Suisse met à disposition publique une grille de rémunération, un calculateur de rémunération et le contrat d’exposition réalisés sous mandat de la Ville et du Canton de Genève. La base de ces rémunérations s’inspire des recommandations de Visarte Suisse 2020. Ces recommandations concernent uniquement la rémunération et non les frais de production matérielle qui font l’objet d’un calcul basé sur les frais effectifs et qui figureront dans le contrat.</p>
+              <p>Dans l’optique d’améliorer le financement des projets en arts visuels, notamment les budgets affectés aux rémunérations des artistes, ce site met à disposition un calculateur de rémunération, un contrat-modèle d’exposition et des ressources téléchargeables.</p>
+
+              <p>Ces outils s’adressent aux artistes, curateur·rice·x·s, aux structures et institutions privées et publiques d’accueil et/ou de subventionnement, ayant des relations de travail avec des artistes dans le domaine des arts visuels.</p>
+
+              <p>La base de ces rémunérations s’inspire des recommandations de Visarte Suisse publiées en 2020. Ces recommandations concernent uniquement la rémunération et non les frais de production matérielle, qui font l’objet d’un calcul basé sur les frais effectifs et qui figurent dans le contrat.</p>
 
               <p>Ces outils ont pour objectifs :</p>
               <ul>
-                  <li>La prise en considération des coûts réels d’un projet en arts visuels</li>
-                  <li>L’amélioration des pratiques de rémunération des artistes</li>
-                  <li>Une harmonisation des pratiques pour l’ensemble des acteur·ice·x·s</li>
-                  <li>L’établissement des termes de négociation de leurs engagements.</li>
+                <li>La prise en considération des coûts réels d’un projet en arts visuels</li>
+                <li>L’amélioration des pratiques de rémunération des artistes</li>
+                <li>Une harmonisation des pratiques pour l’ensemble des acteur·ice·x·s</li>
+                <li>L’établissement des termes de négociation de leurs engagements.</li>
               </ul>
 
-              <p>Ils s’adressent aux artistes, curateur·trice·x·s, aux structures et institutions privées et publiques d’accueil et/ou de subventionnement ayant des relations de travail avec des artistes visuels.</p>
+              <h4>Le calculateur et la grille de rémunération</h4>
+              <p>Les montants du calculateur sont basés sur ceux indiqués dans la grille. Ces outils permettent une meilleure prise en compte de la valeur du travail des artistes et de la réalité financière d’un projet artistique : recherche, conception, développement, création d’œuvre, accrochage, communication, médiation, rencontres publiques, etc.</p>
 
-              <h4>La grille de rémunération et le calculateur de rémunération</h4>
-              <p>La grille de rémunération est présentée sous forme de tableau à la demande des structures pour l’établissement de leurs budgets. Les structures sont listées en fonction du montant de leur budget artistique annuel.</p>
-              <p>Le calculateur reprend la grille de rémunération sous forme de dérouleur permettant un calcul automatique et circonstancié. Les chiffres dans l’un et l’autre format sont identiques. Tous deux permettent une meilleure prise en compte de la valeur du travail des artistes et de la réalité financière du montage d’un projet artistique : recherche, conception, développement, création d’œuvre, accrochage, communication, médiation, rencontres publiques…</p>
+              <p>Le calculateur de rémunération prend la forme d’un dérouleur et permet un calcul automatique et circonstancié, pour l’établissement du montant de la rémunération de l’artiste. La grille de rémunération est présentée sous forme de tableau pdf, à la demande des structures, pour l’établissement de leurs budgets.</p>
 
-              <p>→ Ces chiffres offrent une base de référence à laquelle doit s’ajouter la prise en compte du contexte spécifique à chaque collaboration. Il s’agit de montants minimaux qui permettent la négociation des parties sur une base commune.</p>
-              <p>→ Les montants sont toujours compris en coût total d’embauche (ou super-brut), indifféremment si salarié·e·x·s, indépendant·e·x·s, en associations, location de services ou honoraire libre.</p>
-              <p>→ La rémunération de l’artiste est constituée d’un montant forfaitaire pour la conception de l'œuvre, ainsi que d’un montant pour la réalisation de cette dernière (qui peut être forfaitaire ou horaire).</p>
-              <p>→ Le taux horaire est évalué par l’artiste, en discussion avec la structure. Dans tous les cas, il ne doit pas être inférieur au minimum légal en vigueur (à Genève, il est de 24 CHF brut en 2023 pour les salarié·e·x·s (coût total d’embauche en fonction des cotisations payées ± 28.50 CHF) et de 90 CHF minimum pour les indépendants selon les recommandations de Visarte Suisse.</p>
-              <p>→ Le montant final de rémunération proposé représente le coût total du travail de l’artiste pour une exposition, hors frais de production.</p>
-              <p>→ Il est possible pour l’artiste et la structure de s’engager vers un modèle de co-financement ou de co-production entre la structure et l’artiste. Dans ce cas, l’un et l’autre collaborent à des demandes de soutien supplémentaires et s’engagent à les mener à bien.</p>
+              <p>→ Ces chiffres offrent une base de référence à laquelle doit s’ajouter la prise en compte du contexte
+                  spécifique à chaque collaboration. Il s’agit de montants minimaux qui permettent la négociation des
+                  parties sur une base commune.</p>
+              <p>→ Les montants sont toujours compris en coût total d’embauche (ou super-brut), indifféremment si
+                  salarié·e·x·s, indépendant·e·x·s, en associations, location de services ou honoraire libre.</p>
 
+              <p>→ La rémunération de l’artiste est constituée d’un montant forfaitaire pour la conception de l'œuvre,
+                  ainsi que d’un montant pour la réalisation de cette dernière (qui peut être forfaitaire ou
+                  horaire).</p>
 
-
-              <h4>Le contrat d’exposition</h4>
-              <p>Ce générateur de contrats-modèles est une base qui vise à clarifier et à aider à préciser les
-                  conditions de travail des artistes, ainsi qu’à favoriser la négociation de leurs engagements. Il
-                  cherche à prendre en compte les intérêts des deux parties au contrat. Toutefois, dans la mesure où
-                  chaque situation est particulière, vous avez la possibilité d’adapter le modèle à vos besoins. En cas
-                  de doute, n’hésitez pas à consulter une permanence ou à prendre des conseils juridiques.
-              </p>
+              <p>→ Le taux horaire est évalué par l’artiste, en discussion avec la structure. Dans tous les cas, il ne
+                  doit pas être inférieur au minimum légal en vigueur (à Genève, il est de 24 CHF brut en 2023 pour les
+                  salarié·e·x·s (coût total d’embauche en fonction des cotisations payées ± 28.50 CHF) et de 90 CHF
+                  minimum pour les indépendant·e·x·s selon les recommandations de Visarte Suisse.</p>
+              <p>→ Le montant final de rémunération proposé représente le coût total du travail de l’artiste pour une
+                  exposition, hors frais de production.</p>
+              <p>→ Il est possible pour l’artiste et la structure de s’engager vers un modèle de co-financement ou de
+                  co-production entre la structure et l’artiste. Dans ce cas, l’un et l’autre collaborent à des demandes
+                  de soutien supplémentaires et s’engagent à les mener à bien.</p>
 
 
               <h4>Comment cela fonctionne&nbsp;?</h4>
-              <p>Grille et calculateur indiquent la rémunération minimum par artiste défini en fonction de quatre critères principaux :</p>
+              <p>Grille et calculateur indiquent la rémunération minimum par artiste, définie en fonction de quatre critères principaux&nbsp;:</p>
               <ul>
-                  <li>Le budget artistique annuel de la structure (hors frais fixes de loyer)</li>
+                  <li>Le budget annuel de la structure ou du projet (hors frais fixes de loyer)</li>
                   <li>La nature de l’œuvre (nouvelle production, adaptation ou œuvre existante)</li>
                   <li>Le nombre d’artistes participant à l’exposition</li>
                   <li>La durée de l’exposition</li>
               </ul>
+
+              <p>Les collectifs d’artistes sont rémunérés selon un coefficient de 1,5.</p>
+
+              <h4>Le contrat d’exposition</h4>
+              <p>Ce générateur de contrats-modèles est une base qui vise à préciser les conditions de travail des artistes, ainsi qu’à favoriser la négociation de leurs engagements. Le contrat détaille les éléments essentiels qui devraient être négociés en amont des prestations artistiques. Il permet ainsi de clarifier le cadre dans lequel les parties évoluent afin d'anticiper de potentiels malentendus et litiges.</p>
+              <p>Le contrat cherche à apporter un cadre légal protégeant aussi bien les artistes que les structures et prend ainsi en compte les intérêts des deux parties. Toutefois, dans la mesure où chaque situation est particulière, vous avez la possibilité d’adapter le modèle à vos besoins. En cas de doute, n’hésitez pas à consulter une permanence ou à prendre des conseils juridiques.</p>
+
 
           </template>
 
           <template v-slot:right >
               <h4>Crédits</h4>
               <p>
-                  <br>Projet piloté par :
-                  <br><a href="https://www.visarte-geneve.ch/" >Visarte.Genève</a>
+                  <br>Plateforme pilotée par&nbsp;:
+                  <br><a href="https://www.visarte-geneve.ch/" >Visarte.Genève, en collaboration avec Visarte Suisse</a>
               </p>
 
               <p>Grille de rémunération :
@@ -195,7 +208,7 @@
               <template v-slot:left>
                   <h4>Artiste</h4>
                   <p>
-                      L’artiste est créateur·trice·x de propriété intellectuelle en vertu de la législation suisse sur
+                      L’artiste est créateur·rice·x de propriété intellectuelle en vertu de la législation suisse sur
                       le droit
                       d’auteur. L’artiste dispose des droits de la personnalité et des droits patrimoniaux sur ses
                       œuvres. L’artiste
@@ -210,7 +223,7 @@
                       <li>les chercheur·euse·x·s</li>
                       <li>les artistes sonores</li>
                       <li>les artistes conceptuel·le·x·s</li>
-                      <li>les artistes curateurs·x·trices</li>
+                      <li>les curateur·rice·x·s</li>
                       <li>etc.</li>
                   </ul>
 
@@ -287,7 +300,7 @@
                       </li>
                       <li>Les coûts et services de programmation de base</li>
                       <li>Les dépenses de production, de déplacement et d’hébergement</li>
-                      <li>L’achat d’œuvres d’art ou les droits d’auteur·trice·x</li>
+                      <li>L’achat d’œuvres d’art ou les droits d’auteur·rice·x</li>
                       <li>La TVA pour les services assujettis à la TVA</li>
                       <li>La réalisation d’un catalogue ou autre publication d’envergure</li>
                       <li>La réalisation de prestations telles que : présentation publique, visite guidée, conférences,
@@ -311,7 +324,7 @@
                   <p>Toute création de l’esprit, littéraire ou artistique, qui a un caractère individuel, quelles qu’en
                       soient la valeur ou la destination. (selon l’art. 2 de la Loi fédérale sur le droit d’auteur et
                       les droits voisins (LDA)). L’œuvre peut donc être constituée d’œuvres physiques, de performances,
-                      de projections ou de la programmation-même dans le cadre du travail d’un·e·x curateur·trice·x
+                      de projections ou de la programmation-même dans le cadre du travail d’un·e·x curateur·rice·x
                       indépendant·e·x.</p>
 
                   <h4>Œuvre(s) existante(s)</h4>

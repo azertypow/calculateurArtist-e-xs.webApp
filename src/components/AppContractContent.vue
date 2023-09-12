@@ -894,7 +894,7 @@
               class="app-button--check app-contract-with_production"
               @click="contractStore.option_editors = !contractStore.option_editors"
           >
-            Monteurs.trices et techniciens.nes externes et/ou internes
+            Monteur·rice·x·s et technicien·ne·x·s externes et/ou internes
           </p>
           <template
               v-for="toBeCompletedIfNecessary of contractStore.option_arrayOf_toBeCompletedIfNecessary"
