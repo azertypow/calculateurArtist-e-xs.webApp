@@ -16,7 +16,7 @@
 <!--      >version texte</div>-->
 
     <div
-        v-if="!isHome && !waitPDFExport"
+        v-if="isContrat && !waitPDFExport"
         class="app-button v-app-footer__button v-app-footer__button-export"
         @click="onClickOnExportPDF"
     >exporter en PDF</div>
