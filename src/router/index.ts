@@ -35,8 +35,8 @@ const router = createRouter({
       component: () => import('../views/ViewContract.vue'),
     },
     {
-      path: '/resources',
-      name: 'resources',
+      path: '/ressources',
+      name: 'ressources',
       component: () => import('../views/FilesResources.vue'),
     },
   ]

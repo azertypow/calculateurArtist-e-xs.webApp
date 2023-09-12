@@ -6,7 +6,7 @@
             ></app-nav>
         </div>
 
-        <h2 class="app-with-gutter">Resources</h2>
+        <h2 class="app-with-gutter">Ressources</h2>
 
         <div class="v-files-resources__section">
             <div
