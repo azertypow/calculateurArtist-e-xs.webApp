@@ -451,14 +451,22 @@ export default defineComponent({
       },
 
       async pdfExport() {
+
+          console.log('0')
+
           const htmlToExport = document.querySelector('.v-app-contract-content')
           if (!(htmlToExport instanceof HTMLElement)) return
 
+          console.log('2')
+
           const containerForHtmlToExport = document.createElement('div')
+
+          console.log('3')
 
           containerForHtmlToExport.appendChild(htmlToExport.cloneNode(true))
           containerForHtmlToExport.classList.add('to-export')
 
+          console.log('4-2')
 
           const toSaveContainer = html2pdf().set({
               margin: [100, 0, 20, 0],
@@ -469,9 +477,13 @@ export default defineComponent({
                   unit: "px",
                   format: [790, 1120],
               },
-          }).from(containerForHtmlToExport).toContainer()
+          })
+
+          console.log('5')
 
           await toSaveContainer
+
+          console.log('6')
 
           // toSaveContainer.prop.container.querySelector('.v-app-contract-content').style.color = 'blue'
 
