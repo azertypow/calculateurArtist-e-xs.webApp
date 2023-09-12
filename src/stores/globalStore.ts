@@ -236,7 +236,7 @@ help:`
                     {
                         index : 7,
                         title : 'Montage et transport',
-                        required : true,
+                        required : false,
                         info : "recommandation de 60 CHF/h, minimum 23 CHF/h",
                         help:`
                             <p>Lorsque l’artiste se charge du montage et/ou du transport de ses pièces&nbsp;:</p>
