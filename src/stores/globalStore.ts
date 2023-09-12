@@ -40,7 +40,7 @@ const calculatorSection_2 = new OptionCalculatorSection(
         {index : 2, title : 'Exposant·e·x·s', required : true,
 help:`
 <p>Choisir l'une des options par rapport au nombre de artistes invitées. à exposer. 
-</br>Un collectif d'artistes est considéré dans ce décompte comme une personne.</p>
+</br>Un collectif d’artistes est considéré dans ce décompte comme une personne.</p>
 `}
     ).addSubSection(
         new OptionCalculatorSubsection({uniqueID: '01', titre: '1 artiste'}),
@@ -71,10 +71,10 @@ export const useGlobalStore = defineStore('globalStore', {
                 new OptionCalculatorSection(
                     {index : 3, title : 'Œuvres', required : true,
 help:`
-<p>Préciser la nature des œuvres présentées pour l'exposition. Si différentes œuvres entrent dans différentes catégories, choisir l'option la plus avantageuse pour l'artiste.
-Les options sont classées de la moins avantageuse à la plus avantageuse pour l'artiste.</p>
+<p>Préciser la nature des œuvres présentées pour l’exposition. Si différentes œuvres entrent dans différentes catégories, choisir l'option la plus avantageuse pour l’artiste.
+Les options sont classées de la moins avantageuse à la plus avantageuse pour l’artiste.</p>
 
-<p>Exemple : Si une exposition regroupe des œuvres déjà existantes et de nouvelles créations d'un artiste, alors c’est la catégorie «conception d'une ou plusieurs nouvelles œuvres» qui est appliquée.</p>
+<p>Exemple : Si une exposition regroupe des œuvres déjà existantes et de nouvelles créations d’un artiste, alors c’est la catégorie «conception d'une ou plusieurs nouvelles œuvres» qui est appliquée.</p>
 `}
                 ).addSubSection(
                     new OptionCalculatorSubsection({
@@ -129,7 +129,7 @@ Les options sont classées de la moins avantageuse à la plus avantageuse pour l
                 new NumberCalculatorSection(
                     {index : 4, title : "Durée de l’exposition", required : true, info : 'Montant forfaitaire supplémentaire par mois au-delà du premier mois',
 help:`
-<p>Les frais liés à la durée correspondent à des frais de location. Ils sont donc progressifs. La durée minimale de ces frais est fixée à un mois. Concernant la progression, arrondir la durée mensuelle à l'unité la plus proche.</p>
+<p>Les frais liés à la durée correspondent à des frais de location. Ils sont donc progressifs. La durée minimale de ces frais est fixée à un mois. Concernant la progression, arrondir la durée mensuelle à l’unité la plus proche.</p>
 
 <p>Exemples :</p>
  
@@ -170,20 +170,20 @@ help:`
                 new NumberCalculatorSection(
                     {index : 5, title : 'Honoraires de réalisation',
 help:`
-<p>Option 1 : Si le ou les œuvres sont produites par l'artiste&nbsp;: 
+<p>Option 1 : Si le ou les œuvres sont produites par l’artiste&nbsp;: 
 <ul>
-    <li> Soit définir en amont un nombre d'heures nécessaire à la réalisation du travail ainsi que son coût horaire. Conformément aux directives de Visarte Suisse, le montant horaire ne peut être inférieur à 90CHF pour les indépendants et selon la loi genevoise sur le salaire minimum de 24CHF pour les salarié.e.x.s.</li>
+    <li> Soit définir en amont un nombre d’heures nécessaire à la réalisation du travail ainsi que son coût horaire. Conformément aux directives de Visarte Suisse, le montant horaire ne peut être inférieur à 90CHF pour les indépendants et selon la loi genevoise sur le salaire minimum de 24CHF pour les salarié.e.x.s.</li>
     <li> Soit définir en amont un montant forfaitaire </li>
 </ul>
 
-<p>Option 2 : Si le ou les œuvres sont produites par l'artiste + une autre personne morale ou physique&nbsp;:  
+<p>Option 2 : Si le ou les œuvres sont produites par l’artiste + une autre personne morale ou physique&nbsp;:  
 <ul>
-<li> La structure rémunère elle-même l'intervenant.e.x.s externe et cela n'apparaît dans les calculs ci-dessous. Pour la rémunération de l'artiste, se référer à l'option&nbsp;1</li>
-<li> L'artiste rémunère les personnes morales ou physiques employées pour la réalisation de ses pièces. Envisager dans ce cas un forfait.</li></ul>
+<li> La structure rémunère elle-même l’intervenant.e.x.s externe et cela n'apparaît dans les calculs ci-dessous. Pour la rémunération de l’artiste, se référer à l'option&nbsp;1</li>
+<li> L’artiste rémunère les personnes morales ou physiques employées pour la réalisation de ses pièces. Envisager dans ce cas un forfait.</li></ul>
 
 <p>Option 3 : 
 <ul>
-<li>Si le ou les œuvres ne sont pas produites par l'artiste, le coût de production n'entre pas dans le calcul des honoraires de l'artiste et n'apparaît donc pas dans ce calculateur.</li></ul>
+<li>Si le ou les œuvres ne sont pas produites par l’artiste, le coût de production n'entre pas dans le calcul des honoraires de l’artiste et n'apparaît donc pas dans ce calculateur.</li></ul>
 
 <p>Dans tous les cas, ces décisions doivent se prendre en accord avec la structure. </p>
 `},
@@ -212,7 +212,7 @@ help:`
                 new NumberCalculatorSection(
                     {index : 6, title : 'Per diem',
 help:`
-<p>Indemnité forfaitaire visant à dédommager l'artiste pour ses frais de repas et de déplacement lors du montage de l'exposition par exemple.</p>
+<p>Indemnité forfaitaire visant à dédommager l’artiste pour ses frais de repas et de déplacement lors du montage de l'exposition par exemple.</p>
 
 <p>Le nombre de jours se détermine en accord avec la structure.</p>
 `},
@@ -239,11 +239,11 @@ help:`
                         required : true,
                         info : "recommandation de 60 CHF/h, minimum 23 CHF/h",
                         help:`
-                            <p>Lorsque l'artiste se charge du montage et/ou du transport de ses pièces&nbsp;:</p>
+                            <p>Lorsque l’artiste se charge du montage et/ou du transport de ses pièces&nbsp;:</p>
                              
                             <ul>
-                                <li><span style="color: red" >soit</span> compléter par le nombre d'heures estimées</li>
-                                <li><span style="color: red" >soit</span> définir un forfait</li> 
+                                <li>soit compléter par le nombre d’heures estimées</li>
+                                <li>soit définir un forfait</li> 
                             </ul>
                             
                             <p>Ces décisions se prennent en accord avec la structure.</p>
@@ -261,7 +261,7 @@ help:`
                     })
                 ).addSubSection(
                     new NumberCalculatorSubsection(
-                        'Forfait',
+                        'Et/ou forfait',
                         0,
                         "CHF",
                         0,
@@ -308,7 +308,7 @@ help: `
                 // ----------
                 new NumberCalculatorSection(
                     {index : 9, title : "Texte", required : false, info : 'source?',
-help:`<p>Les textes commandés par la structure à l'artiste sont rémunérés pas 1000 frappes (espaces compris). La longueur du texte final est arrondi au millier de frappes le plus proche.</p>
+help:`<p>Les textes commandés par la structure à l’artiste sont rémunérés pas 1000 frappes (espaces compris). La longueur du texte final est arrondi au millier de frappes le plus proche.</p>
 <ul>Exemples : 
 <li>Si le texte produit contient 1312 caractères espaces compris, compter 1 occurence.</li>
 <li>Si le texte produit contient 29’979 caractères espaces compris, compter 30 occurences.</li>

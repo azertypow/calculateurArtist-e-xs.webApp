@@ -208,7 +208,7 @@
 
                   <h4>Collectif d’artistes</h4>
                   <p>
-                      Groupe d'artistes se définissant sous une même entité. Dans le cadre de ce document, à chaque
+                      Groupe d’artistes se définissant sous une même entité. Dans le cadre de ce document, à chaque
                       fois que le terme «artiste» apparaît de manière générique, il peut être remplacé par « collectif d’artistes ».
                   </p>
 

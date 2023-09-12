@@ -462,9 +462,9 @@
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
           , l’Artiste
-          <content-editable placeholder="Prénom de l'artiste" :value="contractStore.artiste_firstname"
+          <content-editable placeholder="Prénom de l’artiste" :value="contractStore.artiste_firstname"
                                         @update:value="contractStore.structure_name = $event"/>
-          <content-editable placeholder="Nom de l'artiste" :value="contractStore.artiste_name"
+          <content-editable placeholder="Nom de l’artiste" :value="contractStore.artiste_name"
                             @update:value="contractStore.structure_name = $event"/>
           renseigne sur ses autres expositions en cours ou à venir, lors desquelles il serait prévu de
           présenter des Œuvres objet du présent contrat.
@@ -646,7 +646,7 @@
                     <option :value="true">avec</option>
                     <option :value="false">sans</option>
                 </select>
-            </div> Indemnisation calculée à l’heure?
+            </div> Indemnisation calculée à l’heure
         </div>
 
         <h4
@@ -686,7 +686,7 @@
                   <option :value="true">avec</option>
                   <option :value="false">sans</option>
               </select>
-          </div> exposition et vente?
+          </div> exposition et vente
         </div>
 
         <h4
@@ -726,7 +726,7 @@
                       <option :value="true">avec</option>
                       <option :value="false">sans</option>
                   </select>
-              </div> Participation de la structure au prix de vente?
+              </div> Participation de la structure au prix de vente
           </div>
 
         <h4
@@ -1140,7 +1140,7 @@
 
         </p>
 
-        <p>Pour l'artiste&nbsp;:
+        <p>Pour l’artiste&nbsp;:
           <br><content-editable placeholder="Prénom" :value="contractStore.artiste_firstname"
                             @update:value="contractStore.artiste_firstname = $event"/>
           <br><content-editable placeholder="Nom" :value="contractStore.artiste_name"

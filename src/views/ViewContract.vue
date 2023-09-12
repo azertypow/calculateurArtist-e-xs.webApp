@@ -21,7 +21,7 @@
         <div class="app-g__coll-4-12 app-with-gutter"
         >Contrat</div>
         <div class="app-g__coll-6-12 app-with-gutter">
-          <div class="app-button--check" :class="{'is-active': contractStore.contract_exposition}" @click="contractStore.contract_exposition = !contractStore.contract_exposition">d'exposition</div>
+          <div class="app-button--check" :class="{'is-active': contractStore.contract_exposition}" @click="contractStore.contract_exposition = !contractStore.contract_exposition">d’exposition</div>
           <div>
             <div
                 class="app-select-style-box"
