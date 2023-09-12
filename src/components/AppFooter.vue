@@ -128,36 +128,40 @@
                 </p>
 
                 <p>Grille de rémunération :
-                    <br>Clovis Duran, Julie Marmet, Ramaya Tegegne
+                    <br>GARAGe (référentes : Julie Marmet et Ramaya Tegegne)
+                    <br>Rosa Brux (référent : Clovis Duran)
                 </p>
 
                 <p>Rédaction du contrat-modèle :
-                    <br>Lab-of-Arts
+                    <br>Lab-of-Arts (référent·e·s : Lancelot Dandelot et Zoé Seiler)
                 </p>
 
-                <p>Développement :
-                    <br>Nicolas Baldran
-                </p>
-
-                <p>Bibliothèques :
-                    <br><a href="https://vuejs.org/">Vue.js
-                    </a>
-                    <br><a href="">html2pdf.js</a>
-                    <br>
-                </p>
-
-                <p>Graphisme :
-                    <br>Clovis Duran
+                <p>Coordination :
+                    <br>Hélène Mariéthoz
                 </p>
 
                 <p>Communication :
                     <br>Camille Dumond
                 </p>
 
+                <p>Développement :
+                    <br>Nicolas Baldran
+                </p>
+
+                <p>Graphisme :
+                    <br>Clovis Duran
+                </p>
+
                 <p>Typographies :
                     <br>Christiana, Gudrun Zapf-von Hesse
                     <br>Suisse Intl, Swiss Typefaces
                 </p>
+
+                <p>Bibliothèques pour la création du PDF:
+                    <br><a href="">html2pdf.js</a>
+                </p>
+
+                <p>travaildesartistes.ch est le résultat d’un mandat confié par le Service culturel de la Ville de Genève et l'Office cantonal de la culture et du sport.</p>
 
             </template>
 
