@@ -35,8 +35,9 @@
             <div
                     v-if="globalStore.isACollective"
                     class="v-view-calculator__result__option_info"
+                    style="text-align: right; max-width: none"
             >
-              Les collectifs d’artistes sont rémunérés selon un coefficient de 1.5.
+              Les collectifs d’artistes sont rémunérés selon un coefficient de 1,5.
             </div>
           </div>
           <h6 style="margin: 0" v-else>{{globalTotal.errorMessage}}</h6>
