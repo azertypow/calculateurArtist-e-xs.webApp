@@ -21,14 +21,14 @@
         >GÉNÉRATEUR DE&nbsp;CONTRAT&#8209;MODÈLE POUR UNE&nbsp;EXPOSITION</div>
     </router-link>
     <router-link
-            :to="{name:'resources'}"
+            :to="{name:'ressources'}"
             class="v-app-nav__link app-button"
     >
         <icon-folder/>
         <div
                 v-if="withDescription"
                 class="app-button__desc"
-        >Resources à télécharger</div>
+        >Ressources à télécharger</div>
     </router-link>
   </div>
 </template>
