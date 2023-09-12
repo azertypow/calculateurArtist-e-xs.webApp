@@ -39,13 +39,13 @@ help:`
 const calculatorSection_2 = new OptionCalculatorSection(
         {index : 2, title : 'Exposant·e·x·s', required : true,
 help:`
-<p>Choisir l'une des options par rapport au nombre de artist.e.x.s invitées. à exposer. 
+<p>Choisir l'une des options par rapport au nombre de artistes invitées. à exposer. 
 </br>Un collectif d'artistes est considéré dans ce décompte comme une personne.</p>
 `}
     ).addSubSection(
         new OptionCalculatorSubsection({uniqueID: '01', titre: '1 artiste'}),
-        new OptionCalculatorSubsection({uniqueID: '02', titre: '2 à 6 personnes'}),
-        new OptionCalculatorSubsection({uniqueID: '03', titre: '7 personnes ou plus'}, ),
+        new OptionCalculatorSubsection({uniqueID: '02', titre: '2 à 6 artistes'}),
+        new OptionCalculatorSubsection({uniqueID: '03', titre: '7 artistes ou plus'}, ),
     )
 
 export const useGlobalStore = defineStore('globalStore', {
