@@ -14,7 +14,7 @@
             >
                 <a
                     class="app-button"
-                    href="/tableau_remuneration_v3.pdf"
+                    href="/calculateurArtist-e-xs.webApp/tableau_remuneration_v3.pdf"
                     download="tableau_remuneration.pdf"
                 >
                     <icon-download/>
