@@ -68,6 +68,11 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .v-app {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+
   &.wait-pdf-export {
     user-select: none !important;
     pointer-events: none !important;

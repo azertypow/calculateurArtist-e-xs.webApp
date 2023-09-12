@@ -1,16 +1,21 @@
 .vue-transition-page-enter-active,
 .vue-transition-page-leave-active {
-  transition: transform .75s ease-in-out, opacity .75s ease-in-out;
+  position: relative;
+  transition: transform .75s ease-in-out, opacity .5s ease-in-out;
   opacity: 1;
   transform: translate3D(0, 0, 0);
 }
 
+.vue-transition-page-enter-active {
+  transition-delay: .5s;
+}
+
 .vue-transition-page-enter-from {
   opacity: 0;
-  transform: translate3D(0, -2rem, 0);
+  transform: translate3D(5rem, 0, 0);
 }
 
 .vue-transition-page-leave-to {
   opacity: 0;
-  transform: translate3D(0, 2rem, 0);
+  transform: translate3D(-10rem, 0, 0);
 }

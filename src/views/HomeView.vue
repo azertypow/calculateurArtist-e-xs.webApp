@@ -1,5 +1,5 @@
 <template>
-  <div class="v-home-view">
+  <div class="v-home-view app-view">
       <div class="v-home-view__nav-box" >
           <app-nav
                   :with-description = 'true'
@@ -21,6 +21,9 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .v-home-view {
-
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>

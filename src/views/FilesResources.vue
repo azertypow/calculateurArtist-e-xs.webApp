@@ -1,5 +1,5 @@
 <template>
-    <div class="v-files-resources">
+    <div class="v-files-resources app-view">
         <div class="v-home-view__nav-box">
             <app-nav
                 :with-description='true'
@@ -42,11 +42,6 @@ export default defineComponent({
 })</script>
 
 <style lang="scss">
-.v-files-resources {
-    padding-top: 2rem;
-    padding-bottom: 33.33333vh;
-}
-
 h2 {
     text-align: center;
     border-top: solid 1px var(--app-color-border);

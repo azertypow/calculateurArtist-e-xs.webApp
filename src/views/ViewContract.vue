@@ -320,11 +320,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.v-view-contract {
-  padding-top: 2rem;
-  padding-bottom: 33.33333vh;
-}
-
 h2 {
   text-align: center;
   border-top: solid 1px var(--app-color-border);
