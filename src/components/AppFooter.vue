@@ -95,15 +95,12 @@
 
 
               <h4>Le contrat d’exposition</h4>
-              <p>Ce générateur de contrats-modèles se base sur le contrat réalisé sous mandat de la Ville et de l’Etat de Genève par Visarte et l’association d’avocats Lab-of-Arts. Il vise à clarifier et aide à préciser les conditions de travail des artiste·x·s, ainsi qu’à favoriser la négociation de leurs engagements. Il prend en compte les intérêts des deux parties au contrat. Dans la mesure où chaque situation est particulière, vous avez la possibilité d’adapter le modèle à vos besoins. En cas de doute, n’hésitez pas à consulter la permanence d’aide mise en place par Visarte·Genève ou à prendre des conseils juridiques.</p>
-              <p>Ce générateur présente 3 parties :</p>
-              <ul>
-                <li>Le dérouleur avec espaces d’inscription. Certains sont facultatifs</li>
-                <li>Le contrat dans son intégralité avec mise en évidence des articles relatifs à votre situation (à l’impression, seuls ceux-ci sont pris en compte)</li>
-                <li>Les annexes</li>
-              </ul>
-
-
+              <p>Ce générateur de contrats-modèles est une base qui vise à clarifier et à aider à préciser les
+                  conditions de travail des artistes, ainsi qu’à favoriser la négociation de leurs engagements. Il
+                  cherche à prendre en compte les intérêts des deux parties au contrat. Toutefois, dans la mesure où
+                  chaque situation est particulière, vous avez la possibilité d’adapter le modèle à vos besoins. En cas
+                  de doute, n’hésitez pas à consulter une permanence ou à prendre des conseils juridiques.
+              </p>
 
           </template>
 
