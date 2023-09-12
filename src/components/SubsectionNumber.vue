@@ -4,7 +4,7 @@
   >
     <div
         v-if="multiplier && multiplier.status === 'reg'"
-        class="app-g app-g--align-center"
+        class="app-g app-g--align-start"
     >
       <div class="app-g__coll-sm-0-12 app-g__coll-2-12 app-with-gutter"></div>
       <div class="app-g__coll-xs-12-12 app-g__coll-sm-4-12 app-g__coll-4-12 app-with-gutter" >{{ multiplier.text }}</div>
