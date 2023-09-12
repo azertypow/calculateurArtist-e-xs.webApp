@@ -102,11 +102,8 @@
                   de doute, n’hésitez pas à consulter une permanence ou à prendre des conseils juridiques.
               </p>
 
-          </template>
 
-          <template v-slot:right >
               <h4>Comment cela fonctionne&nbsp;?</h4>
-
               <p>Grille et calculateur indiquent la rémunération minimum par artiste défini en fonction de quatre critères principaux :</p>
               <ul>
                   <li>Le budget artistique annuel de la structure (hors frais fixes de loyer)</li>
@@ -117,49 +114,52 @@
 
           </template>
 
+          <template v-slot:right >
+              <h4>Crédits</h4>
+              <p>
+                  <br>Projet piloté par :
+                  <br><a href="https://www.visarte-geneve.ch/" >Visarte.Genève</a>
+              </p>
+
+              <p>Grille de rémunération :
+                  <br>GARAGe (référentes : Julie Marmet et Ramaya Tegegne)
+                  <br>Rosa Brux (référent : Clovis Duran)
+              </p>
+
+              <p>Rédaction du contrat-modèle :
+                  <br>Lab-of-Arts (référent·e·s : Lancelot Dandelot et Zoé Seiler)
+              </p>
+
+              <p>Coordination :
+                  <br>Hélène Mariéthoz
+              </p>
+
+              <p>Communication :
+                  <br>Camille Dumond
+              </p>
+
+              <p>Développement :
+                  <br>Nicolas Baldran
+              </p>
+
+              <p>Graphisme :
+                  <br>Clovis Duran
+              </p>
+
+              <p>Typographies :
+                  <br>Christiana, Gudrun Zapf-von Hesse
+                  <br>Suisse Intl, Swiss Typefaces
+              </p>
+
+              <p>Bibliothèques pour la création du PDF:
+                  <br><a href="">html2pdf.js</a>
+              </p>
+
+              <p>travaildesartistes.ch est le résultat d’un mandat confié par le Service culturel de la Ville de Genève et l'Office cantonal de la culture et du sport.</p>
+
+          </template>
+
             <template v-slot:left-bottom>
-                <h4>Crédits</h4>
-                <p>
-                    <br>Projet piloté par :
-                    <br><a href="https://www.visarte-geneve.ch/" >Visarte.Genève</a>
-                </p>
-
-                <p>Grille de rémunération :
-                    <br>GARAGe (référentes : Julie Marmet et Ramaya Tegegne)
-                    <br>Rosa Brux (référent : Clovis Duran)
-                </p>
-
-                <p>Rédaction du contrat-modèle :
-                    <br>Lab-of-Arts (référent·e·s : Lancelot Dandelot et Zoé Seiler)
-                </p>
-
-                <p>Coordination :
-                    <br>Hélène Mariéthoz
-                </p>
-
-                <p>Communication :
-                    <br>Camille Dumond
-                </p>
-
-                <p>Développement :
-                    <br>Nicolas Baldran
-                </p>
-
-                <p>Graphisme :
-                    <br>Clovis Duran
-                </p>
-
-                <p>Typographies :
-                    <br>Christiana, Gudrun Zapf-von Hesse
-                    <br>Suisse Intl, Swiss Typefaces
-                </p>
-
-                <p>Bibliothèques pour la création du PDF:
-                    <br><a href="">html2pdf.js</a>
-                </p>
-
-                <p>travaildesartistes.ch est le résultat d’un mandat confié par le Service culturel de la Ville de Genève et l'Office cantonal de la culture et du sport.</p>
-
             </template>
 
 

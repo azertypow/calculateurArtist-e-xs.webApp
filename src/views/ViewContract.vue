@@ -7,12 +7,6 @@
     </div>
     <h2 class="app-with-gutter">GÉNÉRATEUR DE CONTRAT-MODÈLE POUR UNE EXPOSITION</h2>
 
-      <p>Ce générateur de contrats-modèles est une base qui vise à clarifier et à aider à préciser les conditions de
-          travail des artistes, ainsi qu’à favoriser la négociation de leurs engagements. Il cherche à prendre en
-          compte les intérêts des deux parties au contrat. Toutefois, dans la mesure où chaque situation est
-          particulière, vous avez la possibilité d’adapter le modèle à vos besoins. En cas de doute, n’hésitez pas à
-          consulter une permanence ou à prendre des conseils&nbsp;juridiques.</p>
-
     <div class="v-view-contract__section">
       <div
           class="app-g"
