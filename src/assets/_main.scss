@@ -116,12 +116,23 @@ button,
   cursor: pointer;
   box-shadow: 0 3px 6px rgba(0, 0, 0, .25);
   user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &.app-button--active,
   &.router-link-active {
     background-color: var(--app-color-secondary);
   }
 
+
+  .app-button__desc {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    font-family: Christiana_bold, serif;
+    text-transform: uppercase;
+  }
 }
 
 a {

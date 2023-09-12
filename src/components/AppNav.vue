@@ -7,7 +7,7 @@
         <icon-calculator></icon-calculator>
         <div
                 v-if="withDescription"
-                class="v-app-nav__link__desc"
+                class="app-button__desc"
         >RECOMMANDATIONS DE&nbsp;RÉMUNÉRATION POUR UNE&nbsp;EXPOSITION</div>
     </router-link>
     <router-link
@@ -17,8 +17,18 @@
         <icon-contract></icon-contract>
         <div
                 v-if="withDescription"
-                class="v-app-nav__link__desc"
+                class="app-button__desc"
         >GÉNÉRATEUR DE&nbsp;CONTRAT&#8209;MODÈLE POUR UNE&nbsp;EXPOSITION</div>
+    </router-link>
+    <router-link
+            :to="{name:'resources'}"
+            class="v-app-nav__link app-button"
+    >
+        <icon-folder/>
+        <div
+                v-if="withDescription"
+                class="app-button__desc"
+        >Resources à télécharger</div>
     </router-link>
   </div>
 </template>
@@ -30,10 +40,11 @@ import IconContract from "./IconContract.vue";
 import IconIsValidate from "./IconIsValidate.vue";
 import IconPen from "./IconPen.vue";
 import IconDelet from "./IconDelete.vue";
+import IconFolder from "./IconFolder.vue";
 
 export default defineComponent({
   name: 'AppNav',
-  components: {IconDelet, IconPen, IconIsValidate, IconContract, IconCalculator},
+  components: {IconFolder, IconDelet, IconPen, IconIsValidate, IconContract, IconCalculator},
 
     props: {
         withDescription: {
@@ -48,7 +59,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .v-app-nav {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -71,13 +82,6 @@ export default defineComponent({
   align-items: center;
   gap: 1rem;
   width: 18rem;
-}
-
-.v-app-nav__link__desc {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  line-height: 1.75rem;
-  font-family: Christiana_bold, serif;
 }
 
 </style>

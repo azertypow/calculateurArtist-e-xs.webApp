@@ -2,6 +2,10 @@
   display: flex;
   flex-wrap: wrap;
 
+  &.app-g--justify-center {
+    justify-content: center;
+  }
+
   &.app-g--align-start {
     align-items: flex-start;
   }

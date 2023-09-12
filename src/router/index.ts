@@ -34,6 +34,11 @@ const router = createRouter({
       name: 'contract',
       component: () => import('../views/ViewContract.vue'),
     },
+    {
+      path: '/resources',
+      name: 'resources',
+      component: () => import('../views/FilesResources.vue'),
+    },
   ]
 })
 
