@@ -37,13 +37,15 @@ export default defineComponent({
   border-bottom: solid 1px var(--app-color-border);
   text-align: center;
   box-sizing: border-box;
-  height: 7rem;
-  padding-top: 1rem;
+  height: 4rem;
+  padding-top: 0;
   display: block;
   box-shadow: none;
 
   h1 {
     margin: 0;
+    text-transform: uppercase;
+    font-size: 2.8rem;
   }
 }
 

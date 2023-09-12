@@ -59,11 +59,11 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .v-app-panel {
-  height: calc(100% - 7rem - 4rem - 2px);
+  height: calc(100% - 2rem - 4rem - 1px);
   width: 100%;
   background: var(--app-color-main);
   position: fixed;
-  top: 7rem;
+  top: 4rem;
   left: 0;
   overflow: auto;
 }
