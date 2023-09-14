@@ -1,9 +1,5 @@
 <template>
   <div class="v-app-panel">
-      <div
-              class="v-app-panel__close"
-              @click="closeLexicAndInfoPanels"
-      ><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m258.423-218.693-38.922-39.73L440.27-480 219.501-701.577l38.922-39.73L480-519.73l221.577-221.577 38.922 39.73L519.73-480l220.769 221.577-38.922 39.73L480-440.27 258.423-218.693Z"/></svg></div>
     <div class="v-app-panel__container" >
       <div class="app-with-gutter">
         <slot name="left" ></slot>
@@ -45,13 +41,11 @@ export default defineComponent({
 
 
     methods: {
-        closeLexicAndInfoPanels() {
-            this.globalStore.showInfo     = false
-            this.globalStore.showLexical  = false
-        },
         listernerEscapeKeyUp(ev: KeyboardEvent) {
-            console.log('key pressed', ev.code === 'Escape')
-            if (ev.code === 'Escape') this.closeLexicAndInfoPanels()
+            if (ev.code === 'Escape') {
+                this.globalStore.showInfo     = false
+                this.globalStore.showLexical  = false
+            }
         },
     },
 });
@@ -66,28 +60,6 @@ export default defineComponent({
   top: 4rem;
   left: 0;
   overflow: auto;
-}
-
-.v-app-panel__close {
-  cursor: pointer;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: white;
-  box-sizing: content-box;
-  padding: .5rem;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 100%;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, .25);
-  user-select: none;
-
-  > svg {
-    display: block;
-    height: 100%;
-    width: auto;
-    margin: auto;
-  }
 }
 
 .v-app-panel__container {

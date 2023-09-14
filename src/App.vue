@@ -10,6 +10,21 @@
       <app-header></app-header>
     </header>
 
+
+      <transition
+              name="close"
+      >
+        <div
+                v-if="globalStore.$state.showLexical || globalStore.$state.showInfo"
+                class="v-app__close"
+                @click="closeLexicAndInfoPanels"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                <path d="m258.423-218.693-38.922-39.73L440.27-480 219.501-701.577l38.922-39.73L480-519.73l221.577-221.577 38.922 39.73L519.73-480l220.769 221.577-38.922 39.73L480-440.27 258.423-218.693Z"/>
+            </svg>
+        </div>
+      </transition>
+
     <main
         class="v-app__main"
     >
@@ -61,7 +76,20 @@ export default defineComponent({
     waitPDFExport(): boolean {
         return useGlobalStore().waitPDFExport
     }
-  }
+  },
+
+  data() {
+      return {
+          globalStore: useGlobalStore(),
+      }
+  },
+
+  methods: {
+      closeLexicAndInfoPanels() {
+          this.globalStore.showInfo     = false
+          this.globalStore.showLexical  = false
+      },
+  },
 
 });
 </script>
@@ -139,6 +167,41 @@ export default defineComponent({
   100% {
     opacity: 0;
   }
+}
+
+
+.v-app__close {
+  cursor: pointer;
+  position: fixed;
+  top: 6rem;
+  right: 2rem;
+  background: white;
+  box-sizing: content-box;
+  padding: .5rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .25);
+  user-select: none;
+  z-index: 100000;
+
+  > svg {
+    display: block;
+    height: 100%;
+    width: auto;
+    margin: auto;
+  }
+}
+
+.close-enter-active,
+.close-leave-active {
+  transition: opacity .25s ease, transform .25s ease-in-out;
+}
+
+.close-enter-from,
+.close-leave-to {
+  opacity: 0;
+  transform: rotate(45deg) scale(0.90);
 }
 
 </style>
