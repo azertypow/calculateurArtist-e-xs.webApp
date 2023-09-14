@@ -391,18 +391,21 @@
                @click="openInfo"
                :class="{'app-with-circle-status--active': globalStore.showInfo}"
           >À propos</div>
-          <div class="app-with-circle-status"
+          <div
+              style="user-select: none; display: flex; align-items: center; gap: .5rem;"
                v-if="!isHome"
                @click="globalStore.showHelpers = !globalStore.showHelpers"
                :class="{'app-with-circle-status--active': globalStore.showHelpers}"
-          >Aide</div>
+          >
+              <div
+                      class="app-button--toggle app-button--toggle--is-small"
+                      :class="{'is-active': globalStore.showHelpers}"
+              ></div>
+              Aide</div>
         </div>
         <div
             class="v-app-footer__info__container__box"
         >
-          <div>
-            <span>Site en version beta</span>
-          </div>
           <div>
             <a  style="text-decoration: none;
                 box-shadow: none"
