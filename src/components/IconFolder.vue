@@ -26,8 +26,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .v-icon-folder {
-  width: 8rem;
-  height: 8rem;
+  width: 10rem;
+  height: 10rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,6 +37,6 @@ svg {
   display: block;
   margin: auto;
   width: auto;
-  height: 8rem;
+  height: 100%;
 }
 </style>
