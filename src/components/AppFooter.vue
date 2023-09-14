@@ -399,7 +399,7 @@
             <a  style="text-decoration: none;
                 box-shadow: none"
                 target="_blank"
-                href="mailto:communication+calculateur@visarte-geneve.ch"
+                href="mailto:communication+calculateur@visarte-geneve.ch?Subject=travaildesartistes.ch"
             >Suggestion&nbsp;?</a>
           </div>
         </div>
