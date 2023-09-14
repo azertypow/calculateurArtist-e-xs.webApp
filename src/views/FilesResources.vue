@@ -41,7 +41,7 @@ export default defineComponent({
 
 })</script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 h2 {
     text-align: center;
     border-top: solid 1px var(--app-color-border);
