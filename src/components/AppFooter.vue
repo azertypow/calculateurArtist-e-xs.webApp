@@ -158,7 +158,7 @@
               <h4>Crédits</h4>
               <p>
                   Plateforme pilotée par&nbsp;:
-                  <br><a href="https://www.visarte-geneve.ch/" >Visarte.Genève, en collaboration avec Visarte Suisse</a>
+                  <br><a target="_blank" href="https://www.visarte-geneve.ch/" >Visarte.Genève, en collaboration avec Visarte Suisse</a>
               </p>
 
               <p>Grille de rémunération :
@@ -192,10 +192,10 @@
               </p>
 
               <p>Bibliothèques pour la création du PDF:
-                  <br><a href="">html2pdf.js</a>
+                  <br><a target="_blank" href="https://ekoopmans.github.io/html2pdf.js/">html2pdf.js</a>
               </p>
 
-              <p>travaildesartistes.ch est le résultat d’un mandat confié par le Service culturel de la Ville de Genève et l'Office cantonal de la culture et du sport.</p>
+              <p>travaildesartistes.ch est le résultat d’un mandat confié par le Service culturel de la <a href="https://www.geneve.ch/fr" target="_blank" >Ville de Genève</a> et <a href="https://www.ge.ch/organisation/office-cantonal-culture-du-sport" target="_blank" >l'Office cantonal de la culture et du sport</a>.</p>
 
           </template>
 
@@ -238,20 +238,28 @@
 
                   <h4>Adaptation d’une ou plusieurs œuvre(s) existante(s)</h4>
                   <p>Œuvre(s) ayant déjà été réalisée(s), qu’elle(s) ai(en)t été présentée(s) publiquement ou non et
-                      qui nécessite(nt) des modifications. Conception d’une ou plusieurs nouvelles œuvres Œuvre(s)
-                      inédite(s) et non encore réalisée(s), n’ayant jamais été présentée(s) publiquement et/ou
-                      développée(s) à la demande de la structure.
+                      qui nécessite(nt) des modifications.
                       <br>↦ Afin de déterminer quelle catégorie s’applique à une
                       œuvre, il convient d’utiliser celle étant la plus favorable pour l’artiste. Si une exposition
                       regroupe des œuvres déjà existantes et de nouvelles créations, alors c’est la catégorie relevant
-                      de la nouvelle œuvre qui est appliquée.</p>
-
+                      de la nouvelle œuvre qui est appliquée.
+                  </p>
 
                   <h4>Collectif d’artistes</h4>
                   <p>
                       Groupe d’artistes se définissant sous une même entité. Dans le cadre de ce document, à chaque
                       fois que le terme «artiste» apparaît de manière générique, il peut être remplacé par « collectif d’artistes ».
                   </p>
+
+                  <h4>Conception d’une ou plusieurs nouvelles œuvres Œuvre(s)</h4>
+                  <p>inédite(s) et non encore réalisée(s), n’ayant jamais été présentée(s) publiquement et/ou
+                      développée(s) à la demande de la structure.
+                      <br>↦ Afin de déterminer quelle catégorie s’applique à une
+                      œuvre, il convient d’utiliser celle étant la plus favorable pour l’artiste. Si une exposition
+                      regroupe des œuvres déjà existantes et de nouvelles créations, alors c’est la catégorie relevant
+                      de la nouvelle œuvre qui est appliquée.
+                  </p>
+
 
                   <h4>Événement avec préparation</h4>
                   <p>Présentation publique nécessitant un temps de préparation.</p>
@@ -337,7 +345,12 @@
 
                   <h4>Œuvre(s) existante(s)</h4>
                   <p>Œuvre(s) ayant déjà été réalisée(s), qu’elle(s) ai(en)t été présentée(s) publiquement ou non et
-                      qui ne nécessite(nt) aucune modification.</p>
+                      qui ne nécessite(nt) aucune modification.
+                      <br>↦ Afin de déterminer quelle catégorie s’applique à une
+                      œuvre, il convient d’utiliser celle étant la plus favorable pour l’artiste. Si une exposition
+                      regroupe des œuvres déjà existantes et de nouvelles créations, alors c’est la catégorie relevant
+                      de la nouvelle œuvre qui est appliquée.
+                  </p>
 
                   <h4>Prestations supplémentaires</h4>
                   <p>Ensemble de prestations qui débordent le cadre fixé par les honoraires de conception et qui font
