@@ -6,19 +6,18 @@
             ></app-nav>
         </div>
 
-        <h2 class="app-with-gutter">Ressources</h2>
-
         <div class="v-files-resources__section">
             <div
-                class="app-g app-g--justify-center"
+                class="v-files-resources__section__item"
             >
                 <a
                     class="app-button app-button__variante"
                     href="/calculateurArtist-e-xs.webApp/tableau_remuneration_v3.pdf"
                     download="tableau_remuneration.pdf"
-                    style="flex-direction: row"
                 >
-                    <icon-download/>
+                    <icon-download
+                        :small-size="true"
+                    />
                     <div
                         class="app-button__desc"
                     >GRILLE DE RÉMUNÉRATION DES ARTISTES</div>
@@ -54,6 +53,12 @@ h2 {
 .v-files-resources__section {
     box-sizing: border-box;
     border-top: solid 1px var(--app-color-border);
-    padding: 2rem 1rem 3rem;
+}
+
+.v-files-resources__section__item {
+    border-bottom: solid 1px var(--app-color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 </style>

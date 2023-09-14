@@ -128,6 +128,11 @@ button,
   &.app-button__variante {
     background-color: transparent;
     box-shadow: none;
+    flex-direction: row;
+
+    .app-button__desc {
+      margin: 0 0 0 1rem;
+    }
   }
 
   .app-button__desc {
