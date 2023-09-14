@@ -157,7 +157,7 @@
           <template v-slot:right >
               <h4>Crédits</h4>
               <p>
-                  <br>Plateforme pilotée par&nbsp;:
+                  Plateforme pilotée par&nbsp;:
                   <br><a href="https://www.visarte-geneve.ch/" >Visarte.Genève, en collaboration avec Visarte Suisse</a>
               </p>
 
