@@ -23,6 +23,24 @@
                     >GRILLE DE RÉMUNÉRATION DES ARTISTES</div>
                 </a>
             </div>
+            <div
+                class="v-files-resources__section__item"
+            >
+                <div
+                    style=" margin-top: 1rem;
+                            margin-bottom: 1rem;
+                            font-size: 1.5rem;
+                            line-height: 1.75rem;
+                            font-family: Christiana_bold, serif;
+                            text-transform: uppercase;
+                            text-align: center;
+                            user-select: none;
+                    "
+                >plus de document à venir <div
+                    class="app__export-loader__animation"
+                ><span>.</span><span>.</span><span>.</span></div>
+                </div>
+            </div>
         </div>
     </div>
 </template>

@@ -46,7 +46,7 @@
                   class="v-app__export-loader__text"
           >Export PDF
               <div
-                      class="v-app__export-loader__animation"
+                      class="app__export-loader__animation"
               ><span>.</span><span>.</span><span>.</span></div>
           </div>
       </div>
@@ -137,38 +137,7 @@ export default defineComponent({
     left: 50%;
     transform: translate(-50%, -50%);
   }
-
-  .v-app__export-loader__animation {
-    display: inline-block;
-
-    >* {
-      animation-name: pdf-export-animation;
-      animation-duration: .75s;
-      animation-delay: 0ms;
-      animation-iteration-count: infinite;
-    }
-
-    >*:nth-child(2) {
-      animation-delay: 500ms;
-    }
-    >*:nth-child(3) {
-      animation-delay: 1000ms;
-    }
-  }
 }
-
-@keyframes pdf-export-animation {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 
 .v-app__close {
   cursor: pointer;
