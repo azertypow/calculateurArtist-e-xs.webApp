@@ -18,8 +18,8 @@
           ref="total"
       >
         <div class="app-g__coll-2-12 app-g__coll-sm-0-12 app-with-gutter"></div>
-        <div class="app-g__coll-4-12 app-g__coll-sm-3-12 app-with-gutter" >TOTAL</div>
-        <div class="v-view-calculator__result__result-container app-g__coll-6-12 app-g__coll-sm-9-12 app-with-gutter"
+        <div class="app-g__coll-2-12 app-g__coll-sm-3-12 app-with-gutter" >TOTAL</div>
+        <div class="v-view-calculator__result__result-container app-g__coll-8-12 app-g__coll-sm-9-12 app-with-gutter"
         >
           <div
               v-if="typeof globalTotal === 'number'"
