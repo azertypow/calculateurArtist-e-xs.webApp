@@ -44,9 +44,9 @@
     <div
         class="app-g"
     >
-      <div class="app-g__coll-2-12" ></div>
+      <div class="app-g__coll-sm-0-12 app-g__coll-2-12" ></div>
       <div
-          class="app-g__coll-10-12 v-app-section__help"
+          class="app-g__coll-sm-12-12 app-g__coll-10-12 v-app-section__help"
           v-html="section.help"
           v-if="showHelpers"
       ></div>
@@ -158,18 +158,28 @@ export default defineComponent({
   position: relative;
 
   &:before {
-    content: '';
+    content: 'Aide';
     position: absolute;
     top: 4rem;
     left: 0;
     transform: translateX( calc(-100% - 1rem ));
-
+    padding-left: 3rem;
     width: 1rem;
     height: 2rem;
     background-image: url("../assets/icons/lightbulb.svg");
     background-size: 9.268px auto;
     background-position: center center;
     background-repeat: no-repeat;
+
+    @media (max-width: 700px) {
+      top: 1.5rem;
+      left: 0;
+      transform: none;
+      width: 2.5rem;
+      height: 2rem;
+      background-size: 12px auto;
+      background-position: 10px center;
+    }
   }
 
   > ul {
