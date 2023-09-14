@@ -246,8 +246,8 @@
                       fois que le terme «artiste» apparaît de manière générique, il peut être remplacé par « collectif d’artistes ».
                   </p>
 
-                  <h4>Conception d’une ou plusieurs nouvelles œuvres Œuvre(s)</h4>
-                  <p>inédite(s) et non encore réalisée(s), n’ayant jamais été présentée(s) publiquement et/ou
+                  <h4>Conception d’une ou plusieurs nouvelles œuvres</h4>
+                  <p>Œuvre(s) inédite(s) et non encore réalisée(s), n’ayant jamais été présentée(s) publiquement et/ou
                       développée(s) à la demande de la structure.
                       <br>↦ Afin de déterminer quelle catégorie s’applique à une
                       œuvre, il convient d’utiliser celle étant la plus favorable pour l’artiste. Si une exposition
