@@ -53,6 +53,7 @@ h2 {
 .v-files-resources__section {
     box-sizing: border-box;
     border-top: solid 1px var(--app-color-border);
+    margin-top: 6rem;
 }
 
 .v-files-resources__section__item {
@@ -60,5 +61,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 </style>
