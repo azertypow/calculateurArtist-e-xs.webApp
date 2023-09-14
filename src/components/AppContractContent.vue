@@ -439,8 +439,8 @@
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
           en vue de leur présentation publique, lors de l’exposition
-          <content-editable placeholder="INTITULEE XXX" :value="contractStore.entitled"
-                            @update:value="contractStore.entitled = $event"/>
+          <content-editable placeholder="INTITULEE XXX" :value="contractStore.exposition_name"
+                            @update:value="contractStore.exposition_name = $event"/>
           , qui se tiendra du
           <content-editable placeholder="date du contrat" :value="contractStore.info_date_expo_from"
                             @update:value="contractStore.info_date_expo_from = $event"/>
