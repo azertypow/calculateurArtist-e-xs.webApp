@@ -396,7 +396,11 @@
             <span>Site en version beta</span>
           </div>
           <div>
-            <a style="text-decoration: none; box-shadow: none" target="_blank" href="" >Suggestion&nbsp;?</a>
+            <a  style="text-decoration: none;
+                box-shadow: none"
+                target="_blank"
+                href="mailto:communication+calculateur@visarte-geneve.ch"
+            >Suggestion&nbsp;?</a>
           </div>
         </div>
       </div>
