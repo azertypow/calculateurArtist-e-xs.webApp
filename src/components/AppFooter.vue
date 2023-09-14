@@ -393,7 +393,7 @@
           >À propos</div>
           <div
               style="user-select: none; display: flex; align-items: center; gap: .5rem;"
-               v-if="!isHome"
+               v-if="isCalculateur"
                @click="globalStore.showHelpers = !globalStore.showHelpers"
                :class="{'app-with-circle-status--active': globalStore.showHelpers}"
           >
