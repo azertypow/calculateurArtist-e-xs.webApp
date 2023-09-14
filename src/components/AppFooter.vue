@@ -41,14 +41,14 @@
               v-if="typeof globalTotal === 'number'"
               class="v-app-footer__content__artiste-option"
           >
+              <div
+                      class="app-button--toggle app-button--toggle--is-small"
+                      @click="globalStore.isACollective = !globalStore.isACollective"
+                      :class="{'is-active': globalStore.isACollective}"
+              ></div>
               <div>
                   Collectif d’artiste?
               </div>
-              <div
-                  class="app-button--toggle app-button--toggle--is-small"
-                  @click="globalStore.isACollective = !globalStore.isACollective"
-                  :class="{'is-active': globalStore.isACollective}"
-              ></div>
           </div>
       </div>
     </div>
@@ -580,6 +580,7 @@ export default defineComponent({
       position: relative;
 
       .v-app-footer__content__artiste-option {
+        user-select: none;
           position: absolute;
           right: 0;
           top: 50%;

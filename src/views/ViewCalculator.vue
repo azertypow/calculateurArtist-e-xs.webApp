@@ -25,12 +25,13 @@
           <div
               v-if="typeof globalTotal === 'number'"
           >résultat: {{globalTotal}}.— CHF
-            <div class="v-view-calculator__result__option">Collectif d’artiste?
+            <div class="v-view-calculator__result__option">
               <div
                   class="app-button--toggle"
                   @click="globalStore.isACollective = !globalStore.isACollective"
                   :class="{'is-active': globalStore.isACollective}"
               ></div>
+                Collectif d’artiste?
             </div>
             <div
                     v-if="globalStore.isACollective"
