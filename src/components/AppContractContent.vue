@@ -1342,6 +1342,7 @@ ul.v-app-contract-content__lexical {
     //display: none;
     //color: coral;
     opacity: .5;
+    display: none;
   }
 
   .dev-error {
