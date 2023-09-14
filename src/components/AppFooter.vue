@@ -103,9 +103,15 @@
               </ul>
 
               <h4>Le calculateur et la grille de rémunération</h4>
-              <p>Les montants du calculateur sont basés sur ceux indiqués dans la grille. Ces outils permettent une meilleure prise en compte de la valeur du travail des artistes et de la réalité financière d’un projet artistique : recherche, conception, développement, création d’œuvre, accrochage, communication, médiation, rencontres publiques, etc.</p>
+              <p>Les montants du calculateur sont basés sur ceux indiqués dans la grille. Grille et calculateur indiquent la rémunération minimum par artiste, définie en fonction de quatre critères principaux&nbsp;:</p>
+              <ul>
+                  <li>Le budget annuel de la structure ou du projet (hors frais fixes de loyer)</li>
+                  <li>La nature de l’œuvre (nouvelle production, adaptation ou œuvre existante)</li>
+                  <li>Le nombre d’artistes participant à l’exposition</li>
+                  <li>La durée de l’exposition</li>
+              </ul>
+              <p>Le calculateur de rémunération prend la forme d’un dérouleur et permet un calcul automatique et circonstancié, pour l’établissement du montant de la rémunération de l’artiste. La grille de rémunération est présentée sous forme de tableau pdf, à&nbsp;la&nbsp;demande des structures, pour l’établissement de leurs budgets.</p>
 
-              <p>Le calculateur de rémunération prend la forme d’un dérouleur et permet un calcul automatique et circonstancié, pour l’établissement du montant de la rémunération de l’artiste. La grille de rémunération est présentée sous forme de tableau pdf, à la demande des structures, pour l’établissement de leurs budgets.</p>
 
               <p>→ Ces chiffres offrent une base de référence à laquelle doit s’ajouter la prise en compte du contexte
                   spécifique à chaque collaboration. Il s’agit de montants minimaux qui permettent la négociation des
@@ -127,15 +133,6 @@
                   co-production entre la structure et l’artiste. Dans ce cas, l’un et l’autre collaborent à des demandes
                   de soutien supplémentaires et s’engagent à les mener à bien.</p>
 
-
-              <h4>Comment cela fonctionne&nbsp;?</h4>
-              <p>Grille et calculateur indiquent la rémunération minimum par artiste, définie en fonction de quatre critères principaux&nbsp;:</p>
-              <ul>
-                  <li>Le budget annuel de la structure ou du projet (hors frais fixes de loyer)</li>
-                  <li>La nature de l’œuvre (nouvelle production, adaptation ou œuvre existante)</li>
-                  <li>Le nombre d’artistes participant à l’exposition</li>
-                  <li>La durée de l’exposition</li>
-              </ul>
 
               <p>Les collectifs d’artistes sont rémunérés selon un coefficient de 1,5.</p>
 
