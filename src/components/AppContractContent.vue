@@ -1200,7 +1200,7 @@
       </div>
 
       <div
-          @click="contractStore.objectList.push({assurance:'',year:'',material:'',dimensions:''})"
+          @click="contractStore.objectList.push({title:'', assurance:'',year:'',material:'',dimensions:''})"
           class="app-button remove-for-pdf-export"
           style="display: inline-block; margin-top: 2.5rem">[+] ajouter une œuvre
       </div>
