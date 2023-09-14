@@ -167,7 +167,10 @@ export default defineComponent({
   transition: opacity .25s ease, transform .25s ease-in-out;
 }
 
-.close-enter-from,
+.close-enter-from {
+  opacity: 0;
+  transform: rotate(-45deg) scale(0.90);
+}
 .close-leave-to {
   opacity: 0;
   transform: rotate(45deg) scale(0.90);
