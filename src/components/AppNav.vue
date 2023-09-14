@@ -70,6 +70,7 @@ export default defineComponent({
     gap: 2rem;
     padding-top: 0;
     padding-bottom: 1rem;
+    align-items: center;
   }
 }
 
