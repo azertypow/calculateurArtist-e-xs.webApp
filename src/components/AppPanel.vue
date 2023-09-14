@@ -106,3 +106,11 @@ export default defineComponent({
   }
 }
 </style>
+
+<style lang="scss">
+.v-app-panel__container {
+  h4 {
+    margin-top: 6rem;
+  }
+}
+</style>
