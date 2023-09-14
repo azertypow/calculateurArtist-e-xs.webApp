@@ -2,7 +2,6 @@
   <div class="v-view-calculator app-view">
     <div class="v-view-calculator__nav-box" >
         <app-nav
-                :with-description = 'true'
         ></app-nav>
     </div>
     <h2 class="app-with-gutter">RECOMMANDATIONS DE RÉMUNÉRATION POUR UNE EXPOSITION</h2>

@@ -158,7 +158,7 @@ export default defineComponent({
   position: relative;
 
   &:before {
-    content: 'Aide';
+    content: '';
     position: absolute;
     top: 4rem;
     left: 0;
@@ -172,6 +172,7 @@ export default defineComponent({
     background-repeat: no-repeat;
 
     @media (max-width: 700px) {
+      content: 'Aide';
       top: 1.5rem;
       left: 0;
       transform: none;

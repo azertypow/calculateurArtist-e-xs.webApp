@@ -1,12 +1,16 @@
 <template>
-  <div class="v-app-nav">
+  <div
+          class="v-app-nav"
+          :class="{
+            'remove-description-mobile-version': removeDescriptionMobileVersion,
+          }"
+  >
     <router-link
             :to="{name:'calculator'}"
             class="v-app-nav__link app-button"
     >
         <icon-calculator></icon-calculator>
         <div
-                v-if="withDescription"
                 class="app-button__desc"
         >RECOMMANDATIONS DE&nbsp;RÉMUNÉRATION POUR UNE&nbsp;EXPOSITION</div>
     </router-link>
@@ -16,7 +20,6 @@
     >
         <icon-contract></icon-contract>
         <div
-                v-if="withDescription"
                 class="app-button__desc"
         >GÉNÉRATEUR DE&nbsp;CONTRAT&#8209;MODÈLE POUR UNE&nbsp;EXPOSITION</div>
     </router-link>
@@ -26,7 +29,6 @@
     >
         <icon-folder/>
         <div
-                v-if="withDescription"
                 class="app-button__desc"
         >Ressources à télécharger</div>
     </router-link>
@@ -47,9 +49,9 @@ export default defineComponent({
   components: {IconFolder, IconDelet, IconPen, IconIsValidate, IconContract, IconCalculator},
 
     props: {
-        withDescription: {
+        removeDescriptionMobileVersion: {
             type: Boolean,
-            default: false,
+            default: true,
             required: false,
         },
     },
@@ -83,6 +85,14 @@ export default defineComponent({
   align-items: center;
   gap: 1rem;
   width: 18rem;
+}
+
+.remove-description-mobile-version {
+  .app-button__desc {
+    @media (max-width: 700px) {
+      display: none;
+    }
+  }
 }
 
 </style>

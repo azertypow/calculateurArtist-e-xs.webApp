@@ -2,7 +2,7 @@
   <div class="v-home-view app-view">
       <div class="v-home-view__nav-box" >
           <app-nav
-                  :with-description = 'true'
+                  :remove-description-mobile-version="false"
           ></app-nav>
       </div>
   </div>

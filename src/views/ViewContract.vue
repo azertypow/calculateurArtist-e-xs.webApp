@@ -2,7 +2,6 @@
   <div class="v-view-contract app-view">
     <div class="v-view-contract__nav-box" >
         <app-nav
-                :with-description = 'true'
         ></app-nav>
     </div>
     <h2 class="app-with-gutter">GÉNÉRATEUR DE CONTRAT-MODÈLE POUR UNE EXPOSITION</h2>

@@ -2,7 +2,6 @@
     <div class="v-files-resources app-view">
         <div class="v-home-view__nav-box">
             <app-nav
-                :with-description='true'
             ></app-nav>
         </div>
 
