@@ -34,7 +34,7 @@
                   class="app-g app-g--align-center app-g--justify-end"
                   style="gap: 2rem"
           >
-              <div style="font-size: 2rem; line-height: 4rem" >résultat: {{globalTotal}}.— CHF</div>
+              <div style="font-size: 2rem; line-height: 4rem" >TOTAL&emsp;CHF {{globalTotal}}<template v-if="globalTotal % 1 === 0">.—</template></div>
           </div>
         <div v-else                                 >{{globalTotal.errorMessage}}</div>
           <div

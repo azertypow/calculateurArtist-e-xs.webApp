@@ -24,7 +24,7 @@
         >
           <div
               v-if="typeof globalTotal === 'number'"
-          >résultat: {{globalTotal}}.— CHF
+          >CHF {{globalTotal}}<template v-if="globalTotal % 1 === 0">.—</template>
             <div class="v-view-calculator__result__option">
               <div
                   class="app-button--toggle"
