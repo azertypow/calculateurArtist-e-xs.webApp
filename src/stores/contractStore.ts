@@ -80,6 +80,7 @@ export interface IStateContractStore {
     }[]
 
     objectList: {
+        title: string
         year: string
         dimensions: string
         material: string
@@ -166,6 +167,7 @@ export const useContractStore = defineStore('contractStore', {
 
             objectList: [
                 {
+                    title: '',
                     year: '',
                     dimensions: '',
                     material: '',

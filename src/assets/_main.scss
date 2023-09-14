@@ -297,6 +297,10 @@ a {
   padding: 1rem;
   border-radius: 2rem;
 
+  h4 {
+    margin-bottom: 2rem !important;
+  }
+
   > *:first-child {
     margin-top: 0;
   }

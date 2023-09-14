@@ -1170,7 +1170,10 @@
 
 <!--            list-->
             <div class="app-object-list">
-              <h4>Titre de l’œuvre :</h4>
+              <h4>Titre de l’œuvre :
+                  <content-editable placeholder="Titre" :value="object.title"
+                                    @update:value="object.title        = $event"/>
+              </h4>
               <p>Année de production&nbsp;:
                 <content-editable placeholder="Année de production" :value="object.year"
                                   @update:value="object.year        = $event"/>
