@@ -139,23 +139,13 @@
               <h4>Le contrat d’exposition</h4>
               <p>Ce générateur de contrats-modèles est une base qui vise à préciser les conditions de travail des artistes, ainsi qu’à favoriser la négociation de leurs engagements. Le contrat détaille les éléments essentiels qui devraient être négociés en amont des prestations artistiques. Il permet ainsi de clarifier le cadre dans lequel les parties évoluent afin d'anticiper de potentiels malentendus et litiges.</p>
               <p>Le contrat cherche à apporter un cadre légal protégeant aussi bien les artistes que les structures et prend ainsi en compte les intérêts des deux parties. Toutefois, dans la mesure où chaque situation est particulière, vous avez la possibilité d’adapter le modèle à vos besoins. En cas de doute, n’hésitez pas à consulter une permanence ou à prendre des conseils juridiques.</p>
-
-              <h4>Note</h4>
-              <p>Visarte.Genève / les auteur·ices déclinent toute responsabilité du succès ou du non-succès de cette
-                  plateforme. Ces modèles ne dispensent pas de négociations et ne prémunissent pas contre tout problème
-                  qui pourrait survenir lors de leur usage.
-                  <br>Le contrat a été créé sur la base d'un document revu par Lab-of-arts, et adopté par
-                  Visarte.Genève.
-              </p>
-
-
           </template>
 
           <template v-slot:right >
               <h4>Crédits</h4>
               <p>
                   Plateforme pilotée par&nbsp;:
-                  <br><a target="_blank" href="https://www.visarte-geneve.ch/" >Visarte.Genève, en collaboration avec Visarte Suisse</a>
+                  <br><a target="_blank" href="https://www.visarte-geneve.ch/" >Visarte.Genève</a>, en collaboration avec <a target="_blank" href="https://visarte.ch/fr/">Visarte Suisse</a>
               </p>
 
               <p>Grille de rémunération :
@@ -193,6 +183,14 @@
               </p>
 
               <p>travaildesartistes.ch est le résultat d’un mandat confié par le Service culturel de la <a href="https://www.geneve.ch/fr" target="_blank" >Ville de Genève</a> et <a href="https://www.ge.ch/organisation/office-cantonal-culture-du-sport" target="_blank" >l'Office cantonal de la culture et du sport</a>.</p>
+
+              <h4>Note</h4>
+              <p>Visarte.Genève / les auteur·ices déclinent toute responsabilité du succès ou du non-succès de cette
+                  plateforme. Ces modèles ne dispensent pas de négociations et ne prémunissent pas contre tout problème
+                  qui pourrait survenir lors de leur usage.
+                  <br>Le contrat a été créé sur la base d'un document revu par Lab-of-arts, et adopté par
+                  Visarte.Genève.
+              </p>
 
           </template>
 
