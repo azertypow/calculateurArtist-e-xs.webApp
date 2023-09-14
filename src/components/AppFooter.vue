@@ -569,8 +569,8 @@ export default defineComponent({
     background: var(--app-color-main);
     border-top: solid 1px var(--app-color-border);
     box-sizing: border-box;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     box-shadow: 0 10px 20px 10px hsl(114.8deg 100% 75%);
   }
 
@@ -578,9 +578,8 @@ export default defineComponent({
     display: flex;
     flex-direction: row-reverse;
     margin: auto;
-    max-width: var(--app-max-width);
-      justify-content: center;
-      position: relative;
+    justify-content: center;
+    position: relative;
 
       .v-app-footer__content__artiste-option {
         user-select: none;
