@@ -60,6 +60,7 @@ export default defineComponent({
   top: 4rem;
   left: 0;
   overflow: auto;
+  z-index: 10;
 }
 
 .v-app-panel__container {

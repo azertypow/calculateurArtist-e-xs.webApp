@@ -598,6 +598,7 @@ export default defineComponent({
     width: 100%;
     background: var(--app-color-main);
     border-top: solid 1px var(--app-color-border);
+      z-index: 1;
   }
 
   .v-app-footer__status__container {
@@ -672,6 +673,7 @@ export default defineComponent({
     width: 100%;
     background: var(--app-color-main);
     border-top: solid 1px var(--app-color-border);
+    box-shadow: 0 10px 20px 10px hsl(114.8deg 100% 75%);
 
     .v-app-footer__info__container {
       max-width: var(--app-max-width);
