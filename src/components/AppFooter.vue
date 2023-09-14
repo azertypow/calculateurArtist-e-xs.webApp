@@ -452,21 +452,13 @@ export default defineComponent({
 
       async pdfExport() {
 
-          console.log('0')
-
           const htmlToExport = document.querySelector('.v-app-contract-content')
           if (!(htmlToExport instanceof HTMLElement)) return
 
-          console.log('2')
-
           const containerForHtmlToExport = document.createElement('div')
-
-          console.log('3')
 
           containerForHtmlToExport.appendChild(htmlToExport.cloneNode(true))
           containerForHtmlToExport.classList.add('to-export')
-
-          console.log('4-2')
 
           const toSaveContainer = html2pdf().set({
               margin: [100, 0, 20, 0],
@@ -479,11 +471,7 @@ export default defineComponent({
               },
           })
 
-          console.log('5')
-
           await toSaveContainer
-
-          console.log('6')
 
           // toSaveContainer.prop.container.querySelector('.v-app-contract-content').style.color = 'blue'
 
@@ -500,8 +488,11 @@ export default defineComponent({
                       pdf.addImage(imageHeader, "PNG", 0, 0, 790, 74)
                       pdf.text(50, 1100, `P. ${i}/${totalPages}`)
                   }
+                  console.log("8")
               })
               .save()
+
+          console.log("7")
       },
   },
 
