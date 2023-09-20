@@ -11,7 +11,7 @@
             >
                 <a
                     class="app-button app-button__variante"
-                    href="/calculateurArtist-e-xs.webApp/grille_remuneration_20sept-23.pdf"
+                    href="/grille_remuneration_20sept-23.pdf"
                     download="tableau_remuneration.pdf"
                 >
                     <icon-download
