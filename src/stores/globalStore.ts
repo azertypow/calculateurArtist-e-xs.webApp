@@ -27,7 +27,7 @@ const calculatorSection_1 = new OptionCalculatorSection(
                 <li>Petite : moins de 50 000 CHF</li>
                 <li>Moyenne : entre 50 000 et 250 000 CHF</li>
                 <li>Grande : entre 250 000 et 500 000 CHF</li>
-                <li>Très grande : supérieur à 500 000 CHF</li>
+                <li>Très grande : supérieure à 500 000 CHF</li>
             </ul>
             
             <p>Il est recommandé aux parties de remplir conjointement le formulaire en ligne.</p>
@@ -42,7 +42,7 @@ const calculatorSection_1 = new OptionCalculatorSection(
 const calculatorSection_2 = new OptionCalculatorSection(
         {index : 2, title : 'Exposant·e·x·s', required : true,
 help:`
-<p>Choisir l'une des options par rapport au nombre de artistes invité·e·x·s à exposer. 
+<p>Choisir l'une des options par rapport au nombre dartistes invité·e·x·s à exposer. 
 </br>Un collectif d’artistes est considéré dans ce décompte comme une personne.</p>
 `}
     ).addSubSection(
