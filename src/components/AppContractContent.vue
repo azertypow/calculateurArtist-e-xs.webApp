@@ -1036,7 +1036,7 @@
         <p>En-dehors des clauses figurant ci-dessus (sous VI. 1) et des cessions de droits strictement nécessaires à la bonne exécution du
           contrat, l’Artiste conserve l’entier des droits d’auteur sur l’Œuvre.</p>
 
-        <p>L’Artiste a droit à une rémunération
+        <p>L’Artiste a droit à une rémunération de
           <content-editable placeholder="pourcentage" :value="contractStore.artiste_renumerationPercent"
                             @update:value="contractStore.artiste_renumerationPercent = $event"/>%
           sur le montant de rémunération pour la cession de certains droits
