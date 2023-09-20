@@ -1081,7 +1081,7 @@
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
           l’interpelle immédiatement par écrit et l’enjoint à respecter ses obligations. Elle lui octroie un délai de 30
-          jours s’exécuter.
+          jours pour s’exécuter.
         </p>
 
         <p>Si l’Artiste persiste dans la violation de ses obligations d’une manière qui empêche la bonne exécution
