@@ -35,7 +35,7 @@
                             text-align: center;
                             user-select: none;
                     "
-                >plus de document à venir <div
+                >plus de documents à venir <div
                     class="app__export-loader__animation"
                 ><span>.</span><span>.</span><span>.</span></div>
                 </div>
