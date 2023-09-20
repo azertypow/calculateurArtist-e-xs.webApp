@@ -677,6 +677,7 @@
         >Le versement sera effectué sur réception d’une facture payable dans les 30 jours.</p>
 
         <div
+                class="remove-for-pdf-export"
                 style="margin-top: 8rem"
         >
           <div
@@ -717,6 +718,7 @@
 
 
           <div
+                  class="remove-for-pdf-export"
                   style="margin-top: 8rem"
           >
               <div
