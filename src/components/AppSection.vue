@@ -2,7 +2,7 @@
   <div class="v-app-section">
     <div class="v-app-section__required-info">
       <span v-if="classifiedSection.value.required" class="v-app-section__required-info__true">*</span>
-      <span v-else          class="v-app-section__required-info__false">Facultatif</span>
+      <span v-else          class="v-app-section__required-info__false">Optionnel</span>
     </div>
     <div
         class="app-g app-g--align-center"
