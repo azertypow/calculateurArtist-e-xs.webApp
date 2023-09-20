@@ -498,7 +498,7 @@ export default defineComponent({
               this.pdfExport().then(() => {
                   window.setTimeout(() => {
                       this.globalStore.waitPDFExport = false
-                  }, 1_000)
+                  }, 2_000)
               })
           }, 500)
       },
