@@ -7,7 +7,7 @@
     "build--prod": "run-p type-check build-only--prod",
     "preview": "vite preview",
     "build-only": "vite build --outDir docs/ --base /calculateurArtist-e-xs.webApp/",
-    "build-only--prod": "vite build --outDir prod/ --base /calculateurArtist-e-xs.webApp/",
+    "build-only--prod": "vite build --outDir prod/ --base /",
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
