@@ -516,6 +516,12 @@ export default defineComponent({
             containerForHtmlToExport.appendChild(htmlToExport.cloneNode(true))
             containerForHtmlToExport.classList.add('to-export')
 
+            containerForHtmlToExport.querySelectorAll('.app-font-remove').forEach(value => {
+                if( ! (value instanceof HTMLElement) ) return
+                if( ! (value.parentNode instanceof Node) ) return
+                value.parentNode.removeChild(value)
+            })
+
             const toSaveContainer = html2pdf().set({
                 margin: [100, 0, 20, 0],
                 html2canvas: {
