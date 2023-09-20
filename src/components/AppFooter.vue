@@ -117,7 +117,7 @@
                   spécifique à chaque collaboration. Il s’agit de montants minimaux qui permettent la négociation des
                   parties sur une base commune.</p>
               <p>→ Les montants sont toujours compris en coût total d’embauche (ou super-brut), indifféremment si
-                  salarié·e·x·s, indépendant·e·x·s, en associations, location de services ou honoraire libre.</p>
+                  salarié·e·x·s, indépendant·e·x·s, en association, location de services ou honoraire libre.</p>
 
               <p>→ La rémunération de l’artiste est constituée d’un montant forfaitaire pour la conception de l'œuvre,
                   ainsi que d’un montant pour la réalisation de cette dernière (qui peut être forfaitaire ou
