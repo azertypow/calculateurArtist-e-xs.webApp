@@ -274,9 +274,7 @@
 
                   <h4>Exposition collective</h4>
                   <p>Exposition présentant le travail de plusieurs artistes qui exposent ensemble leurs travaux sans les
-                      concevoir conjointement. Si l’exposition ne se déroule pas dans la totalité de la surface de la
-                      structure, alors il convient d’appliquer la catégorie d’espace la plus adaptée à la surface
-                      spécifique au sein de la structure.</p>
+                      concevoir conjointement.</p>
 
                   <h4>Montant forfaitaire supplémentaire</h4>
                   <p>Montant forfaitaire supplémentaire par mois au-delà du premier mois. Le montant forfaitaire

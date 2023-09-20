@@ -20,7 +20,12 @@ const calculatorSection_1 = new OptionCalculatorSection(
     {index : 1, title : 'Budget annuel de la structure', required : true,
         help:`
             <p>Choisir la catégorie par rapport au budget annuel de la structure ou du projet (hors frais fixes de loyer).</p>
-            <p>La délimitation des structures et des projets peut être difficile à établir selon les cas de figure. En cas de doute entre deux catégories, il est recommandé de choisir la plus haute.</p> 
+            <p>La délimitation des structures et des projets peut être difficile à établir selon les cas de figure. En cas de doute entre deux catégories, il est recommandé de choisir la plus haute.</p>
+            
+            <p>Si l’exposition ne se déroule pas dans la totalité de la surface de la
+                      structure, alors il convient d’appliquer la catégorie d’espace la plus adaptée à la surface
+                      spécifique au sein de la structure.</p>
+             
             <p>Les quatre catégories proposées sont :</p>
             
             <ul>
