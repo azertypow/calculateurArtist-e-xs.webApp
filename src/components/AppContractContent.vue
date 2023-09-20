@@ -73,7 +73,7 @@
         <h3>Propriété intellectuelle</h3>
         <ul>
           <li>Crédit de production</li>
-          <li>Droit d’auteur.ice.x</li>
+          <li>Droit d’auteur·rice·x</li>
         </ul>
       </li>
 
@@ -874,7 +874,7 @@
               class="app-button--check app-contract-with_production"
               @click="contractStore.option_dailyTax = !contractStore.option_dailyTax"
           >
-            Taux journalier pour performeur.euse
+            Taux journalier pour performeur·euse·x
           </p>
           <p
               :class="{
@@ -1016,7 +1016,7 @@
           L’Artiste crédite
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
-          comme producteur – ou coproducteur – dans les crédits des Œuvres, ainsi que dans tous les supports de
+          comme producteur·rice·x – ou coproducteur·rice·x – dans les crédits des Œuvres, ainsi que dans tous les supports de
           communication et formes de présentation de l’Œuvre par l’Artiste.
         </p>
 
@@ -1031,7 +1031,7 @@
                               :value="contractStore.structure_name"
                               @update:value="contractStore.structure_name = $event"/>.</p>
 
-        <h3>Droit d’auteur.ice.x</h3>
+        <h3>Droit d’auteur·rice·x</h3>
 
         <p>En-dehors des clauses figurant ci-dessus (sous VI. 1) et des cessions de droits strictement nécessaires à la bonne exécution du
           contrat, l’Artiste conserve l’entier des droits d’auteur sur l’Œuvre.</p>
