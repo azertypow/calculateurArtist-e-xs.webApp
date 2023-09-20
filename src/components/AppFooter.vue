@@ -279,7 +279,7 @@
                       spécifique au sein de la structure.</p>
 
                   <h4>Montant forfaitaire supplémentaire</h4>
-                  <p>Montant forfaitaire supplémentaire par mois au-delà du premier mois Le montant forfaitaire
+                  <p>Montant forfaitaire supplémentaire par mois au-delà du premier mois. Le montant forfaitaire
                       supplémentaire mensuel compense la non-disponibilité de l’œuvre pour une autre utilisation pendant
                       l’exposition. Il s’applique au-delà d’un mois d’exposition.</p>
 
