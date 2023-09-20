@@ -469,7 +469,7 @@ export default defineComponent({
                   unit: "px",
                   format: [790, 1120],
               },
-          })
+          }).from(containerForHtmlToExport).toContainer()
 
           await toSaveContainer
 
