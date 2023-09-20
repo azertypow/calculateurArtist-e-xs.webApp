@@ -89,7 +89,7 @@
         <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-6-12">
           <div>(ci-après «&nbsp;<content-editable placeholder="Nom de la structure" :value="contractStore.structure_name" @update:value="contractStore.structure_name = $event"/>&nbsp;»)
-          <br>représenté par:</div>
+          <br>représentée par:</div>
         </div>
       </div>
 
@@ -272,7 +272,7 @@
               <input
                       class="app-value-string"
                       v-model="contractStore.artiste_represente_par"
-                      placeholder="Représenté par"
+                      placeholder="Représenté·e·x par"
               >
           </div>
       </div>
