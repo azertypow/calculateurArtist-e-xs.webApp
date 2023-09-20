@@ -42,7 +42,7 @@ const calculatorSection_1 = new OptionCalculatorSection(
 const calculatorSection_2 = new OptionCalculatorSection(
         {index : 2, title : 'Exposant·e·x·s', required : true,
 help:`
-<p>Choisir l'une des options par rapport au nombre dartistes invité·e·x·s à exposer. 
+<p>Choisir l'une des options par rapport au nombre d’artistes invité·e·x·s à exposer. 
 </br>Un collectif d’artistes est considéré dans ce décompte comme une personne.</p>
 `}
     ).addSubSection(
