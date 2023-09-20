@@ -178,7 +178,7 @@ help:`
                 new NumberCalculatorSection(
                     {index : 5, title : 'Honoraires de réalisation',
 help:`
-<p>Option 1 : Si le ou les œuvres sont produites par l’artiste&nbsp;: 
+<p>Option 1 : Si la ou les œuvres sont produites par l’artiste&nbsp;: 
 <ul>
     <li> Soit définir en amont un nombre d’heures nécessaire à la réalisation du travail ainsi que son coût horaire. Conformément aux directives de Visarte Suisse, le montant horaire ne peut être inférieur à 90&nbsp;CHF pour les indépendants et selon la loi genevoise sur le salaire minimum de 24&nbsp;CHF pour les salarié·e·x·s.</li>
     <li> Soit définir en amont un montant forfaitaire </li>
