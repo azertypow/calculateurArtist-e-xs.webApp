@@ -17,7 +17,6 @@
 
     <div
         v-if="isContrat && !waitPDFExport"
-        style="background: var(--app-color-main)"
         class="app-button v-app-footer__button v-app-footer__button-export"
         @click="onClickOnExportPDF"
     >exporter en PDF</div>
