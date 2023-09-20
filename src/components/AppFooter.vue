@@ -405,11 +405,13 @@
             class="v-app-footer__info__container__box"
         >
           <div>
-            <a  style="text-decoration: none;
-                box-shadow: none"
-                target="_blank"
-                href="mailto:communication+calculateur@visarte-geneve.ch?Subject=travaildesartistes.ch"
-            >Suggestion&nbsp;?</a>
+            <div  style="
+                        text-decoration: none;
+                        box-shadow: none;
+                        cursor: pointer;
+                    "
+                  @click="sendUserMsg"
+            >Suggestion&nbsp;?</div>
           </div>
         </div>
       </div>
@@ -472,11 +474,9 @@ export default defineComponent({
   methods: {
 
     sendUserMsg() {
-      const user = "nico"
-      const domain = "villa1203.ch"
-
-      window.open()
-      mailto:`${user}@${domain}?subject=Suggestion%20webApplication`
+      const user = "communication+calculateur"
+      const domain = "visarte-geneve.ch"
+      window.open(`mailto:${user}@${domain}?subject=travaildesartistes.ch`)
     },
 
       router() {
