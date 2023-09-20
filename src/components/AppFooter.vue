@@ -192,6 +192,11 @@
                   Visarte.Genève.
               </p>
 
+              <h4>Version</h4>
+              <p>v 0.9.1
+                <br>Dernière mise à jour : 20 septembre 2023
+              </p>
+
           </template>
 
             <template v-slot:left-bottom>
