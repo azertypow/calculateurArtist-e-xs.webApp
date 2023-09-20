@@ -1022,7 +1022,7 @@
 
         <h3>Propriété de l’œuvre</h3>
 
-        <p>Sauf accord contraire, la contribution financière et/ou matériel de
+        <p>Sauf accord contraire, la contribution financière et/ou matérielle de
             <content-editable placeholder="Nom de la structure"
                               :value="contractStore.structure_name"
                               @update:value="contractStore.structure_name = $event"/>
