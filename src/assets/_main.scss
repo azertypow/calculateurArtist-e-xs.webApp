@@ -324,6 +324,7 @@ select,
 .app-select-style-box {
   position: relative;
   display: inline-block;
+  margin-right: 1rem;
 
   &:after {
     content: "";
