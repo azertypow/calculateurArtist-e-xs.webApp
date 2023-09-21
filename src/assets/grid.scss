@@ -85,6 +85,14 @@
   .app-g__coll-xs-10-12  {width: calc(100% / 12 * 10); display: block; box-sizing: border-box;}
   .app-g__coll-xs-11-12  {width: calc(100% / 12 * 11); display: block; box-sizing: border-box;}
   .app-g__coll-xs-12-12  {width: calc(100% / 12 * 12); display: block; box-sizing: border-box;}
+
+  .app-g__space-top {
+    margin-top: 2rem;
+  }
+
+  .app-g__space-bottom {
+    margin-bottom: 2rem;
+  }
 }
 
 .app-with-gutter {
