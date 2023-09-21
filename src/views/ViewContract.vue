@@ -11,7 +11,7 @@
           class="app-g"
       >
         <div class="app-g__coll-sm-0-12  app-g__coll-2-12"></div>
-        <div class="app-g__coll-4-12 app-g__coll-xs-12-12 app-with-gutter"
+        <div class="app-g__coll-4-12 app-g__coll-xs-12-12 app-with-space-bottom--xs app-with-gutter"
         >Contrat</div>
         <div class="app-g__coll-6-12 app-g__coll-xs-12-12 app-with-gutter">
           <div class="app-button--check" :class="{'is-active': contractStore.contract_exposition}" @click="contractStore.contract_exposition = !contractStore.contract_exposition">d’exposition</div>
@@ -35,13 +35,13 @@
             class="app-g app-g--with-margin-top-xl"
         >
           <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
-          <div class="app-g__coll-4-12 app-with-gutter"
+          <div class="app-g__coll-4-12 app-with-gutter app-g__coll-xs-12-12 app-with-bottom-spacing"
           >Entre la structure</div>
         </div>
         <div class="app-g">
-          <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
-          <div class="app-g__coll-4-12"></div>
-          <div class="app-g__coll-4-12 app-with-gutter"
+          <div class="app-g__coll-sm-0-12"></div>
+          <div class="app-g__coll-4-12 app-g__coll-xs-12-12"></div>
+          <div class="app-g__coll-4-12 app-g__coll-xs-12-12 app-with-gutter"
           >
             <input
                 class="app-value-string"
@@ -49,7 +49,7 @@
                 placeholder="Rue"
             >
           </div>
-          <div class="app-g__coll-2-12 app-with-gutter"
+          <div class="app-g__coll-2-12 app-with-gutter app-g__coll-xs-12-12"
           >
             <input
                 class="app-value-string"
@@ -65,7 +65,7 @@
       <div class="app-g">
         <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12"></div>
-        <div class="app-g__coll-4-12 app-with-gutter">
+        <div class="app-g__coll-4-12 app-g__coll-xs-12-12 app-with-gutter">
           <input
               class="app-value-string"
               v-model="contractStore.structure_city"
@@ -76,7 +76,7 @@
       <div class="app-g">
         <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12"></div>
-        <div class="app-g__coll-4-12 app-with-gutter">
+        <div class="app-g__coll-4-12 app-with-gutter app-g__coll-xs-12-12">
           <input
               class="app-value-string"
               v-model="contractStore.structure_country"
@@ -87,7 +87,7 @@
 
       <div class="app-g app-g--with-margin-top">
         <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
-        <div class="app-g__coll-6-12">
+        <div class="app-g__coll-6-12 app-with-gutter app-g__coll-xs-12-12 app-with-space-bottom--xs">
           <div>(ci-après «&nbsp;<content-editable placeholder="Nom de la structure" :value="contractStore.structure_name" @update:value="contractStore.structure_name = $event"/>&nbsp;»)
           <br>représentée par:</div>
         </div>
@@ -98,7 +98,7 @@
       >
         <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12"></div>
-        <div class="app-g__coll-4-12 app-with-gutter">
+        <div class="app-g__coll-4-12 app-with-gutter app-g__coll-xs-12-12">
           <input
               class="app-value-string"
               v-model="contractStore.struct_representant_firstname"
@@ -111,7 +111,7 @@
       >
         <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12"></div>
-        <div class="app-g__coll-4-12 app-with-gutter">
+        <div class="app-g__coll-4-12 app-with-gutter app-g__coll-xs-12-12">
           <input
               class="app-value-string"
               v-model="contractStore.struct_representant_name"
@@ -122,7 +122,7 @@
 
       <div class="app-g app-g--with-margin-top">
         <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
-        <div class="app-g__coll-6-12">
+        <div class="app-g__coll-6-12 app-g__coll-xs-12-12 app-with-space-bottom--xs app-with-gutter">
           <div>Agissant en qualité de</div>
         </div>
       </div>
@@ -132,7 +132,7 @@
       >
         <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12"></div>
-        <div class="app-g__coll-4-12 app-with-gutter">
+        <div class="app-g__coll-4-12 app-with-gutter app-g__coll-xs-12-12">
           <input
               class="app-value-string"
               v-model="contractStore.struct_representant_status"
@@ -145,7 +145,7 @@
           class="app-g app-g--with-margin-top-xl"
       >
         <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
-        <div class="app-g__coll-4-12">
+        <div class="app-g__coll-4-12 app-g__coll-xs-12-12 app-with-gutter app-with-space-bottom--xs">
           <div>et l’artiste/les artistes/le collectif d’artistes/la galerie</div>
         </div>
         <div class="app-g__coll-4-12 app-with-gutter"></div>
@@ -156,7 +156,7 @@
       >
         <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12"></div>
-        <div class="app-g__coll-4-12 app-with-gutter">
+        <div class="app-g__coll-4-12 app-with-gutter app-g__coll-xs-12-12">
           <input
               class="app-value-string"
               v-model="contractStore.artiste_firstname"
@@ -170,7 +170,7 @@
       >
         <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12"></div>
-        <div class="app-g__coll-4-12 app-with-gutter">
+        <div class="app-g__coll-4-12 app-with-gutter app-g__coll-xs-12-12">
           <input
               class="app-value-string"
               v-model="contractStore.artiste_name"
@@ -184,7 +184,7 @@
       >
         <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12"></div>
-        <div class="app-g__coll-4-12 app-with-gutter">
+        <div class="app-g__coll-4-12 app-with-gutter app-g__coll-xs-12-12">
           <input
               class="app-value-string"
               v-model="contractStore.artiste_nationality"
@@ -198,7 +198,7 @@
       >
         <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12"></div>
-        <div class="app-g__coll-4-12 app-with-gutter">
+        <div class="app-g__coll-4-12 app-with-gutter app-g__coll-xs-12-12">
           <input
               class="app-value-string"
               v-model="contractStore.artiste_birth"
@@ -212,7 +212,7 @@
       >
         <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12"></div>
-        <div class="app-g__coll-4-12 app-with-gutter">
+        <div class="app-g__coll-4-12 app-with-gutter app-g__coll-xs-12-12">
           <input
               class="app-value-string"
               v-model="contractStore.artiste_mail"
@@ -226,7 +226,7 @@
       >
         <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12"></div>
-        <div class="app-g__coll-4-12 app-with-gutter">
+        <div class="app-g__coll-4-12 app-with-gutter app-g__coll-xs-12-12">
           <input
               class="app-value-string"
               v-model="contractStore.artiste_postal"
@@ -240,7 +240,7 @@
       >
         <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12"></div>
-        <div class="app-g__coll-4-12 app-with-gutter">
+        <div class="app-g__coll-4-12 app-with-gutter app-g__coll-xs-12-12">
           <input
               class="app-value-string"
               v-model="contractStore.artiste_mobileNumber"
@@ -254,7 +254,7 @@
       >
         <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12"></div>
-        <div class="app-g__coll-4-12 app-with-gutter">
+        <div class="app-g__coll-4-12 app-with-gutter app-g__coll-xs-12-12">
           <input
               class="app-value-string"
               v-model="contractStore.artiste_gallery"
@@ -268,7 +268,7 @@
       >
           <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
           <div class="app-g__coll-4-12"></div>
-          <div class="app-g__coll-4-12 app-with-gutter">
+          <div class="app-g__coll-4-12 app-with-gutter app-g__coll-xs-12-12">
               <input
                       class="app-value-string"
                       v-model="contractStore.artiste_represente_par"
