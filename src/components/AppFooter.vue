@@ -582,6 +582,10 @@ export default defineComponent({
     @media (max-width: 1280px) { // footer special breakpoint
       margin-right: 2rem;
     }
+
+      @media (max-width: 700px) {
+          margin-right: 1rem;
+      }
   }
 
   .v-app-footer__status__items__name {
