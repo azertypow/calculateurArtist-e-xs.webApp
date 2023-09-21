@@ -315,6 +315,14 @@ export default defineComponent({
       contractStore: useContractStore() as IStateContractStore,
     }
   },
+
+    mounted() {
+        //@ts-ignore
+        gtag('event', 'page_view', {
+            page_title: 'ViewContract',
+            page_location: '/#/contrat'
+        })
+    }
 });
 </script>
 

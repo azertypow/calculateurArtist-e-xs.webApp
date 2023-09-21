@@ -56,6 +56,14 @@ export default defineComponent({
         msg: {type: String, required: true}
     },
 
+    mounted() {
+        //@ts-ignore
+        gtag('event', 'page_view', {
+            page_title: 'FilesResources',
+            page_location: '/#/ressources'
+        })
+    }
+
 })</script>
 
 <style lang="scss" scoped>

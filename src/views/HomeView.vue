@@ -16,6 +16,14 @@ export default defineComponent({
   name: 'HomeView',
   components: {AppNav},
 
+    mounted() {
+        //@ts-ignore
+        gtag('event', 'page_view', {
+            page_title: 'home',
+            page_location: '/'
+        })
+    }
+
 });
 </script>
 

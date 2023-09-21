@@ -73,6 +73,12 @@ export default defineComponent({
     this.$nextTick(() => {
       document.querySelector('#app')!.addEventListener('scroll', this.getResultPosition)
     })
+
+    //@ts-ignore
+    gtag('event', 'page_view', {
+        page_title: 'ViewCalculator',
+        page_location: '/#/calculateur'
+    })
   },
 
   beforeUnmount() {
