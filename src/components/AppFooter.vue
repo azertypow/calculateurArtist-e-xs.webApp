@@ -540,6 +540,10 @@ export default defineComponent({
         display: flex;
         align-items: center;
         gap: 1rem;
+
+          @media (max-width: 700px) {// align with grid
+              display: none;
+          }
       }
   }
 
