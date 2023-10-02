@@ -150,7 +150,7 @@
 
               <p>Grille de rémunération :
                   <br>GARAGe (référentes : Julie Marmet et Ramaya Tegegne)
-                  <br>Rosa Brux (référent : Clovis Duran)
+                  <br>Clovis Duran
               </p>
 
               <p>Rédaction du contrat-modèle :
