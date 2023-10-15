@@ -170,7 +170,6 @@
           organise, en vue de la présentation publique d’une ou plusieurs Œuvres de l’Artiste, une exposition
           <content-editable placeholder="INTITULEE XXX" :value="contractStore.exposition_name"
                             @update:value="contractStore.exposition_name = $event"/>,
-          ,
           laquelle se tiendra du
           <content-editable placeholder="date du contrat" :value="contractStore.info_date_expo_from"
                             @update:value="contractStore.info_date_expo_from = $event"/>
