@@ -561,8 +561,9 @@ export default defineComponent({
 
                     for (let i = 1; i <= totalPages; i++) {
                         pdf.setPage(i)
-                        pdf.text(175, 1100, `P. ${i}/${totalPages}`)
-                        pdf.text(360, 1100, `création: ${databaseDate.getDate()} / ${databaseDate.getMonth() + 1} / ${databaseDate.getFullYear()}`)
+                        pdf.text(10, 1100, `P. ${i}/${totalPages}`)
+                        pdf.text(168, 1100, "Document généré sur www.travaildesartistes.ch")
+                        pdf.text(474, 1100, `création: ${databaseDate.getDate()} / ${databaseDate.getMonth() + 1} / ${databaseDate.getFullYear()}`)
                     }
 
                     pdf.addPage()
