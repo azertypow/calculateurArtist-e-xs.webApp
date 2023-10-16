@@ -95,7 +95,11 @@
           <li>Juridiction compétente
             <ul>
               <li><router-link to="/calculateur" >Annexe I – Formulaire de rémunération</router-link></li>
-              <li><router-link to="#lite-des-oeuvres" >Annexe II – Liste des Œuvres</router-link></li>
+              <li
+                      :class="{
+                          'remove-for-pdf-export': contractStore.objectList[0].title.length < 1
+                      }"
+              ><router-link to="#lite-des-oeuvres" >Annexe II – Liste des Œuvres</router-link></li>
             </ul>
           </li>
         </ul>
@@ -808,7 +812,7 @@
       </div>
 
       <div class="html2pdf__page-break" ></div>
-      <h2>De la participation aux frais engagés par l’Artiste</h2>
+      <h2>De la participation aux frais engagés par&nbsp;l’Artiste</h2>
       <div class="v-app-contract-content__content__subsection">
 
 <!--        condution with production -->
@@ -1156,11 +1160,19 @@
 
         <div class="html2pdf__page-break" ></div>
 
-        <h4 id="lite-des-oeuvres">Annexe II – Liste des Œuvres</h4>
+        <h4
+                :class="{
+                          'remove-for-pdf-export': contractStore.objectList[0].title.length < 1
+                      }"
+                id="lite-des-oeuvres"
+        >Annexe II – Liste des Œuvres</h4>
 
 <!--        cartel container-->
         <div
             class="app-g v-app-contract-content__list-oeuvre"
+            :class="{
+                          'remove-for-pdf-export': contractStore.objectList[0].title.length < 1
+                      }"
         >
           <div
               v-for="(object, index) of contractStore.objectList"
