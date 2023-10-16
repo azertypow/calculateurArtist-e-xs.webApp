@@ -521,6 +521,15 @@ export default defineComponent({
             containerForHtmlToExport.appendChild(htmlToExport.cloneNode(true))
             containerForHtmlToExport.classList.add('to-export')
 
+            containerForHtmlToExport.querySelectorAll('input').forEach(inputElement => {
+                if( ! (inputElement.parentNode instanceof Node) ) return
+
+                const spanToInsert = document.createElement('span')
+                spanToInsert.innerText = inputElement.value.length > 0 ? inputElement.value : inputElement.placeholder
+                inputElement.parentNode.insertBefore(spanToInsert, inputElement)
+                inputElement.parentNode.removeChild(inputElement)
+            })
+
             containerForHtmlToExport.querySelectorAll('.app-font-remove').forEach(value => {
                 if( ! (value instanceof HTMLElement) ) return
                 if( ! (value.parentNode instanceof Node) ) return
@@ -865,7 +874,11 @@ export default defineComponent({
 
   // todo: corriger le display none
   input {
-    display: none !important;
+    //display: none !important;
+  }
+
+  .app-value-string {
+      border-bottom: none !important;
   }
 
   button {
