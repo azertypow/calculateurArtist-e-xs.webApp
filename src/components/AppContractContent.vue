@@ -94,12 +94,12 @@
           <li>Médiation</li>
           <li>Juridiction compétente
             <ul>
-              <li><router-link to="/calculateur" >Annexe I – Formulaire de rémunération</router-link></li>
+              <li><router-link to="/calculateur" >Annexe&nbsp;I – Formulaire de rémunération</router-link></li>
               <li
                       :class="{
                           'remove-for-pdf-export': contractStore.objectList[0].title.length < 1
                       }"
-              ><router-link to="#lite-des-oeuvres" >Annexe II – Liste des Œuvres</router-link></li>
+              ><router-link to="#lite-des-oeuvres" >Annexe&nbsp;II – Liste des Œuvres</router-link></li>
             </ul>
           </li>
         </ul>
@@ -190,7 +190,7 @@
           L’Artiste accepte de participer à cette exposition et de mettre à disposition de
           <content-editable placeholder="Nom de la structure" :value="contractStore.structure_name"
                             @update:value="contractStore.structure_name = $event"/>
-          , les Œuvres listées et/ou décrites dans la « Liste des Œuvres » (Annexe II) lesquelles seront présentée(s)
+          , les Œuvres listées et/ou décrites dans la « Liste des Œuvres » (Annexe&nbsp;II) lesquelles seront présentée(s)
           publiquement à cette occasion.
         </p>
 
@@ -511,7 +511,7 @@
             @click="contractStore.artiste_angagementPretEtRedaction = 'rédiger les textes décrivant sa démarche artistique'"
         >
           L’Artiste s’engage à rédiger les textes décrivant sa démarche artistique et son projet. Il sera rémunéré
-            selon le « Formulaire de rémunération » (Annexe I).
+            selon le « Formulaire de rémunération » (Annexe&nbsp;I).
         </p>
 
         <p
@@ -614,7 +614,7 @@
                               :value="contractStore.work_price"
                               @update:value="contractStore.work_price = $event"
             />
-            , hors TVA, déterminée selon l’activité déployée et les critères prévus dans la « <router-link to="/calculateur">Grille de rémunération</router-link> » (Annexe I), à titre de rémunération pour
+            , hors TVA, déterminée selon l’activité déployée et les critères prévus dans la « <router-link to="/calculateur">Grille de rémunération</router-link> » (Annexe&nbsp;I), à titre de rémunération pour
         </p>
 
         <p
@@ -709,7 +709,7 @@
             :class="{'app-font-remove': contractStore.option_expositionEtVente === false}"
         >
           Chaque vente doit faire l’objet d’un contrat écrit, détaillant la ou les Œuvre(s) vendue(s) conformément à
-          l’Annexe II « Liste des Œuvres » et indiquant le prix convenu par les parties au contrat de vente.
+          l’Annexe&nbsp;II « Liste des Œuvres » et indiquant le prix convenu par les parties au contrat de vente.
         </p>
         <p
             :class="{'app-font-remove': contractStore.option_expositionEtVente === false}"
@@ -847,7 +847,7 @@
               class="app-button--check app-contract-with_production"
               @click="contractStore.option_honoraryAchievement = !contractStore.option_honoraryAchievement"
           >
-            Honoraires de réalisation par l’Artiste ou externalisés selon le « Formulaire de rémunération » (Annexe I)
+            Honoraires de réalisation par l’Artiste ou externalisés selon le « Formulaire de rémunération » (Annexe&nbsp;I)
           </p>
 
           <p
@@ -1047,7 +1047,7 @@
                             @update:value="contractStore.artiste_renumerationPercent = $event"/>%
           sur le montant de rémunération pour la cession de certains droits
           d’auteur selon les termes du présent contrat. Cette rémunération est incluse dans la rémunération facturée par
-          l’Artiste et déterminée selon les critères prévus dans le « Formulaire de rémunération » (Annexe I).</p>
+          l’Artiste et déterminée selon les critères prévus dans le « Formulaire de rémunération » (Annexe&nbsp;I).</p>
       </div>
 
 
@@ -1154,7 +1154,7 @@
         </p>
 
 
-        <h4>Annexe I – Formulaire de rémunération</h4>
+        <h4>Annexe&nbsp;I – Formulaire de rémunération</h4>
 
         <p>[INSERER LA DERNIER VERSION DE LA GRILLE DE REMUNERATION]</p>
 
@@ -1165,7 +1165,7 @@
                           'remove-for-pdf-export': contractStore.objectList[0].title.length < 1
                       }"
                 id="lite-des-oeuvres"
-        >Annexe II – Liste des Œuvres</h4>
+        >Annexe&nbsp;II – Liste des Œuvres</h4>
 
 <!--        cartel container-->
         <div
