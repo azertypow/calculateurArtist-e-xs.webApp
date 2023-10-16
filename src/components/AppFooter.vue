@@ -803,6 +803,8 @@ export default defineComponent({
   }
 
   h4 {
+      font-size: var(--font-size) !important;
+      line-height: var(--line-height) !important;
     margin-top: calc( var(--line-height) * 2)!important;
   }
 
