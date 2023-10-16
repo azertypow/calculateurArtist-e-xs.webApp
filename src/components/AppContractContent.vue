@@ -970,7 +970,9 @@
           </p>
       <!-- [END]        condution with production -->
 
-          <div class="html2pdf__page-break" ></div>
+          <div class="html2pdf__page-break"
+               :class="{'app-font-remove': contractStore.with_production === false}"
+          ></div>
         <h3>Participation aux frais accessoires</h3>
 
         <p
