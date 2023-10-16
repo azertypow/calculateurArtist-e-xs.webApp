@@ -889,6 +889,19 @@ export default defineComponent({
 
   .app-button--check {
     display: none !important;
+
+      &.is-active {
+          display: block !important;
+          padding-left: 2em;
+          position: relative;
+
+          &:before {
+              all: unset;
+              content: '—';
+              position: absolute;
+              left: 0;
+          }
+      }
   }
 
   .app-font-remove {
