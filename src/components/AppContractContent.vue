@@ -1154,9 +1154,15 @@
         </p>
 
 
-        <h4>Annexe&nbsp;I – Formulaire de rémunération</h4>
+        <h4
+                class="remove-for-pdf-export"
+        >Annexe&nbsp;I – Grille de rémunération</h4>
 
-        <p>[INSERER LA DERNIER VERSION DE LA GRILLE DE REMUNERATION]</p>
+        <p
+                class="remove-for-pdf-export"
+        ><router-link
+                to="/ressources"
+        >Voir le document</router-link></p>
 
         <div class="html2pdf__page-break" ></div>
 
