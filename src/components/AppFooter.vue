@@ -580,6 +580,7 @@ export default defineComponent({
 
                     // Utilise la police dans ton document
                     pdf.setFont(customFont.id); // Utilise le nom défini dans "addFont"
+                    pdf.setFontSize(18)
 
                     const totalPages = pdf.getNumberOfPages()
 
@@ -601,16 +602,31 @@ export default defineComponent({
 
                     pdf.insertPage(1)
 
-                    pdf.setFontSize(50)
+                    pdf.setFontSize(100)
 
                     pdf.text("Contrat", pdfParams.width/2, pdfParams.height/5, {
                         align: "center",
                     })
 
+                    pdf.setFontSize(18)
+                    pdf.setLineHeightFactor(1.35)
 
+const text = `
+Contrat${contratData.contract_exposition ? ' d\'exposition' : ''}${contratData.with_physical_objects ? ' avec production d\'œuvre' : ''}
+entre ${contratData.structure_name} (représentée par: ${contratData.struct_representant_firstname} ${contratData.struct_representant_name})
+et l’artiste ou les artistes ou le collectif d’artistes
+ou la galerie ${contratData.artiste_firstname} ${contratData.artiste_name}.
 
-                    pdf.text("Contrat", pdfParams.width/2, pdfParams.height/5, {
-                        align: "center",
+${contratData.artiste_postal}
+${contratData.artiste_mail}
+${contratData.artiste_nationality}
+${contratData.artiste_mobileNumber}
+${contratData.artiste_birth}
+${contratData.artiste_gallery}
+`
+
+                    pdf.text(text, pdfParams.width/5, pdfParams.height/5*2, {
+                        align: "left",
                     })
 
 
