@@ -1155,9 +1155,7 @@
                             @update:value="contractStore.artiste_name = $event"/>
         </p>
 
-
         <h4
-                class="remove-for-pdf-export"
         >Annexe&nbsp;I – Grille de rémunération</h4>
 
         <p
@@ -1166,7 +1164,12 @@
                 to="/ressources"
         >Voir le document</router-link></p>
 
-        <div class="html2pdf__page-break" ></div>
+        <div
+                :class="{
+                    'html2pdf__page-break'  : contractStore.objectList[0].title.length > 0,
+                    'remove-for-pdf-export' : contractStore.objectList[0].title.length < 1,
+                }"
+        ></div>
 
         <h4
                 :class="{
@@ -1186,7 +1189,7 @@
               v-for="(object, index) of contractStore.objectList"
               class="app-g__coll-sm-12-12 app-g__coll-6-12 app-with-gutter"
               :class="{
-                'html2pdf__page-break': index !== 0
+                'html2pdf__page-break': index !== 0 && index % 2 === 0
               }"
           >
 
