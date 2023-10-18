@@ -15,11 +15,23 @@
 <!--              @click="onClickOnExportPDF"-->
 <!--      >version texte</div>-->
 
-    <div
-        v-if="isContrat && !waitPDFExport"
-        class="app-button v-app-footer__button v-app-footer__button-export"
-        @click="onClickOnExportPDF"
-    >exporter en PDF</div>
+      <template
+          v-if="isContrat && !waitPDFExport"
+      >
+          <div
+              v-if="isIOS"
+              class="app-button v-app-footer__button v-app-footer__button-export v-app-footer__button-export--ios"
+          >
+              export en PDF prochainement sur iOS
+              <br><small>pour utiliser l'export PDF, rendez-vous sur un ordinateur ou appareil Android.</small>
+          </div>
+          <div
+              v-else
+              class="app-button v-app-footer__button v-app-footer__button-export"
+              @click="onClickOnExportPDF"
+          >exporter en PDF
+          </div>
+      </template>
 
     <div
         v-if="isCalculateur"
@@ -445,6 +457,7 @@ export default defineComponent({
   data() {
     return {
       globalStore: useGlobalStore(),
+        isIOS: /\b(iPad|iPhone|iPod)\b/.test(navigator.userAgent)
     }
   },
 
@@ -819,6 +832,12 @@ ${contratData.artiste_gallery}
         left: 50%;
         white-space: nowrap;
         transform: translate(-50%, -50%) rotate(0);
+    }
+
+    &.v-app-footer__button-export--ios {
+        background: var(--app-color-main);
+        max-width: 18em;
+        line-height: 1.15rem;
     }
 }
 
