@@ -43,7 +43,7 @@ interface IOptionCalculatorSectionParams {
     title: string
     required?: boolean
     info?: string
-    help: string
+    help?: string
 }
 
 export class OptionCalculatorSection extends CalculatorSection {

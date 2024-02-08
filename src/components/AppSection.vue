@@ -45,11 +45,13 @@
         class="app-g"
     >
       <div class="app-g__coll-sm-0-12 app-g__coll-2-12" ></div>
-      <div
+      <template v-if="section.help">
+        <div
           class="app-g__coll-sm-12-12 app-g__coll-10-12 v-app-section__help"
           v-html="section.help"
           v-if="showHelpers"
-      ></div>
+        ></div>
+      </template>
     </div>
   </div>
 </template>
@@ -61,6 +63,7 @@ import type {NumberCalculatorSection, OptionCalculatorSection} from "../gloabal/
 import SubsectionOption from "./SubsectionOption.vue";
 import SubsectionNumber from "./SubsectionNumber.vue";
 import {useGlobalStore} from "../stores/globalStore";
+import {OptionCalculatorSection, OptionCalculatorSubsection} from "../gloabal/CalculatorSection";
 
 export default defineComponent({
   name: 'AppSection',
@@ -74,6 +77,12 @@ export default defineComponent({
   },
 
   computed: {
+      OptionCalculatorSection() {
+          return OptionCalculatorSection
+      },
+      OptionCalculatorSubsection() {
+          return OptionCalculatorSubsection
+      },
 
     showHelpers(): boolean {
       return useGlobalStore().showHelpers
