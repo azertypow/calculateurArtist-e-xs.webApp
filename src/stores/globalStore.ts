@@ -16,8 +16,17 @@ import {conditionalLogicSection_8} from "./conditionalLogicSection_8";
 import {conditionalLogicSection_8_sans} from "./conditionalLogicSection_8_sans"
 import {conditionalLogicSection_9} from "./conditionalLogicSection_9";
 
+const calculatorSection_0 = new OptionCalculatorSection(
+    {index : 1, title : 'Modalité de rémunération', required : true}
+).addSubSection(
+    new OptionCalculatorSubsection({uniqueID: '01', titre: 'indépendant'}),
+    new OptionCalculatorSubsection({uniqueID: '02', titre: 'salariat'}),
+    new OptionCalculatorSubsection({uniqueID: '03', titre: 'association'}),
+)
+
+
 const calculatorSection_1 = new OptionCalculatorSection(
-    {index : 1, title : 'Budget annuel de la structure', required : true,
+    {index : 2, title : 'Montant des subventions annuelles fixes', required : true,
         help:`
             <p>Choisir la catégorie par rapport au budget annuel de la structure ou du projet (hors frais fixes de loyer).</p>
             <p>La délimitation des structures et des projets peut être difficile à établir selon les cas de figure. En cas de doute entre deux catégories, il est recommandé de choisir la plus haute.</p>
@@ -45,7 +54,7 @@ const calculatorSection_1 = new OptionCalculatorSection(
 )
 
 const calculatorSection_2 = new OptionCalculatorSection(
-        {index : 2, title : 'Exposant·e·x·s', required : true,
+        {index : 3, title : 'Exposant·e·x·s', required : true,
 help:`
 <p>Choisir l'une des options par rapport au nombre d’artistes invité·e·x·s à exposer. 
 </br>Un collectif d’artistes est considéré dans ce décompte comme une personne.</p>
@@ -70,6 +79,7 @@ export const useGlobalStore = defineStore('globalStore', {
             showFixedResult: true,
             calculatorSections: [
                 // ----------
+                calculatorSection_0,
                 calculatorSection_1,
                 calculatorSection_2,
                 // ----------
@@ -77,7 +87,7 @@ export const useGlobalStore = defineStore('globalStore', {
 
                 // ----------
                 new OptionCalculatorSection(
-                    {index : 3, title : 'Œuvres', required : true,
+                    {index : 4, title : 'Œuvres', required : true,
 help:`
 <p>Préciser la nature des œuvres présentées pour l’exposition. Si différentes œuvres entrent dans différentes catégories, choisir l'option la plus avantageuse pour l’artiste.
 Les options sont classées de la moins avantageuse à la plus avantageuse pour l’artiste.</p>
@@ -135,7 +145,7 @@ Les options sont classées de la moins avantageuse à la plus avantageuse pour l
 
                 // ----------
                 new NumberCalculatorSection(
-                    {index : 4, title : "Durée de l’exposition", required : true, info : 'Montant forfaitaire supplémentaire par mois au-delà du premier mois',
+                    {index : 5, title : "Durée de l’exposition", required : true, info : 'Montant forfaitaire supplémentaire par mois au-delà du premier mois',
 help:`
 <p>Les frais liés à la durée correspondent à des frais de location. Ils sont donc progressifs. La durée minimale de ces frais est fixée à un mois. Concernant la progression, arrondir la durée mensuelle à l’unité la plus proche.</p>
 
@@ -176,7 +186,7 @@ help:`
 
                 // ----------
                 new NumberCalculatorSection(
-                    {index : 5, title : 'Honoraires de réalisation',
+                    {index : 6, title : 'Honoraires de réalisation',
 help:`
 <p>Option 1 : Si la ou les œuvres sont produites par l’artiste&nbsp;: 
 <ul>
@@ -217,7 +227,7 @@ help:`
 
                 // ----------
                 new NumberCalculatorSection(
-                    {index : 6, title : 'Per diem',
+                    {index : 7, title : 'Per diem',
 help:`
 <p>Indemnité forfaitaire visant à dédommager l’artiste pour ses frais de repas et de déplacement lors du montage de l'exposition par exemple.</p>
 
@@ -241,7 +251,7 @@ help:`
                 // ----------
                 new NumberCalculatorSection(
                     {
-                        index : 7,
+                        index : 8,
                         title : 'Montage et transport',
                         required : false,
                         info : "recommandation de 60 CHF/h, minimum 23 CHF/h",
@@ -279,7 +289,7 @@ help:`
 
                 // ----------
                 new NumberCalculatorSection(
-                    {index : 8, title : "Événement",
+                    {index : 9, title : "Événement",
 help: `
 <ul>
 <li>Événement avec préparation : présentation publique nécessitant un temps de préparation.</li>
@@ -314,7 +324,7 @@ help: `
 
                 // ----------
                 new NumberCalculatorSection(
-                    {index : 9, title : "Texte", required : false, info : 'source?',
+                    {index : 10, title : "Texte", required : false, info : 'source?',
 help:`<p>Les textes commandés par la structure à l’artiste sont rémunérés par 1000 frappes (espaces compris). Le coût forfaitaire par 1000 frappes est calculé automatiquement selon la taille de la structure d’accueil. La longueur du texte final est arrondie au millier de frappes le plus proche.</p>
 <ul>Exemples : 
 <li>Si le texte produit contient 1312 caractères espaces compris, compter 1 occurence.</li>
