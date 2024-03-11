@@ -16,13 +16,57 @@ import {conditionalLogicSection_8} from "./conditionalLogicSection_8";
 import {conditionalLogicSection_8_sans} from "./conditionalLogicSection_8_sans"
 import {conditionalLogicSection_9} from "./conditionalLogicSection_9";
 
-const calculatorSection_0 = new OptionCalculatorSection(
-    {index : 1, title : 'Modalité de rémunération', required : true}
+export const calculatorSection_0_title = {
+    ind:    'indépendant',
+    sal:    'salariat',
+    asso:   'association',
+}
+
+export const listeOfMessages = {
+    [calculatorSection_0_title.ind]:    "les montants actuels sont les montants pour les indépendants",
+    [calculatorSection_0_title.asso]:   "les montants pour les associations sont recalculés selon les taux en vigueur et les charges employeur",
+    [calculatorSection_0_title.sal]:    "les montants pour les salariés sont recalculés selon les taux en vigueur",
+}
+
+const calculatorSection_0: OptionCalculatorSection = new OptionCalculatorSection(
+    {
+        index : 1,
+        title : 'Modalité de rémunération',
+        required : true,
+        help: `
+        <p>De quelle manière la rémunération de l’artiste sera-t-elle versée ou perçue ?</p>
+        <ul>
+            <li>indépendant
+                <br>→ l’artiste est indépendant et facture sa prestation directement à la structure</li>
+            <li>salariat
+                <br>→ l’artiste est salarié directement par la structure</li>
+            <li>association
+                <br>→ l’artiste est salarié par une association productrice, qui facture la prestation à la structure</li>
+        </ul>
+        `
+    }
 ).addSubSection(
-    new OptionCalculatorSubsection({uniqueID: '01', titre: 'indépendant'}),
-    new OptionCalculatorSubsection({uniqueID: '02', titre: 'salariat'}),
-    new OptionCalculatorSubsection({uniqueID: '03', titre: 'association'}),
+    new OptionCalculatorSubsection({uniqueID: '01', titre: calculatorSection_0_title.ind}),
+    new OptionCalculatorSubsection({uniqueID: '02', titre: calculatorSection_0_title.sal}),
+    new OptionCalculatorSubsection({uniqueID: '03', titre: calculatorSection_0_title.asso}),
 )
+
+calculatorSection_0.addOnChangeListener((section_0) => {
+    // todo: generate this in backend
+    const uuidForMessage = '100648302'
+
+    if( ! section_0._value) return
+
+    const conditionOnTotalValueToEdite = useGlobalStore().conditionOnTotalValue
+
+
+    conditionOnTotalValueToEdite[uuidForMessage] = {
+        message: listeOfMessages[section_0._value.titre],
+        value: section_0._value.titre, //todo: clean: add value system by ID, not string in value property
+    }
+
+    useGlobalStore().conditionOnTotalValue = conditionOnTotalValueToEdite
+})
 
 
 const calculatorSection_1 = new OptionCalculatorSection(
@@ -77,6 +121,14 @@ export const useGlobalStore = defineStore('globalStore', {
 
             isACollective: false,
             showFixedResult: true,
+
+            conditionOnTotalValue: {} as {
+                [key: string]: {
+                    value: string
+                    message: string
+                }
+            },
+
             calculatorSections: [
                 // ----------
                 calculatorSection_0,
@@ -410,7 +462,11 @@ help:`<p>Les textes commandés par la structure à l’artiste sont rémunérés
               else return 0
             }, 0)
         }, 0) * multiply
-      }
-    },
+      },
 
+      globalMessageForTotalResult(): string {
+        return Object.values(this.conditionOnTotalValue).map(value => value.message).join(' ')
+      },
+
+    }
 })

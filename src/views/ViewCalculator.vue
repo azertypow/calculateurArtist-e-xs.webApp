@@ -24,6 +24,14 @@
           <div
               v-if="typeof globalTotal === 'number'"
           >CHF {{globalTotal}}<template v-if="globalTotal % 1 === 0">.—</template>
+            <div>{{globalMessage}}</div>
+
+            <template v-if="conditionOnTotalValue">
+<!--              <div v-if="conditionOnTotalValue === 'indépendant'" >soit {{ globalTotal - (globalTotal / 100 *85.44 )}}</div>-->
+              <div v-if="conditionOnTotalValue === 'association'" >soit {{ globalTotal / 100 * 72.41}} net</div>
+              <div v-if="conditionOnTotalValue === 'salariat'" >soit {{ globalTotal / 100 * 85.44 }} net</div>
+            </template>
+
             <div class="v-view-calculator__result__option">
               <div
                   class="app-button--toggle"
@@ -94,6 +102,7 @@ export default defineComponent({
   },
 
   methods: {
+    useGlobalStore,
     getResultPosition() {
       if( !(this.$refs.total instanceof HTMLDivElement)) return
       this.globalStore.showFixedResult = this.$refs.total.getBoundingClientRect().top >= window.innerHeight;
@@ -108,6 +117,15 @@ export default defineComponent({
     globalTotal(): number | {errorMessage: string} {
       return this.globalStore.globalTotal
     },
+
+    globalMessage(): string {
+      return this.globalStore.globalMessageForTotalResult
+    },
+
+    conditionOnTotalValue(): string {
+      return Object.values(this.globalStore.conditionOnTotalValue)[0].value
+    }
+
   }
 
 });

@@ -8,6 +8,7 @@
   ],
   "compilerOptions": {
     "baseUrl": "./vue-project",
+    "lib": ["es2017", "dom"],
   },
 
   "references": [

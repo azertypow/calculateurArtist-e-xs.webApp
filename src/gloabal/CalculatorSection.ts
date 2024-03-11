@@ -76,7 +76,7 @@ export class OptionCalculatorSection extends CalculatorSection {
 
     public set value(value: OptionCalculatorSubsection) {
         this._value = value
-        this._onValueChange.forEach(callback => callback())
+        this._onValueChange.forEach(callback => callback(this))
     }
 
     public addSubSection(...subsectionsToAdd: OptionCalculatorSubsection[]): this {
@@ -93,11 +93,11 @@ export class OptionCalculatorSection extends CalculatorSection {
         return 'validate'
     }
 
-    addOnChangeListener( callback: () => void ) {
+    addOnChangeListener( callback: (thisInstance: OptionCalculatorSection) => void ) {
         this._onValueChange.push(callback)
     }
 
-    private _onValueChange: (() => void)[] = []
+    private _onValueChange: ((thisInstance: OptionCalculatorSection) => void)[] = []
 
 }
 
@@ -245,7 +245,7 @@ export class OptionCalculatorSubsection {
 
     private _parent?: OptionCalculatorSection
 
-    public uniqueID: string;
+    public uniqueID: string;  //todo: generate e real uid in backend
     public titre: string;
     public subtitle?: string;
     private readonly _subsectionOptionChangeListener?: ConditionalValueFromSubsectionOption;
@@ -256,7 +256,8 @@ export class OptionCalculatorSubsection {
         subsectionOptionChangeListener?: ConditionalValueFromSubsectionOption,
         subtitle?: string,
         titre: string,
-        uniqueID: string
+        uniqueID: string,
+        subForm?: SubForm
     }) {
         if(params.numberValue) this._result     = params.numberValue
         this._subsectionOptionChangeListener    = params.subsectionOptionChangeListener
@@ -342,3 +343,42 @@ export class ConditionalValueFromSubsectionOption {
 
     onChange() {}
 }
+
+
+interface ConstructorParams {
+    percentValueOf__AVS: ISubFormPercentCalculation
+    percentValueOf__LPP: ISubFormPercentCalculation
+    percentValueOf__LAA: ISubFormPercentCalculation
+    percentValueOf__AMPG: ISubFormPercentCalculation
+    percentValueOf__impot_a_la_source: ISubFormPercentCalculation
+}
+
+export class SubForm {
+    constructor({
+                    percentValueOf__AVS,
+                    percentValueOf__LPP,
+                    percentValueOf__LAA,
+                    percentValueOf__AMPG,
+                    percentValueOf__impot_a_la_source
+                }: ConstructorParams,) {
+
+    }
+}
+
+// AVSPercent:             6,438 %			    8,870 %
+// LPP					    7 % 				8 %
+// LAA					    1,12 %				0,8 %
+// AMPG					1,04 %				1,04 %
+// Impôt à la source		0 %				    –
+
+export interface ISubFormPercentCalculation {
+    bossPercent: number,
+    workerPercent: number,
+}
+
+// export class SubFormLine {
+//     constructor(name: string, public employeePercent: number, public employerPercent: number) {
+//         if(employeePercent < 0 || employeePercent > 100) new Error('employeePercent must be percent value 0 < value < 100')
+//         if(employerPercent < 0 || employerPercent > 100) new Error('employerPercent must be percent value 0 < value < 100')
+//     }
+// }

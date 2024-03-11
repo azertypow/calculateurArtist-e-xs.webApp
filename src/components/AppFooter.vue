@@ -489,6 +489,10 @@ export default defineComponent({
     globalTotal(): number | {errorMessage: string} {
       return this.globalStore.globalTotal
     },
+
+    globalMessage(): string {
+      return this.globalStore.globalMessageForTotalResult
+    }
   },
 
   methods: {
