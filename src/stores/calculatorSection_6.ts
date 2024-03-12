@@ -5,7 +5,7 @@ export const calculatorSection_6 = new NumberCalculatorSection(
         help:`
 <p>Option 1 : Si la ou les œuvres sont produites par l’artiste&nbsp;: 
 <ul>
-    <li> Soit définir en amont un nombre d’heures nécessaires à la réalisation du travail ainsi que son coût horaire. Conformément aux directives de Visarte Suisse, et selon la loi genevoise (salaire minimum de 24&nbsp;CHF pour les salarié·e·x·s), le montant horaire ne peut être inférieur à 90&nbsp;CHF pour les indépendant·e·x·s.</li>
+    <li> Soit définir en amont un nombre d’heures nécessaires à la réalisation du travail ainsi que son coût horaire. Conformément aux directives de Visarte Suisse, et selon la loi genevoise (salaire minimum de 24&nbsp;CHF pour les salarié·e·x·s), le montant horaire ne peut être inférieur à 90&nbsp;CHF pour les indépendant·e·x·s. <span style="color: red">contenu plus générique ici</span></li>
     <li> Soit définir en amont un montant forfaitaire </li>
 </ul>
 
