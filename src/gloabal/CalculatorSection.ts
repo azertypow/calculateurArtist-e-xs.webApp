@@ -158,6 +158,8 @@ export class NumberCalculatorSection extends CalculatorSection {
 
 export class NumberCalculatorSubsection {
 
+    public conseilValue: string | null = 'coucou'
+
     private _multiplier?: {
         value: number
         text: string

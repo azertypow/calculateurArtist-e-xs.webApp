@@ -47,6 +47,13 @@
                   style="gap: 2rem"
           >
               <div style="font-size: 2rem; line-height: 4rem" >TOTAL&emsp;CHF {{globalTotal}}<template v-if="globalTotal % 1 === 0">.—</template></div>
+
+            <template v-if="conditionOnTotalValue">
+              <!--              <div v-if="conditionOnTotalValue === 'indépendant'" >soit {{ globalTotal - (globalTotal / 100 *85.44 )}}</div>-->
+              <div v-if="conditionOnTotalValue === 'association'" >(CHF {{ formatCHF(globalTotal / 100 * 72.41) }} net)</div>
+              <div v-if="conditionOnTotalValue === 'salariat'" >(CHF {{ formatCHF(globalTotal / 100 * 85.44) }} net)</div>
+            </template>
+
           </div>
         <div v-else                                 >{{globalTotal.errorMessage}}</div>
           <div
@@ -449,6 +456,7 @@ import {useGlobalStore} from "../stores/globalStore";
 import router from "../router";
 import type * as jspdf from "jspdf";
 import {useContractStore} from "../stores/contractStore";
+import {formatCHF} from "../gloabal/formatCurency";
 
 export default defineComponent({
   name: 'AppFooter',
@@ -490,12 +498,17 @@ export default defineComponent({
       return this.globalStore.globalTotal
     },
 
+    conditionOnTotalValue(): string {
+      return Object.values(this.globalStore.conditionOnTotalValue)[0].value
+    },
+
     globalMessage(): string {
       return this.globalStore.globalMessageForTotalResult
     }
   },
 
   methods: {
+    formatCHF,
 
     sendUserMsg() {
       const user = "communication+calculateur"

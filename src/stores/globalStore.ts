@@ -15,6 +15,11 @@ import {conditionalLogicSection_3_option_3} from "./conditionalLogicSection_3_op
 import {conditionalLogicSection_8} from "./conditionalLogicSection_8";
 import {conditionalLogicSection_8_sans} from "./conditionalLogicSection_8_sans"
 import {conditionalLogicSection_9} from "./conditionalLogicSection_9";
+import {calculatorSection_3} from "./calculatorSection_3";
+import {calculatorSection_1} from "./calculatorSection_1";
+import {calculatorSection_2} from "./calculatorSection_2";
+import {calculatorSection_5} from "./calculatorSection_5";
+import {calculatorSection_6} from "./calculatorSection_6";
 
 export const calculatorSection_0_title = {
     ind:    'indépendant',
@@ -23,12 +28,12 @@ export const calculatorSection_0_title = {
 }
 
 export const listeOfMessages = {
-    [calculatorSection_0_title.ind]:    "les montants actuels sont les montants pour les indépendants",
-    [calculatorSection_0_title.asso]:   "les montants pour les associations sont recalculés selon les taux en vigueur et les charges employeur",
-    [calculatorSection_0_title.sal]:    "les montants pour les salariés sont recalculés selon les taux en vigueur",
+    [calculatorSection_0_title.ind]:    "Les montants actuels sont les montants pour les indépendants",
+    [calculatorSection_0_title.asso]:   "Les montants pour les associations sont recalculés selon les taux en vigueur et les charges employeur",
+    [calculatorSection_0_title.sal]:    "Les montants pour les salariés sont recalculés selon les taux en vigueur",
 }
 
-const calculatorSection_0: OptionCalculatorSection = new OptionCalculatorSection(
+export const calculatorSection_0: OptionCalculatorSection = new OptionCalculatorSection(
     {
         index : 1,
         title : 'Modalité de rémunération',
@@ -57,57 +62,12 @@ calculatorSection_0.addOnChangeListener((section_0) => {
 
     if( ! section_0._value) return
 
-    const conditionOnTotalValueToEdite = useGlobalStore().conditionOnTotalValue
-
-
-    conditionOnTotalValueToEdite[uuidForMessage] = {
-        message: listeOfMessages[section_0._value.titre],
-        value: section_0._value.titre, //todo: clean: add value system by ID, not string in value property
-    }
-
-    useGlobalStore().conditionOnTotalValue = conditionOnTotalValueToEdite
-})
-
-
-const calculatorSection_1 = new OptionCalculatorSection(
-    {index : 2, title : 'Montant des subventions annuelles fixes', required : true,
-        help:`
-            <p>Choisir la catégorie par rapport au budget annuel de la structure ou du projet (hors frais fixes de loyer).</p>
-            <p>La délimitation des structures et des projets peut être difficile à établir selon les cas de figure. En cas de doute entre deux catégories, il est recommandé de choisir la plus haute.</p>
-            
-            <p>Si l’exposition ne se déroule pas dans la totalité de la surface de la
-                      structure, alors il convient d’appliquer la catégorie d’espace la plus adaptée à la surface
-                      spécifique au sein de la structure.</p>
-             
-            <p>Les quatre catégories proposées sont :</p>
-            
-            <ul>
-                <li>Petite : moins de 50 000 CHF</li>
-                <li>Moyenne : entre 50 000 et 250 000 CHF</li>
-                <li>Grande : entre 250 000 et 500 000 CHF</li>
-                <li>Très grande : supérieure à 500 000 CHF</li>
-            </ul>
-            
-            <p>Il est recommandé aux parties de remplir conjointement le formulaire en ligne.</p>
-        `}
-).addSubSection(
-    new OptionCalculatorSubsection({uniqueID: '01', titre: 'petite', subtitle: '< 50 000 CHF /année'}),
-    new OptionCalculatorSubsection({uniqueID: '02', titre: 'moyenne', subtitle: '50K–250K CHF /année'}),
-    new OptionCalculatorSubsection({uniqueID: '03', titre: 'grande', subtitle: '250K–500K CHF /année'}),
-    new OptionCalculatorSubsection({uniqueID: '04', titre: 'très grande', subtitle: '> 500K CHF /année'}),
-)
-
-const calculatorSection_2 = new OptionCalculatorSection(
-        {index : 3, title : 'Exposant·e·x·s', required : true,
-help:`
-<p>Choisir l'une des options par rapport au nombre d’artistes invité·e·x·s à exposer. 
-</br>Un collectif d’artistes est considéré dans ce décompte comme une personne.</p>
-`}
-    ).addSubSection(
-        new OptionCalculatorSubsection({uniqueID: '01', titre: '1 artiste'}),
-        new OptionCalculatorSubsection({uniqueID: '02', titre: '2 à 6 artistes'}),
-        new OptionCalculatorSubsection({uniqueID: '03', titre: '7 artistes ou plus'}, ),
+    useGlobalStore().setConditionOnTotalValue(
+        uuidForMessage,
+        listeOfMessages[section_0._value.titre], //todo: clean: add value system by ID, not string in value property
+        section_0._value.titre,
     )
+})
 
 export const useGlobalStore = defineStore('globalStore', {
     state: function () {
@@ -134,146 +94,9 @@ export const useGlobalStore = defineStore('globalStore', {
                 calculatorSection_0,
                 calculatorSection_1,
                 calculatorSection_2,
-                // ----------
-
-
-                // ----------
-                new OptionCalculatorSection(
-                    {index : 4, title : 'Œuvres', required : true,
-help:`
-<p>Préciser la nature des œuvres présentées pour l’exposition. Si différentes œuvres entrent dans différentes catégories, choisir l'option la plus avantageuse pour l’artiste.
-Les options sont classées de la moins avantageuse à la plus avantageuse pour l’artiste.</p>
-
-<p>Exemple : Si une exposition regroupe des œuvres déjà existantes et de nouvelles créations d’un artiste, alors c’est la catégorie «conception d'une ou plusieurs nouvelles œuvres» qui est appliquée.</p>
-`}
-                ).addSubSection(
-                    new OptionCalculatorSubsection({
-                        uniqueID: '01',
-                        titre: 'œuvre(s) existante(s)',
-                        subtitle: undefined,
-                        subsectionOptionChangeListener: new ConditionalValueFromSubsectionOption(
-                            [
-                                calculatorSection_1,
-                                calculatorSection_2,
-                            ],
-                            () => conditionalLogicSection_3_option_1(calculatorSection_1, calculatorSection_2),
-                            0,
-                        ),
-                    }),
-                    new OptionCalculatorSubsection(
-                        {
-                            uniqueID: '02',
-                            titre: 'adaptation d’œuvre(s) existante(s)',
-                            subtitle: undefined,
-                            subsectionOptionChangeListener: new ConditionalValueFromSubsectionOption(
-                                [
-                                    calculatorSection_1,
-                                    calculatorSection_2,
-                                ],
-                                () => conditionalLogicSection_3_option_2(calculatorSection_1, calculatorSection_2),
-                                0,
-                            )
-                        },
-                    ),
-                    new OptionCalculatorSubsection(
-                        {
-                            uniqueID: '03',
-                            titre: 'conception de nouvelle(s) œuvre(s)',
-                            subtitle: undefined,
-                            subsectionOptionChangeListener: new ConditionalValueFromSubsectionOption(
-                                [
-                                    calculatorSection_1,
-                                    calculatorSection_2,
-                                ],
-                                () => conditionalLogicSection_3_option_3(calculatorSection_1, calculatorSection_2),
-                                0,
-                            )
-
-                        },
-                    ),
-                ),
-                // ----------
-
-
-                // ----------
-                new NumberCalculatorSection(
-                    {index : 5, title : "Durée de l’exposition", required : true, info : 'Montant forfaitaire supplémentaire par mois au-delà du premier mois',
-help:`
-<p>Les frais liés à la durée correspondent à des frais de location. Ils sont donc progressifs. La durée minimale de ces frais est fixée à un mois. Concernant la progression, arrondir la durée mensuelle à l’unité la plus proche.</p>
-
-<p>Exemples :</p>
- 
-<ul>
-    <li> Exposition de 3 semaines = 1 mois</li>
-    <li> Exposition de 9 semaines = 2 mois</li>
-</ul>
-`},
-                ).addSubSection(
-                    new NumberCalculatorSubsection(
-                        '',
-                        0,
-                        "mois",
-                        1,
-                    ).setAMultiplier(
-                        {
-                            value: new ConditionalValueFromSubsectionOption(
-                                [
-                                    calculatorSection_1,
-                                    calculatorSection_2,
-                                ],
-                                () => conditionalLogicSection_4(
-                                    calculatorSection_1,
-                                    calculatorSection_2,
-                                ),
-                            ),
-                            text: 'Montant forfaitaire supplémentaire par mois au-delà du premier mois: ',
-                            status: "info",
-                            unit: "CHF",
-                            isActiveIfValueGreaterThan: 1
-                        },
-                    )
-                ),
-                // ----------
-
-
-                // ----------
-                new NumberCalculatorSection(
-                    {index : 6, title : 'Honoraires de réalisation',
-help:`
-<p>Option 1 : Si la ou les œuvres sont produites par l’artiste&nbsp;: 
-<ul>
-    <li> Soit définir en amont un nombre d’heures nécessaires à la réalisation du travail ainsi que son coût horaire. Conformément aux directives de Visarte Suisse, et selon la loi genevoise (salaire minimum de 24&nbsp;CHF pour les salarié·e·x·s), le montant horaire ne peut être inférieur à 90&nbsp;CHF pour les indépendant·e·x·s.</li>
-    <li> Soit définir en amont un montant forfaitaire </li>
-</ul>
-
-<p>Option 2 : Si la ou les œuvres sont produites par l’artiste + une autre personne morale ou physique&nbsp;:  
-<ul>
-<li> La structure rémunère elle-même l’intervenant·e·x·s externe et cela n’apparaît pas dans les calculs ci-dessous. Pour la rémunération de l’artiste, se référer à l'option&nbsp;1</li>
-<li> L’artiste rémunère les personnes morales ou physiques employées pour la réalisation de ses pièces. Envisager dans ce cas un forfait.</li>
-</ul>
-
-<p>Option 3 : Si la ou les œuvres ne sont pas produites par l’artiste, le coût de production n'entre pas dans le calcul des honoraires de l’artiste et n'apparaît donc pas dans ce calculateur.</p>
-
-<p>Dans tous les cas, ces décisions doivent se prendre en accord avec la structure. </p>
-`},
-                ).addSubSection(
-                    new NumberCalculatorSubsection(
-                        "nombre d’heures",
-                        0,
-                        "heures",
-                    ).setAMultiplier({
-                        text: 'Coût horaire',
-                        isEditable: true,
-                        unit: 'CHF',
-                        value: 0,
-                    })
-                ).addSubSection(
-                    new NumberCalculatorSubsection(
-                        'Et/ou forfait de réalisation',
-                        0,
-                "CHF",
-                    )
-                ),
+                calculatorSection_3,
+                calculatorSection_5,
+                calculatorSection_6,
                 // ----------
 
 
@@ -431,6 +254,19 @@ help:`<p>Les textes commandés par la structure à l’artiste sont rémunérés
                     },
                 }
             }
+        }
+    },
+
+    actions: {
+        setConditionOnTotalValue(uuidForMessage: string, message: string, value: string) {
+            const conditionOnTotalValueToEdite = this.conditionOnTotalValue
+
+            conditionOnTotalValueToEdite[uuidForMessage] = {
+                message: message,
+                value: value,
+            }
+
+            this.conditionOnTotalValue = conditionOnTotalValueToEdite
         }
     },
 

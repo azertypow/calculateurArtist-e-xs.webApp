@@ -24,13 +24,15 @@
           <div
               v-if="typeof globalTotal === 'number'"
           >CHF {{globalTotal}}<template v-if="globalTotal % 1 === 0">.—</template>
-            <div>{{globalMessage}}</div>
 
             <template v-if="conditionOnTotalValue">
 <!--              <div v-if="conditionOnTotalValue === 'indépendant'" >soit {{ globalTotal - (globalTotal / 100 *85.44 )}}</div>-->
-              <div v-if="conditionOnTotalValue === 'association'" >soit {{ globalTotal / 100 * 72.41}} net</div>
-              <div v-if="conditionOnTotalValue === 'salariat'" >soit {{ globalTotal / 100 * 85.44 }} net</div>
+              <div v-if="conditionOnTotalValue === 'association'" >(CHF {{ formatCHF(globalTotal / 100 * 72.41) }} net)</div>
+              <div v-if="conditionOnTotalValue === 'salariat'" >(CHF {{ formatCHF(globalTotal / 100 * 85.44) }} net)</div>
             </template>
+
+            <div style="line-height: 2rem;font-size: 1.4rem;">{{globalMessage}}</div>
+
 
             <div class="v-view-calculator__result__option">
               <div
@@ -63,7 +65,7 @@ import AppNav from "../components/AppNav.vue";
 import AppCheckbox from "../components/AppCheckbox.vue";
 import AppSection from "../components/AppSection.vue";
 import AppNumberValue from "../components/AppNumberValue.vue";
-import {useGlobalStore} from "../stores/globalStore";
+import {calculatorSection_0_title, useGlobalStore} from "../stores/globalStore";
 import type {
   NumberCalculatorSection,
   OptionCalculatorSection
@@ -72,6 +74,8 @@ import SubsectionOption from "../components/SubsectionOption.vue";
 import SubsectionNumber from "../components/SubsectionNumber.vue";
 import type {OptionOrNumberCalculatorSection} from "../gloabal/CalculatorSection";
 import AppPanel from "../components/AppPanel.vue";
+import {formatCHF} from "../gloabal/formatCurency";
+import {calculatorSection_6} from "../stores/calculatorSection_6";
 
 export default defineComponent({
   name: 'ViewCalculator',
@@ -102,6 +106,7 @@ export default defineComponent({
   },
 
   methods: {
+    formatCHF,
     useGlobalStore,
     getResultPosition() {
       if( !(this.$refs.total instanceof HTMLDivElement)) return
@@ -129,6 +134,22 @@ export default defineComponent({
   }
 
 });
+
+useGlobalStore().$onAction(context => {
+  if( context.name !== 'setConditionOnTotalValue' ) return
+
+
+  if(context.args[2] === calculatorSection_0_title.sal) {
+    useGlobalStore().calculatorSections[5].subSections[0].conseilValue = "(min. légal genevois = 24 CHF / h)"
+  }
+  else if(context.args[2] === calculatorSection_0_title.asso) {
+    useGlobalStore().calculatorSections[5].subSections[0].conseilValue = "(min. légal genevois = 28.10 CHF / h, équivalent coût employeur)"
+  }
+  else {
+    useGlobalStore().calculatorSections[5].subSections[0].conseilValue = "(minimum recommandé par Visarte = 90 CHF / horaire)"
+  }
+
+})
 </script>
 
 <style lang="scss" scoped>
