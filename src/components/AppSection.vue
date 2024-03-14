@@ -146,9 +146,9 @@ export default defineComponent({
 
 .v-app-section__index {
   background: var(--app-color-secondary);
-  padding: 1rem;
+  padding: 1rem 0;
   line-height: 1rem;
-  width: 1rem;
+  width: 3rem;
   height: 1rem;
   border-radius: 2rem;
   text-align: center;
