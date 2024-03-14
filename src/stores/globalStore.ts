@@ -20,6 +20,10 @@ import {calculatorSection_1} from "./calculatorSection_1";
 import {calculatorSection_2} from "./calculatorSection_2";
 import {calculatorSection_5} from "./calculatorSection_5";
 import {calculatorSection_6} from "./calculatorSection_6";
+import {calculatorSection_7} from "./calculatorSection_7";
+import {calculatorSection_8} from "./calculatorSection_8";
+import {calculatorSection_9} from "./calculatorSection_9";
+import {calculatorSection_10} from "./calculatorSection_10";
 
 export const calculatorSection_0_title = {
     ind:    'indépendant·x·e',
@@ -146,133 +150,11 @@ export const useGlobalStore = defineStore('globalStore', {
                 calculatorSection_3,
                 calculatorSection_5,
                 calculatorSection_6,
+                calculatorSection_7,
+                calculatorSection_8,
+                calculatorSection_9,
+                calculatorSection_10,
                 // ----------
-
-
-                // ----------
-                new NumberCalculatorSection(
-                    {index : 7, title : 'Per diem',
-help:`
-<p>Les per diems ne sont pas considérés comme du salaire, et ne sont pas soumis aux cotisations sociales.</p>
-
-<p>Indemnité forfaitaire visant à dédommager l’artiste pour ses frais de repas et de déplacement lors du montage de l'exposition par exemple.</p>
-
-<p>Le nombre de jours se détermine en accord avec la structure.</p>
-`},
-                ).addSubSection(
-                    new NumberCalculatorSubsection(
-                        "Nombre de jours",
-                        0,
-                        'jours',
-                    ).setAMultiplier({
-                        value: 50,
-                        text: 'Montant du per diem: ',
-                        unit: 'CHF',
-                        status: 'info',
-                    }),
-                ),
-                // ----------
-
-
-                // ----------
-                new NumberCalculatorSection(
-                    {
-                        index : 8,
-                        title : 'Montage et transport',
-                        required : false,
-                        info : "recommandation de 60 CHF/h, minimum 23 CHF/h",
-                        help:`
-                            <p>Lorsque l’artiste se charge du montage et/ou du transport de ses pièces&nbsp;:</p>
-                             
-                            <ul>
-                                <li>soit compléter par le nombre d’heures estimées</li>
-                                <li>soit définir un forfait</li> 
-                            </ul>
-                            
-                            <p>Ces décisions se prennent en accord avec la structure.</p>
-                        `
-                    },
-                ).addSubSection(
-                    new NumberCalculatorSubsection(
-                        'nombre d’heures',
-                        0,
-                    ).setAMultiplier({
-                        value: 0,
-                        text: 'Coût horaire',
-                        isEditable: true,
-                        unit: 'CHF',
-                    })
-                ).addSubSection(
-                    new NumberCalculatorSubsection(
-                        'Et/ou forfait',
-                        0,
-                        "CHF",
-                        0,
-                    )
-                ),
-                // ----------
-
-
-                // ----------
-                new NumberCalculatorSection(
-                    {index : 9, title : "Événement",
-help: `
-<ul>
-<li>Événement avec préparation : présentation publique nécessitant un temps de préparation.</li>
-<li>Exemples : lecture, conférence, workshop, modération de rencontre, etc.</li>
-<li>Événement sans préparation : présentation publique ne nécessitant pas de temps de préparation.</li>
-<li>Exemples : présence lors de visite guidée, projection en présence de l’artiste, participation à une table ronde, etc.</li>
-</ul>
-`},
-                ).addSubSection(
-                    new NumberCalculatorSubsection(
-                        "nombre d’occurences",
-                    ).setAMultiplier({
-                        value: new ConditionalValueFromSubsectionOption([
-                            calculatorSection_1,
-                        ], () => conditionalLogicSection_8(calculatorSection_1)),
-                        text: "Événement avec préparation",
-                        unit: 'CHF',
-                    }),
-                ).addSubSection(
-                    new NumberCalculatorSubsection(
-                        "nombre d’occurences",
-                    ).setAMultiplier({
-                      value: new ConditionalValueFromSubsectionOption([
-                        calculatorSection_1,
-                      ], () => conditionalLogicSection_8_sans(calculatorSection_1)),
-                      text: "Événement sans préparation",
-                      unit: 'CHF',
-                    }),
-                ),
-                // ----------
-
-
-                // ----------
-                new NumberCalculatorSection(
-                    {index : 10, title : "Texte", required : false, info : 'source?',
-help:`<p>Les textes commandés par la structure à l’artiste sont rémunérés par 1000 frappes (espaces compris). Le coût forfaitaire par 1000 frappes est calculé automatiquement selon la taille de la structure d’accueil. La longueur du texte final est arrondie au millier de frappes le plus proche.</p>
-<ul>Exemples : 
-<li>Si le texte produit contient 1312 caractères espaces compris, compter 1 occurence.</li>
-<li>Si le texte produit contient 29’979 caractères espaces compris, compter 30 occurences.</li>
-</ul>
-`}
-                ).addSubSection(
-                    new NumberCalculatorSubsection(
-                        "nombre d’occurrences",
-                    ).setAMultiplier(
-                        {
-                            value: new ConditionalValueFromSubsectionOption([
-                                calculatorSection_1,
-                            ], () => conditionalLogicSection_9(calculatorSection_1)),
-                            text: "Coût forfait texte / 1000 frappes",
-                            unit: "CHF"
-                        }
-                    ),
-                )
-                // ----------
-
-
             ] satisfies Record<number, OptionCalculatorSection | NumberCalculatorSection>,
 
             contractSection: {
