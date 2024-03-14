@@ -72,7 +72,7 @@ import SubsectionNumber from "../components/SubsectionNumber.vue";
 import type {OptionOrNumberCalculatorSection} from "../gloabal/CalculatorSection";
 import AppPanel from "../components/AppPanel.vue";
 import {formatCHF} from "../gloabal/formatCurency";
-import {calculatorSection_6} from "../stores/calculatorSection_6";
+import type {NumberCalculatorSubsection} from "../gloabal/CalculatorSection";
 
 export default defineComponent({
   name: 'ViewCalculator',
@@ -140,16 +140,16 @@ useGlobalStore().$onAction(context => {
 
 
   if(context.args[2] === calculatorSection_0_title.ind) {
-      useGlobalStore().calculatorSections[5].subSections[0].conseilValue = "Pour les indépendant·e·x·s, Visarte recommande un tarif horaire de 90 CHF."
+    (useGlobalStore().calculatorSections[5].subSections[0] as NumberCalculatorSubsection).conseilValue = "Pour les indépendant·e·x·s, Visarte recommande un tarif horaire de 90 CHF."
   }
   else if(context.args[2] === calculatorSection_0_title.asso) {
-      useGlobalStore().calculatorSections[5].subSections[0].conseilValue = "À Genève, le salaire minimum horaire est de 24 CHF en 2024. Cela représente un coût employeur de 28.30 CHF."
+    (useGlobalStore().calculatorSections[5].subSections[0] as NumberCalculatorSubsection).conseilValue = "À Genève, le salaire minimum horaire est de 24 CHF en 2024. Cela représente un coût employeur de 28.30 CHF."
   }
   else if(context.args[2] === calculatorSection_0_title.sal) {
-      useGlobalStore().calculatorSections[5].subSections[0].conseilValue = 'À Genève, le salaire minimum horaire est de 24 CHF en 2024. Cela représente un coût employeur de 28.30 CHF.'
+    (useGlobalStore().calculatorSections[5].subSections[0] as NumberCalculatorSubsection).conseilValue = 'À Genève, le salaire minimum horaire est de 24 CHF en 2024. Cela représente un coût employeur de 28.30 CHF.'
   }
   else if (context.args[2] === calculatorSection_0_title.unknown) {
-      useGlobalStore().calculatorSections[5].subSections[0].conseilValue = "Pour les indépendant·e·x·s, Visarte recommande un tarif horaire de 90 CHF. À Genève, le salaire minimum horaire est de 24 CHF en 2024. Cela représente un coût employeur de 28.30 CHF."
+    (useGlobalStore().calculatorSections[5].subSections[0] as NumberCalculatorSubsection).conseilValue = "Pour les indépendant·e·x·s, Visarte recommande un tarif horaire de 90 CHF. À Genève, le salaire minimum horaire est de 24 CHF en 2024. Cela représente un coût employeur de 28.30 CHF."
   }
 
 })

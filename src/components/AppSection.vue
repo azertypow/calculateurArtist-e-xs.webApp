@@ -59,7 +59,7 @@
 <script lang="ts">
 import {defineComponent} from 'vue';
 import type {PropType} from 'vue';
-import type {NumberCalculatorSection, OptionCalculatorSection} from "../gloabal/CalculatorSection";
+import type {NumberCalculatorSection} from "../gloabal/CalculatorSection";
 import SubsectionOption from "./SubsectionOption.vue";
 import SubsectionNumber from "./SubsectionNumber.vue";
 import {useGlobalStore} from "../stores/globalStore";

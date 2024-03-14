@@ -100,10 +100,10 @@ export const calculatorSection_0: OptionCalculatorSection = new OptionCalculator
         `
     }
 ).addSubSection(
-    new OptionCalculatorSubsection({uniqueID: '01', titre: calculatorSection_0_title.ind,       subtitle: listeOfSubtitle[calculatorSection_0_title.ind]}),
-    new OptionCalculatorSubsection({uniqueID: '02', titre: calculatorSection_0_title.sal,       subtitle: listeOfSubtitle[calculatorSection_0_title.sal]}),
-    new OptionCalculatorSubsection({uniqueID: '03', titre: calculatorSection_0_title.asso,      subtitle: listeOfSubtitle[calculatorSection_0_title.asso]}),
-    new OptionCalculatorSubsection({uniqueID: '04', titre: calculatorSection_0_title.unknown,   subtitle: listeOfSubtitle[calculatorSection_0_title.unknown]}),
+    new OptionCalculatorSubsection({uniqueID: '01', titre: calculatorSection_0_title.ind,       subtitle: listeOfSubtitle[calculatorSection_0_title.ind]     || undefined   }),
+    new OptionCalculatorSubsection({uniqueID: '02', titre: calculatorSection_0_title.sal,       subtitle: listeOfSubtitle[calculatorSection_0_title.sal]     || undefined   }),
+    new OptionCalculatorSubsection({uniqueID: '03', titre: calculatorSection_0_title.asso,      subtitle: listeOfSubtitle[calculatorSection_0_title.asso]    || undefined   }),
+    new OptionCalculatorSubsection({uniqueID: '04', titre: calculatorSection_0_title.unknown,   subtitle: listeOfSubtitle[calculatorSection_0_title.unknown] || undefined   }),
 )
 
 calculatorSection_0.addOnChangeListener((section_0) => {

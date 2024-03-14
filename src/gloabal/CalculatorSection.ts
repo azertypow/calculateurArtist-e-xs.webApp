@@ -14,7 +14,6 @@ interface ICalculatorSectionParams {
     title: string;
     required?: boolean;
     info?: string;
-    help: string
 }
 
 class CalculatorSection {
@@ -62,11 +61,11 @@ export class OptionCalculatorSection extends CalculatorSection {
 
     public info?: string;
 
-    public help: string;
+    public help?: string;
 
     constructor({index, title, required=false, info, help}: IOptionCalculatorSectionParams,
     ) {
-        super({index : index, title : title, required : required, info : info, help: help})
+        super({index : index, title : title, required : required, info : info})
         this.info = info;
         this.required = required;
         this.title = title;
@@ -126,7 +125,7 @@ export class NumberCalculatorSection extends CalculatorSection {
 
     constructor({index, title, required=false, info, help}: INumberCalculatorSectionParams,
     ) {
-        super({index : index, title : title, required : required, info : info, help: help});
+        super({index : index, title : title, required : required, info : info});
         this.info = info;
         this.required = required;
         this.title = title;
@@ -360,7 +359,7 @@ export interface ISubFormConstructorParams {
     percentValueOf__impot_a_la_source: ISubFormPercentCalculation   // 0    //todo: a enlever si j'arrive a pas a finir le form
 }
 
-export class SubFormForCalculation implements ISubFormConstructorParams{
+export class SubFormForCalculation {
     protected percentValueOf__AVS: ISubFormPercentCalculation;
     protected percentValueOf__LPP: ISubFormPercentCalculation;
     protected percentValueOf__LAA: ISubFormPercentCalculation;
@@ -383,11 +382,11 @@ export class SubFormForCalculation implements ISubFormConstructorParams{
     }
 
     getPercent() {
-        this.percentValueOf__AVS
-        + this.percentValueOf__LPP
-        + this.percentValueOf__LAA
-        + this.percentValueOf__AMPG
-        + this.percentValueOf__impot_a_la_source
+        // this.percentValueOf__AVS
+        // + this.percentValueOf__LPP
+        // + this.percentValueOf__LAA
+        // + this.percentValueOf__AMPG
+        // + this.percentValueOf__impot_a_la_source
     }
 }
 
