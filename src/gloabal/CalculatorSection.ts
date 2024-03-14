@@ -391,12 +391,6 @@ export class SubFormForCalculation implements ISubFormConstructorParams{
     }
 }
 
-// AVSPercent:              6,438 %			    8,870 %
-// LPP					    7 % 				8 %
-// LAA					    1,12 %				0,8 %
-// AMPG					    1,04 %				1,04 %
-// Impôt à la source		0 %				    –
-
 export interface ISubFormPercentCalculation {
     bossPercent: number,
     workerPercent: number,
