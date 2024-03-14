@@ -3,22 +3,18 @@ import {NumberCalculatorSection, NumberCalculatorSubsection} from "../gloabal/Ca
 export const calculatorSection_6 = new NumberCalculatorSection(
     {index : 6, title : 'Honoraires de réalisation',
         help:`
-<p>Option 1 : Si la ou les œuvres sont produites par l’artiste&nbsp;: 
-<ul>
-    <li> Soit définir en amont un nombre d’heures nécessaires à la réalisation du travail ainsi que son coût horaire. Conformément aux directives de Visarte Suisse, et selon la loi genevoise (salaire minimum de 24&nbsp;CHF pour les salarié·e·x·s), le montant horaire ne peut être inférieur à 90&nbsp;CHF pour les indépendant·e·x·s. <span style="color: red">contenu plus générique ici</span></li>
-    <li> Soit définir en amont un montant forfaitaire </li>
-</ul>
+        <p>Comment déterminer la rémunération de l’artiste pour la réalisation de l'œuvre ?</p>
+        <p>
+        → Définir un nombre d’heures nécessaires à la réalisation du travail ainsi que son tarif horaire. 
+        <br>OU
+        <br>→ Définir un montant forfaitaire.
+        <p>
+        Attention : 
+        <br>→ Dans tous les cas, ces décisions doivent se prendre en amont et en accord entre l’artiste et la structure. 
+        <br>→ Si l'œuvre n’est pas réalisée directement par l’artiste (réalisation par un tiers), les coûts de production n'entrent pas dans le calcul de l’honoraire de l’artiste et n'apparaissent donc pas dans ce calculateur.
+        </p>
 
-<p>Option 2 : Si la ou les œuvres sont produites par l’artiste + une autre personne morale ou physique&nbsp;:  
-<ul>
-<li> La structure rémunère elle-même l’intervenant·e·x·s externe et cela n’apparaît pas dans les calculs ci-dessous. Pour la rémunération de l’artiste, se référer à l'option&nbsp;1</li>
-<li> L’artiste rémunère les personnes morales ou physiques employées pour la réalisation de ses pièces. Envisager dans ce cas un forfait.</li>
-</ul>
-
-<p>Option 3 : Si la ou les œuvres ne sont pas produites par l’artiste, le coût de production n'entre pas dans le calcul des honoraires de l’artiste et n'apparaît donc pas dans ce calculateur.</p>
-
-<p>Dans tous les cas, ces décisions doivent se prendre en accord avec la structure. </p>
-`},
+        `},
 ).addSubSection(
     new NumberCalculatorSubsection(
         "nombre d’heures",

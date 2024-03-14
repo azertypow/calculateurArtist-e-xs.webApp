@@ -105,15 +105,18 @@ export const calculatorSection_0: OptionCalculatorSection = new OptionCalculator
 calculatorSection_0.addOnChangeListener((section_0) => {
     // todo: generate this in backend
     const uuidForMessage = '100648302'
+    updateConditionOnToTalValue(section_0, uuidForMessage)
+})
 
-    if( ! section_0._value) return
+export function updateConditionOnToTalValue(section: OptionCalculatorSection, uuidForMessage: string) {
+    if( ! section._value) return
 
     useGlobalStore().setConditionOnTotalValue(
         uuidForMessage,
-        listeOfMessages[section_0._value.titre], //todo: clean: add value system by ID, not string in value property
-        section_0._value.titre,
+        listeOfMessages[section._value.titre], //todo: clean: add value system by ID, not string in value property
+        section._value.titre,
     )
-})
+}
 
 export const useGlobalStore = defineStore('globalStore', {
     state: function () {

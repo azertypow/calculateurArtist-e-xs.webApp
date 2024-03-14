@@ -136,14 +136,17 @@ useGlobalStore().$onAction(context => {
   if( context.name !== 'setConditionOnTotalValue' ) return
 
 
-  if(context.args[2] === calculatorSection_0_title.sal) {
-    useGlobalStore().calculatorSections[5].subSections[0].conseilValue = "(min. légal genevois = 24 CHF / h)"
+  if(context.args[2] === calculatorSection_0_title.ind) {
+      useGlobalStore().calculatorSections[5].subSections[0].conseilValue = "Pour les indépendant·e·x·s, Visarte recommande un tarif horaire de 90 CHF."
   }
   else if(context.args[2] === calculatorSection_0_title.asso) {
-    useGlobalStore().calculatorSections[5].subSections[0].conseilValue = "(min. légal genevois = 28.10 CHF / h, équivalent coût employeur)"
+      useGlobalStore().calculatorSections[5].subSections[0].conseilValue = "À Genève, le salaire minimum horaire est de 24 CHF en 2024. Cela représente un coût employeur de 28.30 CHF."
   }
-  else {
-    useGlobalStore().calculatorSections[5].subSections[0].conseilValue = "(minimum recommandé par Visarte = 90 CHF / horaire)"
+  else if(context.args[2] === calculatorSection_0_title.sal) {
+      useGlobalStore().calculatorSections[5].subSections[0].conseilValue = 'À Genève, le salaire minimum horaire est de 24 CHF en 2024. Cela représente un coût employeur de 28.30 CHF.'
+  }
+  else if (context.args[2] === calculatorSection_0_title.unknown) {
+      useGlobalStore().calculatorSections[5].subSections[0].conseilValue = "Pour les indépendant·e·x·s, Visarte recommande un tarif horaire de 90 CHF. À Genève, le salaire minimum horaire est de 24 CHF en 2024. Cela représente un coût employeur de 28.30 CHF."
   }
 
 })
