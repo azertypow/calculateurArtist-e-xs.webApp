@@ -277,6 +277,23 @@
           </div>
       </div>
 
+      <div
+          class="app-g"
+      >
+        <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
+        <div class="app-g__coll-4-12"></div>
+        <div class="app-g__coll-4-12 app-with-gutter app-g__coll-xs-12-12">
+          <p>
+            Ce contrat est à considérer comme contrat d’exposition et non comme contrat de travail pour une personne
+            salariée. Un travail est en cours pour la rédaction d’une 2ème version du contrat d’exposition.
+            Temporairement,
+            merci d’utiliser le modèle de contrat pour personne salariée, que vous pourrez trouver <a
+            href="https://infos-artistes-geneve.ch/wp-content/uploads/2023/06/Modele-association-5-Contrat-de-travail-avec-notice.docx"
+            target="_blank">à l’adresse suivante</a>.
+          </p>
+        </div>
+      </div>
+
     </div>
 
     <div class="v-view-contract__section">
