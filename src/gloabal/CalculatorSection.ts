@@ -14,6 +14,7 @@ interface ICalculatorSectionParams {
     title: string;
     required?: boolean;
     info?: string;
+    needToBeExcludeOfFinalPercentValue?: boolean
 }
 
 class CalculatorSection {
@@ -27,13 +28,16 @@ class CalculatorSection {
 
     public info?: string;
 
+    public needToBeExcludeOfFinalPercentValue?: boolean
+
     constructor(
-        {index, title, required=false, info}: ICalculatorSectionParams,
+        {index, title, required=false, info, needToBeExcludeOfFinalPercentValue}: ICalculatorSectionParams,
     ) {
         this.info = info;
         this.required = required;
         this.title = title;
         this.index = index;
+        this.needToBeExcludeOfFinalPercentValue = needToBeExcludeOfFinalPercentValue
     }
 }
 
@@ -43,6 +47,7 @@ interface IOptionCalculatorSectionParams {
     required?: boolean
     info?: string
     help?: string
+    needToBeExcludeOfFinalPercentValue?: boolean
 }
 
 export class OptionCalculatorSection extends CalculatorSection {
@@ -63,9 +68,9 @@ export class OptionCalculatorSection extends CalculatorSection {
 
     public help?: string;
 
-    constructor({index, title, required=false, info, help}: IOptionCalculatorSectionParams,
+    constructor({index, title, required=false, info, help, needToBeExcludeOfFinalPercentValue}: IOptionCalculatorSectionParams,
     ) {
-        super({index : index, title : title, required : required, info : info})
+        super({index : index, title : title, required : required, info : info, needToBeExcludeOfFinalPercentValue})
         this.info = info;
         this.required = required;
         this.title = title;
@@ -106,6 +111,7 @@ interface INumberCalculatorSectionParams {
     required?: boolean;
     info?: string;
     help: string;
+    needToBeExcludeOfFinalPercentValue?: boolean
 }
 
 export class NumberCalculatorSection extends CalculatorSection {
@@ -123,9 +129,9 @@ export class NumberCalculatorSection extends CalculatorSection {
 
     public help: string;
 
-    constructor({index, title, required=false, info, help}: INumberCalculatorSectionParams,
+    constructor({index, title, required=false, info, help, needToBeExcludeOfFinalPercentValue}: INumberCalculatorSectionParams,
     ) {
-        super({index : index, title : title, required : required, info : info});
+        super({index : index, title : title, required : required, info : info, needToBeExcludeOfFinalPercentValue: needToBeExcludeOfFinalPercentValue});
         this.info = info;
         this.required = required;
         this.title = title;

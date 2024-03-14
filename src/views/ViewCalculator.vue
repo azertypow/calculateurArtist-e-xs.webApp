@@ -21,14 +21,14 @@
         <div class="app-g__coll-2-12 app-g__coll-sm-3-12 app-with-gutter" >TOTAL</div>
         <div class="v-view-calculator__result__result-container app-g__coll-8-12 app-g__coll-sm-9-12 app-with-gutter"
         >
+          <h6 style="margin: 0" v-if="'errorMessage' in globalTotal">{{globalTotal.errorMessage}}</h6>
           <div
-              v-if="typeof globalTotal === 'number'"
-          >CHF {{globalTotal}}<template v-if="globalTotal % 1 === 0">.—</template>
+              v-else
+          >CHF {{globalTotal.OUT_ofFinalPercentCalc + globalTotal.IN_finalPercentCalc}}<template v-if="(globalTotal.OUT_ofFinalPercentCalc + globalTotal.IN_finalPercentCalc) % 1 === 0">.—</template>
 
             <template v-if="conditionOnTotalValue">
-<!--              <div v-if="conditionOnTotalValue === 'indépendant'" >soit {{ globalTotal - (globalTotal / 100 *85.44 )}}</div>-->
-              <div v-if="conditionOnTotalValue === calculatorSection_0_title.asso" >(CHF {{ formatCHF(globalTotal / 100 * 72.41) }} net)</div>
-              <div v-if="conditionOnTotalValue === calculatorSection_0_title.sal" >(CHF {{ formatCHF(globalTotal / 100 * 85.44) }} net)</div>
+              <div v-if="conditionOnTotalValue === calculatorSection_0_title.asso" >(CHF {{ globalTotalNetForAssociation }} net)</div>
+              <div v-if="conditionOnTotalValue === calculatorSection_0_title.sal" >(CHF {{ globalTotalNetForSalarierStruct }} net)</div>
             </template>
 
             <div class="v-view-calculator__result__option">
@@ -47,7 +47,6 @@
               Les collectifs d’artistes sont rémunérés selon un coefficient de 1,5.
             </div>
           </div>
-          <h6 style="margin: 0" v-else>{{globalTotal.errorMessage}}</h6>
         </div>
       </div>
 
@@ -62,7 +61,7 @@ import AppNav from "../components/AppNav.vue";
 import AppCheckbox from "../components/AppCheckbox.vue";
 import AppSection from "../components/AppSection.vue";
 import AppNumberValue from "../components/AppNumberValue.vue";
-import {calculatorSection_0_title, useGlobalStore} from "../stores/globalStore";
+import {calculatorSection_0_title, type IGlobalTotal, useGlobalStore} from "../stores/globalStore";
 import type {
   NumberCalculatorSection,
   OptionCalculatorSection
@@ -119,7 +118,7 @@ export default defineComponent({
       return this.globalStore.calculatorSections as OptionOrNumberCalculatorSection<OptionCalculatorSection | NumberCalculatorSection>[]
     },
 
-    globalTotal(): number | {errorMessage: string} {
+    globalTotal(): IGlobalTotal | {errorMessage: string} {
       return this.globalStore.globalTotal
     },
 
@@ -129,6 +128,22 @@ export default defineComponent({
 
     conditionOnTotalValue(): string {
       return Object.values(this.globalStore.conditionOnTotalValue)[0].value
+    },
+
+    globalTotalNetForAssociation(): string {
+      if('errorMessage' in this.globalTotal) return ''
+
+      const inPercent = this.globalTotal.IN_finalPercentCalc / 100 * 72.41
+
+      return formatCHF( inPercent + this.globalTotal.OUT_ofFinalPercentCalc )
+    },
+
+    globalTotalNetForSalarierStruct(): string {
+      if('errorMessage' in this.globalTotal) return ''
+
+      const inPercent = this.globalTotal.IN_finalPercentCalc / 100 * 85.44
+
+      return formatCHF( inPercent + this.globalTotal.OUT_ofFinalPercentCalc )
     }
 
   }

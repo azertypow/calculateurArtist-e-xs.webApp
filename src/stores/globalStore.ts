@@ -204,7 +204,7 @@ export const useGlobalStore = defineStore('globalStore', {
     },
 
     getters: {
-      globalTotal(): number | {errorMessage: string} {
+      globalTotal(): IGlobalTotal | {errorMessage: string} {
 
         let errorForTotalCalculation: null | {errorMessage: string} = null
         for (const section of this.calculatorSections) {
@@ -219,18 +219,32 @@ export const useGlobalStore = defineStore('globalStore', {
 
         const multiply = this.isACollective ? 1.5 : 1
 
-        return this.calculatorSections.reduce((previousTotalOfSection, currentSection) => {
-          return previousTotalOfSection + (currentSection
-            .subSections as unknown[])
-            .reduce((previousSubsectionValue: number, currentSubsection) => {
+          const toReturn: IGlobalTotal = {
+              OUT_ofFinalPercentCalc: 0,
+              IN_finalPercentCalc: 0,
+          }
+
+        this.calculatorSections.forEach((currentSection) => {
+          (currentSection.subSections as unknown[])
+            .forEach((currentSubsection) => {
               if (
-                currentSubsection
-                && typeof currentSubsection === 'object'
-                && 'result' in currentSubsection
-              ) return previousSubsectionValue + (currentSubsection.result as number)
-              else return 0
+                  currentSubsection
+                  && typeof currentSubsection === 'object'
+                  && 'result' in currentSubsection
+              )  {
+                  if(currentSection.needToBeExcludeOfFinalPercentValue) {
+                      toReturn.OUT_ofFinalPercentCalc = toReturn.OUT_ofFinalPercentCalc + (currentSubsection.result as number)
+                  } else {
+                      toReturn.IN_finalPercentCalc = toReturn.IN_finalPercentCalc + (currentSubsection.result as number)
+                  }
+              }
             }, 0)
-        }, 0) * multiply //todo ici
+        }, 0)
+
+          return {
+            IN_finalPercentCalc: toReturn.IN_finalPercentCalc * multiply,
+            OUT_ofFinalPercentCalc: toReturn.OUT_ofFinalPercentCalc * multiply,
+          }
       },
 
       globalMessageForTotalResult(): string {
@@ -239,3 +253,5 @@ export const useGlobalStore = defineStore('globalStore', {
 
     }
 })
+
+export interface IGlobalTotal {OUT_ofFinalPercentCalc: number, IN_finalPercentCalc: number}

@@ -41,35 +41,40 @@
           class="v-app-footer__content"
           v-if="router().currentRoute.value.name === 'calculator' "
       >
-          <div
-                  v-if="typeof globalTotal === 'number'"
-                  class="app-g app-g--align-center app-g--justify-end"
-                  style="gap: 2rem"
-          >
-              <div style="font-size: 2rem; line-height: 4rem" >TOTAL&emsp;CHF {{globalTotal}}<template v-if="globalTotal % 1 === 0">.—</template></div>
+        <div v-if="'errorMessage' in globalTotal"
+          >{{globalTotal.errorMessage}}
+        </div>
 
-            <template v-if="conditionOnTotalValue">
-              <div v-if="conditionOnTotalValue === calculatorSection_0_title.asso"
-              >(CHF {{ formatCHF(globalTotal / 100 * 72.41) }} net)</div>
-              <div v-if="conditionOnTotalValue === calculatorSection_0_title.sal"
-              >(CHF {{ formatCHF(globalTotal / 100 * 85.44) }} net)</div>
-            </template>
-
-          </div>
-        <div v-else                                 >{{globalTotal.errorMessage}}</div>
+        <template v-else >
           <div
-              v-if="typeof globalTotal === 'number'"
-              class="v-app-footer__content__artiste-option"
-          >
-              <div
-                      class="app-button--toggle app-button--toggle--is-small"
-                      @click="globalStore.isACollective = !globalStore.isACollective"
-                      :class="{'is-active': globalStore.isACollective}"
-              ></div>
-              <div>
-                  Collectif d’artiste?
-              </div>
-          </div>
+                    class="app-g app-g--align-center app-g--justify-end"
+                    style="gap: 2rem"
+            >
+                <div style="font-size: 2rem; line-height: 4rem"
+                >TOTAL&emsp;CHF {{ (globalTotal.OUT_ofFinalPercentCalc + globalTotal.IN_finalPercentCalc)}}<template v-if="(globalTotal.OUT_ofFinalPercentCalc + globalTotal.IN_finalPercentCalc) % 1 === 0">.—</template></div>
+
+              <template v-if="conditionOnTotalValue">
+                <div v-if="conditionOnTotalValue === calculatorSection_0_title.asso"
+                >(CHF {{ globalTotalNetForAssociation }} net)</div>
+                <div v-if="conditionOnTotalValue === calculatorSection_0_title.sal"
+                >(CHF {{ globalTotalNetForSalarierStruct }} net)</div>
+              </template>
+
+            </div>
+
+            <div
+                class="v-app-footer__content__artiste-option"
+            >
+                <div
+                        class="app-button--toggle app-button--toggle--is-small"
+                        @click="globalStore.isACollective = !globalStore.isACollective"
+                        :class="{'is-active': globalStore.isACollective}"
+                ></div>
+                <div>
+                    Collectif d’artiste?
+                </div>
+            </div>
+        </template>
       </div>
     </div>
     <div
@@ -452,7 +457,7 @@ import type {
   OptionCalculatorSection,
   OptionOrNumberCalculatorSection
 } from "../gloabal/CalculatorSection";
-import {calculatorSection_0_title, useGlobalStore} from "../stores/globalStore";
+import {calculatorSection_0_title, type IGlobalTotal, useGlobalStore} from "../stores/globalStore";
 // import * as html2pdf from 'html2pdf.js';
 import router from "../router";
 import type * as jspdf from "jspdf";
@@ -471,6 +476,23 @@ export default defineComponent({
   },
 
   computed: {
+
+    globalTotalNetForAssociation(): string {
+      if('errorMessage' in this.globalTotal) return ''
+
+      const inPercent = this.globalTotal.IN_finalPercentCalc / 100 * 72.41
+
+      return formatCHF( inPercent + this.globalTotal.OUT_ofFinalPercentCalc )
+    },
+
+    globalTotalNetForSalarierStruct(): string {
+      if('errorMessage' in this.globalTotal) return ''
+
+      const inPercent = this.globalTotal.IN_finalPercentCalc / 100 * 85.44
+
+      return formatCHF( inPercent + this.globalTotal.OUT_ofFinalPercentCalc )
+    },
+
     calculatorSection_0_title() {
       return calculatorSection_0_title
     },
@@ -498,7 +520,7 @@ export default defineComponent({
       return this.globalStore.calculatorSections as OptionOrNumberCalculatorSection<OptionCalculatorSection | NumberCalculatorSection>[]
     },
 
-    globalTotal(): number | {errorMessage: string} {
+    globalTotal(): IGlobalTotal | {errorMessage: string} {
       return this.globalStore.globalTotal
     },
 

@@ -1,7 +1,10 @@
 import {NumberCalculatorSection, NumberCalculatorSubsection} from "../gloabal/CalculatorSection";
 
 export const calculatorSection_7 = new NumberCalculatorSection(
-    {index : 7, title : 'Per diem',
+    {
+        index : 7,
+        title : 'Per diem',
+        needToBeExcludeOfFinalPercentValue: true,
         help:`
 <p>Les per diems ne sont pas considérés comme du salaire, et ne sont pas soumis aux cotisations sociales.</p>
 
