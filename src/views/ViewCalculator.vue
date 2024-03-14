@@ -31,9 +31,6 @@
               <div v-if="conditionOnTotalValue === 'salariat'" >(CHF {{ formatCHF(globalTotal / 100 * 85.44) }} net)</div>
             </template>
 
-            <div style="line-height: 2rem;font-size: 1.4rem;">{{globalMessage}}</div>
-
-
             <div class="v-view-calculator__result__option">
               <div
                   class="app-button--toggle"

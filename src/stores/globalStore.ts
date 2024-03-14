@@ -22,16 +22,69 @@ import {calculatorSection_5} from "./calculatorSection_5";
 import {calculatorSection_6} from "./calculatorSection_6";
 
 export const calculatorSection_0_title = {
-    ind:    'indépendant',
-    sal:    'salariat',
-    asso:   'association',
+    ind:    'indépendant·x·e',
+    sal:    'salarié·e·x par la structure',
+    asso:   'salarié·e·x par une association',
+    unknown:'je ne sais pas',
 }
 
 export const listeOfMessages = {
-    [calculatorSection_0_title.ind]:    "Les montants actuels sont les montants pour les indépendants",
-    [calculatorSection_0_title.asso]:   "Les montants pour les associations sont recalculés selon les taux en vigueur et les charges employeur",
-    [calculatorSection_0_title.sal]:    "Les montants pour les salariés sont recalculés selon les taux en vigueur",
+    [calculatorSection_0_title.ind]:    "Message global ind",
+    [calculatorSection_0_title.asso]:   "Message global asso",
+    [calculatorSection_0_title.sal]:    "Message global salarié structure",
+    [calculatorSection_0_title.unknown]:    "Message global unknown",
 }
+
+export const listeOfSubtitle = {
+    [calculatorSection_0_title.ind]:    `
+    <p>L’artiste est indépendant·e·x et facture sa prestation directement à la structure.</p>
+    <p>Les montants sont indiqués toutes charges comprises</p>
+    `,
+    [calculatorSection_0_title.asso]:   `
+    <p>L’artiste est indépendant·e·x et facture sa prestation directement à la structure.</p>
+    <p>Les montants sont indiqués toutes charges comprises</p>
+    <p>
+    Soit :
+    </p>
+    <table>
+      <tr>
+        <td>AVS/AI/APG/AC/AMat</td>
+        <td>6.438%</td>
+      </tr>
+      <tr>
+        <td>LPP</td>
+        <td>7%</td>
+      </tr>
+      <tr>
+        <td>LAA</td>
+        <td>1.12%</td>
+      </tr>
+    </table>
+    `,
+    [calculatorSection_0_title.sal]:    `
+    <p>L’artiste est salarié·e·x directement par la structure.</p>
+    <p>Les montants sont indiqués en salaire brut.  Les charges patronales sont payées en plus par la structure.</p>
+    <p>
+    Soit :
+    </p>
+    <table>
+      <tr>
+        <td>AVS/AI/APG/AC/AMat</td>
+        <td>6.438%</td>
+      </tr>
+      <tr>
+        <td>LPP</td>
+        <td>7%</td>
+      </tr>
+      <tr>
+        <td>LAA</td>
+        <td>1.12%</td>
+      </tr>
+    </table>
+    `,
+    [calculatorSection_0_title.unknown]:  null,
+}
+
 
 export const calculatorSection_0: OptionCalculatorSection = new OptionCalculatorSection(
     {
@@ -39,21 +92,14 @@ export const calculatorSection_0: OptionCalculatorSection = new OptionCalculator
         title : 'Modalité de rémunération',
         required : true,
         help: `
-        <p>De quelle manière la rémunération de l’artiste sera-t-elle versée ou perçue ?</p>
-        <ul>
-            <li>indépendant
-                <br>→ l’artiste est indépendant et facture sa prestation directement à la structure</li>
-            <li>salariat
-                <br>→ l’artiste est salarié directement par la structure</li>
-            <li>association
-                <br>→ l’artiste est salarié par une association productrice, qui facture la prestation à la structure</li>
-        </ul>
+        <p>Les taux de cotisation proposés d’office correspondent aux taux en vigueur à Genève en 2024.</p>
         `
     }
 ).addSubSection(
-    new OptionCalculatorSubsection({uniqueID: '01', titre: calculatorSection_0_title.ind}),
-    new OptionCalculatorSubsection({uniqueID: '02', titre: calculatorSection_0_title.sal}),
-    new OptionCalculatorSubsection({uniqueID: '03', titre: calculatorSection_0_title.asso}),
+    new OptionCalculatorSubsection({uniqueID: '01', titre: calculatorSection_0_title.ind,       subtitle: listeOfSubtitle[calculatorSection_0_title.ind]}),
+    new OptionCalculatorSubsection({uniqueID: '02', titre: calculatorSection_0_title.sal,       subtitle: listeOfSubtitle[calculatorSection_0_title.sal]}),
+    new OptionCalculatorSubsection({uniqueID: '03', titre: calculatorSection_0_title.asso,      subtitle: listeOfSubtitle[calculatorSection_0_title.asso]}),
+    new OptionCalculatorSubsection({uniqueID: '04', titre: calculatorSection_0_title.unknown,   subtitle: listeOfSubtitle[calculatorSection_0_title.unknown]}),
 )
 
 calculatorSection_0.addOnChangeListener((section_0) => {

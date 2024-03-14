@@ -446,3 +446,11 @@ body {
 ::-webkit-scrollbar-button {
   background: var(--app-color-main);
 }
+
+table {
+  border-spacing: 0;
+
+  td {
+    padding: 0 2em 0.5em 0;
+  }
+}

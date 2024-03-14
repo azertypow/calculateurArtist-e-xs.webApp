@@ -23,9 +23,10 @@
       >i</span>
     </span>
     </label>
-    <template v-if="description">
-      <span class="v-app-checkbox__description" >{{description}}</span>
-    </template>
+    <div class="v-app-checkbox__description app-remove-child-margin"
+         v-if="description"
+         v-html="description"
+    ></div>
   </div>
 </template>
 
@@ -106,14 +107,6 @@ export default defineComponent({
   }
 }
 
-.v-app-checkbox__description {
-  line-height: 2rem;
-  font-size: 1.4rem;
-  padding-left: 3rem;
-  margin-top: 1rem;
-  display: block;
-}
-
 .v-app-checkbox__info {
   position: absolute;
   width: calc(100% - 4rem);
@@ -142,5 +135,20 @@ export default defineComponent({
   height: 1rem;
   line-height: 1rem;
   z-index: 10;
+}
+</style>
+
+<style lang="scss">
+.v-app-checkbox__description {
+    line-height: 1.1em;
+    font-size: 1.4rem;
+    padding-left: 3rem;
+    margin-top: 1rem;
+    display: block;
+
+    p {
+        margin-bottom:  .75em;
+        margin-top:     .75em;
+    }
 }
 </style>
