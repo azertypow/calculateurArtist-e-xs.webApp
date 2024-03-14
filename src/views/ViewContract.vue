@@ -146,7 +146,7 @@
       >
         <div class="app-g__coll-sm-0-12 app-g__coll-2-12"></div>
         <div class="app-g__coll-4-12 app-g__coll-xs-12-12 app-with-gutter app-with-space-bottom--xs">
-          <div>et l’artiste/les artistes/le collectif d’artistes/la galerie</div>
+          <div>et l’artiste/les artistes/le collectif d’artistes/la galerie/l’association</div>
         </div>
         <div class="app-g__coll-4-12 app-with-gutter"></div>
       </div>
