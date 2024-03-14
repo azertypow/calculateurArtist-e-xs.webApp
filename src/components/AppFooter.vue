@@ -49,9 +49,10 @@
               <div style="font-size: 2rem; line-height: 4rem" >TOTAL&emsp;CHF {{globalTotal}}<template v-if="globalTotal % 1 === 0">.—</template></div>
 
             <template v-if="conditionOnTotalValue">
-              <!--              <div v-if="conditionOnTotalValue === 'indépendant'" >soit {{ globalTotal - (globalTotal / 100 *85.44 )}}</div>-->
-              <div v-if="conditionOnTotalValue === 'association'" >(CHF {{ formatCHF(globalTotal / 100 * 72.41) }} net)</div>
-              <div v-if="conditionOnTotalValue === 'salariat'" >(CHF {{ formatCHF(globalTotal / 100 * 85.44) }} net)</div>
+              <div v-if="conditionOnTotalValue === calculatorSection_0_title.asso"
+              >(CHF {{ formatCHF(globalTotal / 100 * 72.41) }} net)</div>
+              <div v-if="conditionOnTotalValue === calculatorSection_0_title.sal"
+              >(CHF {{ formatCHF(globalTotal / 100 * 85.44) }} net)</div>
             </template>
 
           </div>
@@ -451,7 +452,7 @@ import type {
   OptionCalculatorSection,
   OptionOrNumberCalculatorSection
 } from "../gloabal/CalculatorSection";
-import {useGlobalStore} from "../stores/globalStore";
+import {calculatorSection_0_title, useGlobalStore} from "../stores/globalStore";
 // import * as html2pdf from 'html2pdf.js';
 import router from "../router";
 import type * as jspdf from "jspdf";
@@ -470,6 +471,9 @@ export default defineComponent({
   },
 
   computed: {
+    calculatorSection_0_title() {
+      return calculatorSection_0_title
+    },
     isHome(): boolean {
       return this.$router.currentRoute.value.path === '/'
     },

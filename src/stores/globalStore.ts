@@ -230,7 +230,7 @@ export const useGlobalStore = defineStore('globalStore', {
               ) return previousSubsectionValue + (currentSubsection.result as number)
               else return 0
             }, 0)
-        }, 0) * multiply
+        }, 0) * multiply //todo ici
       },
 
       globalMessageForTotalResult(): string {

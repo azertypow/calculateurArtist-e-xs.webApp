@@ -27,8 +27,8 @@
 
             <template v-if="conditionOnTotalValue">
 <!--              <div v-if="conditionOnTotalValue === 'indépendant'" >soit {{ globalTotal - (globalTotal / 100 *85.44 )}}</div>-->
-              <div v-if="conditionOnTotalValue === 'association'" >(CHF {{ formatCHF(globalTotal / 100 * 72.41) }} net)</div>
-              <div v-if="conditionOnTotalValue === 'salariat'" >(CHF {{ formatCHF(globalTotal / 100 * 85.44) }} net)</div>
+              <div v-if="conditionOnTotalValue === calculatorSection_0_title.asso" >(CHF {{ formatCHF(globalTotal / 100 * 72.41) }} net)</div>
+              <div v-if="conditionOnTotalValue === calculatorSection_0_title.sal" >(CHF {{ formatCHF(globalTotal / 100 * 85.44) }} net)</div>
             </template>
 
             <div class="v-view-calculator__result__option">
@@ -112,6 +112,9 @@ export default defineComponent({
   },
 
   computed: {
+    calculatorSection_0_title() {
+      return calculatorSection_0_title
+    },
     sections(): OptionOrNumberCalculatorSection<OptionCalculatorSection | NumberCalculatorSection>[] {
       return this.globalStore.calculatorSections as OptionOrNumberCalculatorSection<OptionCalculatorSection | NumberCalculatorSection>[]
     },
