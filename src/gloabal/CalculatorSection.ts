@@ -253,13 +253,18 @@ export class OptionCalculatorSubsection {
     private readonly _subsectionOptionChangeListener?: ConditionalValueFromSubsectionOption;
     private _result = 0;
 
+    private subFormForCalculation?: SubFormForCalculation
+    get hasSubFormForCalculation(): boolean {
+        return this.subFormForCalculation !== undefined
+    }
+
     constructor(params: {
         numberValue?: number,
         subsectionOptionChangeListener?: ConditionalValueFromSubsectionOption,
         subtitle?: string,
         titre: string,
         uniqueID: string,
-        subForm?: SubForm
+        subForm?: ISubFormConstructorParams
     }) {
         if(params.numberValue) this._result     = params.numberValue
         this._subsectionOptionChangeListener    = params.subsectionOptionChangeListener
@@ -268,14 +273,14 @@ export class OptionCalculatorSubsection {
         this.uniqueID                           = params.uniqueID
 
         this._initSubsectionOptionChangeListener()
+
+        if(params.subForm) this.subFormForCalculation = new SubFormForCalculation(params.subForm)
     }
 
     private _initSubsectionOptionChangeListener() {
         if(!this._subsectionOptionChangeListener) return
         this._result = this._subsectionOptionChangeListener.defaultValue
         this._subsectionOptionChangeListener.onChange = () => {
-
-            console.log('change from OptionCalculatorSubsection')
 
             if(!this._subsectionOptionChangeListener) return
             this._result = this._subsectionOptionChangeListener.calculateValueOnChange()
@@ -347,30 +352,49 @@ export class ConditionalValueFromSubsectionOption {
 }
 
 
-interface ConstructorParams {
-    percentValueOf__AVS: ISubFormPercentCalculation
-    percentValueOf__LPP: ISubFormPercentCalculation
-    percentValueOf__LAA: ISubFormPercentCalculation
-    percentValueOf__AMPG: ISubFormPercentCalculation
-    percentValueOf__impot_a_la_source: ISubFormPercentCalculation
+export interface ISubFormConstructorParams {
+    percentValueOf__AVS: ISubFormPercentCalculation                 // 6.438  // AVS/AI/APG/AC/AMat
+    percentValueOf__LPP: ISubFormPercentCalculation                 // 7
+    percentValueOf__LAA: ISubFormPercentCalculation                 // 1.12
+    percentValueOf__AMPG: ISubFormPercentCalculation                // 0    //todo: a enlever si j'arrive a pas a finir le form
+    percentValueOf__impot_a_la_source: ISubFormPercentCalculation   // 0    //todo: a enlever si j'arrive a pas a finir le form
 }
 
-export class SubForm {
+export class SubFormForCalculation implements ISubFormConstructorParams{
+    protected percentValueOf__AVS: ISubFormPercentCalculation;
+    protected percentValueOf__LPP: ISubFormPercentCalculation;
+    protected percentValueOf__LAA: ISubFormPercentCalculation;
+    protected percentValueOf__AMPG: ISubFormPercentCalculation;
+    protected percentValueOf__impot_a_la_source: ISubFormPercentCalculation;
+
     constructor({
                     percentValueOf__AVS,
                     percentValueOf__LPP,
                     percentValueOf__LAA,
                     percentValueOf__AMPG,
                     percentValueOf__impot_a_la_source
-                }: ConstructorParams,) {
+                }: ISubFormConstructorParams,) {
+        this.percentValueOf__AVS = percentValueOf__AVS;
+        this.percentValueOf__LPP = percentValueOf__LPP;
+        this.percentValueOf__LAA = percentValueOf__LAA;
+        this.percentValueOf__AMPG = percentValueOf__AMPG;
+        this.percentValueOf__impot_a_la_source = percentValueOf__impot_a_la_source;
 
+    }
+
+    getPercent() {
+        this.percentValueOf__AVS
+        + this.percentValueOf__LPP
+        + this.percentValueOf__LAA
+        + this.percentValueOf__AMPG
+        + this.percentValueOf__impot_a_la_source
     }
 }
 
-// AVSPercent:             6,438 %			    8,870 %
+// AVSPercent:              6,438 %			    8,870 %
 // LPP					    7 % 				8 %
 // LAA					    1,12 %				0,8 %
-// AMPG					1,04 %				1,04 %
+// AMPG					    1,04 %				1,04 %
 // Impôt à la source		0 %				    –
 
 export interface ISubFormPercentCalculation {
