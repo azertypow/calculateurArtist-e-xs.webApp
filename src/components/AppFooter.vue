@@ -212,7 +212,7 @@
               </p>
 
               <h4>Version</h4>
-              <p>v 0.9.1
+              <p>v 0.9.2
                 <br>Dernière mise à jour : 20 septembre 2023
               </p>
 
