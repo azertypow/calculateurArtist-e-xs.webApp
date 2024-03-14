@@ -3,7 +3,7 @@ import {OptionCalculatorSection, OptionCalculatorSubsection} from "../gloabal/Ca
 export const calculatorSection_1 = new OptionCalculatorSection(
     {index : 2, title : 'Montant des subventions annuelles fixes', required : true,
         help:`
-            <p>Choisir la catégorie par rapport au budget annuel de la structure ou du projet (hors frais fixes de loyer).</p>
+            <p>Choisir la catégorie par rapport au montant des subventions publiques fixes annuelles de la structure ou du projet.</p>
             <p>La délimitation des structures et des projets peut être difficile à établir selon les cas de figure. En cas de doute entre deux catégories, il est recommandé de choisir la plus haute.</p>
             
             <p>Si l’exposition ne se déroule pas dans la totalité de la surface de la
