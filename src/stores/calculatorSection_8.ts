@@ -9,10 +9,11 @@ export const calculatorSection_8 = new NumberCalculatorSection(
         help:`
                             <p>Lorsque l’artiste se charge du montage et/ou du transport de ses pièces&nbsp;:</p>
                              
-                            <ul>
-                                <li>soit compléter par le nombre d’heures estimées</li>
-                                <li>soit définir un forfait</li> 
-                            </ul>
+                            <p>
+                                → soit compléter par le nombre d’heures estimées
+                                <br>OU
+                                <br>→ soit définir un forfait
+                            </p>
                             
                             <p>Ces décisions se prennent en accord avec la structure.</p>
                         `

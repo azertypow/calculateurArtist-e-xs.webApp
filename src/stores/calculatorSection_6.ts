@@ -10,9 +10,11 @@ export const calculatorSection_6 = new NumberCalculatorSection(
         <br>→ Définir un montant forfaitaire.
         <p>
         Attention : 
-        <br>→ Dans tous les cas, ces décisions doivent se prendre en amont et en accord entre l’artiste et la structure. 
-        <br>→ Si l'œuvre n’est pas réalisée directement par l’artiste (réalisation par un tiers), les coûts de production n'entrent pas dans le calcul de l’honoraire de l’artiste et n'apparaissent donc pas dans ce calculateur.
         </p>
+        <ul>
+        <li>Dans tous les cas, ces décisions doivent se prendre en amont et en accord entre l’artiste et la structure.</li>
+        <li>Si l'œuvre n’est pas réalisée directement par l’artiste (réalisation par un tiers), les coûts de production n'entrent pas dans le calcul de l’honoraire de l’artiste et n'apparaissent donc pas dans ce calculateur.</li>
+        </ul>
 
         `},
 ).addSubSection(

@@ -4,5 +4,5 @@ export function formatCHF(value: number): string {
         currency: 'CHF',
     })
         .replace('.00', '.—')
-        .replace(' CHF', '')
+        .replace('CHF', '')
 }

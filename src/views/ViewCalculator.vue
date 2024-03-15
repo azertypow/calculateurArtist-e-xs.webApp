@@ -27,8 +27,8 @@
           >CHF {{globalTotal.OUT_ofFinalPercentCalc + globalTotal.IN_finalPercentCalc}}<template v-if="(globalTotal.OUT_ofFinalPercentCalc + globalTotal.IN_finalPercentCalc) % 1 === 0">.—</template>
 
             <template v-if="conditionOnTotalValue">
-              <div v-if="conditionOnTotalValue === calculatorSection_0_title.asso" >(CHF {{ globalTotalNetForAssociation }} net)</div>
-              <div v-if="conditionOnTotalValue === calculatorSection_0_title.sal" >(CHF {{ globalTotalNetForSalarierStruct }} net)</div>
+              <div v-if="conditionOnTotalValue === calculatorSection_0_title.asso" >(CHF {{ globalTotalNetForAssociation }}net)</div>
+              <div v-if="conditionOnTotalValue === calculatorSection_0_title.sal" >(CHF {{ globalTotalNetForSalarierStruct }}net)</div>
             </template>
 
             <div class="v-view-calculator__result__option">

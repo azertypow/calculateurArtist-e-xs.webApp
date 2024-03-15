@@ -42,11 +42,11 @@ export const listeOfMessages = {
 export const listeOfSubtitle = {
     [calculatorSection_0_title.ind]:    `
     <p>L’artiste est indépendant·e·x et facture sa prestation directement à la structure.</p>
-    <p>Les montants sont indiqués toutes charges comprises</p>
+    <p>Les montants sont indiqués toutes charges comprises.</p>
     `,
     [calculatorSection_0_title.asso]:   `
     <p>L’artiste est indépendant·e·x et facture sa prestation directement à la structure.</p>
-    <p>Les montants sont indiqués toutes charges comprises</p>
+    <p>Les montants sont indiqués toutes charges comprises.</p>
     <p>
     Soit :
     </p>

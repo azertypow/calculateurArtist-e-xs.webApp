@@ -732,7 +732,7 @@
                       <option :value="true">avec</option>
                       <option :value="false">sans</option>
                   </select>
-              </div> Participation de la structure au prix de vente
+              </div> participation de la structure au prix de vente
           </div>
 
         <h4
@@ -900,7 +900,7 @@
               class="app-button--check app-contract-with_production"
               @click="contractStore.option_editors = !contractStore.option_editors"
           >
-            Monteur·rice·x·s et technicien·ne·x·s externes et/ou internes
+            Monteur·euse·x·s / technicien·ne·x·s internes ou externes
           </p>
           <template
               v-for="toBeCompletedIfNecessary of contractStore.option_arrayOf_toBeCompletedIfNecessary"
@@ -965,7 +965,7 @@
                   class="app-contract-with_production"
                   :class="{'app-font-remove': contractStore.with_production === false}"
           >
-            Les Parties peuvent convenir d’une avance sur le budget de production convenu, payable dans les 30 jours dès
+            Les parties peuvent convenir d’une avance sur le budget de production convenu, payable dans les 30 jours dès
             la signature du contrat.
           </p>
       <!-- [END]        condution with production -->
