@@ -26,7 +26,7 @@ import {calculatorSection_9} from "./calculatorSection_9";
 import {calculatorSection_10} from "./calculatorSection_10";
 
 export const calculatorSection_0_title = {
-    ind:    'indépendant·x·e',
+    ind:    'indépendant·e·x',
     sal:    'salarié·e·x par la structure',
     asso:   'salarié·e·x par une association',
     unknown:'je ne sais pas',
@@ -47,44 +47,10 @@ export const listeOfSubtitle = {
     [calculatorSection_0_title.asso]:   `
     <p>L’artiste est indépendant·e·x et facture sa prestation directement à la structure.</p>
     <p>Les montants sont indiqués toutes charges comprises.</p>
-    <p>
-    Soit :
-    </p>
-    <table>
-      <tr>
-        <td>AVS/AI/APG/AC/AMat</td>
-        <td>6.438%</td>
-      </tr>
-      <tr>
-        <td>LPP</td>
-        <td>7%</td>
-      </tr>
-      <tr>
-        <td>LAA</td>
-        <td>1.12%</td>
-      </tr>
-    </table>
     `,
     [calculatorSection_0_title.sal]:    `
-    <p>L’artiste est salarié·e·x directement par la structure.</p>
-    <p>Les montants sont indiqués en salaire brut.  Les charges patronales sont payées en plus par la structure.</p>
-    <p>
-    Soit :
-    </p>
-    <table>
-      <tr>
-        <td>AVS/AI/APG/AC/AMat</td>
-        <td>6.438%</td>
-      </tr>
-      <tr>
-        <td>LPP</td>
-        <td>7%</td>
-      </tr>
-      <tr>
-        <td>LAA</td>
-        <td>1.12%</td>
-      </tr>
-    </table>
+    <p>L’artiste est salarié·e·x par une association productrice qui facture la prestation à la structure.</p>
+    <p>Les montants sont indiqués en coût total employeur. Les charges patronales, ainsi que les charges sociales employé sont à déduire du montant.</p>
     `,
     [calculatorSection_0_title.unknown]:  null,
 }
@@ -96,7 +62,21 @@ export const calculatorSection_0: OptionCalculatorSection = new OptionCalculator
         title : 'Modalité de rémunération',
         required : true,
         help: `
-        <p>Les taux de cotisation proposés d’office correspondent aux taux en vigueur à Genève en 2024.</p>
+        <p>Les taux de cotisation proposés d’office correspondent aux taux en vigueur à Genève en 2024, ainsi que selon une affiliation auprès de Artes & Comoedia, caisse de prévoyance de référence pour le domaine culturel en Suisse Romande.</p>
+        <table>
+              <tr>
+                <td>AVS/AI/APG/AC/AMat</td>
+                <td>6.438%</td>
+              </tr>
+              <tr>
+                <td>LPP</td>
+                <td>7%</td>
+              </tr>
+              <tr>
+                <td>LAA</td>
+                <td>1.12%</td>
+              </tr>
+            </table>
         `
     }
 ).addSubSection(

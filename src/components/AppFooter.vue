@@ -758,17 +758,19 @@ ${contratData.artiste_gallery}
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 0 1rem;
     line-height: 2rem;
     font-size: 1.4rem;
     margin: auto;
+    gap: 2rem;
 
     @media (max-width: 1280px) { // footer special breakpoint
       justify-content: flex-start;
       max-width: var(--app-max-width);
       padding-top: .5rem;
       padding-bottom: .5rem;
+      gap: 0;
     }
   }
 
