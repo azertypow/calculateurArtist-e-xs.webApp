@@ -207,7 +207,7 @@
                   <br><a target="_blank" href="https://ekoopmans.github.io/html2pdf.js/">html2pdf.js</a>
               </p>
 
-              <p>travaildesartistes.ch est le résultat de mandats du Service culturel de la <a href="https://www.geneve.ch/fr" target="_blank" >Ville de Genève</a> et de <a href="https://www.ge.ch/organisation/office-cantonal-culture-du-sport" target="_blank" >l'Office cantonal de la culture et du sport.</a>.</p>
+              <p>travaildesartistes.ch est le résultat de mandats du Service culturel de la <a href="https://www.geneve.ch/fr" target="_blank" >Ville de Genève</a> et de <a href="https://www.ge.ch/organisation/office-cantonal-culture-du-sport" target="_blank" >l'Office cantonal de la culture et du sport.</a></p>
 
               <h4>Note</h4>
               <p>Visarte.Genève / les auteur·ices déclinent toute responsabilité du succès ou du non-succès de cette
