@@ -29,14 +29,12 @@ export const calculatorSection_0_title = {
     ind:    'indépendant·e·x',
     sal:    'salarié·e·x par la structure',
     asso:   'salarié·e·x par une association',
-    unknown:'je ne sais pas',
 }
 
 export const listeOfMessages = {
     [calculatorSection_0_title.ind]:    "Message global ind",
     [calculatorSection_0_title.asso]:   "Message global asso",
     [calculatorSection_0_title.sal]:    "Message global salarié structure",
-    [calculatorSection_0_title.unknown]:    "Message global unknown",
 }
 
 export const listeOfSubtitle = {
@@ -52,7 +50,6 @@ export const listeOfSubtitle = {
     <p>L’artiste est salarié·e·s directement par la structure.</p>
     <p>Les montants sont indiqués en salaire brut.  Les charges patronales sont payées en plus par la structure.</p>
     `,
-    [calculatorSection_0_title.unknown]:  null,
 }
 
 
@@ -83,7 +80,6 @@ export const calculatorSection_0: OptionCalculatorSection = new OptionCalculator
     new OptionCalculatorSubsection({uniqueID: '01', titre: calculatorSection_0_title.ind,       subtitle: listeOfSubtitle[calculatorSection_0_title.ind]     || undefined   }),
     new OptionCalculatorSubsection({uniqueID: '02', titre: calculatorSection_0_title.sal,       subtitle: listeOfSubtitle[calculatorSection_0_title.sal]     || undefined   }),
     new OptionCalculatorSubsection({uniqueID: '03', titre: calculatorSection_0_title.asso,      subtitle: listeOfSubtitle[calculatorSection_0_title.asso]    || undefined   }),
-    new OptionCalculatorSubsection({uniqueID: '04', titre: calculatorSection_0_title.unknown,   subtitle: listeOfSubtitle[calculatorSection_0_title.unknown] || undefined   }),
 )
 
 calculatorSection_0.addOnChangeListener((section_0) => {
