@@ -326,12 +326,6 @@
                       <li>La mise à disposition d’œuvres le temps de l’exposition.</li>
                   </ul>
 
-                  <p>Sont inclus dans les honoraires de conception :</p>
-                  <ul>
-                      <li>les cotisations aux assurances sociales</li>
-                      <li>les frais d’infrastructure de l’artiste (loyer de l’atelier, ordinateur, etc.)</li>
-                  </ul>
-
                   <p>Les honoraires de conception ne comprennent pas :</p>
                   <ul>
                       <li>La réalisation, fabrication, production des œuvres elles-mêmes (qu’elles soient réalisées par
@@ -356,8 +350,11 @@
                       sociales.</p>
 
                   <h4>Montant final</h4>
-                  <p>Les montants sont compris en coût total employeur·euse·x, pour les salarié·e·x·s comme pour les
-                      indépendant·e·x·s.</p>
+                  <p>
+                    → pour les indépendant·e·x·s, les montants sont indiqués toutes charges comprises
+                    <br>→ pour les personnes salarié·e·x·s par la structure, les montants sont indiqués en salaire brut
+                    <br>→ pour les personnes salarié·e·x·s par une association, les montants sont indiqués en coût total employeur
+                  </p>
 
                   <h4>Œuvre(s)</h4>
                   <p>Toute création de l’esprit, littéraire ou artistique, qui a un caractère individuel, quelles qu’en
