@@ -5,10 +5,20 @@
         ></app-nav>
     </div>
     <h2 class="app-with-gutter">RECOMMANDATIONS DE RÉMUNÉRATION POUR UNE EXPOSITION</h2>
-    <app-section
-        v-for="section of sections"
-        :section="section"
-    ></app-section>
+
+    <div class="v-view-calculator__wrap">
+      <main class="v-view-calculator__wrap__main">
+        <app-section
+            v-for="section of sections"
+            :section="section"
+        ></app-section>
+      </main>
+      <aside class="v-view-calculator__wrap__aside">
+        <div class="v-view-calculator__ticket-container">
+          <AppTicket/>
+        </div>
+      </aside>
+    </div>
 
     <div
         class="v-view-calculator__result"
@@ -72,10 +82,11 @@ import type {OptionOrNumberCalculatorSection} from "../gloabal/CalculatorSection
 import AppPanel from "../components/AppPanel.vue";
 import {formatCHF} from "../gloabal/formatCurency";
 import type {NumberCalculatorSubsection} from "../gloabal/CalculatorSection";
+import AppTicket from "@/components/AppTicket.vue";
 
 export default defineComponent({
   name: 'ViewCalculator',
-  components: {AppPanel, SubsectionNumber, SubsectionOption, AppNumberValue, AppSection, AppCheckbox, AppNav},
+  components: {AppTicket, AppPanel, SubsectionNumber, SubsectionOption, AppNumberValue, AppSection, AppCheckbox, AppNav},
 
   mounted() {
     this.$nextTick(() => {
@@ -207,5 +218,26 @@ h2 {
   font-size: 1.4rem;
   max-width: 40em;
   margin-top: 1rem;
+}
+
+
+.v-view-calculator__wrap {
+  display: flex;
+}
+
+.v-view-calculator__wrap__main {
+  box-sizing: border-box;
+  width: calc(100% - 30rem);
+}
+.v-view-calculator__wrap__aside {
+  box-sizing: border-box;
+  width: 30rem;
+}
+
+.v-view-calculator__ticket-container {
+  position: sticky;
+  top: 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 </style>
