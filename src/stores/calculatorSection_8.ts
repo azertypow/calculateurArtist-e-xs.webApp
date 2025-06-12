@@ -7,15 +7,11 @@ export const calculatorSection_8 = new NumberCalculatorSection(
         required : false,
         info : "recommandation de 60 CHF/h, minimum 23 CHF/h",
         help:`
-                            <p>Lorsque l’artiste se charge du montage et/ou du transport de ses pièces&nbsp;:</p>
-                             
                             <p>
-                                → soit compléter par le nombre d’heures estimées
-                                <br>OU
-                                <br>→ soit définir un forfait
+                              Attention : 
+                              <br>→ Pour les indépendant·e·x·s, Visarte recommande un tarif horaire de 60 CHF minimum et de 300 CHF brut par jour minimum pour les salarié·e·x·s. 
+                              <br>→ À Genève, le salaire minimum horaire est de 24,48 CHF en 2025. Cela représente un coût total employeur de 28.23 CHF.
                             </p>
-                            
-                            <p>Ces décisions se prennent en accord avec la structure.</p>
                         `
     },
 ).addSubSection(
