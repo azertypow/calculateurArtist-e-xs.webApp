@@ -60,20 +60,6 @@ export const calculatorSection_0: OptionCalculatorSection = new OptionCalculator
         required : true,
         help: `
         <p>Les taux de cotisation proposés d’office correspondent aux taux en vigueur à Genève en 2025, ainsi que selon une affiliation auprès de Artes & Comoedia, caisse de prévoyance de référence pour le domaine culturel en Suisse Romande.</p>
-        <table>
-              <tr>
-                <td>AVS/AI/APG/AC/AMat</td>
-                <td>6.438%</td>
-              </tr>
-              <tr>
-                <td>LPP</td>
-                <td>7%</td>
-              </tr>
-              <tr>
-                <td>LAA</td>
-                <td>1.12%</td>
-              </tr>
-            </table>
         `
     }
 ).addSubSection(
