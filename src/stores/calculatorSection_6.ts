@@ -23,7 +23,7 @@ export const calculatorSection_6 = new NumberCalculatorSection(
         0,
         "heures",
     ).setAMultiplier({
-        text: 'Coût horaire',
+        text: 'Base Mensuelle:',
         isEditable: true,
         unit: 'CHF',
         value: 0,
