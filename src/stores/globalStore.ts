@@ -126,7 +126,6 @@ export const useGlobalStore = defineStore('globalStore', {
                 calculatorSection_3,
                 calculatorSection_5,
                 calculatorSection_6,
-                calculatorSection_8,
                 calculatorSection_9,
                 calculatorSection_10,
                 // ----------
