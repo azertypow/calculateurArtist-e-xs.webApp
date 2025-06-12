@@ -8,7 +8,7 @@ import {conditionalLogicSection_8} from "./conditionalLogicSection_8";
 import {conditionalLogicSection_8_sans} from "./conditionalLogicSection_8_sans";
 
 export const calculatorSection_9 =                 new NumberCalculatorSection(
-    {index : 9, title : "Événement",
+    {index : 7, title : "Événement",
         help: `
 <ul>
 <li>Événement avec préparation : présentation publique nécessitant un temps de préparation.</li>
