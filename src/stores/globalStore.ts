@@ -59,7 +59,7 @@ export const calculatorSection_0: OptionCalculatorSection = new OptionCalculator
         title : 'Modalité de rémunération',
         required : true,
         help: `
-        <p>Les taux de cotisation proposés d’office correspondent aux taux en vigueur à Genève en 2024, ainsi que selon une affiliation auprès de Artes & Comoedia, caisse de prévoyance de référence pour le domaine culturel en Suisse Romande.</p>
+        <p>Les taux de cotisation proposés d’office correspondent aux taux en vigueur à Genève en 2025, ainsi que selon une affiliation auprès de Artes & Comoedia, caisse de prévoyance de référence pour le domaine culturel en Suisse Romande.</p>
         <table>
               <tr>
                 <td>AVS/AI/APG/AC/AMat</td>
