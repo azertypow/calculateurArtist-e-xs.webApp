@@ -7,7 +7,7 @@ import {calculatorSection_1} from "./calculatorSection_1";
 import {conditionalLogicSection_9} from "./conditionalLogicSection_9";
 
 export const calculatorSection_10 =                 new NumberCalculatorSection(
-    {index : 8, title : "Texte", required : false, info : 'source?',
+    {index : 9, title : "Texte", required : false, info : 'source?',
         help:`<p>Les textes commandés par la structure à l’artiste sont rémunérés par 1000 frappes (espaces compris). Le coût forfaitaire par 1000 frappes est calculé automatiquement selon la taille de la structure d’accueil. La longueur du texte final est arrondie au millier de frappes le plus proche.</p>
 <ul>Exemples : 
 <li>Si le texte produit contient 1312 caractères espaces compris, compter 1 occurence.</li>
