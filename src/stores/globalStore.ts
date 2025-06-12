@@ -43,12 +43,12 @@ export const listeOfSubtitle = {
     <p>Les montants sont indiqués toutes charges comprises.</p>
     `,
     [calculatorSection_0_title.asso]:   `
-    <p>L’artiste est salarié·e·x directement par la structure.
-    Les montants sont indiqués en salaire brut.</p>
+    <p>L’artiste est salarié·e·x par une association productrice qui facture la prestation à la structure.</p>
+    <p>Les montants sont indiqués en coût total employeur.</p>
     `,
     [calculatorSection_0_title.sal]:    `
-    <p>L’artiste est salarié·e·s directement par la structure.</p>
-    <p>Les montants sont indiqués en salaire brut.  Les charges patronales sont payées en plus par la structure.</p>
+    <p>L’artiste est salarié·e·x directement par la structure.</p>
+    <p>Les montants sont indiqués en salaire brut.</p>
     `,
 }
 
