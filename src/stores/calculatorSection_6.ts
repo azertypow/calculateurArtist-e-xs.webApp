@@ -5,7 +5,7 @@ export const calculatorSection_6 = new NumberCalculatorSection(
         help:`
         <p>Comment déterminer la rémunération de l’artiste pour la réalisation de l'œuvre ?</p>
         <p>
-        → Définir un nombre d’heures nécessaires à la réalisation du travail ainsi que son tarif horaire. 
+        → Définir le nombre de jours ou de semaines nécessaires à la réalisation du travail ainsi que son tarif horaire. 
         <br>OU
         <br>→ Définir un montant forfaitaire.
         <p>
