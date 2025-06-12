@@ -15,14 +15,14 @@
       <div class="v-app-ticket__main__prices">
         <div class="v-app-ticket__main__prices__item">
           <AppTicketPrice
-                  name="Budget de conception"
+                  name="Honoraires de conception"
                   :value="5000"
           />
         </div>
 
         <div class="v-app-ticket__main__prices__item">
           <AppTicketPrice
-                  name="Budget de réalisation"
+                  name="Honoraires de réalisation"
                   :value="300"
           />
         </div>

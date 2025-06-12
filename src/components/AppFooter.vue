@@ -141,17 +141,11 @@
               <p>→ Ces chiffres offrent une base de référence à laquelle doit s’ajouter la prise en compte du contexte
                   spécifique à chaque collaboration. Il s’agit de montants minimaux qui permettent la négociation des
                   parties sur une base commune.</p>
-              <p>→ Les montants sont toujours compris en coût total d’embauche (ou super-brut), indifféremment si
-                  salarié·e·x·s, indépendant·e·x·s, en association, location de services ou honoraire libre.</p>
 
               <p>→ La rémunération de l’artiste est constituée d’un montant forfaitaire pour la conception de l'œuvre,
                   ainsi que d’un montant pour la réalisation de cette dernière (qui peut être forfaitaire ou
                   horaire).</p>
 
-              <p>→ Le taux horaire est évalué par l’artiste, en discussion avec la structure. Dans tous les cas, il ne
-                  doit pas être inférieur au minimum légal en vigueur (à Genève, il est de 24 CHF brut en 2023 pour les
-                  salarié·e·x·s (coût total d’embauche en fonction des cotisations payées ± 28.50 CHF) et de 90 CHF
-                  minimum pour les indépendant·e·x·s selon les recommandations de Visarte Suisse.</p>
               <p>→ Le montant final de rémunération proposé représente le coût total du travail de l’artiste pour une
                   exposition, hors frais de production.</p>
               <p>→ Il est possible pour l’artiste et la structure de s’engager vers un modèle de co-financement ou de
