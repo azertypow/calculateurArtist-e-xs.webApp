@@ -155,11 +155,11 @@ export default defineComponent({
     },
 
     globalTotalForAssociation(): string {
-      return totalWithPercent(this.globalTotal, 150)
+      return totalWithPercent(this.globalTotal, 117.634)
     },
 
     globalTotalForSalarierStruct(): string {
-        return totalWithPercent(this.globalTotal, 200)
+        return totalWithPercent(this.globalTotal, 117.634)
     }
 
   }
