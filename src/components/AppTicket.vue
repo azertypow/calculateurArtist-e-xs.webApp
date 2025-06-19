@@ -109,6 +109,15 @@ export default defineComponent({
     },
 
     computed: {
+
+        calculatorSection_0_title() {
+            return calculatorSection_0_title
+        },
+
+        conditionOnTotalValue(): string {
+            return (Object.values(this.globalStore.conditionOnTotalValue)[0] as any).value
+        },
+
         globalTotal(): IGlobalTotal | {errorMessage: string} {
             return this.globalStore.globalTotal
         },
