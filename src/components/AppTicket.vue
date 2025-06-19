@@ -20,7 +20,7 @@
             <div class="v-app-ticket__main__prices__item">
               <AppTicketPrice
                       name="Honoraires de conception"
-                      :value="5000"
+                      :value="globalConceptionPartTotal"
               />
             </div>
 
@@ -63,10 +63,10 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, onMounted, onUnmounted, type Ref, ref} from "vue"
+import {defineComponent, onMounted, onUnmounted, type Ref, ref, type UnwrapRef} from "vue"
 import AppTicketPrice from "@/components/AppTicketPrice.vue";
 import {totalWithPercent} from "@/utlis/totalCalculation";
-import {type IGlobalTotal, useGlobalStore} from "@/stores/globalStore";
+import {calculatorSection_0_title, type IGlobalTotal, useGlobalStore} from "@/stores/globalStore";
 
 export default defineComponent({
     components: {AppTicketPrice},
@@ -78,8 +78,6 @@ export default defineComponent({
     data() {
         return {
             globalStore: useGlobalStore(),
-            proto: true,
-            checkeds: [],
         }
     },
 
@@ -116,6 +114,10 @@ export default defineComponent({
 
         conditionOnTotalValue(): string {
             return (Object.values(this.globalStore.conditionOnTotalValue)[0] as any).value
+        },
+
+        globalConceptionPartTotal(): string {
+            return this.globalStore.globalConceptionPartTotal
         },
 
         globalTotal(): IGlobalTotal | {errorMessage: string} {

@@ -156,6 +156,30 @@ export const useGlobalStore = defineStore('globalStore', {
     },
 
     getters: {
+
+        globalConceptionPartTotal(): number | null {
+
+            const multiply = this.isACollective ? 1.5 : 1
+
+            const toReturn = this.calculatorSections.slice(0, 5).reduce((acc: number, currentSection) => {
+
+                // console.log('currentSection.title: ', currentSection.title)
+                // console.log(currentSection)
+
+                let total = 0
+
+                currentSection.subSections.forEach((currentSubsection) => {
+                    total += currentSubsection.result
+                })
+
+                return total + acc
+            }, 0)
+
+            console.log( 'toReturn: ', toReturn )
+
+            return toReturn * multiply
+        },
+
       globalTotal(): IGlobalTotal | {errorMessage: string} {
 
         let errorForTotalCalculation: null | {errorMessage: string} = null
