@@ -24,12 +24,36 @@
               />
             </div>
 
-            <div class="v-app-ticket__main__prices__item">
-              <AppTicketPrice
-                      name="Honoraires de réalisation"
-                      :value="300"
-              />
-            </div>
+
+            <template v-if="conditionOnTotalValue" >
+              <template v-for="section of globalStore.calculatorSections.slice(5, 100)" >
+                <div class="v-app-ticket__main__prices__item"
+                     v-if="section.value > 0"
+                >
+                  <template v-if="conditionOnTotalValue === calculatorSection_0_title.asso">
+                    <AppTicketPrice
+                            :name="section.title"
+                            :value="section.value * (117.634 / 100)"
+                    />
+                  </template>
+                  <template v-else-if="conditionOnTotalValue === calculatorSection_0_title.sal">
+                    <AppTicketPrice
+                            :name="section.title"
+                            :value="section.value * (117.634 / 100)"
+                    />
+                  </template>
+                  <template v-else>
+                    <AppTicketPrice
+                            :name="section.title"
+                            :value="section.value * (100 / 100)"
+                    />
+                  </template>
+                </div>
+              </template>
+            </template>
+
+
+
           </div>
           <div class="v-app-ticket__main__total">
             <div class="v-app-ticket__main__total__result">
@@ -129,11 +153,11 @@ export default defineComponent({
         },
 
         globalTotalForAssociation(): string {
-            return totalWithPercent(this.globalTotal, 150)
+            return totalWithPercent(this.globalTotal, 117.634)
         },
 
         globalTotalForSalarierStruct(): string {
-            return totalWithPercent(this.globalTotal, 200)
+            return totalWithPercent(this.globalTotal, 117.634)
         }
     },
 })

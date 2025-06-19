@@ -9,7 +9,7 @@
         CHF
       </div>
       <div class="v-app-ticket-price__value__suffix">
-        {{value}}.—
+        {{formatCHF(value)}}
       </div>
     </div>
 
@@ -21,8 +21,10 @@
 
 <script lang="ts">
 import {defineComponent} from "vue"
+import {formatCHF} from "@/gloabal/formatCurency";
 
 export default defineComponent({
+    methods: {formatCHF},
     props: {
         name: {type: String, required: true},
         value: {type: Number, required: true}
