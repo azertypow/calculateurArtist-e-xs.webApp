@@ -34,11 +34,19 @@
           <h6 style="margin: 0" v-if="'errorMessage' in globalTotal">{{globalTotal.errorMessage}}</h6>
           <div
               v-else
-          >CHF {{globalTotal.OUT_ofFinalPercentCalc + globalTotal.IN_finalPercentCalc}}<template v-if="(globalTotal.OUT_ofFinalPercentCalc + globalTotal.IN_finalPercentCalc) % 1 === 0">.—</template>
+          >
 
             <template v-if="conditionOnTotalValue">
-              <div v-if="conditionOnTotalValue === calculatorSection_0_title.asso" >(CHF {{ globalTotalNetForAssociation }}net)</div>
-              <div v-if="conditionOnTotalValue === calculatorSection_0_title.sal" >(CHF {{ globalTotalNetForSalarierStruct }}net)</div>
+              <div v-if="conditionOnTotalValue === calculatorSection_0_title.asso"
+              >{{ globalTotalForAssociation }}</div>
+              <div v-else-if="conditionOnTotalValue === calculatorSection_0_title.sal"
+              >{{ globalTotalForSalarierStruct }}</div>
+              <template v-else>
+                {{ globalTotalForIndependent }}
+              </template>
+            </template>
+            <template v-else>
+              {{globalTotalForIndependent}}
             </template>
 
             <div class="v-view-calculator__result__option">
@@ -83,6 +91,7 @@ import AppPanel from "../components/AppPanel.vue";
 import {formatCHF} from "../gloabal/formatCurency";
 import type {NumberCalculatorSubsection} from "../gloabal/CalculatorSection";
 import AppTicket from "@/components/AppTicket.vue";
+import {totalWithPercent} from "@/utlis/totalCalculation";
 
 export default defineComponent({
   name: 'ViewCalculator',
@@ -141,20 +150,16 @@ export default defineComponent({
       return Object.values(this.globalStore.conditionOnTotalValue)[0].value
     },
 
-    globalTotalNetForAssociation(): string {
-      if('errorMessage' in this.globalTotal) return ''
-
-      const inPercent = this.globalTotal.IN_finalPercentCalc / 100 * 72.41
-
-      return formatCHF( inPercent + this.globalTotal.OUT_ofFinalPercentCalc )
+    globalTotalForIndependent(): string {
+        return totalWithPercent(this.globalTotal, 100)
     },
 
-    globalTotalNetForSalarierStruct(): string {
-      if('errorMessage' in this.globalTotal) return ''
+    globalTotalForAssociation(): string {
+      return totalWithPercent(this.globalTotal, 150)
+    },
 
-      const inPercent = this.globalTotal.IN_finalPercentCalc / 100 * 85.44
-
-      return formatCHF( inPercent + this.globalTotal.OUT_ofFinalPercentCalc )
+    globalTotalForSalarierStruct(): string {
+        return totalWithPercent(this.globalTotal, 200)
     }
 
   }
