@@ -83,16 +83,32 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .v-app-ticket {
-  background: white;
   box-sizing: border-box;
   font-size: 1.15rem;
   line-height: 1.25em;
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: .25rem;
+    background-image: url('@/assets/icons/ticket_de_caisse_tda.svg');
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+  }
+
+  &:after {
+    transform-origin: center center;
+    transform: rotate(180deg);
+  }
 }
 
 .v-app-ticket__header {
   box-sizing: border-box;
   padding: 1rem;
   border-bottom: dotted 2px;
+  background: white;
 }
 
 .v-app-ticket__main {
@@ -101,6 +117,7 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   gap: 4rem;
+  background: white;
 }
 
 .v-app-ticket__main__prices {
