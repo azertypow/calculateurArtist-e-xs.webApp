@@ -1,43 +1,63 @@
 <template>
   <section class="v-app-ticket">
-
     <header class="v-app-ticket__header">
       <div>travaildesartistes.ch</div>
     </header>
 
-    <main class="v-app-ticket__main">
+      <main class="v-app-ticket__main">
 
-      <div class="v-app-ticket__main__date">
-        <div>{{(new Date()).toLocaleDateString().replace(/\//g, '.')}}</div>
-        <div>{{time}}</div>
-      </div>
+        <template v-if="'errorMessage' in globalTotal" >
+          <p style="margin: 0"
+          >{{globalTotal.errorMessage}}</p>
+        </template>
 
-      <div class="v-app-ticket__main__prices">
-        <div class="v-app-ticket__main__prices__item">
-          <AppTicketPrice
-                  name="Honoraires de conception"
-                  :value="5000"
-          />
-        </div>
+        <template v-else>
+          <div class="v-app-ticket__main__date">
+            <div>{{(new Date()).toLocaleDateString().replace(/\//g, '.')}}</div>
+            <div>{{time}}</div>
+          </div>
+          <div class="v-app-ticket__main__prices">
+            <div class="v-app-ticket__main__prices__item">
+              <AppTicketPrice
+                      name="Honoraires de conception"
+                      :value="5000"
+              />
+            </div>
 
-        <div class="v-app-ticket__main__prices__item">
-          <AppTicketPrice
-                  name="Honoraires de réalisation"
-                  :value="300"
-          />
-        </div>
-      </div>
+            <div class="v-app-ticket__main__prices__item">
+              <AppTicketPrice
+                      name="Honoraires de réalisation"
+                      :value="300"
+              />
+            </div>
+          </div>
+          <div class="v-app-ticket__main__total">
+            <div class="v-app-ticket__main__total__result">
+              <div>
+                TOTAL
+              </div>
+              <div>
+                CHF&nbsp;
+                <template v-if="conditionOnTotalValue">
+                  <div v-if="conditionOnTotalValue === calculatorSection_0_title.asso"
+                  >{{ globalTotalForAssociation }}</div>
+                  <div v-else-if="conditionOnTotalValue === calculatorSection_0_title.sal"
+                  >{{ globalTotalForSalarierStruct }}</div>
+                  <template v-else>
+                    {{ globalTotalForIndependent }}
+                  </template>
+                </template>
+                <template v-else>
+                  {{globalTotalForIndependent}}
+                </template>
+              </div>
+            </div>
+          </div>
+        </template>
 
-      <div class="v-app-ticket__main__total">
-        <div class="v-app-ticket__main__total__label">
-          TOTAL
-        </div>
-        <div class="v-app-ticket__main__total__result">
-          <div>CHF</div><div>9 000.—</div>
-        </div>
-      </div>
 
-    </main>
+
+      </main>
 
   </section>
 </template>
@@ -45,12 +65,22 @@
 <script lang="ts">
 import {defineComponent, onMounted, onUnmounted, type Ref, ref} from "vue"
 import AppTicketPrice from "@/components/AppTicketPrice.vue";
+import {totalWithPercent} from "@/utlis/totalCalculation";
+import {type IGlobalTotal, useGlobalStore} from "@/stores/globalStore";
 
 export default defineComponent({
     components: {AppTicketPrice},
     props: {
         // name: String,
         // msg: {type: String, required: true}
+    },
+
+    data() {
+        return {
+            globalStore: useGlobalStore(),
+            proto: true,
+            checkeds: [],
+        }
     },
 
     setup() {
@@ -76,6 +106,24 @@ export default defineComponent({
         })
 
         return {time}
+    },
+
+    computed: {
+        globalTotal(): IGlobalTotal | {errorMessage: string} {
+            return this.globalStore.globalTotal
+        },
+
+        globalTotalForIndependent(): string {
+            return totalWithPercent(this.globalTotal, 100)
+        },
+
+        globalTotalForAssociation(): string {
+            return totalWithPercent(this.globalTotal, 150)
+        },
+
+        globalTotalForSalarierStruct(): string {
+            return totalWithPercent(this.globalTotal, 200)
+        }
     },
 })
 
@@ -139,7 +187,7 @@ export default defineComponent({
 
 .v-app-ticket__main__total__result {
   display: flex;
-  width: 10rem;
+  width: 100%;
   justify-content: space-between;
   border-top: dotted 2px;
   padding-top: 1rem;
