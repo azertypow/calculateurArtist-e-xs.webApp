@@ -7,20 +7,11 @@ import {
     NumberCalculatorSubsection,
     OptionCalculatorSection, OptionCalculatorSubsection
 } from "../gloabal/CalculatorSection";
-import {conditionalLogicSection_5} from "./conditionalLogicSection_5";
-import {conditionalLogicSection_4} from "./conditionalLogicSection_4";
-import {conditionalLogicSection_3_option_1} from "./conditionalLogicSection_3_option_1";
-import {conditionalLogicSection_3_option_2} from "./conditionalLogicSection_3_option_2";
-import {conditionalLogicSection_3_option_3} from "./conditionalLogicSection_3_option_3";
-import {conditionalLogicSection_8} from "./conditionalLogicSection_8";
-import {conditionalLogicSection_8_sans} from "./conditionalLogicSection_8_sans"
-import {conditionalLogicSection_9} from "./conditionalLogicSection_9";
 import {calculatorSection_3} from "./calculatorSection_3";
 import {calculatorSection_1} from "./calculatorSection_1";
 import {calculatorSection_2} from "./calculatorSection_2";
 import {calculatorSection_5} from "./calculatorSection_5";
 import {calculatorSection_6} from "./calculatorSection_6";
-import {calculatorSection_7} from "./calculatorSection_7";
 import {calculatorSection_8} from "./calculatorSection_8";
 import {calculatorSection_9} from "./calculatorSection_9";
 import {calculatorSection_10} from "./calculatorSection_10";
