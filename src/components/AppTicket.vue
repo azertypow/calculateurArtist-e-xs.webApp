@@ -17,12 +17,29 @@
             <div>{{time}}</div>
           </div>
           <div class="v-app-ticket__main__prices">
-            <div class="v-app-ticket__main__prices__item">
-              <AppTicketPrice
-                      name="Honoraires de conception"
-                      :value="globalConceptionPartTotal"
-              />
-            </div>
+            <template v-if="conditionOnTotalValue">
+              <div class="v-app-ticket__main__prices__item">
+                <template v-if="conditionOnTotalValue === calculatorSection_0_title.asso">
+                  <AppTicketPrice
+                          name="Honoraires de conception"
+                          :value="globalConceptionPartTotal * (117.634 / 100)"
+                  />
+                </template>
+                <template v-else-if="conditionOnTotalValue === calculatorSection_0_title.sal">
+                  <AppTicketPrice
+                          name="Honoraires de conception"
+                          :value="globalConceptionPartTotal * (117.634 / 100)"
+                  />
+                </template>
+                <template v-else>
+                  <AppTicketPrice
+                          name="Honoraires de conception"
+                          :value="globalConceptionPartTotal * (100 / 100)"
+                  />
+                </template>
+
+              </div>
+            </template>
 
 
             <template v-if="conditionOnTotalValue" >
