@@ -15,6 +15,7 @@ import {calculatorSection_6} from "./calculatorSection_6";
 import {calculatorSection_8} from "./calculatorSection_8";
 import {calculatorSection_9} from "./calculatorSection_9";
 import {calculatorSection_10} from "./calculatorSection_10";
+import {calculatorSection_6_2} from "./calculatorSection_6_2";
 
 export const calculatorSection_0_title = {
     ind:    'indépendant·e·x',
@@ -103,6 +104,7 @@ export const useGlobalStore = defineStore('globalStore', {
                 calculatorSection_3,
                 calculatorSection_5,
                 calculatorSection_6,
+                calculatorSection_6_2,
                 calculatorSection_8,
                 calculatorSection_9,
                 calculatorSection_10,
