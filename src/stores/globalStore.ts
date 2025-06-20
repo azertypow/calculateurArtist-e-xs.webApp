@@ -103,7 +103,6 @@ export const useGlobalStore = defineStore('globalStore', {
                 calculatorSection_2,
                 calculatorSection_3,
                 calculatorSection_5,
-                calculatorSection_6,
                 calculatorSection_6_2,
                 calculatorSection_8,
                 calculatorSection_9,
