@@ -28,13 +28,13 @@
                 <template v-else-if="conditionOnTotalValue === calculatorSection_0_title.sal">
                   <AppTicketPrice
                           name="Honoraires de conception"
-                          :value="globalConceptionPartTotal * (117.634 / 100)"
+                          :value="globalConceptionPartTotal * (100 / 100)"
                   />
                 </template>
                 <template v-else>
                   <AppTicketPrice
                           name="Honoraires de conception"
-                          :value="globalConceptionPartTotal * (100 / 100)"
+                          :value="globalConceptionPartTotal * (117.634 / 100)"
                   />
                 </template>
 
@@ -55,13 +55,13 @@
                     <template v-else-if="conditionOnTotalValue === calculatorSection_0_title.sal">
                       <AppTicketPrice
                               :name="section.title"
-                              :value="calculateTotalResultOfSubsections(section) * (117.634 / 100)"
+                              :value="calculateTotalResultOfSubsections(section) * (100 / 100)"
                       />
                     </template>
                     <template v-else>
                       <AppTicketPrice
                               :name="section.title"
-                              :value="calculateTotalResultOfSubsections(section) * (100 / 100)"
+                              :value="calculateTotalResultOfSubsections(section) * (117.634 / 100)"
                       />
                     </template>
                   </div>
@@ -182,7 +182,7 @@ export default defineComponent({
         },
 
         globalTotalForIndependent(): string {
-            return totalWithPercent(this.globalTotal, 100)
+            return totalWithPercent(this.globalTotal, 117.634)
         },
 
         globalTotalForAssociation(): string {
@@ -190,7 +190,7 @@ export default defineComponent({
         },
 
         globalTotalForSalarierStruct(): string {
-            return totalWithPercent(this.globalTotal, 117.634)
+            return totalWithPercent(this.globalTotal, 100)
         }
     },
 })
