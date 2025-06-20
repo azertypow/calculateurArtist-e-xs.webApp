@@ -77,22 +77,30 @@
               <div>
                 TOTAL
               </div>
-              <div>
-                CHF&nbsp;
+              <div class="v-app-ticket__main__total__result__value">
+                <div>
+                  CHF&nbsp;
+                </div>
                 <template v-if="conditionOnTotalValue">
                   <div v-if="conditionOnTotalValue === calculatorSection_0_title.asso"
                   >{{ globalTotalForAssociation }}</div>
                   <div v-else-if="conditionOnTotalValue === calculatorSection_0_title.sal"
                   >{{ globalTotalForSalarierStruct }}</div>
-                  <template v-else>
+                  <div v-else>
                     {{ globalTotalForIndependent }}
-                  </template>
+                  </div>
                 </template>
-                <template v-else>
+                <div v-else>
                   {{globalTotalForIndependent}}
-                </template>
+                </div>
               </div>
             </div>
+          </div>
+
+          <div class="v-app-ticket__main__footer" >
+            <a href="mailto:communication+calculateur@visarte-geneve.ch"
+               target="_blank"
+            >communication+calculateur@visarte-geneve.ch</a>
           </div>
         </template>
 
@@ -224,14 +232,14 @@ export default defineComponent({
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 2rem;
   background: white;
 }
 
 .v-app-ticket__main__prices {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .v-app-ticket__main__total {
@@ -251,6 +259,28 @@ export default defineComponent({
   justify-content: space-between;
   border-top: dotted 2px;
   padding-top: 1rem;
+}
+
+.v-app-ticket__main__total__result__value {
+  width: 12rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.v-app-ticket__main__footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-top: dotted 2px;
+  padding-top: 1rem;
+
+  a {
+    display: block;
+    box-shadow: none;
+    //text-align: center;
+    width: 100%;
+    font-size: 1rem;
+  }
 }
 
 </style>

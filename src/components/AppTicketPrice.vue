@@ -55,7 +55,7 @@ export default defineComponent({
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
-  width: 10rem;
+  width: 12rem;
 }
 
 </style>
