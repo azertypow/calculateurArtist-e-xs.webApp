@@ -1,4 +1,4 @@
-<template>
+<template xmlns="http://www.w3.org/1999/html">
   <div
       class="v-subsection-number app-subsection"
   >
@@ -63,9 +63,15 @@
     >
       <div class="app-g__coll-sm-0-12 app-g__coll-2-12 app-with-gutter"></div>
       <div class="app-g__coll-xs-12-12 app-g__coll-sm-4-12 app-g__coll-4-12 app-with-gutter"></div>
-      <div class="app-g__coll-xs-12-12 app-g__coll-sm-8-12 app-g__coll-6-12 app-with-gutter">{{ multiplier.text }}<span
-          v-if="multiplier.unit === 'CHF'">CHF</span> {{ multiplier.value }}<span
-          v-if="multiplier.unit === 'CHF'">.–</span><span v-else-if="multiplier.unit">&nbsp;{{ multiplier.unit }}</span>
+      <div class="app-g__coll-xs-12-12 app-g__coll-sm-8-12 app-g__coll-6-12 app-with-gutter"
+      >
+        <span v-html="multiplier.text"/>
+        <template v-if="multiplier.unit === 'CHF'">
+          CHF {{ formatCHF(multiplier.value) }}
+        </template>
+        <span v-else-if="multiplier.unit">&nbsp
+          {{ multiplier.unit }}
+        </span>
       </div>
     </div>
 
@@ -78,9 +84,11 @@ import type {PropType} from 'vue';
 import type {NumberCalculatorSubsection} from "../gloabal/CalculatorSection";
 import AppNumberValue from "./AppNumberValue.vue";
 import IconPen from "./IconPen.vue";
+import {formatCHF} from "../gloabal/formatCurency";
 
 export default defineComponent({
   name: 'SubsectionNumber',
+    methods: {formatCHF},
   components: {IconPen, AppNumberValue},
 
   data() {
