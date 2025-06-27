@@ -38,15 +38,15 @@
 
             <template v-if="conditionOnTotalValue">
               <div v-if="conditionOnTotalValue === calculatorSection_0_title.asso"
-              >{{ globalTotalForAssociation }}</div>
+              >CHF {{ formatCHF(globalTotalForAssociation) }}</div>
               <div v-else-if="conditionOnTotalValue === calculatorSection_0_title.sal"
-              >{{ globalTotalForSalarierStruct }}</div>
+              >CHF {{ formatCHF(globalTotalForSalarierStruct) }}</div>
               <template v-else>
-                {{ globalTotalForIndependent }}
+                CHF {{ formatCHF(globalTotalForIndependent) }}
               </template>
             </template>
             <template v-else>
-              {{globalTotalForIndependent}}
+              CHF {{ formatCHF(globalTotalForIndependent) }}
             </template>
 
             <div class="v-view-calculator__result__option">
@@ -222,10 +222,18 @@ h2 {
 .v-view-calculator__wrap__main {
   box-sizing: border-box;
   width: calc(100% - 30rem);
+
+  @media (max-width: 1150px) {
+   width: 100%;
+  }
 }
 .v-view-calculator__wrap__aside {
   box-sizing: border-box;
   width: 30rem;
+
+  @media (max-width: 1150px) {
+    display: none;
+  }
 }
 
 .v-view-calculator__ticket-container {

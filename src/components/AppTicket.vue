@@ -97,12 +97,27 @@
                 </div>
               </div>
             </div>
+
+          </div>
+          <div>
+            <template v-if="conditionOnTotalValue === calculatorSection_0_title.ind">
+              Les montant sont indiqués toutes charges comprises.
+            </template>
+            <template v-if="conditionOnTotalValue === calculatorSection_0_title.sal">
+              Les montant sont indiqués en salaire brut.
+            </template>
+            <template v-if="conditionOnTotalValue === calculatorSection_0_title.asso">
+              Les montant sont indiqués en coût total employeur (incl. 17.634% de charges patronales).
+            </template>
+            <template v-if="globalStore.isACollective">
+              <br>Les collectifs d’artistes sont rémunérés selon un coefficient de 1,5.
+            </template>
           </div>
 
           <div class="v-app-ticket__main__footer" >
             <a href="mailto:communication+calculateur@visarte-geneve.ch"
                target="_blank"
-            >communication+calculateur@visarte-geneve.ch</a>
+            >communication@visarte-geneve.ch</a>
           </div>
         </template>
 
