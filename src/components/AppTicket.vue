@@ -160,6 +160,10 @@ export default defineComponent({
     },
 
     computed: {
+        modalitySelected(): string | null {
+            return this.globalStore?.calculatorSections[0]._value?.titre ? this.globalStore?.calculatorSections[0]._value?.titre : null
+        },
+
         NumberCalculatorSubsection() {
             return NumberCalculatorSubsection
         },
