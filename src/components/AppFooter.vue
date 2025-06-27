@@ -38,48 +38,21 @@
         class="v-app-footer__result"
     >
       <div
-          class="v-app-footer__content"
-          v-if="router().currentRoute.value.name === 'calculator' "
+              class="v-app-footer__content"
+              v-if="router().currentRoute.value.name === 'calculator' "
       >
-        <div v-if="'errorMessage' in globalTotal"
-          >{{globalTotal.errorMessage}}
-        </div>
-
-        <template v-else >
-          <div
-                    class="app-g app-g--align-center app-g--justify-end"
-                    style="gap: 2rem"
-            >
-                <div style="font-size: 2rem; line-height: 4rem"
-                >
-                  <template v-if="conditionOnTotalValue">
-                    <div v-if="conditionOnTotalValue === calculatorSection_0_title.asso"
-                    >{{ globalTotalForAssociation }}</div>
-                    <div v-else-if="conditionOnTotalValue === calculatorSection_0_title.sal"
-                    >{{ globalTotalForSalarierStruct }}</div>
-                    <template v-else>
-                      {{ globalTotalForIndependent }}
-                    </template>
-                  </template>
-                  <template v-else>
-                    {{globalTotalForIndependent}}
-                  </template>
-                </div>
-            </div>
-
-            <div
+        <div
                 class="v-app-footer__content__artiste-option"
-            >
-                <div
-                        class="app-button--toggle app-button--toggle--is-small"
-                        @click="globalStore.isACollective = !globalStore.isACollective"
-                        :class="{'is-active': globalStore.isACollective}"
-                ></div>
-                <div>
-                    Collectif d’artiste?
-                </div>
-            </div>
-        </template>
+        >
+          <div
+                  class="app-button--toggle app-button--toggle--is-small"
+                  @click="globalStore.isACollective = !globalStore.isACollective"
+                  :class="{'is-active': globalStore.isACollective}"
+          ></div>
+          <div>
+            Collectif d’artiste?
+          </div>
+        </div>
       </div>
     </div>
     <div
@@ -718,24 +691,16 @@ ${contratData.artiste_gallery}
 
   .v-app-footer__content {
     display: flex;
-    flex-direction: row-reverse;
     margin: auto;
-    justify-content: center;
+    justify-content: flex-end;
     position: relative;
 
       .v-app-footer__content__artiste-option {
         user-select: none;
-          position: absolute;
-          right: 0;
-          top: 50%;
-          transform: translate(0, -50%);
+        position: relative;
         display: flex;
         align-items: center;
         gap: 1rem;
-
-          @media (max-width: 700px) {// align with grid
-              display: none;
-          }
       }
   }
 
