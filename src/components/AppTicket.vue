@@ -6,6 +6,8 @@
 
       <main class="v-app-ticket__main">
 
+        <div v-if="modalitySelected">Modalité de rémunération selectionné&nbsp;: {{ modalitySelected }}</div>
+
         <template v-if="'errorMessage' in globalTotal" >
           <p style="margin: 0"
           >{{globalTotal.errorMessage}}</p>
