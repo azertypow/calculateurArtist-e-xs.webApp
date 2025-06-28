@@ -6,7 +6,7 @@
 
       <main class="v-app-ticket__main">
 
-        <div v-if="modalitySelected">Modalité de rémunération selectionné&nbsp;: {{ modalitySelected }}</div>
+        <div v-if="modalitySelected">Modalité de rémunération selectionnée&nbsp;: {{ modalitySelected }}</div>
 
         <template v-if="'errorMessage' in globalTotal" >
           <p style="margin: 0"
@@ -101,13 +101,13 @@
           </div>
           <div>
             <template v-if="conditionOnTotalValue === calculatorSection_0_title.ind">
-              Les montant sont indiqués toutes charges comprises.
+              Les montants sont indiqués toutes charges comprises.
             </template>
             <template v-if="conditionOnTotalValue === calculatorSection_0_title.sal">
-              Les montant sont indiqués en salaire brut.
+              Les montants sont indiqués en salaire brut.
             </template>
             <template v-if="conditionOnTotalValue === calculatorSection_0_title.asso">
-              Les montant sont indiqués en coût total employeur (incl. 17.634% de charges patronales).
+              Les montants sont indiqués en coût total employeur (incl. 17.634% de charges patronales).
             </template>
             <template v-if="globalStore.isACollective">
               <br>Les collectifs d’artistes sont rémunérés selon un coefficient de 1,5.

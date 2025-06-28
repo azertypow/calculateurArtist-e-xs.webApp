@@ -18,7 +18,7 @@ export const calculatorSection_6_2 =                 new NumberCalculatorSection
         "nombre de semaine·s",
     ).setAMultiplier({
         value: 5500/4,
-        text: "Base mensuelle: CHF 5500.–<br>→ semaine à ",
+        text: "Base mensuelle brute : CHF 5500.– <br>→ semaine à ",
         status: "info",
         unit: 'CHF',
     }),
@@ -27,7 +27,7 @@ export const calculatorSection_6_2 =                 new NumberCalculatorSection
         "nombre de jour·s",
     ).setAMultiplier({
         value: 253.46,
-        text: "Base mensuelle: CHF 5500.–<br>→ jour à ",
+        text: "Base mensuelle brute : CHF 5500.–<br>→ jour à ",
         status: "info",
         unit: 'CHF',
     }),
