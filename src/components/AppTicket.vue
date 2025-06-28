@@ -47,26 +47,50 @@
             <template v-if="conditionOnTotalValue" >
               <template v-for="section of globalStore.calculatorSections.slice(5, 100)" >
                 <template v-if="calculateTotalResultOfSubsections(section) > 0">
-                  <div class="v-app-ticket__main__prices__item">
-                    <template v-if="conditionOnTotalValue === calculatorSection_0_title.asso">
-                      <AppTicketPrice
-                              :name="section.title"
-                              :value="calculateTotalResultOfSubsections(section) * (117.634 / 100)"
-                      />
-                    </template>
-                    <template v-else-if="conditionOnTotalValue === calculatorSection_0_title.sal">
-                      <AppTicketPrice
-                              :name="section.title"
-                              :value="calculateTotalResultOfSubsections(section) * (100 / 100)"
-                      />
-                    </template>
-                    <template v-else>
-                      <AppTicketPrice
-                              :name="section.title"
-                              :value="calculateTotalResultOfSubsections(section) * (117.634 / 100)"
-                      />
-                    </template>
-                  </div>
+                  <template v-if="globalStore.isACollective">
+                    <div class="v-app-ticket__main__prices__item">
+                      <template v-if="conditionOnTotalValue === calculatorSection_0_title.asso">
+                        <AppTicketPrice
+                                :name="section.title"
+                                :value="calculateTotalResultOfSubsections(section) * (117.634 / 100) * 1.5"
+                        />
+                      </template>
+                      <template v-else-if="conditionOnTotalValue === calculatorSection_0_title.sal">
+                        <AppTicketPrice
+                                :name="section.title"
+                                :value="calculateTotalResultOfSubsections(section) * (100 / 100) * 1.5"
+                        />
+                      </template>
+                      <template v-else>
+                        <AppTicketPrice
+                                :name="section.title"
+                                :value="calculateTotalResultOfSubsections(section) * (117.634 / 100) * 1.5"
+                        />
+                      </template>
+                    </div>
+                  </template>
+                  <template v-else>
+                    <div class="v-app-ticket__main__prices__item">
+                      <template v-if="conditionOnTotalValue === calculatorSection_0_title.asso">
+                        <AppTicketPrice
+                                :name="section.title"
+                                :value="calculateTotalResultOfSubsections(section) * (117.634 / 100)"
+                        />
+                      </template>
+                      <template v-else-if="conditionOnTotalValue === calculatorSection_0_title.sal">
+                        <AppTicketPrice
+                                :name="section.title"
+                                :value="calculateTotalResultOfSubsections(section) * (100 / 100)"
+                        />
+                      </template>
+                      <template v-else>
+                        <AppTicketPrice
+                                :name="section.title"
+                                :value="calculateTotalResultOfSubsections(section) * (117.634 / 100)"
+                        />
+                      </template>
+                    </div>
+                  </template>
                 </template>
               </template>
             </template>
