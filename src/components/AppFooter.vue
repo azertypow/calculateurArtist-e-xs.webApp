@@ -191,7 +191,7 @@
 
               <h4>Version</h4>
               <p>v 0.9.2
-                <br>Dernière mise à jour : 18 mars 2024
+                <br>Dernière mise à jour : 10 juillet 2025
               </p>
 
           </template>

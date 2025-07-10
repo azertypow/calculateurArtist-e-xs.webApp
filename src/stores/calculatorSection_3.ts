@@ -16,7 +16,7 @@ export const calculatorSection_3 = new OptionCalculatorSection(
 Préciser la nature des œuvres présentées pour l’exposition. Si différentes œuvres entrent dans différentes catégories, choisir l'option la plus avantageuse pour l’artiste.
 </p>
 
-<p>Exemple : Si une exposition regroupe des œuvres déjà existantes et de nouvelles créations, alors c’est la catégorie «conception d'une ou plusieurs nouvelles œuvres» qui est appliquée.</p>
+<p>Exemple : Si une exposition regroupe des œuvres déjà existantes ainsi que de nouvelles créations, alors c’est la catégorie «conception d'une ou plusieurs nouvelles œuvres» qui est appliquée.</p>
 `}
 ).addSubSection(
     new OptionCalculatorSubsection({

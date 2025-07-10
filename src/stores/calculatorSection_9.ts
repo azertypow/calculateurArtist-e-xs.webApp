@@ -11,10 +11,10 @@ export const calculatorSection_9 =                 new NumberCalculatorSection(
     {index : 8, title : "Événements",
         help: `
 <ul>
-<li>Événement avec préparation : présentation publique nécessitant un temps de préparation.</li>
-<li>Exemples : lecture, conférence, workshop, modération de rencontre, etc.</li>
-<li>Événement sans préparation : présentation publique ne nécessitant pas de temps de préparation.</li>
-<li>Exemples : présence lors de visite guidée, projection en présence de l’artiste, participation à une table ronde, etc.</li>
+<li>Événement avec préparation : présentation publique nécessitant un temps de préparation.
+<br>Exemples : lecture, conférence, workshop, modération de rencontre, etc.</br>
+<li>Événement sans préparation : présentation publique ne nécessitant pas de temps de préparation.
+<br>Exemples : présence lors de visite guidée, projection en présence de l’artiste, etc.</br>
 </ul>
 `},
 ).addSubSection(
